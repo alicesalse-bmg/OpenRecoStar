@@ -378,17 +378,20 @@ INSERT INTO gpkg_geometry_columns (table_name, column_name, geometry_type_name, 
 
 DROP VIEW IF EXISTS RPD_PleineTerre_Reco_virt;
 CREATE VIEW RPD_PleineTerre_Reco_virt as --FIXME : Spliter les MULTILINESTRING
-SELECT ROW_NUMBER () OVER () pkid, id, Geometrie, Null ProfondeurMinNonReg, PrecisionXY, PrecisionZ
-FROM Cable WHERE TypePose = 'Enterre'
-JOIN Cheminement
+SELECT ROW_NUMBER () OVER () pkid, c.id, coalesce(ST_Difference(c."Geometrie", h."Geometrie"), c."Geometrie") Geometrie, Null ProfondeurMinNonReg, c.PrecisionXY,c.PrecisionZ
+FROM Cable c
+LEFT JOIN Cheminement h ON ST_Within(h."Geometrie", c."Geometrie")
+WHERE TypePose = 'Enterre';
 ;
 INSERT INTO gpkg_contents (table_name, data_type, identifier, srs_id) values ('RPD_PleineTerre_Reco_virt','features','RPD_PleineTerre_Reco_virt',2154); --GPKG
 INSERT INTO gpkg_geometry_columns (table_name, column_name, geometry_type_name, srs_id, z, m) values ('RPD_PleineTerre_Reco_virt', 'Geometrie', 'LINESTRING', 2154, 1, 0); --GPKG
 
 DROP VIEW IF EXISTS RPD_Aerien_Reco_virt;
 CREATE VIEW RPD_Aerien_Reco_virt as --FIXME : Spliter les MULTILINESTRING
-SELECT ROW_NUMBER () OVER () pkid, id, TypePose ModePose, Geometrie, Null ProfondeurMinNonReg, PrecisionXY, PrecisionZ
-FROM Cable WHERE NOT TypePose = 'Enterre'
+SELECT ROW_NUMBER () OVER () pkid, c.id, TypePose ModePose, coalesce(ST_Difference(c."Geometrie", h."Geometrie"), c."Geometrie") Geometrie, Null ProfondeurMinNonReg, c.PrecisionXY,c.PrecisionZ
+FROM Cable c
+LEFT JOIN Cheminement h ON ST_Within(h."Geometrie", c."Geometrie")
+WHERE NOT TypePose = 'Enterre'
 ;
 INSERT INTO gpkg_contents (table_name, data_type, identifier, srs_id) values ('RPD_Aerien_Reco_virt','features','RPD_Aerien_Reco_virt',2154); --GPKG
 INSERT INTO gpkg_geometry_columns (table_name, column_name, geometry_type_name, srs_id, z, m) values ('RPD_Aerien_Reco_virt', 'Geometrie', 'LINESTRING', 2154, 1, 0); --GPKG

@@ -1,5 +1,5 @@
 --CONTROLES TOPO
-DROP TABLE generate_series;
+DROP TABLE IF EXISTS generate_series;
 CREATE TABLE generate_series(
   value
 );
