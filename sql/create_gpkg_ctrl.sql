@@ -115,10 +115,10 @@ AND NOT EXISTS (select 1 from RPD_GeometrieSupplementaire_Conteneur_Reco c where
 UNION ALL
 SELECT c.id
 ,CASE WHEN NOT EXISTS (select 1 from RPD_PointLeveOuvrageReseau_Reco p where PtDistWithin(ST_PointN(c.Geometrie, s.value), p.Geometrie, 0.002))
-          THEN 'le Vertex de ce Cable n''est pas placé sur un Point Levé'
+          THEN 'le sommet de ce Cable n''est pas placé sur un Point Levé'
       WHEN (select 1 from RPD_PointLeveOuvrageReseau_Reco p where PtDistWithin(ST_PointN(c.Geometrie, s.value), p.Geometrie, 0.002)
                                                             AND NOT ST_Z(ST_PointN(c.Geometrie, s.value)) = st_Z(p.Geometrie))
-          THEN 'le Z du Vertex de ce Cable n''est pas cohérent avec le Point Levé'
+          THEN 'le Z du sommet de ce Cable n''est pas cohérent avec le Point Levé'
 end ctrl
 ,ST_PointN(c.Geometrie, s.value) Geometrie
 FROM cable c
@@ -128,10 +128,10 @@ WHERE PrecisionXY = 'A' and PrecisionZ = 'A' and ctrl is not null
 UNION ALL
 SELECT c.id
 ,CASE WHEN NOT EXISTS (select 1 from RPD_PointLeveOuvrageReseau_Reco p where PtDistWithin(ST_PointN(c.Geometrie, s.value), p.Geometrie, 0.002))
-          THEN 'le Vertex de ce Cheminement n''est pas placé sur un Point Levé'
+          THEN 'le sommet de ce Cheminement n''est pas placé sur un Point Levé'
       WHEN (select 1 from RPD_PointLeveOuvrageReseau_Reco p where PtDistWithin(ST_PointN(c.Geometrie, s.value), p.Geometrie, 0.002)
                                                             AND NOT ST_Z(ST_PointN(c.Geometrie, s.value)) = st_Z(p.Geometrie))
-          THEN 'le Z du Vertex de ce Cheminement n''est pas cohérent avec le Point Levé'
+          THEN 'le Z du sommet de ce Cheminement n''est pas cohérent avec le Point Levé'
 end ctrl
 ,ST_PointN(c.Geometrie, s.value) Geometrie
 FROM Cheminement c
@@ -141,10 +141,10 @@ WHERE PrecisionXY = 'A' and PrecisionZ = 'A' and ctrl is not null
 UNION ALL
 SELECT c.id
 ,CASE WHEN NOT EXISTS (select 1 from RPD_PointLeveOuvrageReseau_Reco p where PtDistWithin(ST_PointN(c."Ligne2.5D", s.value), p.Geometrie, 0.002))
-          THEN 'le Vertex de cet Ouvrage n''est pas placé sur un Point Levé'
+          THEN 'le sommet de cet Ouvrage n''est pas placé sur un Point Levé'
       WHEN (select 1 from RPD_PointLeveOuvrageReseau_Reco p where PtDistWithin(ST_PointN(c."Ligne2.5D", s.value), p.Geometrie, 0.002)
                                                             AND NOT ST_Z(ST_PointN(c."Ligne2.5D", s.value)) = st_Z(p.Geometrie))
-          THEN 'le Z du Vertex de cet Ouvrage n''est pas cohérent avec le Point Levé'
+          THEN 'le Z du sommet de cet Ouvrage n''est pas cohérent avec le Point Levé'
 end ctrl
 ,ST_PointN(c."Ligne2.5D", s.value) Geometrie
 FROM RPD_GeometrieSupplementaire_Conteneur_Reco c
