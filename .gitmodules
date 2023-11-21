@@ -1,0 +1,3 @@
+[submodule "StaR-Elec"]
+	path = StaR-Elec
+	url = git@github.com:GMalard/StaR-Elec.git
