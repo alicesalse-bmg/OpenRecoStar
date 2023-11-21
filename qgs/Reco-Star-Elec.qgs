@@ -1,5 +1,5 @@
 <!DOCTYPE qgis PUBLIC 'http://mrcc.com/qgis.dtd' 'SYSTEM'>
-<qgis version="3.28.12-Firenze" saveUserFull="Alice Salsé" projectname="" saveDateTime="2023-11-21T12:39:06" saveUser="alicesalse">
+<qgis version="3.28.12-Firenze" saveUserFull="Alice Salsé" projectname="" saveDateTime="2023-11-21T12:50:07" saveUser="alicesalse">
   <homePath path=""/>
   <title></title>
   <transaction mode="AutomaticGroups"/>
@@ -398,33 +398,33 @@
   </layer-tree-group>
   <snapping-settings type="3" minScale="0" enabled="1" intersection-snapping="0" scaleDependencyMode="0" maxScale="0" tolerance="12" unit="1" mode="2" self-snapping="0">
     <individual-layer-settings>
-      <layer-setting type="1" minScale="0" enabled="0" maxScale="0" id="RPD_Support_Reco_65f3aab3_3bb6_4b26_9507_1d10a4efdb39" tolerance="12" units="1"/>
-      <layer-setting type="1" minScale="0" enabled="0" maxScale="0" id="RPD_Coffret_Reco_3262a53c_3782_49cd_965b_2675949930be" tolerance="12" units="1"/>
-      <layer-setting type="1" minScale="0" enabled="0" maxScale="0" id="ctrl_PLOR_Ouvrage_00e2537f_d596_45f7_8749_3316ef0df281" tolerance="12" units="1"/>
-      <layer-setting type="1" minScale="0" enabled="0" maxScale="0" id="RPD_BatimentTechnique_Reco_0d1cb4af_db56_443c_a089_d5eff62183d8" tolerance="12" units="1"/>
-      <layer-setting type="1" minScale="0" enabled="0" maxScale="0" id="RPD_PleineTerre_Reco_virt_b519c09d_5fd8_43ed_b843_0be94ed2d3d5" tolerance="12" units="1"/>
-      <layer-setting type="1" minScale="0" enabled="0" maxScale="0" id="RPD_PointDeComptage_Reco_0b0a6397_b0a2_4d53_892f_fcf300677c9d" tolerance="12" units="1"/>
-      <layer-setting type="1" minScale="0" enabled="0" maxScale="0" id="RPD_ProtectionMecanique_Reco_c50b43a6_a3d1_4c13_bdae_dc996759a1b1" tolerance="12" units="1"/>
-      <layer-setting type="1" minScale="0" enabled="0" maxScale="0" id="ctrl_Noeud_Conteneur_e957e763_b097_40d7_9cae_1080972ba972" tolerance="12" units="1"/>
-      <layer-setting type="1" minScale="0" enabled="0" maxScale="0" id="RPD_JeuBarres_Reco_f474d02c_145d_4f4f_83a5_ec14862b57de" tolerance="12" units="1"/>
-      <layer-setting type="1" minScale="0" enabled="0" maxScale="0" id="RPD_Aerien_Reco_virt_bb776325_a751_46de_9882_2ed11827d6a9" tolerance="12" units="1"/>
-      <layer-setting type="1" minScale="0" enabled="0" maxScale="0" id="ctrl_Cheminement_Cable_2d64b62f_1e28_45a1_8bfa_45d8b95e9e27" tolerance="12" units="1"/>
-      <layer-setting type="1" minScale="0" enabled="0" maxScale="0" id="RPD_PosteElectrique_Reco_714a0e8e_a916_4e5d_8806_0e33133c4bef" tolerance="12" units="1"/>
-      <layer-setting type="1" minScale="0" enabled="0" maxScale="0" id="Conteneur_adc24f8e_d9f1_4a4c_81b8_e068912858f4" tolerance="12" units="1"/>
-      <layer-setting type="1" minScale="0" enabled="0" maxScale="0" id="RPD_EnceinteCloturee_Reco_1d1b0f4e_a411_464d_b89c_9ac2b370e79f" tolerance="12" units="1"/>
-      <layer-setting type="1" minScale="0" enabled="0" maxScale="0" id="RPD_PointLeveOuvrageReseau_Reco_fdb52f9f_7cc9_4161_b70c_ff07e074d328" tolerance="12" units="1"/>
-      <layer-setting type="1" minScale="0" enabled="0" maxScale="0" id="Cheminement_15f9f57d_c464_433f_a802_3f2f24df5ca1" tolerance="12" units="1"/>
-      <layer-setting type="1" minScale="0" enabled="0" maxScale="0" id="RPD_Aerien_Reco_743e97b1_2554_41cd_a2e5_b1683458dd3b" tolerance="12" units="1"/>
-      <layer-setting type="1" minScale="0" enabled="0" maxScale="0" id="RPD_OuvrageCollectifBranchement_Reco_5a9f3840_14a5_4990_b251_7ec99181060a" tolerance="12" units="1"/>
       <layer-setting type="1" minScale="0" enabled="0" maxScale="0" id="RPD_Plage_Reco_82924fea_11f2_4d7b_a430_be2e443d8cff" tolerance="12" units="1"/>
-      <layer-setting type="1" minScale="0" enabled="0" maxScale="0" id="RPD_Jonction_Reco_f4215dd3_0dd7_4739_a775_8b289d1a1746" tolerance="12" units="1"/>
-      <layer-setting type="1" minScale="0" enabled="0" maxScale="0" id="ctrl_Noeud_Cable_a876babf_cbc5_4b1f_9824_c323f928da18" tolerance="12" units="1"/>
-      <layer-setting type="1" minScale="0" enabled="0" maxScale="0" id="RPD_Terre_Reco_279156a7_af43_4784_8667_b5b79623bb85" tolerance="12" units="1"/>
+      <layer-setting type="1" minScale="0" enabled="0" maxScale="0" id="RPD_Aerien_Reco_743e97b1_2554_41cd_a2e5_b1683458dd3b" tolerance="12" units="1"/>
+      <layer-setting type="1" minScale="0" enabled="0" maxScale="0" id="RPD_PleineTerre_Reco_virt_b519c09d_5fd8_43ed_b843_0be94ed2d3d5" tolerance="12" units="1"/>
+      <layer-setting type="1" minScale="0" enabled="0" maxScale="0" id="RPD_RaccordementModulaire_Reco_f8b23447_99f6_4bf0_a9c4_e0be7a836159" tolerance="12" units="1"/>
+      <layer-setting type="1" minScale="0" enabled="0" maxScale="0" id="RPD_Coffret_Reco_3262a53c_3782_49cd_965b_2675949930be" tolerance="12" units="1"/>
+      <layer-setting type="1" minScale="0" enabled="0" maxScale="0" id="RPD_OuvrageCollectifBranchement_Reco_5a9f3840_14a5_4990_b251_7ec99181060a" tolerance="12" units="1"/>
       <layer-setting type="1" minScale="0" enabled="0" maxScale="0" id="RPD_Fourreau_Reco_9f8337d9_7382_4f98_bb14_a587c1db8dce" tolerance="12" units="1"/>
       <layer-setting type="1" minScale="0" enabled="0" maxScale="0" id="RPD_Galerie_Reco_e9a10f52_434d_4341_87c4_bbc79f6dccde" tolerance="12" units="1"/>
-      <layer-setting type="1" minScale="0" enabled="0" maxScale="0" id="RPD_RaccordementModulaire_Reco_f8b23447_99f6_4bf0_a9c4_e0be7a836159" tolerance="12" units="1"/>
-      <layer-setting type="1" minScale="0" enabled="0" maxScale="0" id="Noeud_1d2efbc8_5d82_4054_9e5b_db51b8b6c9ca" tolerance="12" units="1"/>
+      <layer-setting type="1" minScale="0" enabled="0" maxScale="0" id="RPD_Aerien_Reco_virt_bb776325_a751_46de_9882_2ed11827d6a9" tolerance="12" units="1"/>
+      <layer-setting type="1" minScale="0" enabled="0" maxScale="0" id="RPD_EnceinteCloturee_Reco_1d1b0f4e_a411_464d_b89c_9ac2b370e79f" tolerance="12" units="1"/>
+      <layer-setting type="1" minScale="0" enabled="0" maxScale="0" id="RPD_JeuBarres_Reco_f474d02c_145d_4f4f_83a5_ec14862b57de" tolerance="12" units="1"/>
+      <layer-setting type="1" minScale="0" enabled="0" maxScale="0" id="RPD_BatimentTechnique_Reco_0d1cb4af_db56_443c_a089_d5eff62183d8" tolerance="12" units="1"/>
+      <layer-setting type="1" minScale="0" enabled="0" maxScale="0" id="RPD_PosteElectrique_Reco_714a0e8e_a916_4e5d_8806_0e33133c4bef" tolerance="12" units="1"/>
+      <layer-setting type="1" minScale="0" enabled="0" maxScale="0" id="Conteneur_adc24f8e_d9f1_4a4c_81b8_e068912858f4" tolerance="12" units="1"/>
+      <layer-setting type="1" minScale="0" enabled="0" maxScale="0" id="RPD_ProtectionMecanique_Reco_c50b43a6_a3d1_4c13_bdae_dc996759a1b1" tolerance="12" units="1"/>
+      <layer-setting type="1" minScale="0" enabled="0" maxScale="0" id="RPD_PointDeComptage_Reco_0b0a6397_b0a2_4d53_892f_fcf300677c9d" tolerance="12" units="1"/>
+      <layer-setting type="1" minScale="0" enabled="0" maxScale="0" id="ctrl_Noeud_Conteneur_e957e763_b097_40d7_9cae_1080972ba972" tolerance="12" units="1"/>
+      <layer-setting type="1" minScale="0" enabled="0" maxScale="0" id="Cheminement_15f9f57d_c464_433f_a802_3f2f24df5ca1" tolerance="12" units="1"/>
+      <layer-setting type="1" minScale="0" enabled="0" maxScale="0" id="RPD_Jonction_Reco_f4215dd3_0dd7_4739_a775_8b289d1a1746" tolerance="12" units="1"/>
+      <layer-setting type="1" minScale="0" enabled="0" maxScale="0" id="ctrl_Cheminement_Cable_2d64b62f_1e28_45a1_8bfa_45d8b95e9e27" tolerance="12" units="1"/>
+      <layer-setting type="1" minScale="0" enabled="0" maxScale="0" id="ctrl_PLOR_Ouvrage_00e2537f_d596_45f7_8749_3316ef0df281" tolerance="12" units="1"/>
+      <layer-setting type="1" minScale="0" enabled="0" maxScale="0" id="RPD_PointLeveOuvrageReseau_Reco_fdb52f9f_7cc9_4161_b70c_ff07e074d328" tolerance="12" units="1"/>
       <layer-setting type="1" minScale="0" enabled="0" maxScale="0" id="RPD_PleineTerre_Reco_434e16d0_b4fe_4687_b552_7faa09f52916" tolerance="12" units="1"/>
+      <layer-setting type="1" minScale="0" enabled="0" maxScale="0" id="Noeud_1d2efbc8_5d82_4054_9e5b_db51b8b6c9ca" tolerance="12" units="1"/>
+      <layer-setting type="1" minScale="0" enabled="0" maxScale="0" id="ctrl_Noeud_Cable_a876babf_cbc5_4b1f_9824_c323f928da18" tolerance="12" units="1"/>
+      <layer-setting type="1" minScale="0" enabled="0" maxScale="0" id="RPD_Terre_Reco_279156a7_af43_4784_8667_b5b79623bb85" tolerance="12" units="1"/>
+      <layer-setting type="1" minScale="0" enabled="0" maxScale="0" id="RPD_Support_Reco_65f3aab3_3bb6_4b26_9507_1d10a4efdb39" tolerance="12" units="1"/>
     </individual-layer-settings>
   </snapping-settings>
   <relations/>
@@ -432,10 +432,10 @@
   <mapcanvas annotationsVisible="1" name="theMapCanvas">
     <units>meters</units>
     <extent>
-      <xmin>850055.93880072562023997</xmin>
-      <ymin>6799784.37261419836431742</ymin>
-      <xmax>850060.88580086641013622</xmax>
-      <ymax>6799807.1808465039357543</ymax>
+      <xmin>850223.18690618907567114</xmin>
+      <ymin>6799248.04976092372089624</ymin>
+      <xmax>850328.02780116151552647</xmax>
+      <ymax>6799731.42057519499212503</ymax>
     </extent>
     <rotation>0</rotation>
     <destinationsrs>
@@ -1085,6 +1085,18 @@
       <mapTip></mapTip>
     </maplayer>
     <maplayer geometry="Line" readOnly="1" simplifyAlgorithm="0" type="vector" refreshOnNotifyEnabled="0" simplifyDrawingTol="1" refreshOnNotifyMessage="" styleCategories="AllStyleCategories" simplifyLocal="1" simplifyDrawingHints="1" labelsEnabled="0" autoRefreshEnabled="0" simplifyMaxScale="1" symbologyReferenceScale="-1" minScale="100000000" maxScale="0" hasScaleBasedVisibilityFlag="0" legendPlaceholderImage="" autoRefreshTime="0" wkbType="LineStringZ">
+      <extent>
+        <xmin>850109.68840119102969766</xmin>
+        <ymin>6799410.83420727960765362</ymin>
+        <xmax>850396.38409726799000055</xmax>
+        <ymax>6799763.05510962009429932</ymax>
+      </extent>
+      <wgs84extent>
+        <xmin>5.02357057645138472</xmin>
+        <ymin>48.27765331458051179</ymin>
+        <xmax>5.02755560697270099</xmax>
+        <ymax>48.28088751163775072</ymax>
+      </wgs84extent>
       <id>Cable_387228c8_2623_4374_93fd_b60ebe1e899e</id>
       <datasource>../gpkg/Reco-Star-Elec-RPD.gpkg|layername=Cable</datasource>
       <keywordList>
@@ -1949,6 +1961,18 @@ def my_form_open(dialog, layer, feature):
       <mapTip></mapTip>
     </maplayer>
     <maplayer geometry="Line" readOnly="1" simplifyAlgorithm="0" type="vector" refreshOnNotifyEnabled="0" simplifyDrawingTol="1" refreshOnNotifyMessage="" styleCategories="AllStyleCategories" simplifyLocal="1" simplifyDrawingHints="1" labelsEnabled="0" autoRefreshEnabled="0" simplifyMaxScale="1" symbologyReferenceScale="-1" minScale="100000000" maxScale="0" hasScaleBasedVisibilityFlag="0" legendPlaceholderImage="" autoRefreshTime="0" wkbType="LineStringZ">
+      <extent>
+        <xmin>850109.68840119102969766</xmin>
+        <ymin>6799410.83420727960765362</ymin>
+        <xmax>850334.70486091403290629</xmax>
+        <ymax>6799650.12401477992534637</ymax>
+      </extent>
+      <wgs84extent>
+        <xmin>5.02357057645138472</xmin>
+        <ymin>48.2776675590513733</ymin>
+        <xmax>5.02668538118038111</xmax>
+        <ymax>48.27987175854214286</ymax>
+      </wgs84extent>
       <id>Cheminement_15f9f57d_c464_433f_a802_3f2f24df5ca1</id>
       <datasource>../gpkg/Reco-Star-Elec-RPD.gpkg|layername=Cheminement</datasource>
       <keywordList>
@@ -9785,7 +9809,15 @@ def my_form_open(dialog, layer, feature):
       <provider encoding="UTF-8">ogr</provider>
       <vectorjoins/>
       <layerDependencies/>
-      <dataDependencies/>
+      <dataDependencies>
+        <layer id="RPD_Aerien_Reco_743e97b1_2554_41cd_a2e5_b1683458dd3b"/>
+        <layer id="RPD_Fourreau_Reco_9f8337d9_7382_4f98_bb14_a587c1db8dce"/>
+        <layer id="RPD_PleineTerre_Reco_434e16d0_b4fe_4687_b552_7faa09f52916"/>
+        <layer id="RPD_Galerie_Reco_e9a10f52_434d_4341_87c4_bbc79f6dccde"/>
+        <layer id="RPD_ProtectionMecanique_Reco_c50b43a6_a3d1_4c13_bdae_dc996759a1b1"/>
+        <layer id="RPD_CableElectrique_Reco_559ad6fd_6937_4e8b_a5f1_cbfe58af78b3"/>
+        <layer id="RPD_CableTerre_Reco_69e0ec7b_3408_429d_b52c_84c1cc9a9889"/>
+      </dataDependencies>
       <expressionfields/>
       <map-layer-style-manager current="défaut">
         <map-layer-style name="défaut"/>
@@ -9997,8 +10029,8 @@ def my_form_open(dialog, layer, feature):
           <Option type="QString" value="{}" name="QFieldSync/photo_naming"/>
           <Option type="QString" value="{}" name="QFieldSync/relationship_maximum_visible"/>
           <Option type="int" value="0" name="embeddedWidgets/count"/>
-          <Option type="invalid" name="variableNames"/>
-          <Option type="invalid" name="variableValues"/>
+          <Option name="variableNames"/>
+          <Option name="variableValues"/>
         </Option>
       </customproperties>
       <blendMode>0</blendMode>
@@ -10090,7 +10122,7 @@ def my_form_open(dialog, layer, feature):
           </editWidget>
         </field>
         <field configurationFlags="None" name="Geometrie">
-          <editWidget type="">
+          <editWidget type="TextEdit">
             <config>
               <Option/>
             </config>
@@ -10158,10 +10190,10 @@ def my_form_open(dialog, layer, feature):
         <columns>
           <column type="field" width="-1" hidden="0" name="pkid"/>
           <column type="field" width="-1" hidden="0" name="id"/>
-          <column type="field" width="-1" hidden="0" name="ModePose"/>
           <column type="field" width="-1" hidden="0" name="ProfondeurMinNonReg"/>
           <column type="field" width="-1" hidden="0" name="PrecisionXY"/>
           <column type="field" width="-1" hidden="0" name="PrecisionZ"/>
+          <column type="field" width="-1" hidden="0" name="Geometrie"/>
           <column type="actions" width="-1" hidden="1"/>
         </columns>
       </attributetableconfig>
@@ -10194,6 +10226,7 @@ def my_form_open(dialog, layer, feature):
       <featformsuppress>0</featformsuppress>
       <editorlayout>generatedlayout</editorlayout>
       <editable>
+        <field editable="1" name="Geometrie"/>
         <field editable="1" name="ModePose"/>
         <field editable="1" name="PrecisionXY"/>
         <field editable="1" name="PrecisionZ"/>
@@ -10202,6 +10235,7 @@ def my_form_open(dialog, layer, feature):
         <field editable="1" name="pkid"/>
       </editable>
       <labelOnTop>
+        <field name="Geometrie" labelOnTop="0"/>
         <field name="ModePose" labelOnTop="0"/>
         <field name="PrecisionXY" labelOnTop="0"/>
         <field name="PrecisionZ" labelOnTop="0"/>
@@ -10210,6 +10244,7 @@ def my_form_open(dialog, layer, feature):
         <field name="pkid" labelOnTop="0"/>
       </labelOnTop>
       <reuseLastValue>
+        <field name="Geometrie" reuseLastValue="0"/>
         <field name="ModePose" reuseLastValue="0"/>
         <field name="PrecisionXY" reuseLastValue="0"/>
         <field name="PrecisionZ" reuseLastValue="0"/>
@@ -10744,6 +10779,18 @@ def my_form_open(dialog, layer, feature):
       <mapTip></mapTip>
     </maplayer>
     <maplayer geometry="Line" readOnly="0" simplifyAlgorithm="0" type="vector" refreshOnNotifyEnabled="0" simplifyDrawingTol="1" refreshOnNotifyMessage="" styleCategories="AllStyleCategories" simplifyLocal="1" simplifyDrawingHints="1" labelsEnabled="0" autoRefreshEnabled="0" simplifyMaxScale="1" symbologyReferenceScale="-1" minScale="100000000" maxScale="0" hasScaleBasedVisibilityFlag="0" legendPlaceholderImage="" autoRefreshTime="0" wkbType="LineStringZ">
+      <extent>
+        <xmin>850109.68840119102969766</xmin>
+        <ymin>6799410.83420727960765362</ymin>
+        <xmax>850396.38409726799000055</xmax>
+        <ymax>6799763.05510962009429932</ymax>
+      </extent>
+      <wgs84extent>
+        <xmin>5.02357057645138472</xmin>
+        <ymin>48.27765331458051179</ymin>
+        <xmax>5.02755560697270099</xmax>
+        <ymax>48.28088751163775072</ymax>
+      </wgs84extent>
       <id>RPD_CableElectrique_Reco_559ad6fd_6937_4e8b_a5f1_cbfe58af78b3</id>
       <datasource>../gpkg/Reco-Star-Elec-RPD.gpkg|layername=RPD_CableElectrique_Reco</datasource>
       <keywordList>
@@ -13954,6 +14001,18 @@ def my_form_open(dialog, layer, feature):
       <mapTip></mapTip>
     </maplayer>
     <maplayer geometry="Line" readOnly="0" simplifyAlgorithm="0" type="vector" refreshOnNotifyEnabled="0" simplifyDrawingTol="1" refreshOnNotifyMessage="" styleCategories="AllStyleCategories" simplifyLocal="1" simplifyDrawingHints="1" labelsEnabled="0" autoRefreshEnabled="0" simplifyMaxScale="1" symbologyReferenceScale="-1" minScale="100000000" maxScale="0" hasScaleBasedVisibilityFlag="0" legendPlaceholderImage="" autoRefreshTime="0" wkbType="LineStringZ">
+      <extent>
+        <xmin>850109.6875</xmin>
+        <ymin>6799481</ymin>
+        <xmax>850179.0625</xmax>
+        <ymax>6799651</ymax>
+      </extent>
+      <wgs84extent>
+        <xmin>5.02359479929760244</xmin>
+        <ymin>48.27833458143315681</ymin>
+        <xmax>5.02458836513867269</xmax>
+        <ymax>48.27987963775831304</ymax>
+      </wgs84extent>
       <id>RPD_Fourreau_Reco_9f8337d9_7382_4f98_bb14_a587c1db8dce</id>
       <datasource>../gpkg/Reco-Star-Elec-RPD.gpkg|layername=RPD_Fourreau_Reco</datasource>
       <keywordList>
@@ -14665,6 +14724,18 @@ def my_form_open(dialog, layer, feature):
       <mapTip></mapTip>
     </maplayer>
     <maplayer geometry="Line" readOnly="0" simplifyAlgorithm="0" type="vector" refreshOnNotifyEnabled="0" simplifyDrawingTol="1" refreshOnNotifyMessage="" styleCategories="AllStyleCategories" simplifyLocal="1" simplifyDrawingHints="1" labelsEnabled="0" autoRefreshEnabled="0" simplifyMaxScale="1" symbologyReferenceScale="-1" minScale="100000000" maxScale="0" hasScaleBasedVisibilityFlag="0" legendPlaceholderImage="" autoRefreshTime="0" wkbType="LineStringZ">
+      <extent>
+        <xmin>850218.375</xmin>
+        <ymin>6799410</ymin>
+        <xmax>850334.8125</xmax>
+        <ymax>6799484.5</ymax>
+      </extent>
+      <wgs84extent>
+        <xmin>5.02503480796033664</xmin>
+        <ymin>48.27766003095459979</ymin>
+        <xmax>5.02662953770289445</xmax>
+        <ymax>48.27835699300289463</ymax>
+      </wgs84extent>
       <id>RPD_Galerie_Reco_e9a10f52_434d_4341_87c4_bbc79f6dccde</id>
       <datasource>../gpkg/Reco-Star-Elec-RPD.gpkg|layername=RPD_Galerie_Reco</datasource>
       <keywordList>
@@ -18632,6 +18703,18 @@ def my_form_open(dialog, layer, feature):
       <mapTip></mapTip>
     </maplayer>
     <maplayer geometry="Line" readOnly="1" simplifyAlgorithm="0" type="vector" refreshOnNotifyEnabled="0" simplifyDrawingTol="1" refreshOnNotifyMessage="" styleCategories="AllStyleCategories" simplifyLocal="1" simplifyDrawingHints="1" labelsEnabled="0" autoRefreshEnabled="0" simplifyMaxScale="1" symbologyReferenceScale="-1" minScale="0" maxScale="0" hasScaleBasedVisibilityFlag="0" legendPlaceholderImage="" autoRefreshTime="0" wkbType="LineStringZ">
+      <extent>
+        <xmin>850109.68840119102969766</xmin>
+        <ymin>6799481.83273939974606037</ymin>
+        <xmax>850396.38409726799000055</xmax>
+        <ymax>6799763.05510962009429932</ymax>
+      </extent>
+      <wgs84extent>
+        <xmin>5.02359509906944535</xmin>
+        <ymin>48.27829190765503142</ymin>
+        <xmax>5.02755560697273829</xmax>
+        <ymax>48.28088751163775783</ymax>
+      </wgs84extent>
       <id>RPD_PleineTerre_Reco_virt_b519c09d_5fd8_43ed_b843_0be94ed2d3d5</id>
       <datasource>../gpkg/Reco-Star-Elec-RPD.gpkg|layername=RPD_PleineTerre_Reco_virt</datasource>
       <keywordList>
@@ -18696,7 +18779,15 @@ def my_form_open(dialog, layer, feature):
       <provider encoding="UTF-8">ogr</provider>
       <vectorjoins/>
       <layerDependencies/>
-      <dataDependencies/>
+      <dataDependencies>
+        <layer id="RPD_Aerien_Reco_743e97b1_2554_41cd_a2e5_b1683458dd3b"/>
+        <layer id="RPD_Fourreau_Reco_9f8337d9_7382_4f98_bb14_a587c1db8dce"/>
+        <layer id="RPD_PleineTerre_Reco_434e16d0_b4fe_4687_b552_7faa09f52916"/>
+        <layer id="RPD_Galerie_Reco_e9a10f52_434d_4341_87c4_bbc79f6dccde"/>
+        <layer id="RPD_ProtectionMecanique_Reco_c50b43a6_a3d1_4c13_bdae_dc996759a1b1"/>
+        <layer id="RPD_CableElectrique_Reco_559ad6fd_6937_4e8b_a5f1_cbfe58af78b3"/>
+        <layer id="RPD_CableTerre_Reco_69e0ec7b_3408_429d_b52c_84c1cc9a9889"/>
+      </dataDependencies>
       <expressionfields/>
       <map-layer-style-manager current="défaut">
         <map-layer-style name="défaut"/>
@@ -18908,8 +18999,8 @@ def my_form_open(dialog, layer, feature):
           <Option type="QString" value="{}" name="QFieldSync/photo_naming"/>
           <Option type="QString" value="{}" name="QFieldSync/relationship_maximum_visible"/>
           <Option type="int" value="0" name="embeddedWidgets/count"/>
-          <Option type="invalid" name="variableNames"/>
-          <Option type="invalid" name="variableValues"/>
+          <Option name="variableNames"/>
+          <Option name="variableValues"/>
         </Option>
       </customproperties>
       <blendMode>0</blendMode>
@@ -19001,7 +19092,7 @@ def my_form_open(dialog, layer, feature):
           </editWidget>
         </field>
         <field configurationFlags="None" name="Geometrie">
-          <editWidget type="">
+          <editWidget type="TextEdit">
             <config>
               <Option/>
             </config>
@@ -19072,6 +19163,7 @@ def my_form_open(dialog, layer, feature):
           <column type="field" width="-1" hidden="0" name="ProfondeurMinNonReg"/>
           <column type="field" width="-1" hidden="0" name="PrecisionXY"/>
           <column type="field" width="-1" hidden="0" name="PrecisionZ"/>
+          <column type="field" width="-1" hidden="0" name="Geometrie"/>
           <column type="actions" width="-1" hidden="1"/>
         </columns>
       </attributetableconfig>
@@ -19104,6 +19196,7 @@ def my_form_open(dialog, layer, feature):
       <featformsuppress>0</featformsuppress>
       <editorlayout>generatedlayout</editorlayout>
       <editable>
+        <field editable="1" name="Geometrie"/>
         <field editable="1" name="PrecisionXY"/>
         <field editable="1" name="PrecisionZ"/>
         <field editable="1" name="ProfondeurMinNonReg"/>
@@ -19111,6 +19204,7 @@ def my_form_open(dialog, layer, feature):
         <field editable="1" name="pkid"/>
       </editable>
       <labelOnTop>
+        <field name="Geometrie" labelOnTop="0"/>
         <field name="PrecisionXY" labelOnTop="0"/>
         <field name="PrecisionZ" labelOnTop="0"/>
         <field name="ProfondeurMinNonReg" labelOnTop="0"/>
@@ -19118,6 +19212,7 @@ def my_form_open(dialog, layer, feature):
         <field name="pkid" labelOnTop="0"/>
       </labelOnTop>
       <reuseLastValue>
+        <field name="Geometrie" reuseLastValue="0"/>
         <field name="PrecisionXY" reuseLastValue="0"/>
         <field name="PrecisionZ" reuseLastValue="0"/>
         <field name="ProfondeurMinNonReg" reuseLastValue="0"/>
@@ -24707,7 +24802,15 @@ def my_form_open(dialog, layer, feature):
       <provider encoding="UTF-8">ogr</provider>
       <vectorjoins/>
       <layerDependencies/>
-      <dataDependencies/>
+      <dataDependencies>
+        <layer id="RPD_Aerien_Reco_743e97b1_2554_41cd_a2e5_b1683458dd3b"/>
+        <layer id="RPD_Fourreau_Reco_9f8337d9_7382_4f98_bb14_a587c1db8dce"/>
+        <layer id="RPD_PleineTerre_Reco_434e16d0_b4fe_4687_b552_7faa09f52916"/>
+        <layer id="RPD_Galerie_Reco_e9a10f52_434d_4341_87c4_bbc79f6dccde"/>
+        <layer id="RPD_ProtectionMecanique_Reco_c50b43a6_a3d1_4c13_bdae_dc996759a1b1"/>
+        <layer id="RPD_CableElectrique_Reco_559ad6fd_6937_4e8b_a5f1_cbfe58af78b3"/>
+        <layer id="RPD_CableTerre_Reco_69e0ec7b_3408_429d_b52c_84c1cc9a9889"/>
+      </dataDependencies>
       <expressionfields/>
       <map-layer-style-manager current="défaut">
         <map-layer-style name="défaut"/>
@@ -25129,8 +25232,8 @@ def my_form_open(dialog, layer, feature):
           <Option type="QString" value="{}" name="QFieldSync/photo_naming"/>
           <Option type="QString" value="{}" name="QFieldSync/relationship_maximum_visible"/>
           <Option type="int" value="0" name="embeddedWidgets/count"/>
-          <Option type="invalid" name="variableNames"/>
-          <Option type="invalid" name="variableValues"/>
+          <Option name="variableNames"/>
+          <Option name="variableValues"/>
         </Option>
       </customproperties>
       <blendMode>0</blendMode>
@@ -25310,6 +25413,18 @@ def my_form_open(dialog, layer, feature):
       <mapTip></mapTip>
     </maplayer>
     <maplayer geometry="Point" readOnly="1" simplifyAlgorithm="0" type="vector" refreshOnNotifyEnabled="0" simplifyDrawingTol="1" refreshOnNotifyMessage="" styleCategories="AllStyleCategories" simplifyLocal="1" simplifyDrawingHints="0" labelsEnabled="1" autoRefreshEnabled="0" simplifyMaxScale="1" symbologyReferenceScale="-1" minScale="0" maxScale="0" hasScaleBasedVisibilityFlag="0" legendPlaceholderImage="" autoRefreshTime="0" wkbType="Point">
+      <extent>
+        <xmin>850109.68840119102969766</xmin>
+        <ymin>6799410.83420727960765362</ymin>
+        <xmax>850396.38409726799000055</xmax>
+        <ymax>6799763.05510962009429932</ymax>
+      </extent>
+      <wgs84extent>
+        <xmin>5.02357057645138472</xmin>
+        <ymin>48.27765331458051179</ymin>
+        <xmax>5.02755560697270099</xmax>
+        <ymax>48.28088751163775072</ymax>
+      </wgs84extent>
       <id>ctrl_Noeud_Cable_a876babf_cbc5_4b1f_9824_c323f928da18</id>
       <datasource>../gpkg/Reco-Star-Elec-RPD.gpkg|layername=ctrl_Noeud_Cable</datasource>
       <keywordList>
@@ -25374,7 +25489,18 @@ def my_form_open(dialog, layer, feature):
       <provider encoding="UTF-8">ogr</provider>
       <vectorjoins/>
       <layerDependencies/>
-      <dataDependencies/>
+      <dataDependencies>
+        <layer id="RPD_JeuBarres_Reco_f474d02c_145d_4f4f_83a5_ec14862b57de"/>
+        <layer id="RPD_Plage_Reco_82924fea_11f2_4d7b_a430_be2e443d8cff"/>
+        <layer id="RPD_PosteElectrique_Reco_714a0e8e_a916_4e5d_8806_0e33133c4bef"/>
+        <layer id="RPD_Jonction_Reco_f4215dd3_0dd7_4739_a775_8b289d1a1746"/>
+        <layer id="RPD_PointDeComptage_Reco_0b0a6397_b0a2_4d53_892f_fcf300677c9d"/>
+        <layer id="RPD_CableElectrique_Reco_559ad6fd_6937_4e8b_a5f1_cbfe58af78b3"/>
+        <layer id="RPD_Terre_Reco_279156a7_af43_4784_8667_b5b79623bb85"/>
+        <layer id="RPD_RaccordementModulaire_Reco_f8b23447_99f6_4bf0_a9c4_e0be7a836159"/>
+        <layer id="RPD_OuvrageCollectifBranchement_Reco_5a9f3840_14a5_4990_b251_7ec99181060a"/>
+        <layer id="RPD_CableTerre_Reco_69e0ec7b_3408_429d_b52c_84c1cc9a9889"/>
+      </dataDependencies>
       <expressionfields/>
       <map-layer-style-manager current="défaut">
         <map-layer-style name="défaut"/>
@@ -25732,8 +25858,8 @@ def my_form_open(dialog, layer, feature):
           <Option type="QString" value="{}" name="QFieldSync/photo_naming"/>
           <Option type="QString" value="{}" name="QFieldSync/relationship_maximum_visible"/>
           <Option type="int" value="0" name="embeddedWidgets/count"/>
-          <Option type="invalid" name="variableNames"/>
-          <Option type="invalid" name="variableValues"/>
+          <Option name="variableNames"/>
+          <Option name="variableValues"/>
         </Option>
       </customproperties>
       <blendMode>0</blendMode>
@@ -25811,7 +25937,7 @@ def my_form_open(dialog, layer, feature):
       <referencedLayers/>
       <fieldConfiguration>
         <field configurationFlags="None" name="pkid">
-          <editWidget type="">
+          <editWidget type="TextEdit">
             <config>
               <Option/>
             </config>
@@ -25852,7 +25978,7 @@ def my_form_open(dialog, layer, feature):
         <default expression="" applyOnUpdate="0" field="Geometrie"/>
       </defaults>
       <constraints>
-        <constraint notnull_strength="0" field="pkid" unique_strength="0" constraints="0" exp_strength="0"/>
+        <constraint notnull_strength="1" field="pkid" unique_strength="1" constraints="3" exp_strength="0"/>
         <constraint notnull_strength="0" field="id" unique_strength="0" constraints="0" exp_strength="0"/>
         <constraint notnull_strength="0" field="ctrl" unique_strength="0" constraints="0" exp_strength="0"/>
         <constraint notnull_strength="0" field="Geometrie" unique_strength="0" constraints="0" exp_strength="0"/>
@@ -25869,10 +25995,10 @@ def my_form_open(dialog, layer, feature):
       </attributeactions>
       <attributetableconfig actionWidgetStyle="dropDown" sortExpression="" sortOrder="0">
         <columns>
-          <column type="field" width="-1" hidden="0" name="uid"/>
           <column type="field" width="-1" hidden="0" name="id"/>
           <column type="field" width="-1" hidden="0" name="ctrl"/>
           <column type="field" width="-1" hidden="0" name="Geometrie"/>
+          <column type="field" width="-1" hidden="0" name="pkid"/>
           <column type="actions" width="-1" hidden="1"/>
         </columns>
       </attributetableconfig>
@@ -25908,18 +26034,21 @@ def my_form_open(dialog, layer, feature):
         <field editable="1" name="Geometrie"/>
         <field editable="1" name="ctrl"/>
         <field editable="1" name="id"/>
+        <field editable="1" name="pkid"/>
         <field editable="1" name="uid"/>
       </editable>
       <labelOnTop>
         <field name="Geometrie" labelOnTop="0"/>
         <field name="ctrl" labelOnTop="0"/>
         <field name="id" labelOnTop="0"/>
+        <field name="pkid" labelOnTop="0"/>
         <field name="uid" labelOnTop="0"/>
       </labelOnTop>
       <reuseLastValue>
         <field name="Geometrie" reuseLastValue="0"/>
         <field name="ctrl" reuseLastValue="0"/>
         <field name="id" reuseLastValue="0"/>
+        <field name="pkid" reuseLastValue="0"/>
         <field name="uid" reuseLastValue="0"/>
       </reuseLastValue>
       <dataDefinedFieldProperties/>
@@ -25927,7 +26056,7 @@ def my_form_open(dialog, layer, feature):
       <previewExpression>"id"</previewExpression>
       <mapTip></mapTip>
     </maplayer>
-    <maplayer geometry="Point" readOnly="1" simplifyAlgorithm="0" type="vector" refreshOnNotifyEnabled="0" simplifyDrawingTol="1" refreshOnNotifyMessage="" styleCategories="AllStyleCategories" simplifyLocal="1" simplifyDrawingHints="1" labelsEnabled="1" autoRefreshEnabled="0" simplifyMaxScale="1" symbologyReferenceScale="-1" minScale="0" maxScale="0" hasScaleBasedVisibilityFlag="0" legendPlaceholderImage="" autoRefreshTime="0" wkbType="Point">
+    <maplayer geometry="Point" readOnly="1" simplifyAlgorithm="0" type="vector" refreshOnNotifyEnabled="0" simplifyDrawingTol="1" refreshOnNotifyMessage="" styleCategories="AllStyleCategories" simplifyLocal="1" simplifyDrawingHints="0" labelsEnabled="1" autoRefreshEnabled="0" simplifyMaxScale="1" symbologyReferenceScale="-1" minScale="0" maxScale="0" hasScaleBasedVisibilityFlag="0" legendPlaceholderImage="" autoRefreshTime="0" wkbType="Point">
       <id>ctrl_Noeud_Conteneur_e957e763_b097_40d7_9cae_1080972ba972</id>
       <datasource>../gpkg/Reco-Star-Elec-RPD.gpkg|layername=ctrl_Noeud_Conteneur</datasource>
       <keywordList>
@@ -25954,6 +26083,15 @@ def my_form_open(dialog, layer, feature):
         <type>dataset</type>
         <title></title>
         <abstract></abstract>
+        <contact>
+          <name></name>
+          <organization></organization>
+          <position></position>
+          <voice></voice>
+          <fax></fax>
+          <email></email>
+          <role></role>
+        </contact>
         <links/>
         <fees></fees>
         <encoding></encoding>
@@ -25970,12 +26108,33 @@ def my_form_open(dialog, layer, feature):
             <geographicflag>false</geographicflag>
           </spatialrefsys>
         </crs>
-        <extent/>
+        <extent>
+          <spatial minz="0" maxx="0" miny="0" crs="" minx="0" maxy="0" maxz="0" dimensions="2"/>
+          <temporal>
+            <period>
+              <start></start>
+              <end></end>
+            </period>
+          </temporal>
+        </extent>
       </resourceMetadata>
       <provider encoding="UTF-8">ogr</provider>
       <vectorjoins/>
       <layerDependencies/>
-      <dataDependencies/>
+      <dataDependencies>
+        <layer id="RPD_JeuBarres_Reco_f474d02c_145d_4f4f_83a5_ec14862b57de"/>
+        <layer id="RPD_Plage_Reco_82924fea_11f2_4d7b_a430_be2e443d8cff"/>
+        <layer id="RPD_PosteElectrique_Reco_714a0e8e_a916_4e5d_8806_0e33133c4bef"/>
+        <layer id="RPD_Support_Reco_65f3aab3_3bb6_4b26_9507_1d10a4efdb39"/>
+        <layer id="RPD_EnceinteCloturee_Reco_1d1b0f4e_a411_464d_b89c_9ac2b370e79f"/>
+        <layer id="RPD_Jonction_Reco_f4215dd3_0dd7_4739_a775_8b289d1a1746"/>
+        <layer id="RPD_PointDeComptage_Reco_0b0a6397_b0a2_4d53_892f_fcf300677c9d"/>
+        <layer id="RPD_Coffret_Reco_3262a53c_3782_49cd_965b_2675949930be"/>
+        <layer id="RPD_Terre_Reco_279156a7_af43_4784_8667_b5b79623bb85"/>
+        <layer id="RPD_BatimentTechnique_Reco_0d1cb4af_db56_443c_a089_d5eff62183d8"/>
+        <layer id="RPD_RaccordementModulaire_Reco_f8b23447_99f6_4bf0_a9c4_e0be7a836159"/>
+        <layer id="RPD_OuvrageCollectifBranchement_Reco_5a9f3840_14a5_4990_b251_7ec99181060a"/>
+      </dataDependencies>
       <expressionfields/>
       <map-layer-style-manager current="défaut">
         <map-layer-style name="défaut"/>
@@ -26332,11 +26491,77 @@ def my_form_open(dialog, layer, feature):
           <Option type="QString" value="offline" name="QFieldSync/cloud_action"/>
           <Option type="QString" value="{}" name="QFieldSync/photo_naming"/>
           <Option type="QString" value="{}" name="QFieldSync/relationship_maximum_visible"/>
+          <Option type="int" value="0" name="embeddedWidgets/count"/>
+          <Option name="variableNames"/>
+          <Option name="variableValues"/>
         </Option>
       </customproperties>
       <blendMode>0</blendMode>
       <featureBlendMode>0</featureBlendMode>
       <layerOpacity>1</layerOpacity>
+      <SingleCategoryDiagramRenderer attributeLegend="1" diagramType="Histogram">
+        <DiagramCategory height="15" diagramOrientation="Up" width="15" minScaleDenominator="0" direction="0" sizeType="MM" spacingUnit="MM" showAxis="1" penAlpha="255" minimumSize="0" sizeScale="3x:0,0,0,0,0,0" lineSizeScale="3x:0,0,0,0,0,0" scaleBasedVisibility="0" spacingUnitScale="3x:0,0,0,0,0,0" backgroundColor="#ffffff" spacing="5" lineSizeType="MM" scaleDependency="Area" backgroundAlpha="255" rotationOffset="270" opacity="1" maxScaleDenominator="0" penWidth="0" penColor="#000000" enabled="0" barWidth="5" labelPlacementMethod="XHeight">
+          <fontProperties underline="0" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" style="" bold="0" italic="0" strikethrough="0"/>
+          <axisSymbol>
+            <symbol type="line" force_rhr="0" is_animated="0" clip_to_extent="1" alpha="1" name="" frame_rate="10">
+              <data_defined_properties>
+                <Option type="Map">
+                  <Option type="QString" value="" name="name"/>
+                  <Option name="properties"/>
+                  <Option type="QString" value="collection" name="type"/>
+                </Option>
+              </data_defined_properties>
+              <layer enabled="1" locked="0" class="SimpleLine" pass="0">
+                <Option type="Map">
+                  <Option type="QString" value="0" name="align_dash_pattern"/>
+                  <Option type="QString" value="square" name="capstyle"/>
+                  <Option type="QString" value="5;2" name="customdash"/>
+                  <Option type="QString" value="3x:0,0,0,0,0,0" name="customdash_map_unit_scale"/>
+                  <Option type="QString" value="MM" name="customdash_unit"/>
+                  <Option type="QString" value="0" name="dash_pattern_offset"/>
+                  <Option type="QString" value="3x:0,0,0,0,0,0" name="dash_pattern_offset_map_unit_scale"/>
+                  <Option type="QString" value="MM" name="dash_pattern_offset_unit"/>
+                  <Option type="QString" value="0" name="draw_inside_polygon"/>
+                  <Option type="QString" value="bevel" name="joinstyle"/>
+                  <Option type="QString" value="35,35,35,255" name="line_color"/>
+                  <Option type="QString" value="solid" name="line_style"/>
+                  <Option type="QString" value="0.26" name="line_width"/>
+                  <Option type="QString" value="MM" name="line_width_unit"/>
+                  <Option type="QString" value="0" name="offset"/>
+                  <Option type="QString" value="3x:0,0,0,0,0,0" name="offset_map_unit_scale"/>
+                  <Option type="QString" value="MM" name="offset_unit"/>
+                  <Option type="QString" value="0" name="ring_filter"/>
+                  <Option type="QString" value="0" name="trim_distance_end"/>
+                  <Option type="QString" value="3x:0,0,0,0,0,0" name="trim_distance_end_map_unit_scale"/>
+                  <Option type="QString" value="MM" name="trim_distance_end_unit"/>
+                  <Option type="QString" value="0" name="trim_distance_start"/>
+                  <Option type="QString" value="3x:0,0,0,0,0,0" name="trim_distance_start_map_unit_scale"/>
+                  <Option type="QString" value="MM" name="trim_distance_start_unit"/>
+                  <Option type="QString" value="0" name="tweak_dash_pattern_on_corners"/>
+                  <Option type="QString" value="0" name="use_custom_dash"/>
+                  <Option type="QString" value="3x:0,0,0,0,0,0" name="width_map_unit_scale"/>
+                </Option>
+                <data_defined_properties>
+                  <Option type="Map">
+                    <Option type="QString" value="" name="name"/>
+                    <Option name="properties"/>
+                    <Option type="QString" value="collection" name="type"/>
+                  </Option>
+                </data_defined_properties>
+              </layer>
+            </symbol>
+          </axisSymbol>
+        </DiagramCategory>
+      </SingleCategoryDiagramRenderer>
+      <DiagramLayerSettings placement="0" zIndex="0" showAll="1" linePlacementFlags="18" obstacle="0" dist="0" priority="0">
+        <properties>
+          <Option type="Map">
+            <Option type="QString" value="" name="name"/>
+            <Option name="properties"/>
+            <Option type="QString" value="collection" name="type"/>
+          </Option>
+        </properties>
+      </DiagramLayerSettings>
       <geometryOptions removeDuplicateNodes="0" geometryPrecision="0">
         <activeChecks/>
         <checkConfiguration/>
@@ -26345,28 +26570,28 @@ def my_form_open(dialog, layer, feature):
       <referencedLayers/>
       <fieldConfiguration>
         <field configurationFlags="None" name="pkid">
-          <editWidget type="">
+          <editWidget type="TextEdit">
             <config>
               <Option/>
             </config>
           </editWidget>
         </field>
         <field configurationFlags="None" name="id">
-          <editWidget type="">
+          <editWidget type="TextEdit">
             <config>
               <Option/>
             </config>
           </editWidget>
         </field>
         <field configurationFlags="None" name="ctrl">
-          <editWidget type="">
+          <editWidget type="TextEdit">
             <config>
               <Option/>
             </config>
           </editWidget>
         </field>
         <field configurationFlags="None" name="Geometrie">
-          <editWidget type="">
+          <editWidget type="TextEdit">
             <config>
               <Option/>
             </config>
@@ -26402,7 +26627,13 @@ def my_form_open(dialog, layer, feature):
         <defaultAction value="{00000000-0000-0000-0000-000000000000}" key="Canvas"/>
       </attributeactions>
       <attributetableconfig actionWidgetStyle="dropDown" sortExpression="" sortOrder="0">
-        <columns/>
+        <columns>
+          <column type="field" width="-1" hidden="0" name="pkid"/>
+          <column type="field" width="-1" hidden="0" name="id"/>
+          <column type="field" width="-1" hidden="0" name="ctrl"/>
+          <column type="field" width="-1" hidden="0" name="Geometrie"/>
+          <column type="actions" width="-1" hidden="1"/>
+        </columns>
       </attributetableconfig>
       <conditionalstyles>
         <rowstyles/>
@@ -26413,18 +26644,61 @@ def my_form_open(dialog, layer, feature):
       <editforminit/>
       <editforminitcodesource>0</editforminitcodesource>
       <editforminitfilepath></editforminitfilepath>
-      <editforminitcode><![CDATA[]]></editforminitcode>
+      <editforminitcode><![CDATA[# -*- coding: utf-8 -*-
+"""
+Les formulaires QGIS peuvent avoir une fonction Python qui est appelée lorsque le formulaire est
+ouvert.
+
+Utilisez cette fonction pour ajouter une logique supplémentaire à vos formulaires.
+
+Entrez le nom de la fonction dans le champ 
+"Fonction d'initialisation Python".
+Voici un exemple:
+"""
+from qgis.PyQt.QtWidgets import QWidget
+
+def my_form_open(dialog, layer, feature):
+    geom = feature.geometry()
+    control = dialog.findChild(QWidget, "MyLineEdit")
+]]></editforminitcode>
       <featformsuppress>0</featformsuppress>
       <editorlayout>generatedlayout</editorlayout>
-      <editable/>
-      <labelOnTop/>
-      <reuseLastValue/>
+      <editable>
+        <field editable="1" name="Geometrie"/>
+        <field editable="1" name="ctrl"/>
+        <field editable="1" name="id"/>
+        <field editable="1" name="pkid"/>
+      </editable>
+      <labelOnTop>
+        <field name="Geometrie" labelOnTop="0"/>
+        <field name="ctrl" labelOnTop="0"/>
+        <field name="id" labelOnTop="0"/>
+        <field name="pkid" labelOnTop="0"/>
+      </labelOnTop>
+      <reuseLastValue>
+        <field name="Geometrie" reuseLastValue="0"/>
+        <field name="ctrl" reuseLastValue="0"/>
+        <field name="id" reuseLastValue="0"/>
+        <field name="pkid" reuseLastValue="0"/>
+      </reuseLastValue>
       <dataDefinedFieldProperties/>
       <widgets/>
-      <previewExpression></previewExpression>
+      <previewExpression>"pkid"</previewExpression>
       <mapTip></mapTip>
     </maplayer>
     <maplayer geometry="Point" readOnly="1" simplifyAlgorithm="0" type="vector" refreshOnNotifyEnabled="0" simplifyDrawingTol="1" refreshOnNotifyMessage="" styleCategories="AllStyleCategories" simplifyLocal="1" simplifyDrawingHints="0" labelsEnabled="1" autoRefreshEnabled="0" simplifyMaxScale="1" symbologyReferenceScale="-1" minScale="0" maxScale="0" hasScaleBasedVisibilityFlag="0" legendPlaceholderImage="" autoRefreshTime="0" wkbType="Point">
+      <extent>
+        <xmin>850109.68840119102969766</xmin>
+        <ymin>6799410.83420727960765362</ymin>
+        <xmax>850396.38409726799000055</xmax>
+        <ymax>6799763.05510962009429932</ymax>
+      </extent>
+      <wgs84extent>
+        <xmin>5.02357057645138472</xmin>
+        <ymin>48.27765331458051179</ymin>
+        <xmax>5.02755560697270099</xmax>
+        <ymax>48.28088751163775072</ymax>
+      </wgs84extent>
       <id>ctrl_PLOR_Ouvrage_00e2537f_d596_45f7_8749_3316ef0df281</id>
       <datasource>../gpkg/Reco-Star-Elec-RPD.gpkg|layername=ctrl_PLOR_Ouvrage</datasource>
       <keywordList>
@@ -26477,7 +26751,7 @@ def my_form_open(dialog, layer, feature):
           </spatialrefsys>
         </crs>
         <extent>
-          <spatial minz="0" maxx="0" miny="0" crs="" minx="0" maxy="0" maxz="0" dimensions="2"/>
+          <spatial minz="0" maxx="0" miny="0" crs="EPSG:2154" minx="0" maxy="0" maxz="0" dimensions="2"/>
           <temporal>
             <period>
               <start></start>
@@ -26489,7 +26763,28 @@ def my_form_open(dialog, layer, feature):
       <provider encoding="UTF-8">ogr</provider>
       <vectorjoins/>
       <layerDependencies/>
-      <dataDependencies/>
+      <dataDependencies>
+        <layer id="RPD_JeuBarres_Reco_f474d02c_145d_4f4f_83a5_ec14862b57de"/>
+        <layer id="RPD_OuvrageCollectifBranchement_Reco_5a9f3840_14a5_4990_b251_7ec99181060a"/>
+        <layer id="RPD_PointLeveOuvrageReseau_Reco_fdb52f9f_7cc9_4161_b70c_ff07e074d328"/>
+        <layer id="RPD_Support_Reco_65f3aab3_3bb6_4b26_9507_1d10a4efdb39"/>
+        <layer id="RPD_Fourreau_Reco_9f8337d9_7382_4f98_bb14_a587c1db8dce"/>
+        <layer id="RPD_PosteElectrique_Reco_714a0e8e_a916_4e5d_8806_0e33133c4bef"/>
+        <layer id="RPD_CableElectrique_Reco_559ad6fd_6937_4e8b_a5f1_cbfe58af78b3"/>
+        <layer id="RPD_Aerien_Reco_743e97b1_2554_41cd_a2e5_b1683458dd3b"/>
+        <layer id="RPD_PleineTerre_Reco_434e16d0_b4fe_4687_b552_7faa09f52916"/>
+        <layer id="RPD_ProtectionMecanique_Reco_c50b43a6_a3d1_4c13_bdae_dc996759a1b1"/>
+        <layer id="RPD_CableTerre_Reco_69e0ec7b_3408_429d_b52c_84c1cc9a9889"/>
+        <layer id="RPD_Jonction_Reco_f4215dd3_0dd7_4739_a775_8b289d1a1746"/>
+        <layer id="RPD_Coffret_Reco_3262a53c_3782_49cd_965b_2675949930be"/>
+        <layer id="RPD_BatimentTechnique_Reco_0d1cb4af_db56_443c_a089_d5eff62183d8"/>
+        <layer id="RPD_Terre_Reco_279156a7_af43_4784_8667_b5b79623bb85"/>
+        <layer id="RPD_RaccordementModulaire_Reco_f8b23447_99f6_4bf0_a9c4_e0be7a836159"/>
+        <layer id="RPD_EnceinteCloturee_Reco_1d1b0f4e_a411_464d_b89c_9ac2b370e79f"/>
+        <layer id="RPD_Plage_Reco_82924fea_11f2_4d7b_a430_be2e443d8cff"/>
+        <layer id="RPD_PointDeComptage_Reco_0b0a6397_b0a2_4d53_892f_fcf300677c9d"/>
+        <layer id="RPD_Galerie_Reco_e9a10f52_434d_4341_87c4_bbc79f6dccde"/>
+      </dataDependencies>
       <expressionfields/>
       <map-layer-style-manager current="défaut">
         <map-layer-style name="défaut"/>
@@ -26850,8 +27145,8 @@ def my_form_open(dialog, layer, feature):
             <Option type="QString" value="&quot;ctrl&quot;"/>
           </Option>
           <Option type="int" value="0" name="embeddedWidgets/count"/>
-          <Option type="invalid" name="variableNames"/>
-          <Option type="invalid" name="variableValues"/>
+          <Option name="variableNames"/>
+          <Option name="variableValues"/>
         </Option>
       </customproperties>
       <blendMode>0</blendMode>
@@ -26929,7 +27224,7 @@ def my_form_open(dialog, layer, feature):
       <referencedLayers/>
       <fieldConfiguration>
         <field configurationFlags="None" name="pkid">
-          <editWidget type="">
+          <editWidget type="TextEdit">
             <config>
               <Option/>
             </config>
@@ -26961,7 +27256,7 @@ def my_form_open(dialog, layer, feature):
         <default expression="" applyOnUpdate="0" field="ctrl"/>
       </defaults>
       <constraints>
-        <constraint notnull_strength="0" field="pkid" unique_strength="0" constraints="0" exp_strength="0"/>
+        <constraint notnull_strength="1" field="pkid" unique_strength="1" constraints="3" exp_strength="0"/>
         <constraint notnull_strength="0" field="id" unique_strength="0" constraints="0" exp_strength="0"/>
         <constraint notnull_strength="0" field="ctrl" unique_strength="0" constraints="0" exp_strength="0"/>
       </constraints>
@@ -26978,8 +27273,7 @@ def my_form_open(dialog, layer, feature):
         <columns>
           <column type="field" width="-1" hidden="0" name="id"/>
           <column type="field" width="523" hidden="0" name="ctrl"/>
-          <column type="field" width="-1" hidden="0" name="Geometrie"/>
-          <column type="field" width="-1" hidden="0" name="uid"/>
+          <column type="field" width="-1" hidden="0" name="pkid"/>
           <column type="actions" width="-1" hidden="1"/>
         </columns>
       </attributetableconfig>
@@ -27015,18 +27309,21 @@ def my_form_open(dialog, layer, feature):
         <field editable="1" name="Geometrie"/>
         <field editable="1" name="ctrl"/>
         <field editable="1" name="id"/>
+        <field editable="1" name="pkid"/>
         <field editable="1" name="uid"/>
       </editable>
       <labelOnTop>
         <field name="Geometrie" labelOnTop="0"/>
         <field name="ctrl" labelOnTop="0"/>
         <field name="id" labelOnTop="0"/>
+        <field name="pkid" labelOnTop="0"/>
         <field name="uid" labelOnTop="0"/>
       </labelOnTop>
       <reuseLastValue>
         <field name="Geometrie" reuseLastValue="0"/>
         <field name="ctrl" reuseLastValue="0"/>
         <field name="id" reuseLastValue="0"/>
+        <field name="pkid" reuseLastValue="0"/>
         <field name="uid" reuseLastValue="0"/>
       </reuseLastValue>
       <dataDefinedFieldProperties/>
@@ -27285,7 +27582,7 @@ def my_form_open(dialog, layer, feature):
   </Bookmarks>
   <ProjectViewSettings rotation="0" UseProjectScales="0">
     <Scales/>
-    <DefaultViewExtent xmax="850078.12921232217922807" ymin="6799784.37261419836431742" ymax="6799807.1808465039357543" xmin="850038.69538926985114813">
+    <DefaultViewExtent xmax="850552.25181172916200012" ymin="6799248.04976092372089624" ymax="6799731.42057519499212503" xmin="849998.96289562142919749">
       <spatialrefsys nativeFormat="Wkt">
         <wkt>PROJCRS["RGF93 / Lambert-93",BASEGEOGCRS["RGF93",DATUM["Reseau Geodesique Francais 1993",ELLIPSOID["GRS 1980",6378137,298.257222101,LENGTHUNIT["metre",1]]],PRIMEM["Greenwich",0,ANGLEUNIT["degree",0.0174532925199433]],ID["EPSG",4171]],CONVERSION["Lambert-93",METHOD["Lambert Conic Conformal (2SP)",ID["EPSG",9802]],PARAMETER["Latitude of false origin",46.5,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8821]],PARAMETER["Longitude of false origin",3,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8822]],PARAMETER["Latitude of 1st standard parallel",49,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8823]],PARAMETER["Latitude of 2nd standard parallel",44,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8824]],PARAMETER["Easting at false origin",700000,LENGTHUNIT["metre",1],ID["EPSG",8826]],PARAMETER["Northing at false origin",6600000,LENGTHUNIT["metre",1],ID["EPSG",8827]]],CS[Cartesian,2],AXIS["easting (X)",east,ORDER[1],LENGTHUNIT["metre",1]],AXIS["northing (Y)",north,ORDER[2],LENGTHUNIT["metre",1]],USAGE[SCOPE["Engineering survey, topographic mapping."],AREA["France - onshore and offshore, mainland and Corsica."],BBOX[41.15,-9.86,51.56,10.38]],ID["EPSG",2154]]</wkt>
         <proj4>+proj=lcc +lat_0=46.5 +lon_0=3 +lat_1=49 +lat_2=44 +x_0=700000 +y_0=6600000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs</proj4>
