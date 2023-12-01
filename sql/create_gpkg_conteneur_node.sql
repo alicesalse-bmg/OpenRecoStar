@@ -329,6 +329,20 @@ INSERT INTO FonctionCoffretValue VALUES
 
 INSERT INTO gpkg_contents (table_name, data_type, identifier) values ('FonctionCoffretValue','attributes','FonctionCoffretValue'); --GPKG
 
+DROP TABLE IF EXISTS GeomCoffret;
+CREATE TABLE GeomCoffret (
+  valeurs text NOT NULL UNIQUE PRIMARY KEY,
+  Geometrie LINESTRING
+);
+
+INSERT INTO gpkg_contents (table_name, data_type, identifier, srs_id) values ('GeomCoffret','features','GeomCoffret',2154); --GPKG
+INSERT INTO gpkg_geometry_columns (table_name, column_name, geometry_type_name, srs_id, z, m) values ('GeomCoffret', 'Geometrie', 'LINESTRING', 2154, 0, 0); --GPKG
+
+-- TODO : EXECUTER DANS QGIS
+-- INSERT INTO GeomCoffret VALUES
+--   ('Default',ST_AddPoint(ST_AddPoint(ST_AddPoint(ST_AddPoint(MakeLine(ST_Point(0,0),ST_Point(0.25,0)),ST_Point(0.25,0.25)),ST_Point(-0.25,0.25)),ST_Point(-0.25,0)),ST_Point(0,0)))
+-- ;
+
 
 DROP TABLE IF EXISTS RPD_Coffret_Reco;
 CREATE TABLE RPD_Coffret_Reco(
@@ -337,13 +351,14 @@ CREATE TABLE RPD_Coffret_Reco(
 , ImplantationArmoire TEXT NOT NULL REFERENCES ImplantationArmoireValue (valeurs)
 , TypeCoffret TEXT REFERENCES TypeCoffretValue (valeurs)
 , FonctionCoffret TEXT REFERENCES FonctionCoffretValue (valeurs)
-, Geometrie MULTILINESTRINGZ NOT NULL UNIQUE
+, Geometrie POINTZ NOT NULL UNIQUE
 , PrecisionXY TEXT NOT NULL REFERENCES ClassePrecisionReseauValue (valeurs)
 , PrecisionZ TEXT NOT NULL REFERENCES ClassePrecisionReseauValue (valeurs)
+, angle INTEGER --NOTE : hors reco star : permet de générer la géométrie supp orientée -- TODO : voir taille en fonction type coffret
 );
 
 INSERT INTO gpkg_contents (table_name, data_type, identifier, srs_id) values ('RPD_Coffret_Reco','features','RPD_Coffret_Reco',2154); --GPKG
-INSERT INTO gpkg_geometry_columns (table_name, column_name, geometry_type_name, srs_id, z, m) values ('RPD_Coffret_Reco', 'Geometrie', 'MULTILINESTRING', 2154, 1, 0); --GPKG
+INSERT INTO gpkg_geometry_columns (table_name, column_name, geometry_type_name, srs_id, z, m) values ('RPD_Coffret_Reco', 'Geometrie', 'POINT', 2154, 1, 0); --GPKG
 SELECT gpkgAddSpatialIndex('RPD_Coffret_Reco', 'Geometrie' );
 
 --XXX RPD_Support_Reco
@@ -354,8 +369,46 @@ CREATE TABLE ClasseSupportValue (
   alias text
 );
 
-INSERT INTO ClasseSupportValue VALUES --FIXME ???
-  ('xxx','xxx')
+INSERT INTO ClasseSupportValue VALUES
+  ('A',   'Ancien poteau béton simple')
+, ('B',   'Ancien poteau béton simple')
+, ('C',   'Ancien poteau béton simple')
+, ('CFX', 'Contrefiché bois calé')
+, ('CFY', 'Contrefiché bois')
+, ('CFZ', 'Contrefiché bois')
+, ('CH',  'Chevron bois')
+, ('D',   'Béton simple rectangulaire')
+, ('E',   'Béton simple carré')
+, ('ER',  'Béton simple rond')
+, ('HS',  'Haubanné bois')
+, ('JA',  'Ancien poteau béton jumelé')
+, ('JB',  'Ancien poteau béton jumelé')
+, ('JC',  'Ancien poteau béton jumelé')
+, ('JD',  'Béton rectangulaire jumelé')
+, ('JE',  'Béton carré jumelé')
+, ('JER', 'Béton rond jumelé')
+, ('JS',  'Jumelé bois')
+, ('M',   'Simple métallique')
+, ('PA',  'Ancien portique béton')
+, ('PB',  'Ancien portique béton')
+, ('PC',  'Ancien portique béton')
+, ('PCH', 'Portique chevron')
+, ('PCHX','Portique chevron croisilloné')
+, ('PD',  'Portique béton rectangulaire')
+, ('PE',  'Portique béton carré')
+, ('PER', 'Portique béton rond')
+, ('PJA', 'Ancien portique jumelé béton')
+, ('PJB', 'Ancien portique jumelé béton')
+, ('PJC', 'Ancien portique jumelé béton')
+, ('PJD', 'Portique jumelé béton rectang.')
+, ('PJE', 'Portique jumelé béton carré.')
+, ('PJER','Portique jumelé béton rond.')
+, ('PJS', 'Portique jumelé bois')
+, ('PJX', 'Portique bois jumelé croisillo')
+, ('PM',  'Portique métallique')
+, ('PS',  'Portique bois')
+, ('PX',  'Portique bois croisilloné')
+, ('S',   'Simple bois')
 ;
 
 INSERT INTO gpkg_contents (table_name, data_type, identifier) values ('ClasseSupportValue','attributes','ClasseSupportValue'); --GPKG
@@ -442,25 +495,69 @@ with all_conso as (
   FROM RPD_EnceinteCloturee_Reco
   UNION ALL
   SELECT id, 'Coffret' type_conteneur, PrecisionXY, PrecisionZ
-  , Geometrie "Ligne2.5D"
-  , CASE  WHEN ST_IsClosed(Geometrie) THEN ST_MakePolygon(Geometrie)
-          WHEN ST_NumPoints(Geometrie) > 3 THEN ST_MakePolygon(ST_AddPoint(Geometrie, ST_StartPoint(Geometrie)))
-          ELSE NULL END "Surface2.5D"
-  FROM RPD_Coffret_Reco
+  , ST_Translate(RotateCoordinates(CastToXYZ(g.Geometrie),angle), ST_X(c.Geometrie), ST_Y(c.Geometrie), ST_Z(c.Geometrie)) "Ligne2.5D"
+  , ST_Translate(RotateCoordinates(CastToXYZ(ST_MakePolygon(g.Geometrie)),angle), ST_X(c.Geometrie), ST_Y(c.Geometrie), ST_Z(c.Geometrie)) "Surface2.5D"
+  FROM RPD_Coffret_Reco c
+  JOIN GeomCoffret g ON g.valeurs = 'Default'
 ) select ROW_NUMBER () OVER () pkid, * from all_conso;
 
 INSERT INTO gpkg_contents (table_name, data_type, identifier, srs_id) values ('RPD_GeometrieSupplementaire_Conteneur_Reco','features','RPD_GeometrieSupplementaire_Conteneur_Reco',2154); --GPKG
-INSERT INTO gpkg_geometry_columns (table_name, column_name, geometry_type_name, srs_id, z, m) values ('RPD_GeometrieSupplementaire_Conteneur_Reco', 'Geometrie', 'MULTILINESTRING', 2154, 1, 0); --GPKG
+INSERT INTO gpkg_geometry_columns (table_name, column_name, geometry_type_name, srs_id, z, m) values ('RPD_GeometrieSupplementaire_Conteneur_Reco', 'Surface2.5D', 'MULTIPOLYGON', 2154, 1, 0); --GPKG
 
-DROP VIEW IF EXISTS Conteneur_Noeud; --TODO : voir xsd pour les noms des attributs
+--XXX RELATIONS CONTENEUR / NOEUD / CABLE
+
+DROP VIEW IF EXISTS Conteneur_Noeud; --FIXME : a mettre dans attribut de la table Noeud lors de l'export : voir xsd
 CREATE VIEW Conteneur_Noeud as
-  SELECT n.id noeud_id,  c.id conteneur_id
+with all_conso as (
+  SELECT n.id noeud_id, type_noeud, c.id conteneur_id, type_conteneur
   FROM Noeud n
-  JOIN RPD_GeometrieSupplementaire_Conteneur_Reco c ON PtDistWithin(c."Ligne2.5D", n."Geometrie", 0.01) OR PtDistWithin(c."Surface2.5D", n."Geometrie", 0.01)
+  JOIN RPD_GeometrieSupplementaire_Conteneur_Reco c ON PtDistWithin(c."Ligne2.5D", n."Geometrie", 0.002) OR PtDistWithin(c."Surface2.5D", n."Geometrie", 0.002)
+  UNION ALL
+  SELECT n.id noeud_id, type_noeud, c.id conteneur_id, type_conteneur
+  FROM Noeud n
+  JOIN Conteneur c ON c.type_conteneur = 'Support' AND PtDistWithin(c."Geometrie", n."Geometrie", 0.002)
+) select ROW_NUMBER () OVER () pkid, * from all_conso;
 ;
 
 INSERT INTO gpkg_contents (table_name, data_type, identifier) values ('Conteneur_Noeud','attributes','Conteneur_Noeud'); --GPKG
 
+DROP VIEW IF EXISTS Conteneur_Cable;
+CREATE VIEW Conteneur_Cable as
+with all_conso as (
+  SELECT n.id cable_id, type_cable, 'StartPoint' connpt, c.id conteneur_id, type_conteneur
+  FROM Cable n
+  JOIN RPD_GeometrieSupplementaire_Conteneur_Reco c ON PtDistWithin(c."Ligne2.5D", ST_StartPoint(n."Geometrie"), 0.002) OR PtDistWithin(c."Surface2.5D", ST_StartPoint(n."Geometrie"), 0.002)
+  UNION ALL
+  SELECT n.id cable_id, type_cable, 'StartPoint' connpt, c.id conteneur_id, type_conteneur
+  FROM Cable n
+  JOIN Conteneur c ON c.type_conteneur = 'Support' AND PtDistWithin(c."Geometrie", ST_StartPoint(n."Geometrie"), 0.002)
+  UNION ALL
+  SELECT n.id cable_id, type_cable, 'EndPoint' connpt, c.id conteneur_id, type_conteneur
+  FROM Cable n
+  JOIN RPD_GeometrieSupplementaire_Conteneur_Reco c ON PtDistWithin(c."Ligne2.5D", ST_EndPoint(n."Geometrie"), 0.002) OR PtDistWithin(c."Surface2.5D", ST_EndPoint(n."Geometrie"), 0.002)
+  UNION ALL
+  SELECT n.id cable_id, type_cable, 'EndPoint' connpt, c.id conteneur_id, type_conteneur
+  FROM Cable n
+  JOIN Conteneur c ON c.type_conteneur = 'Support' AND PtDistWithin(c."Geometrie", ST_EndPoint(n."Geometrie"), 0.002)
+) select ROW_NUMBER () OVER () pkid, * from all_conso;
+;
+
+INSERT INTO gpkg_contents (table_name, data_type, identifier) values ('Conteneur_Cable','attributes','Conteneur_Cable'); --GPKG
+
+DROP VIEW IF EXISTS Noeud_Cable;
+CREATE VIEW Noeud_Cable as
+with all_conso as (
+  SELECT c.id cable_id, type_cable, 'StartPoint' connpt, n.id noeud_id, type_noeud
+  FROM Noeud n
+  JOIN Cable c ON PtDistWithin(n."Geometrie", ST_StartPoint(c."Geometrie"), 0.002)
+  UNION ALL
+  SELECT c.id cable_id, type_cable, 'EndPoint' connpt, n.id noeud_id, type_noeud
+  FROM Noeud n
+  JOIN Cable c ON PtDistWithin(n."Geometrie", ST_EndPoint(c."Geometrie"), 0.002)
+) select ROW_NUMBER () OVER () pkid, * from all_conso;
+;
+
+INSERT INTO gpkg_contents (table_name, data_type, identifier) values ('Noeud_Cable','attributes','Noeud_Cable'); --GPKG
 
 --XXX RPD_PointLeveOuvrageReseau_Reco
 
