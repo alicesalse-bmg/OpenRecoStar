@@ -1,0 +1,31 @@
+; the next section is mandatory
+
+[general]
+name=OpenRecoStarPlugin
+email=contact@bemapguest.eu
+author=BeMapGuest / ASE
+qgisMinimumVersion=3.0
+description=Plugin pour la saisie des réseaux au format Reco Star
+version=version 1
+tracker=https://github.com/alicesalse-bmg/OpenRecoStar/issues
+repository=https://github.com/alicesalse-bmg/OpenRecoStar/
+; end of mandatory metadata
+
+; start of optional metadata
+category=Network
+changelog=No Change
+
+; Tags are in comma separated value format, spaces are allowed within the
+; tag name.
+; Tags should be in English language. Please also check for existing tags and
+; synonyms before creating a new one.
+tags=network
+
+; experimental flag (applies to the single version)
+experimental=False
+
+; deprecated flag (applies to the whole plugin and not only to the uploaded version)
+deprecated=False
+
+; if empty, it will be automatically set to major version + .99
+qgisMaximumVersion=3.99
