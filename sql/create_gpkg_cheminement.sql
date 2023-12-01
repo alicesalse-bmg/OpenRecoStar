@@ -181,15 +181,6 @@ INSERT INTO gpkg_geometry_columns (table_name, column_name, geometry_type_name, 
 
 --XXX Cable
 
--- TODO :transformer en vue selon intersect
--- DROP TABLE IF EXISTS Cheminement_Cables;
--- CREATE TABLE Cheminement_Cables( --TODO : voir xsd pour les noms des attributs
---   base_id INTEGER NOT NULL REFERENCES Cable (id) ON DELETE CASCADE DEFERRABLE INITIALLY DEFERRED
--- , related_id INTEGER NOT NULL UNIQUE REFERENCES Cheminement (id) ON DELETE CASCADE DEFERRABLE INITIALLY DEFERRED
--- );
---
--- INSERT INTO gpkg_contents (table_name, data_type, identifier) values ('Cheminement_Cables','attributes','Cheminement_Cables'); --GPKG
-
 -- XXX RPD_CableElectrique_Reco
 
 DROP TABLE IF EXISTS DomaineTensionValue;
@@ -376,25 +367,39 @@ with all_conso as (
 INSERT INTO gpkg_contents (table_name, data_type, identifier, srs_id) values ('Cable','features','Cable',2154); --GPKG
 INSERT INTO gpkg_geometry_columns (table_name, column_name, geometry_type_name, srs_id, z, m) values ('Cable', 'Geometrie', 'LINESTRING', 2154, 1, 0); --GPKG
 
+--XXX Cheminement par defaut
+
 DROP VIEW IF EXISTS RPD_PleineTerre_Reco_virt;
-CREATE VIEW RPD_PleineTerre_Reco_virt as --FIXME : Spliter les MULTILINESTRING
-SELECT ROW_NUMBER () OVER () pkid, c.id, coalesce(ST_Difference(c."Geometrie", h."Geometrie"), c."Geometrie") Geometrie, Null ProfondeurMinNonReg, c.PrecisionXY,c.PrecisionZ
+CREATE VIEW RPD_PleineTerre_Reco_virt as --FIXME : Spliter les MULTILINESTRING pour l'export
+SELECT ROW_NUMBER () OVER () pkid, c.id, coalesce(ST_Difference(c."Geometrie", ST_Union(h."Geometrie")), c."Geometrie") Geometrie, Null ProfondeurMinNonReg, c.PrecisionXY,c.PrecisionZ
 FROM Cable c
 LEFT JOIN Cheminement h ON ST_Within(h."Geometrie", c."Geometrie")
-WHERE TypePose = 'Enterre';
+WHERE TypePose = 'Enterre'
+group by c.id, c.PrecisionXY, c.PrecisionZ, c."Geometrie"
 ;
 INSERT INTO gpkg_contents (table_name, data_type, identifier, srs_id) values ('RPD_PleineTerre_Reco_virt','features','RPD_PleineTerre_Reco_virt',2154); --GPKG
 INSERT INTO gpkg_geometry_columns (table_name, column_name, geometry_type_name, srs_id, z, m) values ('RPD_PleineTerre_Reco_virt', 'Geometrie', 'LINESTRING', 2154, 1, 0); --GPKG
 
 DROP VIEW IF EXISTS RPD_Aerien_Reco_virt;
-CREATE VIEW RPD_Aerien_Reco_virt as --FIXME : Spliter les MULTILINESTRING
-SELECT ROW_NUMBER () OVER () pkid, c.id, TypePose ModePose, coalesce(ST_Difference(c."Geometrie", h."Geometrie"), c."Geometrie") Geometrie, Null ProfondeurMinNonReg, c.PrecisionXY,c.PrecisionZ
+CREATE VIEW RPD_Aerien_Reco_virt as --FIXME : Spliter les MULTILINESTRING pour l'export
+SELECT ROW_NUMBER () OVER () pkid, c.id, coalesce(ST_Difference(c."Geometrie", ST_Union(h."Geometrie")), c."Geometrie") Geometrie, Null ProfondeurMinNonReg, c.PrecisionXY,c.PrecisionZ
 FROM Cable c
 LEFT JOIN Cheminement h ON ST_Within(h."Geometrie", c."Geometrie")
 WHERE NOT TypePose = 'Enterre'
+group by c.id, c.PrecisionXY, c.PrecisionZ, c."Geometrie"
 ;
 INSERT INTO gpkg_contents (table_name, data_type, identifier, srs_id) values ('RPD_Aerien_Reco_virt','features','RPD_Aerien_Reco_virt',2154); --GPKG
 INSERT INTO gpkg_geometry_columns (table_name, column_name, geometry_type_name, srs_id, z, m) values ('RPD_Aerien_Reco_virt', 'Geometrie', 'LINESTRING', 2154, 1, 0); --GPKG
+
+--XXX RELATIONS CHEMINEMENT / CABLE
+-- TODO :transformer en vue selon intersect et spliter les MULTILINESTRING avec uuid distinct
+-- DROP TABLE IF EXISTS Cheminement_Cables;
+-- CREATE TABLE Cheminement_Cables( --TODO : voir xsd pour les noms des attributs
+--   base_id INTEGER NOT NULL REFERENCES Cable (id) ON DELETE CASCADE DEFERRABLE INITIALLY DEFERRED
+-- , related_id INTEGER NOT NULL UNIQUE REFERENCES Cheminement (id) ON DELETE CASCADE DEFERRABLE INITIALLY DEFERRED
+-- );
+--
+-- INSERT INTO gpkg_contents (table_name, data_type, identifier) values ('Cheminement_Cables','attributes','Cheminement_Cables'); --GPKG
 
 
 -- TODO : intégrer les valeurs de mesures uom
