@@ -495,8 +495,8 @@ with all_conso as (
   FROM RPD_EnceinteCloturee_Reco
   UNION ALL
   SELECT id, 'Coffret' type_conteneur, PrecisionXY, PrecisionZ
-  , ST_Translate(RotateCoordinates(CastToXYZ(g.Geometrie),angle), ST_X(c.Geometrie), ST_Y(c.Geometrie), ST_Z(c.Geometrie)) "Ligne2.5D"
-  , ST_Translate(RotateCoordinates(CastToXYZ(ST_MakePolygon(g.Geometrie)),angle), ST_X(c.Geometrie), ST_Y(c.Geometrie), ST_Z(c.Geometrie)) "Surface2.5D"
+  , ST_Translate(RotateCoordinates(CastToXYZ(g.Geometrie),coalesce(angle,0)), ST_X(c.Geometrie), ST_Y(c.Geometrie), ST_Z(c.Geometrie)) "Ligne2.5D"
+  , ST_Translate(RotateCoordinates(CastToXYZ(ST_MakePolygon(g.Geometrie)),coalesce(angle,0)), ST_X(c.Geometrie), ST_Y(c.Geometrie), ST_Z(c.Geometrie)) "Surface2.5D"
   FROM RPD_Coffret_Reco c
   JOIN GeomCoffret g ON g.valeurs = 'Default'
 ) select ROW_NUMBER () OVER () pkid, * from all_conso;
