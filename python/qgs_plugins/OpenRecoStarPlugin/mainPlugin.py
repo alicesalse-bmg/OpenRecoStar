@@ -60,7 +60,7 @@ class MappingDialogBox(QDialog):
                                     newcol.addItems(self.formlayout[wlabel.text()][2])
                                     self.layout.addWidget(newcol, i, 2)
                                 else:
-                                    self.layout.addWidget(QLineEdit(), i, 2)
+                                    self.layout.addWidget(QLineEdit(self.formlayout[wlabel.text()][2]), i, 2)
                                     # TODO : mettre des contraintes selon le type d'attribut
                                 self.layout.setColumnMinimumWidth(2, 300)
                             elif wfield.currentText() != '<AUTRE>' and self.layout.itemAtPosition(i,2) :
@@ -181,65 +181,75 @@ class RecoStarTools:
             file_type = file[0][-3:].lower()
             if not vlayer.isValid():
                 print("Layer failed to load!")
+                self.iface.messageBar().pushMessage("Impossible de charger la couche", Qgis.Critical)
+                return
             else:
                 # Qgsproject=QgsProject.instance()
                 # Qgsproject.instance().addMapLayer(vlayer)
                 vlyr_attrib =  vlayer.fields().names()
-                print(vlyr_attrib)
                 plor_lyrs = self.getLayersFromTable('PointLeveOuvrageReseau')
                 plor_lyrnames = [lyr.name() for lyr in plor_lyrs]
-                print(plor_lyrnames)
                 plor_lyrname, ctrl = QInputDialog.getItem(QInputDialog(), "Couche", "Choisir la couche dans laquelle importer les données", plor_lyrnames, 0)
                 if ctrl :
-                    print(plor_lyrname)
                     plor_lyr = plor_lyrs[plor_lyrnames.index(plor_lyrname)]
-                    plor_attrib = plor_lyr.fields().names()
-                    print(plor_attrib)
-                    formlayout = {}
-                    for attrib in [a for a in plor_attrib if a not in ['pkid', 'id']] :
-                        attrib_stp = plor_lyr.editorWidgetSetup(plor_attrib.index(attrib))
-                        # print(attrib, attrib_stp.config())
-                        if attrib_stp.type() == 'ValueRelation':
-                            value_lyr = self.root.findLayer(attrib_stp.config()['Layer']).layer()
-                            value_list = [f['valeurs'] for f in value_lyr.getFeatures()]
-                            formlayout[attrib] = ('ComboBox',self.sortsimilarity(attrib, vlyr_attrib)+['<AUTRE>'],value_list)
-                        else :
-                            formlayout[attrib] = ('ComboBox',self.sortsimilarity(attrib, vlyr_attrib)+['<AUTRE>'],None) # TODO ajouter des infos sur le type d'attribut
-
-                    if file_type == 'csv' :
-                        formlayout['GeomX'] = ('ComboBox',self.sortsimilarity('X', vlyr_attrib),None)
-                        formlayout['GeomY'] = ('ComboBox',self.sortsimilarity('Y', vlyr_attrib),None)
-                        formlayout['GeomZ'] = ('ComboBox',self.sortsimilarity('Z', vlyr_attrib),None)
-                        formlayout['GeomEPSG'] = ('ComboBox', ['2154','3949','3847','<AUTRE>'],None) #TODO : ajouter les EPSG
-                    dial = MappingDialogBox("Import fichier PLOR", formlayout, self)
-                    if dial.exec() == QDialog.Accepted:
-                        mapping=dial.get_output()
-                        print(mapping)
-                        mapping = {'NumeroPoint': '#Numero', 'Leve': 'Z', 'TypeLeve': "'AltitudeGeneratrice'", 'Producteur': "'test alice'", 'PrecisionXY': "'0'", 'PrecisionZ': "'0'", 'GeomX': 'X', 'GeomY': 'Y', 'GeomZ': 'Z', 'GeomEPSG':'27561'}
-                        for vfeat in vlayer.getFeatures() :
-                            pfeat=QgsFeature(plor_lyr.fields())
-                            pfeat.setAttribute('id', str(uuid.uuid4()))
-                            for m in mapping :
-                                if (file_type == 'csv' and m[:4] != 'Geom') or file_type != 'csv' :
-                                    if mapping[m][:1] == "'" :
-                                        pfeat.setAttribute(m, mapping[m][1:-1])
-                                    else :
-                                        pfeat.setAttribute(m, vfeat.attribute(mapping[m]))
+                    def copyPLOR() :
+                        if not plor_lyr.dataProvider().transaction():
+                            print('echec ouverture session')
+                            return
+                        elif plor_lyr.dataProvider().transaction():
+                            self.iface.messageBar().clearWidgets()
+                            plor_attrib = plor_lyr.fields().names()
+                            formlayout = {}
+                            for attrib in [a for a in plor_attrib if a not in ['pkid', 'id']] :
+                                attrib_stp = plor_lyr.editorWidgetSetup(plor_attrib.index(attrib))
+                                # print(attrib, attrib_stp.config())
+                                if attrib_stp.type() == 'ValueRelation':
+                                    value_lyr = self.root.findLayer(attrib_stp.config()['Layer']).layer()
+                                    value_list = [f['valeurs'] for f in value_lyr.getFeatures()]
+                                    formlayout[attrib] = ('ComboBox',self.sortsimilarity(attrib, vlyr_attrib)+['<AUTRE>'],value_list)
+                                else :
+                                    defvalue_lyr=plor_lyr.fields().field(plor_attrib.index(attrib)).defaultValueDefinition().expression().strip().strip("'").strip()
+                                    formlayout[attrib] = ('ComboBox',self.sortsimilarity(attrib, vlyr_attrib)+['<AUTRE>'],defvalue_lyr) # TODO ajouter des infos sur le type d'attribut
                             if file_type == 'csv' :
-                                # print(vfeat.attribute(mapping['GeomX']), vfeat.attribute(mapping['GeomY']), vfeat.attribute(mapping['GeomZ']))
-                                geom_point=QgsGeometry(QgsPoint(float(vfeat.attribute(mapping['GeomX'])), float(vfeat.attribute(mapping['GeomY'])), float(vfeat.attribute(mapping['GeomZ']))))
-                                transform = QgsCoordinateTransform()
-
-                                geom_point.transform(QgsCoordinateTransform(QgsCoordinateReferenceSystem("EPSG:{0}".format(mapping['GeomEPSG'])), QgsCoordinateReferenceSystem("EPSG:2154"), QgsProject.instance()))
-                                pfeat.setGeometry(geom_point)
-
-                            # valid=self.iface.openFeatureForm(plor_lyr, pfeat)
-                            # if valid :
-                            # TODO : vreif ouverture session MAJ
-                            result=plor_lyr.addFeature(pfeat)
-                            self.iface.messageBar().pushMessage("Création réussie", Qgis.Success)
-
-            return
+                                formlayout['GeomX'] = ('ComboBox',self.sortsimilarity('X', vlyr_attrib),None)
+                                formlayout['GeomY'] = ('ComboBox',self.sortsimilarity('Y', vlyr_attrib),None)
+                                formlayout['GeomZ'] = ('ComboBox',self.sortsimilarity('Z', vlyr_attrib),None)
+                                formlayout['GeomEPSG'] = ('ComboBox', ['2154','3949','3847','<AUTRE>'],None) #TODO : ajouter les EPSG
+                            dial = MappingDialogBox("Import fichier PLOR", formlayout, self)
+                            if dial.exec() == QDialog.Accepted:
+                                mapping=dial.get_output()
+                                print(mapping)
+                                # mapping = {'NumeroPoint': '#Numero', 'Leve': 'Z', 'TypeLeve': "'AltitudeGeneratrice'", 'Producteur': "'test alice'", 'PrecisionXY': "'0'", 'PrecisionZ': "'0'", 'GeomX': 'X', 'GeomY': 'Y', 'GeomZ': 'Z', 'GeomEPSG':'27561'}
+                                for vfeat in vlayer.getFeatures() :
+                                    pfeat=QgsFeature(plor_lyr.fields())
+                                    pfeat.setAttribute('id', str(uuid.uuid4()))
+                                    for m in mapping :
+                                        if (file_type == 'csv' and m[:4] != 'Geom') or file_type != 'csv' :
+                                            if mapping[m][0] == "'" and mapping[m][-1] == "'":
+                                                pfeat.setAttribute(m, mapping[m].strip("'"))
+                                            else :
+                                                pfeat.setAttribute(m, vfeat.attribute(mapping[m]))
+                                    if file_type == 'csv' :
+                                        # print(vfeat.attribute(mapping['GeomX']), vfeat.attribute(mapping['GeomY']), vfeat.attribute(mapping['GeomZ']))
+                                        geom_point=QgsGeometry(QgsPoint(float(vfeat.attribute(mapping['GeomX'])), float(vfeat.attribute(mapping['GeomY'])), float(vfeat.attribute(mapping['GeomZ']))))
+                                        transform = QgsCoordinateTransform()
+                                        geom_point.transform(QgsCoordinateTransform(QgsCoordinateReferenceSystem("EPSG:{0}".format(mapping['GeomEPSG'])), QgsCoordinateReferenceSystem("EPSG:2154"), QgsProject.instance()))
+                                        pfeat.setGeometry(geom_point)
+                                    elif file_type == 'shp' :
+                                        geom_shp=vfeat.geometry()
+                                        geom_shp.transform(QgsCoordinateTransform(vlayer.dataProvider().sourceCrs(), QgsCoordinateReferenceSystem("EPSG:2154"), QgsProject.instance()))
+                                        pfeat.setGeometry(geom_shp)
+                                    # valid=self.iface.openFeatureForm(plor_lyr, pfeat)
+                                    # if valid :
+                                    # TODO : verif ouverture session MAJ
+                                    result=plor_lyr.addFeature(pfeat)
+                                self.iface.messageBar().pushMessage("Création réussie", Qgis.Success)
+                                return
+                    if not plor_lyr.dataProvider().transaction():
+                        self.iface.messageBar().pushMessage("Ouvrir la session de mise à jour", Qgis.Warning, duration=5)
+                        QTimer.singleShot(5000, copyPLOR)
+                    else :
+                        copyPLOR()
 
     def similarity(self, a, b) :
         def match(a, b) :
