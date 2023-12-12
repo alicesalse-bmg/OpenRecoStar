@@ -214,7 +214,7 @@ class RecoStarTools:
                                 formlayout['GeomX'] = ('ComboBox',self.sortsimilarity('X', vlyr_attrib),None)
                                 formlayout['GeomY'] = ('ComboBox',self.sortsimilarity('Y', vlyr_attrib),None)
                                 formlayout['GeomZ'] = ('ComboBox',self.sortsimilarity('Z', vlyr_attrib),None)
-                                formlayout['GeomEPSG'] = ('ComboBox', ['2154','3949','3847','<AUTRE>'],None) #TODO : ajouter les EPSG
+                                formlayout['GeomEPSG'] = ('ComboBox', ['2154','3950','3949','3948','3847','3946','3945','3944','3943','3942','27561','27562','27563','27564','27571','27572','27573','27574','<AUTRE>'],None)
                             dial = MappingDialogBox("Import fichier PLOR", formlayout, self)
                             if dial.exec() == QDialog.Accepted:
                                 mapping=dial.get_output()
@@ -233,7 +233,7 @@ class RecoStarTools:
                                         # print(vfeat.attribute(mapping['GeomX']), vfeat.attribute(mapping['GeomY']), vfeat.attribute(mapping['GeomZ']))
                                         geom_point=QgsGeometry(QgsPoint(float(vfeat.attribute(mapping['GeomX'])), float(vfeat.attribute(mapping['GeomY'])), float(vfeat.attribute(mapping['GeomZ']))))
                                         transform = QgsCoordinateTransform()
-                                        geom_point.transform(QgsCoordinateTransform(QgsCoordinateReferenceSystem("EPSG:{0}".format(mapping['GeomEPSG'])), QgsCoordinateReferenceSystem("EPSG:2154"), QgsProject.instance()))
+                                        geom_point.transform(QgsCoordinateTransform(QgsCoordinateReferenceSystem("EPSG:{0}".format(mapping['GeomEPSG'].strip("'"))), QgsCoordinateReferenceSystem("EPSG:2154"), QgsProject.instance()))
                                         pfeat.setGeometry(geom_point)
                                     elif file_type == 'shp' :
                                         geom_shp=vfeat.geometry()
