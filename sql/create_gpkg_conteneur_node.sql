@@ -2,7 +2,7 @@
 -- SELECT EnableGpkgMode(); --GPKG
 --XXX Noeud
 
---XXX RPD_PosteElectrique_Reco
+--XXX RPD_JeuBarres_Reco
 
 DROP TABLE IF EXISTS RPD_JeuBarres_Reco;
 CREATE TABLE RPD_JeuBarres_Reco(
@@ -45,6 +45,7 @@ CREATE TABLE RPD_Jonction_Reco(
 , PrecisionXY TEXT REFERENCES ClassePrecisionReseauValue (valeurs) -- FIXME : NOT NULL si pas dans conteneur ou noeud parent
 , PrecisionZ TEXT REFERENCES ClassePrecisionReseauValue (valeurs) -- FIXME : NOT NULL si pas dans conteneur ou noeud parent
 , Statut TEXT NOT NULL REFERENCES ConditionOfFacilityValueReco (valeurs)
+, angle INTEGER --NOTE : hors reco star : permet d'améliorer le dessin
 );
 
 INSERT INTO gpkg_contents (table_name, data_type, identifier, srs_id) values ('RPD_Jonction_Reco','features','RPD_Jonction_Reco',2154); --GPKG
@@ -172,6 +173,7 @@ CREATE TABLE RPD_PosteElectrique_Reco(
 , PrecisionXY TEXT REFERENCES ClassePrecisionReseauValue (valeurs) -- FIXME : NOT NULL si pas dans conteneur ou noeud parent
 , PrecisionZ TEXT REFERENCES ClassePrecisionReseauValue (valeurs) -- FIXME : NOT NULL si pas dans conteneur ou noeud parent
 , Statut TEXT NOT NULL REFERENCES ConditionOfFacilityValueReco (valeurs)
+, angle INTEGER --NOTE : hors reco star : permet d'améliorer le dessin
 );
 
 INSERT INTO gpkg_contents (table_name, data_type, identifier, srs_id) values ('RPD_PosteElectrique_Reco','features','RPD_PosteElectrique_Reco',2154); --GPKG
@@ -220,6 +222,7 @@ CREATE TABLE RPD_Terre_Reco(
 , PrecisionXY TEXT REFERENCES ClassePrecisionReseauValue (valeurs) -- FIXME : NOT NULL si pas dans conteneur ou noeud parent
 , PrecisionZ TEXT REFERENCES ClassePrecisionReseauValue (valeurs) -- FIXME : NOT NULL si pas dans conteneur ou noeud parent
 , Statut TEXT NOT NULL REFERENCES ConditionOfFacilityValueReco (valeurs)
+, angle INTEGER --NOTE : hors reco star : permet d'améliorer le dessin
 );
 
 INSERT INTO gpkg_contents (table_name, data_type, identifier, srs_id) values ('RPD_Terre_Reco','features','RPD_Terre_Reco',2154); --GPKG
@@ -446,14 +449,16 @@ DROP TABLE IF EXISTS RPD_Support_Reco;
 CREATE TABLE RPD_Support_Reco(
   pkid INTEGER PRIMARY KEY AUTOINCREMENT
 , id TEXT NOT NULL UNIQUE DEFAULT (CreateUUID())
-, Classe TEXT REFERENCES ClasseSupportValue (valeurs) --CEtte liste n'existe pas-- FIXME : NOT NULL sauf si NatureSupport = facade
-, Effort INTEGER -- FIXME : NOT NULL sauf si NatureSupport = facade
-, HauteurPoteau INTEGER -- FIXME : NOT NULL sauf si NatureSupport = facade
+, Classe TEXT REFERENCES ClasseSupportValue (valeurs) -- NOTE : NOT NULL sauf si NatureSupport = facade
+, Effort INTEGER --QUESTION: UNITE? -- NOTE : NOT NULL sauf si NatureSupport = facade
+, HauteurPoteau INTEGER --QUESTION: UNITE? -- NOTE : NOT NULL sauf si NatureSupport = facade
 , NatureSupport TEXT REFERENCES NatureSupportValue (valeurs)
 , Matiere TEXT NOT NULL REFERENCES MatiereValue (valeurs)
 , Geometrie POINTZ NOT NULL UNIQUE
 , PrecisionXY TEXT NOT NULL REFERENCES ClassePrecisionReseauValue (valeurs)
 , PrecisionZ TEXT NOT NULL REFERENCES ClassePrecisionReseauValue (valeurs)
+, angle INTEGER --NOTE : hors reco star : permet d'améliorer le dessin
+CHECK ((NatureSupport<>'Facade' AND Classe IS NOT NULL AND Effort IS NOT NULL AND HauteurPoteau IS NOT NULL) OR NatureSupport='Facade')
 );
 
 INSERT INTO gpkg_contents (table_name, data_type, identifier, srs_id) values ('RPD_Support_Reco','features','RPD_Support_Reco',2154); --GPKG
@@ -579,12 +584,14 @@ CREATE TABLE RPD_PointLeveOuvrageReseau_Reco(
   pkid INTEGER PRIMARY KEY AUTOINCREMENT
 , id TEXT NOT NULL UNIQUE DEFAULT (CreateUUID())
 , NumeroPoint TEXT NOT NULL
+, CodeOuvrage TEXT NOT NULL --NOTE : hors reco star => permet de tracer les lignes en auto
 , Leve NUMERIC NOT NULL -- ZGS ou Profondeur
 , TypeLeve TEXT NOT NULL REFERENCES LeveTypeValue (valeurs)
 , Producteur TEXT NOT NULL
-, Geometrie POINTZ NOT NULL UNIQUE
+, Geometrie POINTZ NOT NULL --UNIQUE
 , PrecisionXY INTEGER NOT NULL
 , PrecisionZ INTEGER NOT NULL
+, UNIQUE (Geometrie, CodeOuvrage)
 );
 
 INSERT INTO gpkg_contents (table_name, data_type, identifier, srs_id) values ('RPD_PointLeveOuvrageReseau_Reco','features','RPD_PointLeveOuvrageReseau_Reco',2154); --GPKG
