@@ -305,7 +305,7 @@ CREATE TABLE RPD_CableElectrique_Reco(
   , SectionNeutre INTEGER
   , Isolant TEXT NOT NULL REFERENCES IsolantValueReco (valeurs)
   , Materiau TEXT NOT NULL REFERENCES CableMaterialTypeValue (valeurs)
-  , HierarchieBT TEXT REFERENCES HierarchieBTValue (valeurs)
+  , HierarchieBT TEXT REFERENCES HierarchieBTValue (valeurs)  -- NOTE : NOT NULL si DomaineTension = BT
   , Commentaire TEXT
   , Statut TEXT NOT NULL REFERENCES ConditionOfFacilityValueReco (valeurs)
   -- Cheminement
@@ -314,6 +314,7 @@ CREATE TABLE RPD_CableElectrique_Reco(
   -- , ProfondeurMinNonReg_uom TEXT REFERENCES ProfondeurMinNonReg_uomValue (valeurs)
   , PrecisionXY TEXT NOT NULL REFERENCES ClassePrecisionReseauValue (valeurs)
   , PrecisionZ TEXT NOT NULL REFERENCES ClassePrecisionReseauValue (valeurs)
+  CHECK ((DomaineTension='BT' AND HierarchieBT IS NOT NULL) OR DomaineTension <> 'BT')
 );
 
 INSERT INTO gpkg_contents (table_name, data_type, identifier) values ('RPD_CableElectrique_Reco','features','RPD_CableElectrique_Reco'); --GPKG
