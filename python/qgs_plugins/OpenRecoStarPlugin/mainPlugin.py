@@ -120,7 +120,7 @@ class RecoStarTools:
         self.toolbar = self.iface.addToolBar("RecoStarTools")
         self.toolbar.setObjectName("Outils OpenRecoStar")
 
-        self.importplor = QAction(QIcon(":/qgs_plugins/NetworkPlugin/icons/orderedexport.png"),
+        self.importplor = QAction(QIcon(":/qgs_plugins/OpenRecoStarPlugin/icons/ImportPointLeve.png"),
                                     "Importer les Points Levés",
                                     self.iface.mainWindow())
         self.importplor.setObjectName("ImportPLOR")
