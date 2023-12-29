@@ -341,10 +341,9 @@ CREATE TABLE GeomCoffret (
 INSERT INTO gpkg_contents (table_name, data_type, identifier, srs_id) values ('GeomCoffret','features','GeomCoffret',2154); --GPKG
 INSERT INTO gpkg_geometry_columns (table_name, column_name, geometry_type_name, srs_id, z, m) values ('GeomCoffret', 'Geometrie', 'LINESTRING', 2154, 0, 0); --GPKG
 
--- TODO : EXECUTER DANS QGIS
--- INSERT INTO GeomCoffret VALUES
---   ('Default',ST_AddPoint(ST_AddPoint(ST_AddPoint(ST_AddPoint(MakeLine(ST_Point(0,0),ST_Point(0.25,0)),ST_Point(0.25,0.25)),ST_Point(-0.25,0.25)),ST_Point(-0.25,0)),ST_Point(0,0)))
--- ;
+INSERT INTO GeomCoffret VALUES
+  ('Default',ST_AddPoint(ST_AddPoint(ST_AddPoint(ST_AddPoint(MakeLine(ST_Point(0,0),ST_Point(0.25,0)),ST_Point(0.25,0.25)),ST_Point(-0.25,0.25)),ST_Point(-0.25,0)),ST_Point(0,0)))
+;
 
 
 DROP TABLE IF EXISTS RPD_Coffret_Reco;
