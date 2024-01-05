@@ -109,6 +109,47 @@ class MappingDialogBox(QDialog):
 
         return wtext
 
+
+
+class LinefromPLORDialog(QDialog):
+    def __init__(self, plor_lyrnames, line_lyrnames, parent=None):
+        super(LinefromPLORDialog, self).__init__(parent=None)
+
+        self.parent = parent
+
+        self.layout = QFormLayout()
+        self.layout.setLabelAlignment(Qt.AlignRight)
+
+        self.plorlyr = QComboBox()
+        self.plorlyr.addItems(plor_lyrnames)
+        self.layout.addRow("Couche d'origine",self.plorlyr)
+
+        self.ordertyp = QComboBox()
+        self.ordertyp.addItems(['Ordonner par "Numero"', 'Ordonner par proximité'])
+        self.layout.addRow("Type de tracé",self.ordertyp)
+
+        self.linelyr = QComboBox()
+        self.linelyr.addItems(line_lyrnames)
+        self.layout.addRow("Couche de destination",self.linelyr)
+
+        QBtn = QDialogButtonBox.Ok | QDialogButtonBox.Cancel
+        self.buttonBox = QDialogButtonBox(QBtn, self)
+        self.buttonBox.accepted.connect(self.accept_test)
+        self.buttonBox.rejected.connect(self.reject)
+        self.layout.addRow(self.buttonBox)
+
+        self.setLayout(self.layout)
+        self.setModal(True)
+        self.setWindowTitle("Création d'un ouvrage linéaire a partir de points levés")
+
+    def accept_test(self):
+        if (self.plorlyr.currentText() and self.linelyr.currentText() and self.ordertyp.currentText() ) :
+            print("ok")
+            self.accept()
+
+    def get_output(self):
+        return [self.plorlyr.currentText(),self.linelyr.currentText(),self.ordertyp.currentText()]
+
 class RecoStarTools:
 
     def __init__(self, iface):
@@ -301,89 +342,86 @@ class RecoStarTools:
         plor_lyr = None
         if plor_lyrs :
             plor_lyrnames = [lyr.name() for lyr in plor_lyrs]
-            plor_lyrname, ctrl = QInputDialog.getItem(QInputDialog(), "Couches sélectionnées", "Choisir la couche à partir de laquelle tracer les lignes", plor_lyrnames, 0)
-            if ctrl:
-                plor_lyr = plor_lyrs[plor_lyrnames.index(plor_lyrname)]
         else :
             plor_lyrs = self.getLayersFromTable('PointLeveOuvrageReseau')
             plor_lyrnames = [lyr.name() for lyr in plor_lyrs]
-            plor_lyrname, ctrl = QInputDialog.getItem(QInputDialog(), "Couches PLOR", "Choisir la couche à partir de laquelle tracer les lignes", plor_lyrnames, 0)
-            if ctrl :
-                plor_lyr = plor_lyrs[plor_lyrnames.index(plor_lyrname)]
+        line_lyrs=self.allLineLayers()
+        line_lyrnames = [lyr.name() for lyr in line_lyrs]
+        dial = LinefromPLORDialog(plor_lyrnames, line_lyrnames, self)
+        if dial.exec() == QDialog.Accepted:
+            plor_lyrname,line_lyrname,order_type=dial.get_output()
+            plor_lyr = plor_lyrs[plor_lyrnames.index(plor_lyrname)]
+            if len(plor_lyr.selectedFeatures()) == 0:
                 codouvgs = []
                 for f in plor_lyr.getFeatures():
                     if f['CodeOuvrage'] not in codouvgs:
                         codouvgs.append(f['CodeOuvrage'])
                 codouvgs.sort()
-                codouvg, ctrl2 = QInputDialog.getItem(QInputDialog(), "CodeOuvrage PLOR", "Choisir le Code Ouvrage à tracer", codouvgs, 0)
-                if ctrl2 :
+                codouvg, ctrl = QInputDialog.getItem(QInputDialog(), "CodeOuvrage PLOR", "Choisir le Code Ouvrage à tracer", codouvgs, 0)
+                if ctrl :
                     # TODO: limiter sélection 1KM autour du zoom carte
                     plor_lyr.selectByExpression("CodeOuvrage='{0}'".format(codouvg))
-        if plor_lyr :
             if len(plor_lyr.selectedFeatures()) > 0:
                 # TODO : option pour trier par numero plutot que de proche en proche
 
-                # ORDONNE LES POINTS PAR NUMERO
-                # plf=plor_lyr.selectedFeatures()
-                # plf.sort(key=lambda element: element['NumeroPoint'])
-                # orderedid=[f.id() for f in plf]
-
-                # ORDONNE LES POINTS PAR PROXIMITE
-                maxdist, extremid, orderedid = 0, None, []
-                for f in plor_lyr.selectedFeatures():
-                    for t in plor_lyr.selectedFeatures():
-                        if t.id() != f.id() :
-                            distance=t.geometry().distance(f.geometry())
-                            # print(t.id(),f.id(),distance)
-                            if distance > maxdist :
-                                maxdist = distance
-                                extremid = f.id()
-                # print(extremid)
-                orderedid.append(extremid)
-                while len(orderedid) < plor_lyr.selectedFeatureCount() :
-                    mindist=99
+                if order_type == 'Ordonner par "Numero"' :
+                    # ORDONNE LES POINTS PAR NUMERO
+                    plf=plor_lyr.selectedFeatures()
+                    plf.sort(key=lambda element: element['NumeroPoint'])
+                    orderedid=[f.id() for f in plf]
+                else :
+                    # ORDONNE LES POINTS PAR PROXIMITE
+                    maxdist, extremid, orderedid = 0, None, []
                     for f in plor_lyr.selectedFeatures():
-                        if f.id() not in orderedid :
-                            distance=plor_lyr.getFeature(orderedid[-1]).geometry().distance(f.geometry())
-                            # print(orderedid[-1],f.id(),distance)
-                            if distance < mindist :
-                                mindist = distance
-                                extremid = f.id()
+                        for t in plor_lyr.selectedFeatures():
+                            if t.id() != f.id() :
+                                distance=t.geometry().distance(f.geometry())
+                                # print(t.id(),f.id(),distance)
+                                if distance > maxdist :
+                                    maxdist = distance
+                                    extremid = f.id()
+                    # print(extremid)
                     orderedid.append(extremid)
-                    # print(extremid,orderedid)
+                    while len(orderedid) < plor_lyr.selectedFeatureCount() :
+                        mindist=99
+                        for f in plor_lyr.selectedFeatures():
+                            if f.id() not in orderedid :
+                                distance=plor_lyr.getFeature(orderedid[-1]).geometry().distance(f.geometry())
+                                # print(orderedid[-1],f.id(),distance)
+                                if distance < mindist :
+                                    mindist = distance
+                                    extremid = f.id()
+                        orderedid.append(extremid)
+                        # print(extremid,orderedid)
                 if len(orderedid) > 0 :
                     geom_line=QgsGeometry()
                     geom_line.addPoints([plor_lyr.getFeature(i).geometry().vertexAt(0) for i in orderedid], QgsWkbTypes.LineGeometry)
                     # print(geom_line)
                     #TODO previsualiser la ligne avant validation
-                    line_lyrs=self.allLineLayers()
-                    line_lyrnames = [lyr.name() for lyr in line_lyrs]
-                    line_lyrname, ctrl3 = QInputDialog.getItem(QInputDialog(), "Couche de destination", "Choisir la couche dans laquelle enregistrer la ligne créée", line_lyrnames, 0)
-                    if ctrl3 :
-                        line_lyr = line_lyrs[line_lyrnames.index(line_lyrname)]
-                        def createLine():
-                            if not line_lyr.dataProvider().transaction():
-                                self.messageBox('Critical', "Création abandonnée", "La création de la ligne ne peut aboutir", "Aucune session de mise à jour n'est ouverte")
-                                return
-                            elif line_lyr.dataProvider().transaction():
-                                feat=QgsFeature(line_lyr.fields())
-                                feat.setAttribute('id', str(uuid.uuid4()))
-                                line_attrib = line_lyr.fields().names()
-                                for attrib in [a for a in line_attrib if a not in ['pkid', 'id']] :
-                                    defvalue_lyr=line_lyr.fields().field(line_attrib.index(attrib)).defaultValueDefinition().expression().strip().strip("'").strip()
-                                    feat.setAttribute(attrib, defvalue_lyr)
-                                valid=self.iface.openFeatureForm(line_lyr, feat)
-                                if valid :
-                                    feat.setGeometry(geom_line)
-                                    result=line_lyr.addFeature(feat)
-                                    if result == True :
-                                        self.iface.messageBar().pushMessage("Création réussie", Qgis.Success)
-                                        return
-                                    else:
-                                        self.messageBox('Critical', "Création échouée", "La création ne peut aboutir", result[1])
-                                        return
+                    line_lyr = line_lyrs[line_lyrnames.index(line_lyrname)]
+                    def createLine():
                         if not line_lyr.dataProvider().transaction():
-                            self.iface.messageBar().pushMessage("Ouvrir la session de mise à jour", Qgis.Warning, duration=5)
-                            QTimer.singleShot(5000, createLine)
-                        else :
-                            createLine()
+                            self.messageBox('Critical', "Création abandonnée", "La création de la ligne ne peut aboutir", "Aucune session de mise à jour n'est ouverte")
+                            return
+                        elif line_lyr.dataProvider().transaction():
+                            feat=QgsFeature(line_lyr.fields())
+                            feat.setAttribute('id', str(uuid.uuid4()))
+                            line_attrib = line_lyr.fields().names()
+                            for attrib in [a for a in line_attrib if a not in ['pkid', 'id']] :
+                                defvalue_lyr=line_lyr.fields().field(line_attrib.index(attrib)).defaultValueDefinition().expression().strip().strip("'").strip()
+                                feat.setAttribute(attrib, defvalue_lyr)
+                            valid=self.iface.openFeatureForm(line_lyr, feat)
+                            if valid :
+                                feat.setGeometry(geom_line)
+                                result=line_lyr.addFeature(feat)
+                                if result == True :
+                                    self.iface.messageBar().pushMessage("Création réussie", Qgis.Success)
+                                    return
+                                else:
+                                    self.messageBox('Critical', "Création échouée", "La création ne peut aboutir")
+                                    return
+                    if not line_lyr.dataProvider().transaction():
+                        self.iface.messageBar().pushMessage("Ouvrir la session de mise à jour", Qgis.Warning, duration=5)
+                        QTimer.singleShot(5000, createLine)
+                    else :
+                        createLine()
