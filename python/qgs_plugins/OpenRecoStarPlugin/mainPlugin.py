@@ -129,6 +129,15 @@ class RecoStarTools:
         self.importplor.triggered.connect(self.importPLOR)
         self.toolbar.addAction(self.importplor)
 
+        self.linefromplor = QAction(QIcon(":/qgs_plugins/OpenRecoStarPlugin/icons/TracePointLeve.png"),
+                                    "Tracer les lignes à partir des Points Levés",
+                                    self.iface.mainWindow())
+        self.linefromplor.setObjectName("LinefromPLOR")
+        self.linefromplor.setWhatsThis("Tracer les lignes à partir des Points Levés")
+        self.linefromplor.setStatusTip("Trace les ligne")
+        self.linefromplor.triggered.connect(self.linefromPLOR)
+        self.toolbar.addAction(self.linefromplor)
+
     def unload(self):
         del self.toolbar
 
@@ -145,6 +154,12 @@ class RecoStarTools:
                 if tablename in layer.dataProvider().uri().params(list(layer.dataProvider().uri().parameterKeys())[0])[0] :
                     layers.append(layer)
         return layers
+
+    def selectLayerFromTable(self, tablename, expression) :
+        for layer in [l.layer() for l in self.root.findLayers() if l.layer().type() == QgsMapLayerType.VectorLayer] :
+            if len(list(layer.dataProvider().uri().parameterKeys())) > 0 :
+                if tablename in layer.dataProvider().uri().params(list(layer.dataProvider().uri().parameterKeys())[0])[0] :
+                    layer.selectByExpression(expression)
 
     def messageBox(self, level, titre, message=None, detail=None, button=None):
         msgBox = QMessageBox()
@@ -168,7 +183,7 @@ class RecoStarTools:
         if button :
             msgBox.setStandardButtons(button);
         rep = msgBox.exec()
-        self.iface.messageBar().pushMessage(titre, message, detail, messlevel)
+        self.iface.messageBar().pushMessage(titre, message, detail, messlevel, duration=3)
         print(titre, message, detail, rep)
         return rep
 
@@ -194,7 +209,7 @@ class RecoStarTools:
                     plor_lyr = plor_lyrs[plor_lyrnames.index(plor_lyrname)]
                     def copyPLOR() :
                         if not plor_lyr.dataProvider().transaction():
-                            print('echec ouverture session')
+                            self.messageBox('Critical', "Import abandonné", "L'import ne peut aboutir", "Aucune session de mise à jour n'est ouverte")
                             return
                         elif plor_lyr.dataProvider().transaction():
                             self.iface.messageBar().clearWidgets()
@@ -219,7 +234,6 @@ class RecoStarTools:
                             if dial.exec() == QDialog.Accepted:
                                 mapping=dial.get_output()
                                 print(mapping)
-                                # mapping = {'NumeroPoint': '#Numero', 'Leve': 'Z', 'TypeLeve': "'AltitudeGeneratrice'", 'Producteur': "'test alice'", 'PrecisionXY': "'0'", 'PrecisionZ': "'0'", 'GeomX': 'X', 'GeomY': 'Y', 'GeomZ': 'Z', 'GeomEPSG':'27561'}
                                 for vfeat in vlayer.getFeatures() :
                                     pfeat=QgsFeature(plor_lyr.fields())
                                     pfeat.setAttribute('id', str(uuid.uuid4()))
@@ -239,9 +253,6 @@ class RecoStarTools:
                                         geom_shp=vfeat.geometry()
                                         geom_shp.transform(QgsCoordinateTransform(vlayer.dataProvider().sourceCrs(), QgsCoordinateReferenceSystem("EPSG:2154"), QgsProject.instance()))
                                         pfeat.setGeometry(geom_shp)
-                                    # valid=self.iface.openFeatureForm(plor_lyr, pfeat)
-                                    # if valid :
-                                    # TODO : verif ouverture session MAJ
                                     result=plor_lyr.addFeature(pfeat)
                                 self.iface.messageBar().pushMessage("Création réussie", Qgis.Success)
                                 return
@@ -270,3 +281,109 @@ class RecoStarTools:
             newlist.append((i,score))
         newlist.sort(reverse=True, key=lambda index: index[1])
         return [n for n, s in newlist]
+
+    def allPointLayerSelected(self) :
+        lyrs = []
+        for layer in [l.layer() for l in self.root.findLayers() if l.layer().type() == QgsMapLayerType.VectorLayer and l.layer().geometryType() == QgsWkbTypes.PointGeometry] : ## 0 = VectorLayer
+            if layer.selectedFeatureIds():
+                lyrs.append(layer)
+        return lyrs
+
+    def allLineLayers(self) :
+        layers = []
+        for layer in [l.layer() for l in self.root.findLayers() if l.layer().type() == QgsMapLayerType.VectorLayer and l.layer().geometryType() == QgsWkbTypes.LineGeometry] :
+            layers.append(layer)
+        return layers
+
+    def linefromPLOR(self) :
+        print("linefromPLOR: run called!")
+        plor_lyrs = self.allPointLayerSelected()
+        plor_lyr = None
+        if plor_lyrs :
+            plor_lyrnames = [lyr.name() for lyr in plor_lyrs]
+            plor_lyrname, ctrl = QInputDialog.getItem(QInputDialog(), "Couches sélectionnées", "Choisir la couche à partir de laquelle tracer les lignes", plor_lyrnames, 0)
+            if ctrl:
+                plor_lyr = plor_lyrs[plor_lyrnames.index(plor_lyrname)]
+        else :
+            plor_lyrs = self.getLayersFromTable('PointLeveOuvrageReseau')
+            plor_lyrnames = [lyr.name() for lyr in plor_lyrs]
+            plor_lyrname, ctrl = QInputDialog.getItem(QInputDialog(), "Couches PLOR", "Choisir la couche à partir de laquelle tracer les lignes", plor_lyrnames, 0)
+            if ctrl :
+                plor_lyr = plor_lyrs[plor_lyrnames.index(plor_lyrname)]
+                codouvgs = []
+                for f in plor_lyr.getFeatures():
+                    if f['CodeOuvrage'] not in codouvgs:
+                        codouvgs.append(f['CodeOuvrage'])
+                codouvgs.sort()
+                codouvg, ctrl2 = QInputDialog.getItem(QInputDialog(), "CodeOuvrage PLOR", "Choisir le Code Ouvrage à tracer", codouvgs, 0)
+                if ctrl2 :
+                    # TODO: limiter sélection 1KM autour du zoom carte
+                    plor_lyr.selectByExpression("CodeOuvrage='{0}'".format(codouvg))
+        if plor_lyr :
+            if len(plor_lyr.selectedFeatures()) > 0:
+                # TODO : option pour trier par numero plutot que de proche en proche
+
+                # ORDONNE LES POINTS PAR NUMERO
+                # plf=plor_lyr.selectedFeatures()
+                # plf.sort(key=lambda element: element['NumeroPoint'])
+                # orderedid=[f.id() for f in plf]
+
+                # ORDONNE LES POINTS PAR PROXIMITE
+                maxdist, extremid, orderedid = 0, None, []
+                for f in plor_lyr.selectedFeatures():
+                    for t in plor_lyr.selectedFeatures():
+                        if t.id() != f.id() :
+                            distance=t.geometry().distance(f.geometry())
+                            # print(t.id(),f.id(),distance)
+                            if distance > maxdist :
+                                maxdist = distance
+                                extremid = f.id()
+                # print(extremid)
+                orderedid.append(extremid)
+                while len(orderedid) < plor_lyr.selectedFeatureCount() :
+                    mindist=99
+                    for f in plor_lyr.selectedFeatures():
+                        if f.id() not in orderedid :
+                            distance=plor_lyr.getFeature(orderedid[-1]).geometry().distance(f.geometry())
+                            # print(orderedid[-1],f.id(),distance)
+                            if distance < mindist :
+                                mindist = distance
+                                extremid = f.id()
+                    orderedid.append(extremid)
+                    # print(extremid,orderedid)
+                if len(orderedid) > 0 :
+                    geom_line=QgsGeometry()
+                    geom_line.addPoints([plor_lyr.getFeature(i).geometry().vertexAt(0) for i in orderedid], QgsWkbTypes.LineGeometry)
+                    # print(geom_line)
+                    #TODO previsualiser la ligne avant validation
+                    line_lyrs=self.allLineLayers()
+                    line_lyrnames = [lyr.name() for lyr in line_lyrs]
+                    line_lyrname, ctrl3 = QInputDialog.getItem(QInputDialog(), "Couche de destination", "Choisir la couche dans laquelle enregistrer la ligne créée", line_lyrnames, 0)
+                    if ctrl3 :
+                        line_lyr = line_lyrs[line_lyrnames.index(line_lyrname)]
+                        def createLine():
+                            if not line_lyr.dataProvider().transaction():
+                                self.messageBox('Critical', "Création abandonnée", "La création de la ligne ne peut aboutir", "Aucune session de mise à jour n'est ouverte")
+                                return
+                            elif line_lyr.dataProvider().transaction():
+                                feat=QgsFeature(line_lyr.fields())
+                                feat.setAttribute('id', str(uuid.uuid4()))
+                                line_attrib = line_lyr.fields().names()
+                                for attrib in [a for a in line_attrib if a not in ['pkid', 'id']] :
+                                    defvalue_lyr=line_lyr.fields().field(line_attrib.index(attrib)).defaultValueDefinition().expression().strip().strip("'").strip()
+                                    feat.setAttribute(attrib, defvalue_lyr)
+                                valid=self.iface.openFeatureForm(line_lyr, feat)
+                                if valid :
+                                    feat.setGeometry(geom_line)
+                                    result=line_lyr.addFeature(feat)
+                                    if result == True :
+                                        self.iface.messageBar().pushMessage("Création réussie", Qgis.Success)
+                                        return
+                                    else:
+                                        self.messageBox('Critical', "Création échouée", "La création ne peut aboutir", result[1])
+                                        return
+                        if not line_lyr.dataProvider().transaction():
+                            self.iface.messageBar().pushMessage("Ouvrir la session de mise à jour", Qgis.Warning, duration=5)
+                            QTimer.singleShot(5000, createLine)
+                        else :
+                            createLine()
