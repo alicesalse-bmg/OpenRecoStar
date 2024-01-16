@@ -3,6 +3,23 @@ SELECT EnableGpkgMode(); --GPKG
 SELECT gpkgCreateBaseTables(); --GPKG
 SELECT gpkgInsertEpsgSRID(2154); --GPKG
 
+--XXX ReseauUtilite
+
+DROP TABLE IF EXISTS ReseauUtilite;
+CREATE TABLE ReseauUtilite (
+    id TEXT NOT NULL UNIQUE
+  , Mention TEXT
+  , Nom TEXT
+  , Responsable TEXT
+  , Theme TEXT
+);
+
+INSERT INTO ReseauUtilite VALUES
+  ('Reseau','Test export GML OpenRecoStar','Réseau public de distribution','Enedis','ELECTRD')
+;
+
+INSERT INTO gpkg_contents (table_name, data_type, identifier) values ('ReseauUtilite','attributes','ReseauUtilite'); --GPKG
+
 --XXX Cheminement
 
 DROP TABLE IF EXISTS ProtectionMaterialTypeValueReco;
@@ -57,13 +74,15 @@ DROP TABLE IF EXISTS RPD_Fourreau_Reco;
 CREATE TABLE RPD_Fourreau_Reco(
   pkid INTEGER PRIMARY KEY AUTOINCREMENT
 , id TEXT NOT NULL UNIQUE DEFAULT (CreateUUID())
+, Reseau_href TEXT NOT NULL DEFAULT 'Reseau' REFERENCES ReseauUtilite (id)
 , Materiau TEXT NOT NULL REFERENCES ProtectionMaterialTypeValueReco (valeurs)
 , DiametreDuFourreau INTEGER NOT NULL
+, DiametreDuFourreau_uom TEXT DEFAULT 'mm'
 , CoupeType TEXT
 , EtatCoupeType TEXT REFERENCES EtatCoupeTypeValueReco (valeurs)
 , Geometrie LINESTRINGZ NOT NULL UNIQUE
-, ProfondeurMinNonReg DOUBLE
--- , ProfondeurMinNonReg_uom TEXT REFERENCES ProfondeurMinNonReg_uomValue (valeurs)
+, ProfondeurMinNonReg DOUBLE --QUESTION: UNITE?
+, ProfondeurMinNonReg_uom TEXT DEFAULT 'm' -- REFERENCES ProfondeurMinNonReg_uomValue (valeurs)
 , PrecisionXY TEXT NOT NULL REFERENCES ClassePrecisionReseauValue (valeurs)
 , PrecisionZ TEXT NOT NULL REFERENCES ClassePrecisionReseauValue (valeurs)
 );
@@ -78,11 +97,14 @@ DROP TABLE IF EXISTS RPD_Galerie_Reco;
 CREATE TABLE RPD_Galerie_Reco(
   pkid INTEGER PRIMARY KEY AUTOINCREMENT
 , id TEXT NOT NULL UNIQUE DEFAULT (CreateUUID())
+, Reseau_href TEXT NOT NULL DEFAULT 'Reseau' REFERENCES ReseauUtilite (id)
 , Hauteur INTEGER NOT NULL
+, Hauteur_uom TEXT DEFAULT 'm'
 , Largeur INTEGER NOT NULL
+, Largeur_uom TEXT DEFAULT 'm'
 , Geometrie LINESTRINGZ NOT NULL UNIQUE
-, ProfondeurMinNonReg DOUBLE
--- , ProfondeurMinNonReg_uom TEXT REFERENCES ProfondeurMinNonReg_uomValue (valeurs)
+, ProfondeurMinNonReg DOUBLE --QUESTION: UNITE?
+, ProfondeurMinNonReg_uom TEXT DEFAULT 'm' -- REFERENCES ProfondeurMinNonReg_uomValue (valeurs)
 , PrecisionXY TEXT NOT NULL REFERENCES ClassePrecisionReseauValue (valeurs)
 , PrecisionZ TEXT NOT NULL REFERENCES ClassePrecisionReseauValue (valeurs)
 );
@@ -93,22 +115,23 @@ SELECT gpkgAddSpatialIndex('RPD_Galerie_Reco', 'Geometrie' );
 
 --XXX RPD_PleineTerre_Reco
 
-DROP TABLE IF EXISTS RPD_PleineTerre_Reco;
-CREATE TABLE RPD_PleineTerre_Reco(
+DROP TABLE IF EXISTS RPD_PleineTerre_Reco_line;
+CREATE TABLE RPD_PleineTerre_Reco_line(
   pkid INTEGER PRIMARY KEY AUTOINCREMENT
 , id TEXT NOT NULL UNIQUE DEFAULT (CreateUUID())
+, Reseau_href TEXT NOT NULL DEFAULT 'Reseau' REFERENCES ReseauUtilite (id)
 , CoupeType TEXT
 , EtatCoupeType TEXT REFERENCES EtatCoupeTypeValueReco (valeurs)
 , Geometrie LINESTRINGZ NOT NULL UNIQUE
-, ProfondeurMinNonReg DOUBLE
--- , ProfondeurMinNonReg_uom TEXT REFERENCES ProfondeurMinNonReg_uomValue (valeurs)
+, ProfondeurMinNonReg DOUBLE --QUESTION: UNITE?
+, ProfondeurMinNonReg_uom TEXT DEFAULT 'm' -- REFERENCES ProfondeurMinNonReg_uomValue (valeurs)
 , PrecisionXY TEXT NOT NULL REFERENCES ClassePrecisionReseauValue (valeurs)
 , PrecisionZ TEXT NOT NULL REFERENCES ClassePrecisionReseauValue (valeurs)
 );
 
-INSERT INTO gpkg_contents (table_name, data_type, identifier, srs_id) values ('RPD_PleineTerre_Reco','features','RPD_PleineTerre_Reco',2154); --GPKG
-INSERT INTO gpkg_geometry_columns (table_name, column_name, geometry_type_name, srs_id, z, m) values ('RPD_PleineTerre_Reco', 'Geometrie', 'LINESTRING', 2154, 1, 0); --GPKG
-SELECT gpkgAddSpatialIndex('RPD_PleineTerre_Reco', 'Geometrie' );
+INSERT INTO gpkg_contents (table_name, data_type, identifier, srs_id) values ('RPD_PleineTerre_Reco_line','features','RPD_PleineTerre_Reco_line',2154); --GPKG
+INSERT INTO gpkg_geometry_columns (table_name, column_name, geometry_type_name, srs_id, z, m) values ('RPD_PleineTerre_Reco_line', 'Geometrie', 'LINESTRING', 2154, 1, 0); --GPKG
+SELECT gpkgAddSpatialIndex('RPD_PleineTerre_Reco_line', 'Geometrie' );
 
 --XXX RPD_ProtectionMecanique_Reco
 
@@ -116,12 +139,13 @@ DROP TABLE IF EXISTS RPD_ProtectionMecanique_Reco;
 CREATE TABLE RPD_ProtectionMecanique_Reco(
   pkid INTEGER PRIMARY KEY AUTOINCREMENT
 , id TEXT NOT NULL UNIQUE DEFAULT (CreateUUID())
+, Reseau_href TEXT NOT NULL DEFAULT 'Reseau' REFERENCES ReseauUtilite (id)
 , Materiau TEXT NOT NULL REFERENCES ProtectionMaterialTypeValueReco (valeurs)
 , CoupeType TEXT
 , EtatCoupeType TEXT REFERENCES EtatCoupeTypeValueReco (valeurs)
 , Geometrie LINESTRINGZ NOT NULL UNIQUE
-, ProfondeurMinNonReg DOUBLE
--- , ProfondeurMinNonReg_uom TEXT REFERENCES ProfondeurMinNonReg_uomValue (valeurs)
+, ProfondeurMinNonReg DOUBLE --QUESTION: UNITE?
+, ProfondeurMinNonReg_uom TEXT DEFAULT 'm' -- REFERENCES ProfondeurMinNonReg_uomValue (valeurs)
 , PrecisionXY TEXT NOT NULL REFERENCES ClassePrecisionReseauValue (valeurs)
 , PrecisionZ TEXT NOT NULL REFERENCES ClassePrecisionReseauValue (valeurs)
 );
@@ -146,21 +170,22 @@ INSERT INTO ModePoseValue VALUES
 
 INSERT INTO gpkg_contents (table_name, data_type, identifier) values ('ModePoseValue','attributes','ModePoseValue'); --GPKG
 
-DROP TABLE IF EXISTS RPD_Aerien_Reco;
-CREATE TABLE RPD_Aerien_Reco(
+DROP TABLE IF EXISTS RPD_Aerien_Reco_line;
+CREATE TABLE RPD_Aerien_Reco_line(
   pkid INTEGER PRIMARY KEY AUTOINCREMENT
 , id TEXT NOT NULL UNIQUE DEFAULT (CreateUUID())
+, Reseau_href TEXT NOT NULL DEFAULT 'Reseau' REFERENCES ReseauUtilite (id)
 , ModePose TEXT NOT NULL REFERENCES ModePoseValue (valeurs)
 , Geometrie LINESTRINGZ NOT NULL UNIQUE
-, ProfondeurMinNonReg DOUBLE
--- , ProfondeurMinNonReg_uom TEXT REFERENCES ProfondeurMinNonReg_uomValue (valeurs)
+, ProfondeurMinNonReg DOUBLE --QUESTION: UNITE?
+, ProfondeurMinNonReg_uom TEXT DEFAULT 'm' -- REFERENCES ProfondeurMinNonReg_uomValue (valeurs)
 , PrecisionXY TEXT NOT NULL REFERENCES ClassePrecisionReseauValue (valeurs)
 , PrecisionZ TEXT NOT NULL REFERENCES ClassePrecisionReseauValue (valeurs)
 );
 
-INSERT INTO gpkg_contents (table_name, data_type, identifier, srs_id) values ('RPD_Aerien_Reco','features','RPD_Aerien_Reco',2154); --GPKG
-INSERT INTO gpkg_geometry_columns (table_name, column_name, geometry_type_name, srs_id, z, m) values ('RPD_Aerien_Reco', 'Geometrie', 'LINESTRING', 2154, 1, 0); --GPKG
-SELECT gpkgAddSpatialIndex('RPD_Aerien_Reco', 'Geometrie' );
+INSERT INTO gpkg_contents (table_name, data_type, identifier, srs_id) values ('RPD_Aerien_Reco_line','features','RPD_Aerien_Reco_line',2154); --GPKG
+INSERT INTO gpkg_geometry_columns (table_name, column_name, geometry_type_name, srs_id, z, m) values ('RPD_Aerien_Reco_line', 'Geometrie', 'LINESTRING', 2154, 1, 0); --GPKG
+SELECT gpkgAddSpatialIndex('RPD_Aerien_Reco_line', 'Geometrie' );
 
 DROP VIEW IF EXISTS Cheminement;
 CREATE VIEW Cheminement as
@@ -169,11 +194,11 @@ with all_conso as (
   UNION ALL
   SELECT id, 'Galerie' type_cheminement, ProfondeurMinNonReg, PrecisionXY, PrecisionZ, Geometrie FROM RPD_Galerie_Reco
   UNION ALL
-  SELECT id, 'PleineTerre' type_cheminement, ProfondeurMinNonReg, PrecisionXY, PrecisionZ, Geometrie FROM RPD_PleineTerre_Reco
+  SELECT id, 'PleineTerre' type_cheminement, ProfondeurMinNonReg, PrecisionXY, PrecisionZ, Geometrie FROM RPD_PleineTerre_Reco_line
   UNION ALL
   SELECT id, 'ProtectionMecanique' type_cheminement, ProfondeurMinNonReg, PrecisionXY, PrecisionZ, Geometrie FROM RPD_ProtectionMecanique_Reco
   UNION ALL
-  SELECT id, 'Aerien' type_cheminement, ProfondeurMinNonReg, PrecisionXY, PrecisionZ, Geometrie FROM RPD_Aerien_Reco
+  SELECT id, 'Aerien' type_cheminement, ProfondeurMinNonReg, PrecisionXY, PrecisionZ, Geometrie FROM RPD_Aerien_Reco_line
 ) select ROW_NUMBER () OVER () pkid, * from all_conso;
 
 INSERT INTO gpkg_contents (table_name, data_type, identifier, srs_id) values ('Cheminement','features','Cheminement',2154); --GPKG
@@ -298,11 +323,14 @@ DROP TABLE IF EXISTS RPD_CableElectrique_Reco;
 CREATE TABLE RPD_CableElectrique_Reco(
     pkid INTEGER PRIMARY KEY AUTOINCREMENT
   , id TEXT NOT NULL UNIQUE DEFAULT (CreateUUID())
+  , Reseau_href TEXT NOT NULL DEFAULT 'Reseau' REFERENCES ReseauUtilite (id)
   , DomaineTension TEXT NOT NULL REFERENCES DomaineTensionValue (valeurs)
-  , FonctionCable TEXT NOT NULL REFERENCES FonctionCableElectriqueValue (valeurs)
+  , FonctionCable_href TEXT NOT NULL REFERENCES FonctionCableElectriqueValue (valeurs)
   , NombreConducteurs INTEGER NOT NULL
   , Section INTEGER NOT NULL
+  , Section_uom TEXT DEFAULT 'mm-2'
   , SectionNeutre INTEGER
+  , SectionNeutre_uom TEXT DEFAULT 'mm-2'
   , Isolant TEXT NOT NULL REFERENCES IsolantValueReco (valeurs)
   , Materiau TEXT NOT NULL REFERENCES CableMaterialTypeValue (valeurs)
   , HierarchieBT TEXT REFERENCES HierarchieBTValue (valeurs)  -- NOTE : NOT NULL si DomaineTension = BT
@@ -311,11 +339,12 @@ CREATE TABLE RPD_CableElectrique_Reco(
   -- Cheminement
   , TypePose TEXT NOT NULL REFERENCES TypePoseValue (valeurs) --NOTE : hors reco star => ModePose pour aérien ou PleineTerre (Enterre)
   , Geometrie LINESTRINGZ NOT NULL UNIQUE
-  -- , ProfondeurMinNonReg_uom TEXT REFERENCES ProfondeurMinNonReg_uomValue (valeurs)
+  , ProfondeurMinNonReg_uom TEXT DEFAULT 'm' -- REFERENCES ProfondeurMinNonReg_uomValue (valeurs)
   , PrecisionXY TEXT NOT NULL REFERENCES ClassePrecisionReseauValue (valeurs)
   , PrecisionZ TEXT NOT NULL REFERENCES ClassePrecisionReseauValue (valeurs)
   CHECK ((DomaineTension='BT' AND HierarchieBT IS NOT NULL) OR DomaineTension <> 'BT')
 );
+-- QGIS "HierarchieBT" constraint : ("DomaineTension" = 'BT' and  "HierarchieBT" is not null) or "DomaineTension" <> 'BT'
 
 INSERT INTO gpkg_contents (table_name, data_type, identifier) values ('RPD_CableElectrique_Reco','features','RPD_CableElectrique_Reco'); --GPKG
 INSERT INTO gpkg_geometry_columns (table_name, column_name, geometry_type_name, srs_id, z, m) values ('RPD_CableElectrique_Reco', 'Geometrie', 'LINESTRING', 2154, 1, 0); --GPKG
@@ -341,17 +370,20 @@ DROP TABLE IF EXISTS RPD_CableTerre_Reco;
 CREATE TABLE RPD_CableTerre_Reco(
     pkid INTEGER PRIMARY KEY AUTOINCREMENT
   , id TEXT NOT NULL UNIQUE DEFAULT (CreateUUID())
-  , FonctionCable TEXT NOT NULL REFERENCES FonctionCableElectriqueValue (valeurs)
-  , NatureCableTerre TEXT NOT NULL REFERENCES ConducteurProtectionValue (valeurs)
+  , Reseau_href TEXT NOT NULL DEFAULT 'Reseau' REFERENCES ReseauUtilite (id)
+  , FonctionCable_href TEXT NOT NULL REFERENCES FonctionCableElectriqueValue (valeurs)
+  , NatureCableTerre_href TEXT NOT NULL REFERENCES ConducteurProtectionValue (valeurs)
   , Section INTEGER NOT NULL
+  , Section_uom TEXT DEFAULT 'mm-2'
   , Commentaire TEXT
   , Statut TEXT NOT NULL REFERENCES ConditionOfFacilityValueReco (valeurs)
   -- Cheminement
   , TypePose TEXT NOT NULL REFERENCES TypePoseValue (valeurs) --NOTE : hors reco star => ModePose pour aérien ou PleineTerre (Enterre)
   , Geometrie LINESTRINGZ NOT NULL UNIQUE
-  -- , ProfondeurMinNonReg_uom TEXT REFERENCES ProfondeurMinNonReg_uomValue (valeurs)
+  , ProfondeurMinNonReg_uom TEXT DEFAULT 'm' -- REFERENCES ProfondeurMinNonReg_uomValue (valeurs)
   , PrecisionXY TEXT NOT NULL REFERENCES ClassePrecisionReseauValue (valeurs)
   , PrecisionZ TEXT NOT NULL REFERENCES ClassePrecisionReseauValue (valeurs)
+  , noeudreseau_href TEXT --TODO : UUID noeud QUESTION : quel noeud?
 );
 
 INSERT INTO gpkg_contents (table_name, data_type, identifier) values ('RPD_CableTerre_Reco','features','RPD_CableTerre_Reco'); --GPKG
@@ -360,9 +392,9 @@ INSERT INTO gpkg_geometry_columns (table_name, column_name, geometry_type_name, 
 DROP VIEW IF EXISTS Cable;
 CREATE VIEW Cable as
 with all_conso as (
-  SELECT id, 'CableElectrique' type_cable, TypePose, FonctionCable, Section, Commentaire, Statut, PrecisionXY, PrecisionZ, Geometrie FROM RPD_CableElectrique_Reco
+  SELECT id, 'CableElectrique' type_cable, TypePose, FonctionCable_href FonctionCable, Section, Commentaire, Statut, PrecisionXY, PrecisionZ, Geometrie FROM RPD_CableElectrique_Reco
   UNION ALL
-  SELECT id, 'CableTerre' type_cable, TypePose, FonctionCable, Section, Commentaire, Statut, PrecisionXY, PrecisionZ, Geometrie FROM RPD_CableTerre_Reco
+  SELECT id, 'CableTerre' type_cable, TypePose, FonctionCable_href FonctionCable, Section, Commentaire, Statut, PrecisionXY, PrecisionZ, Geometrie FROM RPD_CableTerre_Reco
 ) select ROW_NUMBER () OVER () pkid, * from all_conso;
 
 INSERT INTO gpkg_contents (table_name, data_type, identifier, srs_id) values ('Cable','features','Cable',2154); --GPKG
@@ -371,7 +403,7 @@ INSERT INTO gpkg_geometry_columns (table_name, column_name, geometry_type_name, 
 --XXX Cheminement par defaut
 
 DROP VIEW IF EXISTS RPD_PleineTerre_Reco_virt;
-CREATE VIEW RPD_PleineTerre_Reco_virt as --FIXME : Spliter les MULTILINESTRING pour l'export
+CREATE VIEW RPD_PleineTerre_Reco_virt as --FIXME : Spliter les MULTILINESTRING pour l'export et calculer uuid unique => insert dans table avant export gml
 SELECT ROW_NUMBER () OVER () pkid, c.id, coalesce(ST_Difference(c."Geometrie", ST_Union(h."Geometrie")), c."Geometrie") Geometrie, Null ProfondeurMinNonReg, c.PrecisionXY,c.PrecisionZ
 FROM Cable c
 LEFT JOIN Cheminement h ON ST_Within(h."Geometrie", c."Geometrie")
@@ -382,7 +414,7 @@ INSERT INTO gpkg_contents (table_name, data_type, identifier, srs_id) values ('R
 INSERT INTO gpkg_geometry_columns (table_name, column_name, geometry_type_name, srs_id, z, m) values ('RPD_PleineTerre_Reco_virt', 'Geometrie', 'LINESTRING', 2154, 1, 0); --GPKG
 
 DROP VIEW IF EXISTS RPD_Aerien_Reco_virt;
-CREATE VIEW RPD_Aerien_Reco_virt as --FIXME : Spliter les MULTILINESTRING pour l'export
+CREATE VIEW RPD_Aerien_Reco_virt as --FIXME : Spliter les MULTILINESTRING pour l'export et calculer uuid unique => insert dans table avant export gml
 SELECT ROW_NUMBER () OVER () pkid, c.id, coalesce(ST_Difference(c."Geometrie", ST_Union(h."Geometrie")), c."Geometrie") Geometrie, Null ProfondeurMinNonReg, c.PrecisionXY,c.PrecisionZ
 FROM Cable c
 LEFT JOIN Cheminement h ON ST_Within(h."Geometrie", c."Geometrie")
@@ -394,13 +426,19 @@ INSERT INTO gpkg_geometry_columns (table_name, column_name, geometry_type_name, 
 
 --XXX RELATIONS CHEMINEMENT / CABLE
 -- TODO :transformer en vue selon intersect et spliter les MULTILINESTRING avec uuid distinct
--- DROP TABLE IF EXISTS Cheminement_Cables;
--- CREATE TABLE Cheminement_Cables( --TODO : voir xsd pour les noms des attributs
---   base_id INTEGER NOT NULL REFERENCES Cable (id) ON DELETE CASCADE DEFERRABLE INITIALLY DEFERRED
--- , related_id INTEGER NOT NULL UNIQUE REFERENCES Cheminement (id) ON DELETE CASCADE DEFERRABLE INITIALLY DEFERRED
--- );
+DROP VIEW IF EXISTS Cheminement_Cables;
+CREATE VIEW Cheminement_Cables AS
+  select ROW_NUMBER () OVER () pkid
+  , c.id cables_href
+  , h.id cheminement_href
+  FROM Cable c
+  JOIN Cheminement h ON ST_Within(h."Geometrie", c."Geometrie")
+;
 --
--- INSERT INTO gpkg_contents (table_name, data_type, identifier) values ('Cheminement_Cables','attributes','Cheminement_Cables'); --GPKG
+INSERT INTO gpkg_contents (table_name, data_type, identifier) values ('Cheminement_Cables','attributes','Cheminement_Cables'); --GPKG
 
 
--- TODO : intégrer les valeurs de mesures uom
+-- TODO :
+-- fusionne les cheminements virtuels :
+---- 1 table (dessin) + 1 vue virt => 1 vue globale (nom cible)
+---- 1 table (dessin + nom cible) <= insertion 1 vue virtuelle

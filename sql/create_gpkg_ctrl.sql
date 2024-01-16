@@ -80,19 +80,19 @@ with all_ctrl as(
 
 SELECT n.id, 'ce Poste Electrique n''est pas contenu dans un Batiment Technique' ctrl, CastToXY(n.Geometrie) Geometrie
 FROM RPD_PosteElectrique_Reco n
-WHERE Categorie not in ('PosteSource') and TypePoste not in ('H6')
+WHERE Categorie_href not in ('PosteSource') and TypePoste_href not in ('H6')
 AND NOT EXISTS (SELECT 1 FROM Conteneur_Noeud cn WHERE cn.noeud_id=n.id AND cn.type_conteneur = 'BatimentTechnique')
 
 UNION ALL
 SELECT n.id, 'ce Poste Source n''est pas contenu dans une Enceinte Cloturee' ctrl, CastToXY(n.Geometrie) Geometrie
 FROM RPD_PosteElectrique_Reco n
-WHERE Categorie in ('PosteSource')
+WHERE Categorie_href in ('PosteSource')
 AND NOT EXISTS (SELECT 1 FROM Conteneur_Noeud cn WHERE cn.noeud_id=n.id AND cn.type_conteneur = 'EnceinteCloturee')
 
 UNION ALL
 SELECT n.id, 'ce Poste Electrique n''est pas placé sur un Support' ctrl, CastToXY(n.Geometrie) Geometrie
 FROM RPD_PosteElectrique_Reco n
-WHERE TypePoste in ('H6')
+WHERE TypePoste_href in ('H6')
 AND NOT EXISTS (SELECT 1 FROM Conteneur_Noeud cn WHERE cn.noeud_id=n.id AND cn.type_conteneur = 'Support')
 
 UNION ALL
@@ -106,7 +106,7 @@ SELECT n.id, 'les '||n.type_noeud||' ne sont autorisées que dans les Coffrets M
 FROM Noeud n
 JOIN Conteneur_Noeud cn ON cn.noeud_id=n.id
 JOIN RPD_Coffret_Reco c ON c.id=cn.conteneur_id
-WHERE n.type_noeud in ('Plage') AND cn.type_conteneur='Coffret' AND NOT c.FonctionCoffret = 'Manoeuvrable'
+WHERE n.type_noeud in ('Plage') AND cn.type_conteneur='Coffret' AND NOT c.FonctionCoffret_href = 'Manoeuvrable'
 
 UNION ALL
 SELECT n.id, 'cette RAS n''est pas placé sur un Support' ctrl, CastToXY(n.Geometrie) Geometrie
@@ -137,12 +137,13 @@ WHERE NOT EXISTS (select 1 from Cheminement c where PtDistWithin(c.Geometrie, p.
 AND NOT EXISTS (select 1 from Cable c where PtDistWithin(c.Geometrie, p.Geometrie, 0.002))
 AND NOT EXISTS (select 1 from Noeud c where PtDistWithin(c.Geometrie, p.Geometrie, 0.002))
 AND NOT EXISTS (select 1 from Conteneur c where PtDistWithin(c.Geometrie, p.Geometrie, 0.002) and type_conteneur in ('Support', 'Coffret'))
-AND NOT EXISTS (select 1 from RPD_GeometrieSupplementaire_Conteneur_Reco c where PtDistWithin(c."Ligne2.5D", p."Geometrie", 0.002))
+AND NOT EXISTS (select 1 from RPD_GeometrieSupplementaire_Reco c where PtDistWithin(c."Ligne2.5D", p."Geometrie", 0.002))
 
 UNION ALL
 SELECT c.id
 ,CASE WHEN NOT EXISTS (select 1 from RPD_PointLeveOuvrageReseau_Reco p where PtDistWithin(ST_PointN(c.Geometrie, s.value), p.Geometrie, 0.002))
           THEN 'le sommet de ce Cable n''est pas placé sur un Point Levé'
+          --ok si il arrive sur l'emprise d'un conteneur
       WHEN (select 1 from RPD_PointLeveOuvrageReseau_Reco p where PtDistWithin(ST_PointN(c.Geometrie, s.value), p.Geometrie, 0.002)
                                                             AND NOT ST_Z(ST_PointN(c.Geometrie, s.value)) = st_Z(p.Geometrie))
           THEN 'le Z du sommet de ce Cable n''est pas cohérent avec le Point Levé'
@@ -174,7 +175,7 @@ SELECT c.id
           THEN 'le Z du sommet de ce Conteneur n''est pas cohérent avec le Point Levé'
 end ctrl
 ,ST_PointN(c."Ligne2.5D", s.value) Geometrie
-FROM RPD_GeometrieSupplementaire_Conteneur_Reco c
+FROM RPD_GeometrieSupplementaire_Reco c
 , generate_series s ON s.value <= ST_NumPoints(c."Ligne2.5D")
 WHERE PrecisionXY = 'A' and PrecisionZ = 'A' and type_conteneur in ('BatimentTechnique', 'EnceinteCloturee') and ctrl is not null
 
@@ -213,11 +214,8 @@ INSERT INTO gpkg_geometry_columns (table_name, column_name, geometry_type_name, 
 --- voir regles PGOC UN PTRL tous les 15m et suffisament dans les courbes
 -- CONTROLE CHEMINEMENT AERIEN / SUPPORT
 -- Verifs classe precision si NOEUD pas dans CONTENEUR
--- VOIR REGLES RELATIVES A LA TERRE
-
-
--- QUESTION :
--- quel est le z pour le coffret par exemple ?
+-- VOIR REGLES RELATIVES A LA TERRE :
+--    - un cable de terre doit avoir au moins 1 noeud de terre à une de ses extrémités
 
 
 -- TODO Métier :
