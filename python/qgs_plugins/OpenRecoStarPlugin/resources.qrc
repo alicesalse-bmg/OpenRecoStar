@@ -5,4 +5,7 @@
   <qresource prefix="/qgs_plugins/OpenRecoStarPlugin/" >
      <file>icons/TracePointLeve.png</file>
   </qresource>
+  <qresource prefix="/qgs_plugins/OpenRecoStarPlugin/" >
+     <file>icons/ExportGML.png</file>
+  </qresource>
 </RCC>

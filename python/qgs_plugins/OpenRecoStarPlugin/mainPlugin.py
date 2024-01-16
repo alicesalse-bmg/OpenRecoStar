@@ -7,7 +7,9 @@ from qgis.core import QgsProject, QgsDataSourceUri, QgsWkbTypes, QgsMapLayerType
 # initialize Qt resources from file resources.py
 # execute : pyrcc5 -o resources.py resources.qrc
 from . import resources
+from qgis import processing
 import uuid
+import os
 
 class MappingDialogBox(QDialog):
     def __init__(self, title, formlayout, parent=None):
@@ -125,7 +127,7 @@ class LinefromPLORDialog(QDialog):
         self.layout.addRow("Couche d'origine",self.plorlyr)
 
         self.ordertyp = QComboBox()
-        self.ordertyp.addItems(['Ordonner par "Numero"', 'Ordonner par proximité'])
+        self.ordertyp.addItems(['Ordonner par proximité', 'Ordonner par "Numero"'])
         self.layout.addRow("Type de tracé",self.ordertyp)
 
         self.linelyr = QComboBox()
@@ -178,6 +180,15 @@ class RecoStarTools:
         self.linefromplor.setStatusTip("Trace les ligne")
         self.linefromplor.triggered.connect(self.linefromPLOR)
         self.toolbar.addAction(self.linefromplor)
+
+        self.gpkg2gml = QAction(QIcon(":/qgs_plugins/OpenRecoStarPlugin/icons/ExportGML.png"),
+                                    "Exporter le geopackage en GML",
+                                    self.iface.mainWindow())
+        self.gpkg2gml.setObjectName("GPKG2GML")
+        self.gpkg2gml.setWhatsThis("Exporter le geopackage en GML")
+        self.gpkg2gml.setStatusTip("Export GML")
+        self.gpkg2gml.triggered.connect(self.GPKG2GML)
+        self.toolbar.addAction(self.gpkg2gml)
 
     def unload(self):
         del self.toolbar
@@ -362,8 +373,6 @@ class RecoStarTools:
                     # TODO: limiter sélection 1KM autour du zoom carte
                     plor_lyr.selectByExpression("CodeOuvrage='{0}'".format(codouvg))
             if len(plor_lyr.selectedFeatures()) > 0:
-                # TODO : option pour trier par numero plutot que de proche en proche
-
                 if order_type == 'Ordonner par "Numero"' :
                     # ORDONNE LES POINTS PAR NUMERO
                     plf=plor_lyr.selectedFeatures()
@@ -425,3 +434,31 @@ class RecoStarTools:
                         QTimer.singleShot(5000, createLine)
                     else :
                         createLine()
+
+    def getDatasourceGPKG(self) :
+        gpkgs = []
+        for layer in [l.layer() for l in self.root.findLayers() if l.layer().type() == QgsMapLayerType.VectorLayer] :
+            if '.gpkg' in layer.dataProvider().uri().uri() :
+                gpkg = layer.dataProvider().uri().uri().split('|')[0]
+                if gpkg not in gpkgs :
+                    gpkgs.append(layer.dataProvider().uri().uri().split('|')[0].strip())
+        return gpkgs
+
+    def GPKG2GML(self) :
+        print("GPKG2GML: run called!")
+        gpkgs = self.getDatasourceGPKG()
+        gpkg, ctrl = QInputDialog.getItem(QInputDialog(), "Geopackage vers GML", "Choisir le geopackage à exporter", gpkgs, 0)
+        if ctrl :
+            outputGML = QFileDialog.getSaveFileName(QFileDialog(), "Définir le fichier de destination", filter="GML (*.gml)")
+            print(outputGML)
+            if outputGML[0] :
+                # dir_path = os.path.dirname(os.path.realpath(__file__))
+                # print(dir_path)
+                #TODO: calculer le chemin vers la XSD
+                param={}
+                param['INPUT']=gpkg
+                param['CONVERT_ALL_LAYERS']=True
+                param['OPTIONS']='-f GMLAS -dsco INPUT_XSD="/Users/alicesalse/Documents/BMG/PROJETS/ENEDIS/OpenRecoStar/StaR-Elec/RecoStaR/SchemaStarElecRecoStarV0_6.xsd" -dsco SRSNAME_FORMAT=SHORT -dsco WRAPPING=GMLAS_FEATURECOLLECTION -dsco GENERATE_XSD=NO'
+                param['OUTPUT']=outputGML[0]
+                # print(param)
+                processing.run("gdal:convertformat", param)
