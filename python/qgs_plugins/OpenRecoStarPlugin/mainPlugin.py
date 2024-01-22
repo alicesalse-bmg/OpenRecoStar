@@ -267,20 +267,29 @@ class RecoStarTools:
                             self.iface.messageBar().clearWidgets()
                             plor_attrib = plor_lyr.fields().names()
                             formlayout = {}
-                            for attrib in [a for a in plor_attrib if a not in ['pkid', 'id']] :
+                            for attrib in [a for a in plor_attrib if a not in ['ogr_pkid', 'pkid', 'id', 'Leve_uom']] :
                                 attrib_stp = plor_lyr.editorWidgetSetup(plor_attrib.index(attrib))
                                 # print(attrib, attrib_stp.config())
                                 if attrib_stp.type() == 'ValueRelation':
                                     value_lyr = self.root.findLayer(attrib_stp.config()['Layer']).layer()
                                     value_list = [f['valeurs'] for f in value_lyr.getFeatures()]
-                                    formlayout[attrib] = ('ComboBox',self.sortsimilarity(attrib, vlyr_attrib)+['<AUTRE>'],value_list)
+                                    sort_attrib = self.sortsimilarity(attrib, vlyr_attrib)
+                                    if sort_attrib[1] > 0.5 :
+                                        formlayout[attrib] = ('ComboBox',sort_attrib[0]+['<AUTRE>'],value_list)
+                                    else :
+                                        formlayout[attrib] = ('ComboBox',['<AUTRE>']+sort_attrib[0],value_list)
                                 else :
                                     defvalue_lyr=plor_lyr.fields().field(plor_attrib.index(attrib)).defaultValueDefinition().expression().strip().strip("'").strip()
-                                    formlayout[attrib] = ('ComboBox',self.sortsimilarity(attrib, vlyr_attrib)+['<AUTRE>'],defvalue_lyr) # TODO ajouter des infos sur le type d'attribut
+                                    sort_attrib = self.sortsimilarity(attrib, vlyr_attrib)
+                                    if sort_attrib[1] > 0.5 :
+                                        formlayout[attrib] = ('ComboBox',sort_attrib[0]+['<AUTRE>'],defvalue_lyr)
+                                    else :
+                                        formlayout[attrib] = ('ComboBox',['<AUTRE>']+sort_attrib[0],defvalue_lyr)
+                                    # TODO ajouter des infos sur le type d'attribut
                             if file_type == 'csv' :
-                                formlayout['GeomX'] = ('ComboBox',self.sortsimilarity('X', vlyr_attrib),None)
-                                formlayout['GeomY'] = ('ComboBox',self.sortsimilarity('Y', vlyr_attrib),None)
-                                formlayout['GeomZ'] = ('ComboBox',self.sortsimilarity('Z', vlyr_attrib),None)
+                                formlayout['GeomX'] = ('ComboBox',self.sortsimilarity('X', vlyr_attrib)[0],None)
+                                formlayout['GeomY'] = ('ComboBox',self.sortsimilarity('Y', vlyr_attrib)[0],None)
+                                formlayout['GeomZ'] = ('ComboBox',self.sortsimilarity('Z', vlyr_attrib)[0],None)
                                 formlayout['GeomEPSG'] = ('ComboBox', ['2154','3950','3949','3948','3847','3946','3945','3944','3943','3942','27561','27562','27563','27564','27571','27572','27573','27574','<AUTRE>'],None)
                             dial = MappingDialogBox("Import fichier PLOR", formlayout, self)
                             if dial.exec() == QDialog.Accepted:
@@ -289,12 +298,7 @@ class RecoStarTools:
                                 for vfeat in vlayer.getFeatures() :
                                     pfeat=QgsFeature(plor_lyr.fields())
                                     pfeat.setAttribute('id', str(uuid.uuid4()))
-                                    for m in mapping :
-                                        if (file_type == 'csv' and m[:4] != 'Geom') or file_type != 'csv' :
-                                            if mapping[m][0] == "'" and mapping[m][-1] == "'":
-                                                pfeat.setAttribute(m, mapping[m].strip("'"))
-                                            else :
-                                                pfeat.setAttribute(m, vfeat.attribute(mapping[m]))
+                                    # pfeat.setAttribute('Leve_uom', plor_lyr.fields().field(plor_attrib.index('Leve_uom')).defaultValueDefinition().expression().strip().strip("'").strip())
                                     if file_type == 'csv' :
                                         # print(vfeat.attribute(mapping['GeomX']), vfeat.attribute(mapping['GeomY']), vfeat.attribute(mapping['GeomZ']))
                                         geom_point=QgsGeometry(QgsPoint(float(vfeat.attribute(mapping['GeomX'])), float(vfeat.attribute(mapping['GeomY'])), float(vfeat.attribute(mapping['GeomZ']))))
@@ -305,6 +309,33 @@ class RecoStarTools:
                                         geom_shp=vfeat.geometry()
                                         geom_shp.transform(QgsCoordinateTransform(vlayer.dataProvider().sourceCrs(), QgsCoordinateReferenceSystem("EPSG:2154"), QgsProject.instance()))
                                         pfeat.setGeometry(geom_shp)
+                                    for m in mapping :
+                                        fset=False
+                                        if (file_type == 'csv' and m[:4] != 'Geom') or file_type != 'csv' :
+                                            print(m, mapping[m])
+                                            if m == 'Leve' :
+                                                if mapping['Leve'] == "'$z'" :
+                                                    print ('getZ', pfeat.geometry().get().z())
+                                                    pfeat.setAttribute(m, pfeat.geometry().get().z())
+                                                    fset=True
+                                                elif not (mapping['Leve'][0] == "'" and mapping['Leve'][-1] == "'") :
+                                                    if vfeat.attribute(mapping['Leve']) == '' or not vfeat.attribute(mapping['Leve']) :
+                                                        print ('null getZ', pfeat.geometry().get().z())
+                                                        pfeat.setAttribute(m, pfeat.geometry().get().z())
+                                                        fset=True
+                                            elif m == 'TypeLeve' :
+                                                if mapping['Leve'] == "'$z'" :
+                                                    pfeat.setAttribute(m, "AltitudeGeneratrice")
+                                                    fset=True
+                                                elif not (mapping['Leve'][0] == "'" and mapping['Leve'][-1] == "'") :
+                                                    if vfeat.attribute(mapping['Leve']) == '' or not vfeat.attribute(mapping['Leve']) :
+                                                        pfeat.setAttribute(m, "AltitudeGeneratrice")
+                                                        fset=True
+                                            if mapping[m][0] == "'" and mapping[m][-1] == "'" and not fset:
+                                                pfeat.setAttribute(m, mapping[m].strip("'"))
+                                            elif not fset :
+                                                pfeat.setAttribute(m, vfeat.attribute(mapping[m]))
+
                                     result=plor_lyr.addFeature(pfeat)
                                 self.iface.messageBar().pushMessage("Création réussie", Qgis.Success)
                                 return
@@ -332,7 +363,7 @@ class RecoStarTools:
             score=self.similarity(a,i)
             newlist.append((i,score))
         newlist.sort(reverse=True, key=lambda index: index[1])
-        return [n for n, s in newlist]
+        return [n for n, s in newlist], max([s for n, s in newlist])
 
     def allPointLayerSelected(self) :
         lyrs = []
@@ -408,6 +439,7 @@ class RecoStarTools:
                     # print(geom_line)
                     #TODO previsualiser la ligne avant validation
                     line_lyr = line_lyrs[line_lyrnames.index(line_lyrname)]
+                    #TODO créer des transactions automatiques
                     def createLine():
                         if not line_lyr.dataProvider().transaction():
                             self.messageBox('Critical', "Création abandonnée", "La création de la ligne ne peut aboutir", "Aucune session de mise à jour n'est ouverte")
@@ -416,7 +448,7 @@ class RecoStarTools:
                             feat=QgsFeature(line_lyr.fields())
                             feat.setAttribute('id', str(uuid.uuid4()))
                             line_attrib = line_lyr.fields().names()
-                            for attrib in [a for a in line_attrib if a not in ['pkid', 'id']] :
+                            for attrib in [a for a in line_attrib if a not in ['ogr_pkid', 'pkid', 'id']] :
                                 defvalue_lyr=line_lyr.fields().field(line_attrib.index(attrib)).defaultValueDefinition().expression().strip().strip("'").strip()
                                 feat.setAttribute(attrib, defvalue_lyr)
                             valid=self.iface.openFeatureForm(line_lyr, feat)
@@ -425,6 +457,7 @@ class RecoStarTools:
                                 result=line_lyr.addFeature(feat)
                                 if result == True :
                                     self.iface.messageBar().pushMessage("Création réussie", Qgis.Success)
+                                    # TODO : vider la sélection
                                     return
                                 else:
                                     self.messageBox('Critical', "Création échouée", "La création ne peut aboutir")
@@ -439,9 +472,9 @@ class RecoStarTools:
         gpkgs = []
         for layer in [l.layer() for l in self.root.findLayers() if l.layer().type() == QgsMapLayerType.VectorLayer] :
             if '.gpkg' in layer.dataProvider().uri().uri() :
-                gpkg = layer.dataProvider().uri().uri().split('|')[0]
+                gpkg = layer.dataProvider().uri().uri().split('|')[0].strip()
                 if gpkg not in gpkgs :
-                    gpkgs.append(layer.dataProvider().uri().uri().split('|')[0].strip())
+                    gpkgs.append(gpkg)
         return gpkgs
 
     def GPKG2GML(self) :
@@ -455,10 +488,23 @@ class RecoStarTools:
                 # dir_path = os.path.dirname(os.path.realpath(__file__))
                 # print(dir_path)
                 #TODO: calculer le chemin vers la XSD
+                reseaulyr = self.getLayerFromTable('ReseauUtilite')
+                reseaulyr.startEditing()
+                reseaufeat = reseaulyr.getFeature(1)
+                valid=self.iface.openFeatureForm(reseaulyr, reseaufeat)
+                if valid :
+                    result=reseaulyr.updateFeature(reseaufeat)
+                    reseaulyr.commitChanges()
+                else :
+                    reseaulyr.rollBack()
+                    self.iface.messageBar().pushMessage("Export abandonné", "Action annulée par l'utilisateur", Qgis.Warning, duration=5)
+                    return
                 param={}
                 param['INPUT']=gpkg
                 param['CONVERT_ALL_LAYERS']=True
                 param['OPTIONS']='-f GMLAS -dsco INPUT_XSD="/Users/alicesalse/Documents/BMG/PROJETS/ENEDIS/OpenRecoStar/StaR-Elec/RecoStaR/SchemaStarElecRecoStarV0_6.xsd" -dsco SRSNAME_FORMAT=SHORT -dsco WRAPPING=GMLAS_FEATURECOLLECTION -dsco GENERATE_XSD=NO'
                 param['OUTPUT']=outputGML[0]
                 # print(param)
-                processing.run("gdal:convertformat", param)
+                output=processing.run("gdal:convertformat", param)
+                self.iface.messageBar().pushMessage("Export terminé", output['OUTPUT'], Qgis.Success)
+                return
