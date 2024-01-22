@@ -142,6 +142,7 @@ AND NOT EXISTS (select 1 from RPD_GeometrieSupplementaire_Reco c where PtDistWit
 UNION ALL
 SELECT c.id
 ,CASE WHEN NOT EXISTS (select 1 from RPD_PointLeveOuvrageReseau_Reco p where PtDistWithin(ST_PointN(c.Geometrie, s.value), p.Geometrie, 0.002))
+      AND NOT EXISTS (select 1 from RPD_GeometrieSupplementaire_Reco g where PtDistWithin(ST_PointN(c.Geometrie, s.value), g."Ligne2.5D", 0.002))
           THEN 'le sommet de ce Cable n''est pas placé sur un Point Levé'
           --ok si il arrive sur l'emprise d'un conteneur
       WHEN (select 1 from RPD_PointLeveOuvrageReseau_Reco p where PtDistWithin(ST_PointN(c.Geometrie, s.value), p.Geometrie, 0.002)
@@ -156,6 +157,7 @@ WHERE PrecisionXY = 'A' and PrecisionZ = 'A' and ctrl is not null
 UNION ALL
 SELECT c.id
 ,CASE WHEN NOT EXISTS (select 1 from RPD_PointLeveOuvrageReseau_Reco p where PtDistWithin(ST_PointN(c.Geometrie, s.value), p.Geometrie, 0.002))
+      AND NOT EXISTS (select 1 from RPD_GeometrieSupplementaire_Reco g where PtDistWithin(ST_PointN(c.Geometrie, s.value), g."Ligne2.5D", 0.002))
           THEN 'le sommet de ce Cheminement n''est pas placé sur un Point Levé'
       WHEN (select 1 from RPD_PointLeveOuvrageReseau_Reco p where PtDistWithin(ST_PointN(c.Geometrie, s.value), p.Geometrie, 0.002)
                                                             AND NOT ST_Z(ST_PointN(c.Geometrie, s.value)) = st_Z(p.Geometrie))

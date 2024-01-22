@@ -7,15 +7,16 @@ SELECT gpkgInsertEpsgSRID(2154); --GPKG
 
 DROP TABLE IF EXISTS ReseauUtilite;
 CREATE TABLE ReseauUtilite (
-    id TEXT NOT NULL UNIQUE
+    pkid INTEGER PRIMARY KEY AUTOINCREMENT
+  , id TEXT NOT NULL UNIQUE
   , Mention TEXT
   , Nom TEXT
   , Responsable TEXT
   , Theme TEXT
 );
 
-INSERT INTO ReseauUtilite VALUES
-  ('Reseau','Test export GML OpenRecoStar','Réseau public de distribution','Enedis','ELECTRD')
+INSERT INTO ReseauUtilite (id, Mention, Nom, Responsable, Theme)
+  VALUES ('Reseau','Test export GML OpenRecoStar','Réseau public de distribution','Enedis','ELECTRD')
 ;
 
 INSERT INTO gpkg_contents (table_name, data_type, identifier) values ('ReseauUtilite','attributes','ReseauUtilite'); --GPKG
@@ -74,14 +75,14 @@ DROP TABLE IF EXISTS RPD_Fourreau_Reco;
 CREATE TABLE RPD_Fourreau_Reco(
   pkid INTEGER PRIMARY KEY AUTOINCREMENT
 , id TEXT NOT NULL UNIQUE DEFAULT (CreateUUID())
-, Reseau_href TEXT NOT NULL DEFAULT 'Reseau' REFERENCES ReseauUtilite (id)
+, reseau_href TEXT NOT NULL DEFAULT 'Reseau' REFERENCES ReseauUtilite (id)
 , Materiau TEXT NOT NULL REFERENCES ProtectionMaterialTypeValueReco (valeurs)
 , DiametreDuFourreau INTEGER NOT NULL
 , DiametreDuFourreau_uom TEXT DEFAULT 'mm'
 , CoupeType TEXT
 , EtatCoupeType TEXT REFERENCES EtatCoupeTypeValueReco (valeurs)
 , Geometrie LINESTRINGZ NOT NULL UNIQUE
-, ProfondeurMinNonReg DOUBLE --QUESTION: UNITE?
+, ProfondeurMinNonReg DOUBLE
 , ProfondeurMinNonReg_uom TEXT DEFAULT 'm' -- REFERENCES ProfondeurMinNonReg_uomValue (valeurs)
 , PrecisionXY TEXT NOT NULL REFERENCES ClassePrecisionReseauValue (valeurs)
 , PrecisionZ TEXT NOT NULL REFERENCES ClassePrecisionReseauValue (valeurs)
@@ -97,13 +98,13 @@ DROP TABLE IF EXISTS RPD_Galerie_Reco;
 CREATE TABLE RPD_Galerie_Reco(
   pkid INTEGER PRIMARY KEY AUTOINCREMENT
 , id TEXT NOT NULL UNIQUE DEFAULT (CreateUUID())
-, Reseau_href TEXT NOT NULL DEFAULT 'Reseau' REFERENCES ReseauUtilite (id)
+, reseau_href TEXT NOT NULL DEFAULT 'Reseau' REFERENCES ReseauUtilite (id)
 , Hauteur INTEGER NOT NULL
 , Hauteur_uom TEXT DEFAULT 'm'
 , Largeur INTEGER NOT NULL
 , Largeur_uom TEXT DEFAULT 'm'
 , Geometrie LINESTRINGZ NOT NULL UNIQUE
-, ProfondeurMinNonReg DOUBLE --QUESTION: UNITE?
+, ProfondeurMinNonReg DOUBLE
 , ProfondeurMinNonReg_uom TEXT DEFAULT 'm' -- REFERENCES ProfondeurMinNonReg_uomValue (valeurs)
 , PrecisionXY TEXT NOT NULL REFERENCES ClassePrecisionReseauValue (valeurs)
 , PrecisionZ TEXT NOT NULL REFERENCES ClassePrecisionReseauValue (valeurs)
@@ -119,11 +120,11 @@ DROP TABLE IF EXISTS RPD_PleineTerre_Reco_line;
 CREATE TABLE RPD_PleineTerre_Reco_line(
   pkid INTEGER PRIMARY KEY AUTOINCREMENT
 , id TEXT NOT NULL UNIQUE DEFAULT (CreateUUID())
-, Reseau_href TEXT NOT NULL DEFAULT 'Reseau' REFERENCES ReseauUtilite (id)
+, reseau_href TEXT NOT NULL DEFAULT 'Reseau' REFERENCES ReseauUtilite (id)
 , CoupeType TEXT
 , EtatCoupeType TEXT REFERENCES EtatCoupeTypeValueReco (valeurs)
 , Geometrie LINESTRINGZ NOT NULL UNIQUE
-, ProfondeurMinNonReg DOUBLE --QUESTION: UNITE?
+, ProfondeurMinNonReg DOUBLE
 , ProfondeurMinNonReg_uom TEXT DEFAULT 'm' -- REFERENCES ProfondeurMinNonReg_uomValue (valeurs)
 , PrecisionXY TEXT NOT NULL REFERENCES ClassePrecisionReseauValue (valeurs)
 , PrecisionZ TEXT NOT NULL REFERENCES ClassePrecisionReseauValue (valeurs)
@@ -139,12 +140,12 @@ DROP TABLE IF EXISTS RPD_ProtectionMecanique_Reco;
 CREATE TABLE RPD_ProtectionMecanique_Reco(
   pkid INTEGER PRIMARY KEY AUTOINCREMENT
 , id TEXT NOT NULL UNIQUE DEFAULT (CreateUUID())
-, Reseau_href TEXT NOT NULL DEFAULT 'Reseau' REFERENCES ReseauUtilite (id)
+, reseau_href TEXT NOT NULL DEFAULT 'Reseau' REFERENCES ReseauUtilite (id)
 , Materiau TEXT NOT NULL REFERENCES ProtectionMaterialTypeValueReco (valeurs)
 , CoupeType TEXT
 , EtatCoupeType TEXT REFERENCES EtatCoupeTypeValueReco (valeurs)
 , Geometrie LINESTRINGZ NOT NULL UNIQUE
-, ProfondeurMinNonReg DOUBLE --QUESTION: UNITE?
+, ProfondeurMinNonReg DOUBLE
 , ProfondeurMinNonReg_uom TEXT DEFAULT 'm' -- REFERENCES ProfondeurMinNonReg_uomValue (valeurs)
 , PrecisionXY TEXT NOT NULL REFERENCES ClassePrecisionReseauValue (valeurs)
 , PrecisionZ TEXT NOT NULL REFERENCES ClassePrecisionReseauValue (valeurs)
@@ -174,10 +175,10 @@ DROP TABLE IF EXISTS RPD_Aerien_Reco_line;
 CREATE TABLE RPD_Aerien_Reco_line(
   pkid INTEGER PRIMARY KEY AUTOINCREMENT
 , id TEXT NOT NULL UNIQUE DEFAULT (CreateUUID())
-, Reseau_href TEXT NOT NULL DEFAULT 'Reseau' REFERENCES ReseauUtilite (id)
+, reseau_href TEXT NOT NULL DEFAULT 'Reseau' REFERENCES ReseauUtilite (id)
 , ModePose TEXT NOT NULL REFERENCES ModePoseValue (valeurs)
 , Geometrie LINESTRINGZ NOT NULL UNIQUE
-, ProfondeurMinNonReg DOUBLE --QUESTION: UNITE?
+, ProfondeurMinNonReg DOUBLE
 , ProfondeurMinNonReg_uom TEXT DEFAULT 'm' -- REFERENCES ProfondeurMinNonReg_uomValue (valeurs)
 , PrecisionXY TEXT NOT NULL REFERENCES ClassePrecisionReseauValue (valeurs)
 , PrecisionZ TEXT NOT NULL REFERENCES ClassePrecisionReseauValue (valeurs)
@@ -323,7 +324,7 @@ DROP TABLE IF EXISTS RPD_CableElectrique_Reco;
 CREATE TABLE RPD_CableElectrique_Reco(
     pkid INTEGER PRIMARY KEY AUTOINCREMENT
   , id TEXT NOT NULL UNIQUE DEFAULT (CreateUUID())
-  , Reseau_href TEXT NOT NULL DEFAULT 'Reseau' REFERENCES ReseauUtilite (id)
+  , reseau_href TEXT NOT NULL DEFAULT 'Reseau' REFERENCES ReseauUtilite (id)
   , DomaineTension TEXT NOT NULL REFERENCES DomaineTensionValue (valeurs)
   , FonctionCable_href TEXT NOT NULL REFERENCES FonctionCableElectriqueValue (valeurs)
   , NombreConducteurs INTEGER NOT NULL
@@ -339,7 +340,6 @@ CREATE TABLE RPD_CableElectrique_Reco(
   -- Cheminement
   , TypePose TEXT NOT NULL REFERENCES TypePoseValue (valeurs) --NOTE : hors reco star => ModePose pour aérien ou PleineTerre (Enterre)
   , Geometrie LINESTRINGZ NOT NULL UNIQUE
-  , ProfondeurMinNonReg_uom TEXT DEFAULT 'm' -- REFERENCES ProfondeurMinNonReg_uomValue (valeurs)
   , PrecisionXY TEXT NOT NULL REFERENCES ClassePrecisionReseauValue (valeurs)
   , PrecisionZ TEXT NOT NULL REFERENCES ClassePrecisionReseauValue (valeurs)
   CHECK ((DomaineTension='BT' AND HierarchieBT IS NOT NULL) OR DomaineTension <> 'BT')
@@ -370,7 +370,7 @@ DROP TABLE IF EXISTS RPD_CableTerre_Reco;
 CREATE TABLE RPD_CableTerre_Reco(
     pkid INTEGER PRIMARY KEY AUTOINCREMENT
   , id TEXT NOT NULL UNIQUE DEFAULT (CreateUUID())
-  , Reseau_href TEXT NOT NULL DEFAULT 'Reseau' REFERENCES ReseauUtilite (id)
+  , reseau_href TEXT NOT NULL DEFAULT 'Reseau' REFERENCES ReseauUtilite (id)
   , FonctionCable_href TEXT NOT NULL REFERENCES FonctionCableElectriqueValue (valeurs)
   , NatureCableTerre_href TEXT NOT NULL REFERENCES ConducteurProtectionValue (valeurs)
   , Section INTEGER NOT NULL
@@ -380,7 +380,6 @@ CREATE TABLE RPD_CableTerre_Reco(
   -- Cheminement
   , TypePose TEXT NOT NULL REFERENCES TypePoseValue (valeurs) --NOTE : hors reco star => ModePose pour aérien ou PleineTerre (Enterre)
   , Geometrie LINESTRINGZ NOT NULL UNIQUE
-  , ProfondeurMinNonReg_uom TEXT DEFAULT 'm' -- REFERENCES ProfondeurMinNonReg_uomValue (valeurs)
   , PrecisionXY TEXT NOT NULL REFERENCES ClassePrecisionReseauValue (valeurs)
   , PrecisionZ TEXT NOT NULL REFERENCES ClassePrecisionReseauValue (valeurs)
   , noeudreseau_href TEXT --TODO : UUID noeud QUESTION : quel noeud?
@@ -404,7 +403,7 @@ INSERT INTO gpkg_geometry_columns (table_name, column_name, geometry_type_name, 
 
 DROP VIEW IF EXISTS RPD_PleineTerre_Reco_virt;
 CREATE VIEW RPD_PleineTerre_Reco_virt as --FIXME : Spliter les MULTILINESTRING pour l'export et calculer uuid unique => insert dans table avant export gml
-SELECT ROW_NUMBER () OVER () pkid, c.id, coalesce(ST_Difference(c."Geometrie", ST_Union(h."Geometrie")), c."Geometrie") Geometrie, Null ProfondeurMinNonReg, c.PrecisionXY,c.PrecisionZ
+SELECT ROW_NUMBER () OVER () pkid, c.id, coalesce(ST_Difference(c."Geometrie", ST_Union(h."Geometrie")), c."Geometrie") Geometrie, Null ProfondeurMinNonReg, 'mm-2' ProfondeurMinNonReg_uom, c.PrecisionXY,c.PrecisionZ
 FROM Cable c
 LEFT JOIN Cheminement h ON ST_Within(h."Geometrie", c."Geometrie")
 WHERE TypePose = 'Enterre'
@@ -415,7 +414,7 @@ INSERT INTO gpkg_geometry_columns (table_name, column_name, geometry_type_name, 
 
 DROP VIEW IF EXISTS RPD_Aerien_Reco_virt;
 CREATE VIEW RPD_Aerien_Reco_virt as --FIXME : Spliter les MULTILINESTRING pour l'export et calculer uuid unique => insert dans table avant export gml
-SELECT ROW_NUMBER () OVER () pkid, c.id, coalesce(ST_Difference(c."Geometrie", ST_Union(h."Geometrie")), c."Geometrie") Geometrie, Null ProfondeurMinNonReg, c.PrecisionXY,c.PrecisionZ
+SELECT ROW_NUMBER () OVER () pkid, c.id, coalesce(ST_Difference(c."Geometrie", ST_Union(h."Geometrie")), c."Geometrie") Geometrie, Null ProfondeurMinNonReg, 'mm-2' ProfondeurMinNonReg_uom, c.PrecisionXY,c.PrecisionZ
 FROM Cable c
 LEFT JOIN Cheminement h ON ST_Within(h."Geometrie", c."Geometrie")
 WHERE NOT TypePose = 'Enterre'

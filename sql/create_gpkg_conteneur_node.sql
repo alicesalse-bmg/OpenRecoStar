@@ -8,7 +8,7 @@ DROP TABLE IF EXISTS RPD_BatimentTechnique_Reco_line;
 CREATE TABLE RPD_BatimentTechnique_Reco_line (
   pkid INTEGER PRIMARY KEY AUTOINCREMENT
 , id TEXT NOT NULL UNIQUE DEFAULT (CreateUUID())
-, Reseau_href TEXT NOT NULL DEFAULT 'Reseau' REFERENCES ReseauUtilite (id)
+, reseau_href TEXT NOT NULL DEFAULT 'Reseau' REFERENCES ReseauUtilite (id)
 , Geometrie MULTILINESTRINGZ NOT NULL UNIQUE
 , PrecisionXY TEXT NOT NULL REFERENCES ClassePrecisionReseauValue (valeurs)
 , PrecisionZ TEXT NOT NULL REFERENCES ClassePrecisionReseauValue (valeurs)
@@ -22,7 +22,7 @@ SELECT gpkgAddSpatialIndex('RPD_BatimentTechnique_Reco_line', 'Geometrie' );
 
 DROP VIEW IF EXISTS RPD_BatimentTechnique_Reco;
 CREATE VIEW RPD_BatimentTechnique_Reco as
-select pkid, id, Reseau_href, ST_Centroid(Geometrie) Geometrie, PrecisionXY, PrecisionZ, geometriesupplementaire_href
+select pkid, id, reseau_href, ST_Centroid(Geometrie) Geometrie, PrecisionXY, PrecisionZ, geometriesupplementaire_href
 from RPD_BatimentTechnique_Reco_line;
 
 INSERT INTO gpkg_contents (table_name, data_type, identifier, srs_id) values ('RPD_BatimentTechnique_Reco','features','RPD_BatimentTechnique_Reco',2154); --GPKG
@@ -35,7 +35,7 @@ DROP TABLE IF EXISTS RPD_EnceinteCloturee_Reco_line;
 CREATE TABLE RPD_EnceinteCloturee_Reco_line(
   pkid INTEGER PRIMARY KEY AUTOINCREMENT
 , id TEXT NOT NULL UNIQUE DEFAULT (CreateUUID())
-, Reseau_href TEXT NOT NULL DEFAULT 'Reseau' REFERENCES ReseauUtilite (id)
+, reseau_href TEXT NOT NULL DEFAULT 'Reseau' REFERENCES ReseauUtilite (id)
 , Geometrie MULTILINESTRINGZ NOT NULL UNIQUE
 , PrecisionXY TEXT NOT NULL REFERENCES ClassePrecisionReseauValue (valeurs)
 , PrecisionZ TEXT NOT NULL REFERENCES ClassePrecisionReseauValue (valeurs)
@@ -48,7 +48,7 @@ SELECT gpkgAddSpatialIndex('RPD_EnceinteCloturee_Reco_line', 'Geometrie' );
 
 DROP VIEW IF EXISTS RPD_EnceinteCloturee_Reco;
 CREATE VIEW RPD_EnceinteCloturee_Reco as
-select pkid, id, Reseau_href, ST_Centroid(Geometrie) Geometrie, PrecisionXY, PrecisionZ, geometriesupplementaire_href
+select pkid, id, reseau_href, ST_Centroid(Geometrie) Geometrie, PrecisionXY, PrecisionZ, geometriesupplementaire_href
 from RPD_EnceinteCloturee_Reco_line;
 
 INSERT INTO gpkg_contents (table_name, data_type, identifier, srs_id) values ('RPD_EnceinteCloturee_Reco','features','RPD_EnceinteCloturee_Reco',2154); --GPKG
@@ -120,7 +120,7 @@ DROP TABLE IF EXISTS RPD_Coffret_Reco;
 CREATE TABLE RPD_Coffret_Reco(
   pkid INTEGER PRIMARY KEY AUTOINCREMENT
 , id TEXT NOT NULL UNIQUE DEFAULT (CreateUUID())
-, Reseau_href TEXT NOT NULL DEFAULT 'Reseau' REFERENCES ReseauUtilite (id)
+, reseau_href TEXT NOT NULL DEFAULT 'Reseau' REFERENCES ReseauUtilite (id)
 , ImplantationArmoire_href TEXT NOT NULL REFERENCES ImplantationArmoireValue (valeurs)
 , TypeCoffret_href TEXT REFERENCES TypeCoffretValue (valeurs)
 , FonctionCoffret_href TEXT REFERENCES FonctionCoffretValue (valeurs)
@@ -220,11 +220,11 @@ DROP TABLE IF EXISTS RPD_Support_Reco;
 CREATE TABLE RPD_Support_Reco(
   pkid INTEGER PRIMARY KEY AUTOINCREMENT
 , id TEXT NOT NULL UNIQUE DEFAULT (CreateUUID())
-, Reseau_href TEXT NOT NULL DEFAULT 'Reseau' REFERENCES ReseauUtilite (id)
+, reseau_href TEXT NOT NULL DEFAULT 'Reseau' REFERENCES ReseauUtilite (id)
 , Classe_href TEXT REFERENCES ClasseSupportValue (valeurs) -- NOTE : NOT NULL sauf si NatureSupport = facade
-, Effort INTEGER --QUESTION: UNITE? -- NOTE : NOT NULL sauf si NatureSupport = facade
-, Effort_uom TEXT DEFAULT ''
-, HauteurPoteau INTEGER --QUESTION: UNITE? -- NOTE : NOT NULL sauf si NatureSupport = facade
+, Effort INTEGER -- NOTE : NOT NULL sauf si NatureSupport = facade
+, Effort_uom TEXT DEFAULT 'kN'
+, HauteurPoteau INTEGER -- NOTE : NOT NULL sauf si NatureSupport = facade
 , HauteurPoteau_uom TEXT DEFAULT 'm'
 , NatureSupport_href TEXT REFERENCES NatureSupportValue (valeurs)
 , Matiere_href TEXT NOT NULL REFERENCES MatiereValue (valeurs)
@@ -294,7 +294,7 @@ DROP TABLE IF EXISTS RPD_JeuBarres_Reco;
 CREATE TABLE RPD_JeuBarres_Reco(
   pkid INTEGER PRIMARY KEY AUTOINCREMENT
 , id TEXT NOT NULL UNIQUE DEFAULT (CreateUUID())
-, Reseau_href TEXT NOT NULL DEFAULT 'Reseau' REFERENCES ReseauUtilite (id)
+, reseau_href TEXT NOT NULL DEFAULT 'Reseau' REFERENCES ReseauUtilite (id)
 , Geometrie POINTZ NOT NULL UNIQUE
 , PrecisionXY TEXT REFERENCES ClassePrecisionReseauValue (valeurs) -- NOTE : NOT NULL si pas dans conteneur ou noeud parent
 , PrecisionZ TEXT REFERENCES ClassePrecisionReseauValue (valeurs) -- NOTE : NOT NULL si pas dans conteneur ou noeud parent
@@ -327,7 +327,7 @@ DROP TABLE IF EXISTS RPD_Jonction_Reco;
 CREATE TABLE RPD_Jonction_Reco(
   pkid INTEGER PRIMARY KEY AUTOINCREMENT
 , id TEXT NOT NULL UNIQUE DEFAULT (CreateUUID())
-, Reseau_href TEXT NOT NULL DEFAULT 'Reseau' REFERENCES ReseauUtilite (id)
+, reseau_href TEXT NOT NULL DEFAULT 'Reseau' REFERENCES ReseauUtilite (id)
 , DomaineTension TEXT NOT NULL REFERENCES DomaineTensionValue (valeurs)
 , TypeJonction TEXT NOT NULL REFERENCES TypeJonctionValue (valeurs)
 , Geometrie POINTZ NOT NULL UNIQUE
@@ -349,7 +349,7 @@ DROP TABLE IF EXISTS RPD_Plage_Reco;
 CREATE TABLE RPD_Plage_Reco(
   pkid INTEGER PRIMARY KEY AUTOINCREMENT
 , id TEXT NOT NULL UNIQUE DEFAULT (CreateUUID())
-, Reseau_href TEXT NOT NULL DEFAULT 'Reseau' REFERENCES ReseauUtilite (id)
+, reseau_href TEXT NOT NULL DEFAULT 'Reseau' REFERENCES ReseauUtilite (id)
 , Coupure BOOLEAN NOT NULL
 , Protection BOOLEAN NOT NULL
 , Geometrie POINTZ NOT NULL UNIQUE
@@ -366,12 +366,13 @@ SELECT gpkgAddSpatialIndex('RPD_Plage_Reco', 'Geometrie' );
 
 --XXX RPD_OuvrageCollectifBranchement_Reco
 -- NOTE : peut etre un enfant d'un RM ou JDB
+-- IDEA: copier la liste des PRMs => création auto des OCB
 
 DROP TABLE IF EXISTS RPD_OuvrageCollectifBranchement_Reco;
 CREATE TABLE RPD_OuvrageCollectifBranchement_Reco(
   pkid INTEGER PRIMARY KEY AUTOINCREMENT
 , id TEXT NOT NULL UNIQUE DEFAULT (CreateUUID())
-, Reseau_href TEXT NOT NULL DEFAULT 'Reseau' REFERENCES ReseauUtilite (id)
+, reseau_href TEXT NOT NULL DEFAULT 'Reseau' REFERENCES ReseauUtilite (id)
 , Geometrie POINTZ NOT NULL UNIQUE
 , PrecisionXY TEXT REFERENCES ClassePrecisionReseauValue (valeurs) -- NOTE : NOT NULL si pas dans conteneur ou noeud parent
 , PrecisionZ TEXT REFERENCES ClassePrecisionReseauValue (valeurs) -- NOTE : NOT NULL si pas dans conteneur ou noeud parent
@@ -390,7 +391,7 @@ DROP TABLE IF EXISTS RPD_PointDeComptage_Reco;
 CREATE TABLE RPD_PointDeComptage_Reco(
   pkid INTEGER PRIMARY KEY AUTOINCREMENT
 , id TEXT NOT NULL UNIQUE DEFAULT (CreateUUID())
-, Reseau_href TEXT NOT NULL DEFAULT 'Reseau' REFERENCES ReseauUtilite (id)
+, reseau_href TEXT NOT NULL DEFAULT 'Reseau' REFERENCES ReseauUtilite (id)
 , NumeroPRM INTEGER NOT NULL
 , Geometrie POINTZ NOT NULL UNIQUE
 , PrecisionXY TEXT REFERENCES ClassePrecisionReseauValue (valeurs) -- NOTE : NOT NULL si pas dans conteneur ou noeud parent
@@ -464,7 +465,7 @@ DROP TABLE IF EXISTS RPD_PosteElectrique_Reco;
 CREATE TABLE RPD_PosteElectrique_Reco(
   pkid INTEGER PRIMARY KEY AUTOINCREMENT
 , id TEXT NOT NULL UNIQUE DEFAULT (CreateUUID())
-, Reseau_href TEXT NOT NULL DEFAULT 'Reseau' REFERENCES ReseauUtilite (id)
+, reseau_href TEXT NOT NULL DEFAULT 'Reseau' REFERENCES ReseauUtilite (id)
 , Categorie_href TEXT NOT NULL REFERENCES CategoriesPosteValue (valeurs)
 , TypePoste_href TEXT NOT NULL REFERENCES TypePosteValue (valeurs)
 , Geometrie POINTZ NOT NULL UNIQUE
@@ -485,7 +486,7 @@ DROP TABLE IF EXISTS RPD_RaccordementModulaire_Reco;
 CREATE TABLE RPD_RaccordementModulaire_Reco(
   pkid INTEGER PRIMARY KEY AUTOINCREMENT
 , id TEXT NOT NULL UNIQUE DEFAULT (CreateUUID())
-, Reseau_href TEXT NOT NULL DEFAULT 'Reseau' REFERENCES ReseauUtilite (id)
+, reseau_href TEXT NOT NULL DEFAULT 'Reseau' REFERENCES ReseauUtilite (id)
 , NombrePlages INTEGER NOT NULL
 , Geometrie POINTZ NOT NULL UNIQUE
 , PrecisionXY TEXT REFERENCES ClassePrecisionReseauValue (valeurs) -- NOTE : NOT NULL si pas dans conteneur ou noeud parent
@@ -517,7 +518,7 @@ DROP TABLE IF EXISTS RPD_Terre_Reco;
 CREATE TABLE RPD_Terre_Reco(
   pkid INTEGER PRIMARY KEY AUTOINCREMENT
 , id TEXT NOT NULL UNIQUE DEFAULT (CreateUUID())
-, Reseau_href TEXT NOT NULL DEFAULT 'Reseau' REFERENCES ReseauUtilite (id)
+, reseau_href TEXT NOT NULL DEFAULT 'Reseau' REFERENCES ReseauUtilite (id)
 , NatureTerre_href TEXT NOT NULL REFERENCES NatureTerreValue (valeurs)
 , Resistance INTEGER
 , Resistance_uom TEXT DEFAULT 'ohms'
@@ -633,11 +634,12 @@ CREATE TABLE RPD_PointLeveOuvrageReseau_Reco(
 , NumeroPoint TEXT NOT NULL
 , CodeOuvrage TEXT NOT NULL --NOTE : hors reco star => permet de tracer les lignes en auto
 , Leve NUMERIC NOT NULL -- ZGS ou Profondeur
+, Leve_uom TEXT DEFAULT 'm'
 , TypeLeve TEXT NOT NULL REFERENCES LeveTypeValue (valeurs)
 , Producteur TEXT NOT NULL
 , Geometrie POINTZ NOT NULL --UNIQUE
-, PrecisionXY INTEGER NOT NULL
-, PrecisionZ INTEGER NOT NULL
+, PrecisionXYnum INTEGER NOT NULL
+, PrecisionZnum INTEGER NOT NULL
 , UNIQUE (Geometrie, CodeOuvrage)
 );
 
