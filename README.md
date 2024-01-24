@@ -35,7 +35,7 @@ Entrer l'url du dépôt : https://raw.githubusercontent.com/alicesalse-bmg/OpenR
 
 ### Créer un nouveau projet
 
-* Utiliser l'outil dédié pour la création d'un nouveau projet : <img src="./python/qgs_plugins/OpenRecoStarPlugin/icons/NewProjet.png"  width="25">
+* Utiliser l'outil dédié pour la création d'un nouveau projet : <img src="https://github.com/alicesalse-bmg/OpenRecoStarPlugin/raw/master/icons/NewProjet.png"  width="25">
 
 * Le nouveau projet est automatiquement créé dans le répertoire choisi selon l'arborescence :
 
