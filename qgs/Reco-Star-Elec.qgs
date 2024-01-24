@@ -25,7 +25,7 @@
       <customproperties>
         <Option/>
       </customproperties>
-      <layer-tree-layer id="RPD_Jonction_Reco_f4215dd3_0dd7_4739_a775_8b289d1a1746" source="../gpkg/Reco-Star-Elec-RPD.gpkg|layername=RPD_Jonction_Reco" providerKey="ogr" checked="Qt::Checked" expanded="0" legend_exp="" legend_split_behavior="0" name="RPD_Jonction_Reco" patch_size="-1,-1">
+      <layer-tree-layer id="RPD_Jonction_Reco_f4215dd3_0dd7_4739_a775_8b289d1a1746" source="./gpkg/Reco-Star-Elec-RPD.gpkg|layername=RPD_Jonction_Reco" providerKey="ogr" checked="Qt::Checked" expanded="0" legend_exp="" legend_split_behavior="0" name="RPD_Jonction_Reco" patch_size="-1,-1">
         <customproperties>
           <Option type="Map">
             <Option value="RPD_Jonction_Reco" name="cached_name" type="QString"/>
@@ -68,7 +68,7 @@
           </Option>
         </customproperties>
       </layer-tree-layer>
-      <layer-tree-layer id="RPD_JeuBarres_Reco_f474d02c_145d_4f4f_83a5_ec14862b57de" source="../gpkg/Reco-Star-Elec-RPD.gpkg|layername=RPD_JeuBarres_Reco" providerKey="ogr" checked="Qt::Checked" expanded="1" legend_exp="" legend_split_behavior="0" name="RPD_JeuBarres_Reco" patch_size="-1,-1">
+      <layer-tree-layer id="RPD_JeuBarres_Reco_f474d02c_145d_4f4f_83a5_ec14862b57de" source="./gpkg/Reco-Star-Elec-RPD.gpkg|layername=RPD_JeuBarres_Reco" providerKey="ogr" checked="Qt::Checked" expanded="1" legend_exp="" legend_split_behavior="0" name="RPD_JeuBarres_Reco" patch_size="-1,-1">
         <customproperties>
           <Option type="Map">
             <Option name="expandedLegendNodes" type="invalid"/>
@@ -76,7 +76,7 @@
           </Option>
         </customproperties>
       </layer-tree-layer>
-      <layer-tree-layer id="RPD_RaccordementModulaire_Reco_f8b23447_99f6_4bf0_a9c4_e0be7a836159" source="../gpkg/Reco-Star-Elec-RPD.gpkg|layername=RPD_RaccordementModulaire_Reco" providerKey="ogr" checked="Qt::Checked" expanded="1" legend_exp="" legend_split_behavior="0" name="RPD_RaccordementModulaire_Reco" patch_size="-1,-1">
+      <layer-tree-layer id="RPD_RaccordementModulaire_Reco_f8b23447_99f6_4bf0_a9c4_e0be7a836159" source="./gpkg/Reco-Star-Elec-RPD.gpkg|layername=RPD_RaccordementModulaire_Reco" providerKey="ogr" checked="Qt::Checked" expanded="1" legend_exp="" legend_split_behavior="0" name="RPD_RaccordementModulaire_Reco" patch_size="-1,-1">
         <customproperties>
           <Option type="Map">
             <Option name="expandedLegendNodes" type="invalid"/>
@@ -84,7 +84,7 @@
           </Option>
         </customproperties>
       </layer-tree-layer>
-      <layer-tree-layer id="RPD_Plage_Reco_82924fea_11f2_4d7b_a430_be2e443d8cff" source="../gpkg/Reco-Star-Elec-RPD.gpkg|layername=RPD_Plage_Reco" providerKey="ogr" checked="Qt::Checked" expanded="1" legend_exp="" legend_split_behavior="0" name="RPD_Plage_Reco" patch_size="-1,-1">
+      <layer-tree-layer id="RPD_Plage_Reco_82924fea_11f2_4d7b_a430_be2e443d8cff" source="./gpkg/Reco-Star-Elec-RPD.gpkg|layername=RPD_Plage_Reco" providerKey="ogr" checked="Qt::Checked" expanded="1" legend_exp="" legend_split_behavior="0" name="RPD_Plage_Reco" patch_size="-1,-1">
         <customproperties>
           <Option type="Map">
             <Option name="expandedLegendNodes" type="invalid"/>
@@ -92,7 +92,7 @@
           </Option>
         </customproperties>
       </layer-tree-layer>
-      <layer-tree-layer id="RPD_PointDeComptage_Reco_0b0a6397_b0a2_4d53_892f_fcf300677c9d" source="../gpkg/Reco-Star-Elec-RPD.gpkg|layername=RPD_PointDeComptage_Reco" providerKey="ogr" checked="Qt::Checked" expanded="1" legend_exp="" legend_split_behavior="0" name="RPD_PointDeComptage_Reco" patch_size="-1,-1">
+      <layer-tree-layer id="RPD_PointDeComptage_Reco_0b0a6397_b0a2_4d53_892f_fcf300677c9d" source="./gpkg/Reco-Star-Elec-RPD.gpkg|layername=RPD_PointDeComptage_Reco" providerKey="ogr" checked="Qt::Checked" expanded="1" legend_exp="" legend_split_behavior="0" name="RPD_PointDeComptage_Reco" patch_size="-1,-1">
         <customproperties>
           <Option type="Map">
             <Option name="expandedLegendNodes" type="invalid"/>
@@ -100,7 +100,7 @@
           </Option>
         </customproperties>
       </layer-tree-layer>
-      <layer-tree-layer id="RPD_OuvrageCollectifBranchement_Reco_5a9f3840_14a5_4990_b251_7ec99181060a" source="../gpkg/Reco-Star-Elec-RPD.gpkg|layername=RPD_OuvrageCollectifBranchement_Reco" providerKey="ogr" checked="Qt::Checked" expanded="1" legend_exp="" legend_split_behavior="0" name="RPD_OuvrageCollectifBranchement_Reco" patch_size="-1,-1">
+      <layer-tree-layer id="RPD_OuvrageCollectifBranchement_Reco_5a9f3840_14a5_4990_b251_7ec99181060a" source="./gpkg/Reco-Star-Elec-RPD.gpkg|layername=RPD_OuvrageCollectifBranchement_Reco" providerKey="ogr" checked="Qt::Checked" expanded="1" legend_exp="" legend_split_behavior="0" name="RPD_OuvrageCollectifBranchement_Reco" patch_size="-1,-1">
         <customproperties>
           <Option type="Map">
             <Option name="expandedLegendNodes" type="invalid"/>
@@ -108,7 +108,7 @@
           </Option>
         </customproperties>
       </layer-tree-layer>
-      <layer-tree-layer id="RPD_PosteElectrique_Reco_714a0e8e_a916_4e5d_8806_0e33133c4bef" source="../gpkg/Reco-Star-Elec-RPD.gpkg|layername=RPD_PosteElectrique_Reco" providerKey="ogr" checked="Qt::Checked" expanded="0" legend_exp="" legend_split_behavior="0" name="RPD_PosteElectrique_Reco" patch_size="-1,-1">
+      <layer-tree-layer id="RPD_PosteElectrique_Reco_714a0e8e_a916_4e5d_8806_0e33133c4bef" source="./gpkg/Reco-Star-Elec-RPD.gpkg|layername=RPD_PosteElectrique_Reco" providerKey="ogr" checked="Qt::Checked" expanded="0" legend_exp="" legend_split_behavior="0" name="RPD_PosteElectrique_Reco" patch_size="-1,-1">
         <customproperties>
           <Option type="Map">
             <Option value="RPD_PosteElectrique_Reco" name="cached_name" type="QString"/>
@@ -122,7 +122,7 @@
           </Option>
         </customproperties>
       </layer-tree-layer>
-      <layer-tree-layer id="RPD_Terre_Reco_279156a7_af43_4784_8667_b5b79623bb85" source="../gpkg/Reco-Star-Elec-RPD.gpkg|layername=RPD_Terre_Reco" providerKey="ogr" checked="Qt::Checked" expanded="1" legend_exp="" legend_split_behavior="0" name="RPD_Terre_Reco" patch_size="-1,-1">
+      <layer-tree-layer id="RPD_Terre_Reco_279156a7_af43_4784_8667_b5b79623bb85" source="./gpkg/Reco-Star-Elec-RPD.gpkg|layername=RPD_Terre_Reco" providerKey="ogr" checked="Qt::Checked" expanded="1" legend_exp="" legend_split_behavior="0" name="RPD_Terre_Reco" patch_size="-1,-1">
         <customproperties>
           <Option type="Map">
             <Option name="expandedLegendNodes" type="invalid"/>
@@ -135,7 +135,7 @@
       <customproperties>
         <Option/>
       </customproperties>
-      <layer-tree-layer id="RPD_CableElectrique_Reco_559ad6fd_6937_4e8b_a5f1_cbfe58af78b3" source="../gpkg/Reco-Star-Elec-RPD.gpkg|layername=RPD_CableElectrique_Reco" providerKey="ogr" checked="Qt::Checked" expanded="0" legend_exp="" legend_split_behavior="0" name="RPD_CableElectrique_Reco" patch_size="-1,-1">
+      <layer-tree-layer id="RPD_CableElectrique_Reco_559ad6fd_6937_4e8b_a5f1_cbfe58af78b3" source="./gpkg/Reco-Star-Elec-RPD.gpkg|layername=RPD_CableElectrique_Reco" providerKey="ogr" checked="Qt::Checked" expanded="0" legend_exp="" legend_split_behavior="0" name="RPD_CableElectrique_Reco" patch_size="-1,-1">
         <customproperties>
           <Option type="Map">
             <Option value="RPD_CableElectrique_Reco" name="cached_name" type="QString"/>
@@ -168,7 +168,7 @@
           </Option>
         </customproperties>
       </layer-tree-layer>
-      <layer-tree-layer id="RPD_CableTerre_Reco_69e0ec7b_3408_429d_b52c_84c1cc9a9889" source="../gpkg/Reco-Star-Elec-RPD.gpkg|layername=RPD_CableTerre_Reco" providerKey="ogr" checked="Qt::Checked" expanded="1" legend_exp="" legend_split_behavior="0" name="RPD_CableTerre_Reco" patch_size="-1,-1">
+      <layer-tree-layer id="RPD_CableTerre_Reco_69e0ec7b_3408_429d_b52c_84c1cc9a9889" source="./gpkg/Reco-Star-Elec-RPD.gpkg|layername=RPD_CableTerre_Reco" providerKey="ogr" checked="Qt::Checked" expanded="1" legend_exp="" legend_split_behavior="0" name="RPD_CableTerre_Reco" patch_size="-1,-1">
         <customproperties>
           <Option type="Map">
             <Option name="expandedLegendNodes" type="invalid"/>
@@ -181,7 +181,7 @@
       <customproperties>
         <Option/>
       </customproperties>
-      <layer-tree-layer id="RPD_Coffret_Reco_3262a53c_3782_49cd_965b_2675949930be" source="../gpkg/Reco-Star-Elec-RPD.gpkg|layername=RPD_Coffret_Reco" providerKey="ogr" checked="Qt::Checked" expanded="1" legend_exp="" legend_split_behavior="0" name="RPD_Coffret_Reco" patch_size="-1,-1">
+      <layer-tree-layer id="RPD_Coffret_Reco_3262a53c_3782_49cd_965b_2675949930be" source="./gpkg/Reco-Star-Elec-RPD.gpkg|layername=RPD_Coffret_Reco" providerKey="ogr" checked="Qt::Checked" expanded="1" legend_exp="" legend_split_behavior="0" name="RPD_Coffret_Reco" patch_size="-1,-1">
         <customproperties>
           <Option type="Map">
             <Option name="expandedLegendNodes" type="invalid"/>
@@ -189,7 +189,7 @@
           </Option>
         </customproperties>
       </layer-tree-layer>
-      <layer-tree-layer id="RPD_Support_Reco_65f3aab3_3bb6_4b26_9507_1d10a4efdb39" source="../gpkg/Reco-Star-Elec-RPD.gpkg|layername=RPD_Support_Reco" providerKey="ogr" checked="Qt::Checked" expanded="0" legend_exp="" legend_split_behavior="0" name="RPD_Support_Reco" patch_size="-1,-1">
+      <layer-tree-layer id="RPD_Support_Reco_65f3aab3_3bb6_4b26_9507_1d10a4efdb39" source="./gpkg/Reco-Star-Elec-RPD.gpkg|layername=RPD_Support_Reco" providerKey="ogr" checked="Qt::Checked" expanded="0" legend_exp="" legend_split_behavior="0" name="RPD_Support_Reco" patch_size="-1,-1">
         <customproperties>
           <Option type="Map">
             <Option value="RPD_Support_Reco" name="cached_name" type="QString"/>
@@ -206,7 +206,7 @@
           </Option>
         </customproperties>
       </layer-tree-layer>
-      <layer-tree-layer id="RPD_BatimentTechnique_Reco_line_0d1cb4af_db56_443c_a089_d5eff62183d8" source="../gpkg/Reco-Star-Elec-RPD.gpkg|layername=RPD_BatimentTechnique_Reco_line" providerKey="ogr" checked="Qt::Checked" expanded="1" legend_exp="" legend_split_behavior="0" name="RPD_BatimentTechnique_Reco" patch_size="-1,-1">
+      <layer-tree-layer id="RPD_BatimentTechnique_Reco_line_0d1cb4af_db56_443c_a089_d5eff62183d8" source="./gpkg/Reco-Star-Elec-RPD.gpkg|layername=RPD_BatimentTechnique_Reco_line" providerKey="ogr" checked="Qt::Checked" expanded="1" legend_exp="" legend_split_behavior="0" name="RPD_BatimentTechnique_Reco" patch_size="-1,-1">
         <customproperties>
           <Option type="Map">
             <Option name="expandedLegendNodes" type="invalid"/>
@@ -214,7 +214,7 @@
           </Option>
         </customproperties>
       </layer-tree-layer>
-      <layer-tree-layer id="RPD_EnceinteCloturee_Reco_line_1d1b0f4e_a411_464d_b89c_9ac2b370e79f" source="../gpkg/Reco-Star-Elec-RPD.gpkg|layername=RPD_EnceinteCloturee_Reco_line" providerKey="ogr" checked="Qt::Checked" expanded="1" legend_exp="" legend_split_behavior="0" name="RPD_EnceinteCloturee_Reco" patch_size="-1,-1">
+      <layer-tree-layer id="RPD_EnceinteCloturee_Reco_line_1d1b0f4e_a411_464d_b89c_9ac2b370e79f" source="./gpkg/Reco-Star-Elec-RPD.gpkg|layername=RPD_EnceinteCloturee_Reco_line" providerKey="ogr" checked="Qt::Checked" expanded="1" legend_exp="" legend_split_behavior="0" name="RPD_EnceinteCloturee_Reco" patch_size="-1,-1">
         <customproperties>
           <Option type="Map">
             <Option name="expandedLegendNodes" type="invalid"/>
@@ -222,7 +222,7 @@
           </Option>
         </customproperties>
       </layer-tree-layer>
-      <layer-tree-layer id="RPD_GeometrieSupplementaire_Reco_f8f6394f_3b6d_46e9_a657_5bf0eda0c74f" source="../gpkg/Reco-Star-Elec-RPD.gpkg|layername=RPD_GeometrieSupplementaire_Reco" providerKey="ogr" checked="Qt::Checked" expanded="1" legend_exp="" legend_split_behavior="0" name="RPD_GeometrieSupplementaire_Reco" patch_size="-1,-1">
+      <layer-tree-layer id="RPD_GeometrieSupplementaire_Reco_f8f6394f_3b6d_46e9_a657_5bf0eda0c74f" source="./gpkg/Reco-Star-Elec-RPD.gpkg|layername=RPD_GeometrieSupplementaire_Reco" providerKey="ogr" checked="Qt::Checked" expanded="1" legend_exp="" legend_split_behavior="0" name="RPD_GeometrieSupplementaire_Reco" patch_size="-1,-1">
         <customproperties>
           <Option type="Map">
             <Option name="expandedLegendNodes" type="invalid"/>
@@ -235,7 +235,7 @@
       <customproperties>
         <Option/>
       </customproperties>
-      <layer-tree-layer id="RPD_PleineTerre_Reco_line_434e16d0_b4fe_4687_b552_7faa09f52916" source="../gpkg/Reco-Star-Elec-RPD.gpkg|layername=RPD_PleineTerre_Reco_line" providerKey="ogr" checked="Qt::Checked" expanded="1" legend_exp="" legend_split_behavior="0" name="RPD_PleineTerre_Reco" patch_size="-1,-1">
+      <layer-tree-layer id="RPD_PleineTerre_Reco_line_434e16d0_b4fe_4687_b552_7faa09f52916" source="./gpkg/Reco-Star-Elec-RPD.gpkg|layername=RPD_PleineTerre_Reco_line" providerKey="ogr" checked="Qt::Checked" expanded="1" legend_exp="" legend_split_behavior="0" name="RPD_PleineTerre_Reco" patch_size="-1,-1">
         <customproperties>
           <Option type="Map">
             <Option name="expandedLegendNodes" type="invalid"/>
@@ -243,7 +243,7 @@
           </Option>
         </customproperties>
       </layer-tree-layer>
-      <layer-tree-layer id="RPD_PleineTerre_Reco_virt_b519c09d_5fd8_43ed_b843_0be94ed2d3d5" source="../gpkg/Reco-Star-Elec-RPD.gpkg|layername=RPD_PleineTerre_Reco_virt" providerKey="ogr" checked="Qt::Checked" expanded="1" legend_exp="" legend_split_behavior="0" name="RPD_PleineTerre_Reco_virt" patch_size="-1,-1">
+      <layer-tree-layer id="RPD_PleineTerre_Reco_virt_b519c09d_5fd8_43ed_b843_0be94ed2d3d5" source="./gpkg/Reco-Star-Elec-RPD.gpkg|layername=RPD_PleineTerre_Reco_virt" providerKey="ogr" checked="Qt::Checked" expanded="1" legend_exp="" legend_split_behavior="0" name="RPD_PleineTerre_Reco_virt" patch_size="-1,-1">
         <customproperties>
           <Option type="Map">
             <Option value="RPD_PleineTerre_Reco_virt" name="cached_name" type="QString"/>
@@ -252,7 +252,7 @@
           </Option>
         </customproperties>
       </layer-tree-layer>
-      <layer-tree-layer id="RPD_Aerien_Reco_line_743e97b1_2554_41cd_a2e5_b1683458dd3b" source="../gpkg/Reco-Star-Elec-RPD.gpkg|layername=RPD_Aerien_Reco_line" providerKey="ogr" checked="Qt::Checked" expanded="1" legend_exp="" legend_split_behavior="0" name="RPD_Aerien_Reco" patch_size="-1,-1">
+      <layer-tree-layer id="RPD_Aerien_Reco_line_743e97b1_2554_41cd_a2e5_b1683458dd3b" source="./gpkg/Reco-Star-Elec-RPD.gpkg|layername=RPD_Aerien_Reco_line" providerKey="ogr" checked="Qt::Checked" expanded="1" legend_exp="" legend_split_behavior="0" name="RPD_Aerien_Reco" patch_size="-1,-1">
         <customproperties>
           <Option type="Map">
             <Option name="expandedLegendNodes" type="invalid"/>
@@ -260,7 +260,7 @@
           </Option>
         </customproperties>
       </layer-tree-layer>
-      <layer-tree-layer id="RPD_Aerien_Reco_virt_bb776325_a751_46de_9882_2ed11827d6a9" source="../gpkg/Reco-Star-Elec-RPD.gpkg|layername=RPD_Aerien_Reco_virt" providerKey="ogr" checked="Qt::Checked" expanded="1" legend_exp="" legend_split_behavior="0" name="RPD_Aerien_Reco_virt" patch_size="-1,-1">
+      <layer-tree-layer id="RPD_Aerien_Reco_virt_bb776325_a751_46de_9882_2ed11827d6a9" source="./gpkg/Reco-Star-Elec-RPD.gpkg|layername=RPD_Aerien_Reco_virt" providerKey="ogr" checked="Qt::Checked" expanded="1" legend_exp="" legend_split_behavior="0" name="RPD_Aerien_Reco_virt" patch_size="-1,-1">
         <customproperties>
           <Option type="Map">
             <Option value="RPD_Aerien_Reco_virt" name="cached_name" type="QString"/>
@@ -269,7 +269,7 @@
           </Option>
         </customproperties>
       </layer-tree-layer>
-      <layer-tree-layer id="RPD_Fourreau_Reco_9f8337d9_7382_4f98_bb14_a587c1db8dce" source="../gpkg/Reco-Star-Elec-RPD.gpkg|layername=RPD_Fourreau_Reco" providerKey="ogr" checked="Qt::Checked" expanded="1" legend_exp="" legend_split_behavior="0" name="RPD_Fourreau_Reco" patch_size="-1,-1">
+      <layer-tree-layer id="RPD_Fourreau_Reco_9f8337d9_7382_4f98_bb14_a587c1db8dce" source="./gpkg/Reco-Star-Elec-RPD.gpkg|layername=RPD_Fourreau_Reco" providerKey="ogr" checked="Qt::Checked" expanded="1" legend_exp="" legend_split_behavior="0" name="RPD_Fourreau_Reco" patch_size="-1,-1">
         <customproperties>
           <Option type="Map">
             <Option name="expandedLegendNodes" type="invalid"/>
@@ -277,7 +277,7 @@
           </Option>
         </customproperties>
       </layer-tree-layer>
-      <layer-tree-layer id="RPD_ProtectionMecanique_Reco_c50b43a6_a3d1_4c13_bdae_dc996759a1b1" source="../gpkg/Reco-Star-Elec-RPD.gpkg|layername=RPD_ProtectionMecanique_Reco" providerKey="ogr" checked="Qt::Checked" expanded="1" legend_exp="" legend_split_behavior="0" name="RPD_ProtectionMecanique_Reco" patch_size="-1,-1">
+      <layer-tree-layer id="RPD_ProtectionMecanique_Reco_c50b43a6_a3d1_4c13_bdae_dc996759a1b1" source="./gpkg/Reco-Star-Elec-RPD.gpkg|layername=RPD_ProtectionMecanique_Reco" providerKey="ogr" checked="Qt::Checked" expanded="1" legend_exp="" legend_split_behavior="0" name="RPD_ProtectionMecanique_Reco" patch_size="-1,-1">
         <customproperties>
           <Option type="Map">
             <Option name="expandedLegendNodes" type="invalid"/>
@@ -285,7 +285,7 @@
           </Option>
         </customproperties>
       </layer-tree-layer>
-      <layer-tree-layer id="RPD_Galerie_Reco_e9a10f52_434d_4341_87c4_bbc79f6dccde" source="../gpkg/Reco-Star-Elec-RPD.gpkg|layername=RPD_Galerie_Reco" providerKey="ogr" checked="Qt::Checked" expanded="1" legend_exp="" legend_split_behavior="0" name="RPD_Galerie_Reco" patch_size="-1,-1">
+      <layer-tree-layer id="RPD_Galerie_Reco_e9a10f52_434d_4341_87c4_bbc79f6dccde" source="./gpkg/Reco-Star-Elec-RPD.gpkg|layername=RPD_Galerie_Reco" providerKey="ogr" checked="Qt::Checked" expanded="1" legend_exp="" legend_split_behavior="0" name="RPD_Galerie_Reco" patch_size="-1,-1">
         <customproperties>
           <Option type="Map">
             <Option name="expandedLegendNodes" type="invalid"/>
@@ -294,7 +294,7 @@
         </customproperties>
       </layer-tree-layer>
     </layer-tree-group>
-    <layer-tree-layer id="RPD_PointLeveOuvrageReseau_Reco_fdb52f9f_7cc9_4161_b70c_ff07e074d328" source="../gpkg/Reco-Star-Elec-RPD.gpkg|layername=RPD_PointLeveOuvrageReseau_Reco" providerKey="ogr" checked="Qt::Checked" expanded="0" legend_exp="" legend_split_behavior="0" name="RPD_PointLeveOuvrageReseau_Reco" patch_size="-1,-1">
+    <layer-tree-layer id="RPD_PointLeveOuvrageReseau_Reco_fdb52f9f_7cc9_4161_b70c_ff07e074d328" source="./gpkg/Reco-Star-Elec-RPD.gpkg|layername=RPD_PointLeveOuvrageReseau_Reco" providerKey="ogr" checked="Qt::Checked" expanded="0" legend_exp="" legend_split_behavior="0" name="RPD_PointLeveOuvrageReseau_Reco" patch_size="-1,-1">
       <customproperties>
         <Option type="Map">
           <Option name="expandedLegendNodes" type="StringList">
@@ -310,7 +310,7 @@
       <customproperties>
         <Option/>
       </customproperties>
-      <layer-tree-layer id="Noeud_Cable_7fd9ff7b_5fff_4f7b_a9ca_1a3360db5bde" source="../gpkg/Reco-Star-Elec-RPD.gpkg|layername=Noeud_Cable" providerKey="ogr" checked="Qt::Checked" expanded="1" legend_exp="" legend_split_behavior="0" name="Noeud_Cable" patch_size="-1,-1">
+      <layer-tree-layer id="Noeud_Cable_7fd9ff7b_5fff_4f7b_a9ca_1a3360db5bde" source="./gpkg/Reco-Star-Elec-RPD.gpkg|layername=Noeud_Cable" providerKey="ogr" checked="Qt::Checked" expanded="1" legend_exp="" legend_split_behavior="0" name="Noeud_Cable" patch_size="-1,-1">
         <customproperties>
           <Option type="Map">
             <Option value="Noeud_Cable" name="cached_name" type="QString"/>
@@ -318,7 +318,7 @@
           </Option>
         </customproperties>
       </layer-tree-layer>
-      <layer-tree-layer id="Conteneur_Cable_77516599_a32d_4bfc_a51f_f0ca739f1cf0" source="../gpkg/Reco-Star-Elec-RPD.gpkg|layername=Conteneur_Cable" providerKey="ogr" checked="Qt::Checked" expanded="1" legend_exp="" legend_split_behavior="0" name="Conteneur_Cable" patch_size="-1,-1">
+      <layer-tree-layer id="Conteneur_Cable_77516599_a32d_4bfc_a51f_f0ca739f1cf0" source="./gpkg/Reco-Star-Elec-RPD.gpkg|layername=Conteneur_Cable" providerKey="ogr" checked="Qt::Checked" expanded="1" legend_exp="" legend_split_behavior="0" name="Conteneur_Cable" patch_size="-1,-1">
         <customproperties>
           <Option type="Map">
             <Option value="Conteneur_Cable" name="cached_name" type="QString"/>
@@ -326,7 +326,7 @@
           </Option>
         </customproperties>
       </layer-tree-layer>
-      <layer-tree-layer id="Conteneur_Noeud_ce66537f_7bde_4345_b739_da8e6e8251f0" source="../gpkg/Reco-Star-Elec-RPD.gpkg|layername=Conteneur_Noeud" providerKey="ogr" checked="Qt::Checked" expanded="1" legend_exp="" legend_split_behavior="0" name="Conteneur_Noeud" patch_size="-1,-1">
+      <layer-tree-layer id="Conteneur_Noeud_ce66537f_7bde_4345_b739_da8e6e8251f0" source="./gpkg/Reco-Star-Elec-RPD.gpkg|layername=Conteneur_Noeud" providerKey="ogr" checked="Qt::Checked" expanded="1" legend_exp="" legend_split_behavior="0" name="Conteneur_Noeud" patch_size="-1,-1">
         <customproperties>
           <Option type="Map">
             <Option value="Conteneur_Noeud" name="cached_name" type="QString"/>
@@ -334,7 +334,7 @@
           </Option>
         </customproperties>
       </layer-tree-layer>
-      <layer-tree-layer id="ctrl_Cheminement_Cable_2d64b62f_1e28_45a1_8bfa_45d8b95e9e27" source="../gpkg/Reco-Star-Elec-RPD.gpkg|layername=ctrl_Cheminement_Cable" providerKey="ogr" checked="Qt::Checked" expanded="1" legend_exp="" legend_split_behavior="0" name="ctrl_Cheminement_Cable" patch_size="-1,-1">
+      <layer-tree-layer id="ctrl_Cheminement_Cable_2d64b62f_1e28_45a1_8bfa_45d8b95e9e27" source="./gpkg/Reco-Star-Elec-RPD.gpkg|layername=ctrl_Cheminement_Cable" providerKey="ogr" checked="Qt::Checked" expanded="1" legend_exp="" legend_split_behavior="0" name="ctrl_Cheminement_Cable" patch_size="-1,-1">
         <customproperties>
           <Option type="Map">
             <Option name="expandedLegendNodes" type="invalid"/>
@@ -342,7 +342,7 @@
           </Option>
         </customproperties>
       </layer-tree-layer>
-      <layer-tree-layer id="ctrl_Noeud_Cable_a876babf_cbc5_4b1f_9824_c323f928da18" source="../gpkg/Reco-Star-Elec-RPD.gpkg|layername=ctrl_Noeud_Cable" providerKey="ogr" checked="Qt::Checked" expanded="1" legend_exp="" legend_split_behavior="0" name="ctrl_Noeud_Cable" patch_size="-1,-1">
+      <layer-tree-layer id="ctrl_Noeud_Cable_a876babf_cbc5_4b1f_9824_c323f928da18" source="./gpkg/Reco-Star-Elec-RPD.gpkg|layername=ctrl_Noeud_Cable" providerKey="ogr" checked="Qt::Checked" expanded="1" legend_exp="" legend_split_behavior="0" name="ctrl_Noeud_Cable" patch_size="-1,-1">
         <customproperties>
           <Option type="Map">
             <Option name="expandedLegendNodes" type="invalid"/>
@@ -350,7 +350,7 @@
           </Option>
         </customproperties>
       </layer-tree-layer>
-      <layer-tree-layer id="ctrl_Noeud_Conteneur_e957e763_b097_40d7_9cae_1080972ba972" source="../gpkg/Reco-Star-Elec-RPD.gpkg|layername=ctrl_Noeud_Conteneur" providerKey="ogr" checked="Qt::Checked" expanded="1" legend_exp="" legend_split_behavior="0" name="ctrl_Noeud_Conteneur" patch_size="-1,-1">
+      <layer-tree-layer id="ctrl_Noeud_Conteneur_e957e763_b097_40d7_9cae_1080972ba972" source="./gpkg/Reco-Star-Elec-RPD.gpkg|layername=ctrl_Noeud_Conteneur" providerKey="ogr" checked="Qt::Checked" expanded="1" legend_exp="" legend_split_behavior="0" name="ctrl_Noeud_Conteneur" patch_size="-1,-1">
         <customproperties>
           <Option type="Map">
             <Option name="expandedLegendNodes" type="invalid"/>
@@ -358,7 +358,7 @@
           </Option>
         </customproperties>
       </layer-tree-layer>
-      <layer-tree-layer id="ctrl_PLOR_Ouvrage_00e2537f_d596_45f7_8749_3316ef0df281" source="../gpkg/Reco-Star-Elec-RPD.gpkg|layername=ctrl_PLOR_Ouvrage" providerKey="ogr" checked="Qt::Checked" expanded="1" legend_exp="" legend_split_behavior="0" name="ctrl_PLOR_Ouvrage" patch_size="-1,-1">
+      <layer-tree-layer id="ctrl_PLOR_Ouvrage_00e2537f_d596_45f7_8749_3316ef0df281" source="./gpkg/Reco-Star-Elec-RPD.gpkg|layername=ctrl_PLOR_Ouvrage" providerKey="ogr" checked="Qt::Checked" expanded="1" legend_exp="" legend_split_behavior="0" name="ctrl_PLOR_Ouvrage" patch_size="-1,-1">
         <customproperties>
           <Option type="Map">
             <Option name="expandedLegendNodes" type="invalid"/>
@@ -371,7 +371,7 @@
       <customproperties>
         <Option/>
       </customproperties>
-      <layer-tree-layer id="CableMaterialTypeValue_fd3d989a_76ac_4334_b609_87f508eb3e9a" source="../gpkg/Reco-Star-Elec-RPD.gpkg|layername=CableMaterialTypeValue" providerKey="ogr" checked="Qt::Checked" expanded="1" legend_exp="" legend_split_behavior="0" name="CableMaterialTypeValue" patch_size="-1,-1">
+      <layer-tree-layer id="CableMaterialTypeValue_fd3d989a_76ac_4334_b609_87f508eb3e9a" source="./gpkg/Reco-Star-Elec-RPD.gpkg|layername=CableMaterialTypeValue" providerKey="ogr" checked="Qt::Checked" expanded="1" legend_exp="" legend_split_behavior="0" name="CableMaterialTypeValue" patch_size="-1,-1">
         <customproperties>
           <Option type="Map">
             <Option value="CableMaterialTypeValue" name="cached_name" type="QString"/>
@@ -379,7 +379,7 @@
           </Option>
         </customproperties>
       </layer-tree-layer>
-      <layer-tree-layer id="CategoriesPosteValue_b1d556f2_46a2_42d5_adec_f8fe0100e246" source="../gpkg/Reco-Star-Elec-RPD.gpkg|layername=CategoriesPosteValue" providerKey="ogr" checked="Qt::Checked" expanded="1" legend_exp="" legend_split_behavior="0" name="CategoriesPosteValue" patch_size="-1,-1">
+      <layer-tree-layer id="CategoriesPosteValue_b1d556f2_46a2_42d5_adec_f8fe0100e246" source="./gpkg/Reco-Star-Elec-RPD.gpkg|layername=CategoriesPosteValue" providerKey="ogr" checked="Qt::Checked" expanded="1" legend_exp="" legend_split_behavior="0" name="CategoriesPosteValue" patch_size="-1,-1">
         <customproperties>
           <Option type="Map">
             <Option value="CategoriesPosteValue" name="cached_name" type="QString"/>
@@ -387,7 +387,7 @@
           </Option>
         </customproperties>
       </layer-tree-layer>
-      <layer-tree-layer id="ClassePrecisionReseauValue_7240e407_742d_40b4_9db3_00b5d54ed7c2" source="../gpkg/Reco-Star-Elec-RPD.gpkg|layername=ClassePrecisionReseauValue" providerKey="ogr" checked="Qt::Checked" expanded="1" legend_exp="" legend_split_behavior="0" name="ClassePrecisionReseauValue" patch_size="-1,-1">
+      <layer-tree-layer id="ClassePrecisionReseauValue_7240e407_742d_40b4_9db3_00b5d54ed7c2" source="./gpkg/Reco-Star-Elec-RPD.gpkg|layername=ClassePrecisionReseauValue" providerKey="ogr" checked="Qt::Checked" expanded="1" legend_exp="" legend_split_behavior="0" name="ClassePrecisionReseauValue" patch_size="-1,-1">
         <customproperties>
           <Option type="Map">
             <Option value="ClassePrecisionReseauValue" name="cached_name" type="QString"/>
@@ -395,7 +395,7 @@
           </Option>
         </customproperties>
       </layer-tree-layer>
-      <layer-tree-layer id="ClasseSupportValue_08be9a21_27c5_4744_87ec_aa379aa8568e" source="../gpkg/Reco-Star-Elec-RPD.gpkg|layername=ClasseSupportValue" providerKey="ogr" checked="Qt::Checked" expanded="1" legend_exp="" legend_split_behavior="0" name="ClasseSupportValue" patch_size="-1,-1">
+      <layer-tree-layer id="ClasseSupportValue_08be9a21_27c5_4744_87ec_aa379aa8568e" source="./gpkg/Reco-Star-Elec-RPD.gpkg|layername=ClasseSupportValue" providerKey="ogr" checked="Qt::Checked" expanded="1" legend_exp="" legend_split_behavior="0" name="ClasseSupportValue" patch_size="-1,-1">
         <customproperties>
           <Option type="Map">
             <Option value="ClasseSupportValue" name="cached_name" type="QString"/>
@@ -403,7 +403,7 @@
           </Option>
         </customproperties>
       </layer-tree-layer>
-      <layer-tree-layer id="ConditionOfFacilityValueReco_38db7083_48d8_4055_b0b4_8eaaa83ba36a" source="../gpkg/Reco-Star-Elec-RPD.gpkg|layername=ConditionOfFacilityValueReco" providerKey="ogr" checked="Qt::Checked" expanded="1" legend_exp="" legend_split_behavior="0" name="ConditionOfFacilityValueReco" patch_size="-1,-1">
+      <layer-tree-layer id="ConditionOfFacilityValueReco_38db7083_48d8_4055_b0b4_8eaaa83ba36a" source="./gpkg/Reco-Star-Elec-RPD.gpkg|layername=ConditionOfFacilityValueReco" providerKey="ogr" checked="Qt::Checked" expanded="1" legend_exp="" legend_split_behavior="0" name="ConditionOfFacilityValueReco" patch_size="-1,-1">
         <customproperties>
           <Option type="Map">
             <Option value="ConditionOfFacilityValueReco" name="cached_name" type="QString"/>
@@ -411,7 +411,7 @@
           </Option>
         </customproperties>
       </layer-tree-layer>
-      <layer-tree-layer id="ConducteurProtectionValue_d6b0cd5f_c2e7_4c42_b2af_c1b0001c73e4" source="../gpkg/Reco-Star-Elec-RPD.gpkg|layername=ConducteurProtectionValue" providerKey="ogr" checked="Qt::Checked" expanded="1" legend_exp="" legend_split_behavior="0" name="ConducteurProtectionValue" patch_size="-1,-1">
+      <layer-tree-layer id="ConducteurProtectionValue_d6b0cd5f_c2e7_4c42_b2af_c1b0001c73e4" source="./gpkg/Reco-Star-Elec-RPD.gpkg|layername=ConducteurProtectionValue" providerKey="ogr" checked="Qt::Checked" expanded="1" legend_exp="" legend_split_behavior="0" name="ConducteurProtectionValue" patch_size="-1,-1">
         <customproperties>
           <Option type="Map">
             <Option value="ConducteurProtectionValue" name="cached_name" type="QString"/>
@@ -419,7 +419,7 @@
           </Option>
         </customproperties>
       </layer-tree-layer>
-      <layer-tree-layer id="DomaineTensionValue_8196d2dd_929a_4d00_9d72_0169fe9d652e" source="../gpkg/Reco-Star-Elec-RPD.gpkg|layername=DomaineTensionValue" providerKey="ogr" checked="Qt::Checked" expanded="1" legend_exp="" legend_split_behavior="0" name="DomaineTensionValue" patch_size="-1,-1">
+      <layer-tree-layer id="DomaineTensionValue_8196d2dd_929a_4d00_9d72_0169fe9d652e" source="./gpkg/Reco-Star-Elec-RPD.gpkg|layername=DomaineTensionValue" providerKey="ogr" checked="Qt::Checked" expanded="1" legend_exp="" legend_split_behavior="0" name="DomaineTensionValue" patch_size="-1,-1">
         <customproperties>
           <Option type="Map">
             <Option value="DomaineTensionValue" name="cached_name" type="QString"/>
@@ -427,7 +427,7 @@
           </Option>
         </customproperties>
       </layer-tree-layer>
-      <layer-tree-layer id="EtatCoupeTypeValueReco_a4150406_3335_4e7c_9579_e9c236ae907b" source="../gpkg/Reco-Star-Elec-RPD.gpkg|layername=EtatCoupeTypeValueReco" providerKey="ogr" checked="Qt::Checked" expanded="1" legend_exp="" legend_split_behavior="0" name="EtatCoupeTypeValueReco" patch_size="-1,-1">
+      <layer-tree-layer id="EtatCoupeTypeValueReco_a4150406_3335_4e7c_9579_e9c236ae907b" source="./gpkg/Reco-Star-Elec-RPD.gpkg|layername=EtatCoupeTypeValueReco" providerKey="ogr" checked="Qt::Checked" expanded="1" legend_exp="" legend_split_behavior="0" name="EtatCoupeTypeValueReco" patch_size="-1,-1">
         <customproperties>
           <Option type="Map">
             <Option value="EtatCoupeTypeValueReco" name="cached_name" type="QString"/>
@@ -435,7 +435,7 @@
           </Option>
         </customproperties>
       </layer-tree-layer>
-      <layer-tree-layer id="FonctionCableElectriqueValue_5d940926_5a6d_40e1_a923_6f57aed815cf" source="../gpkg/Reco-Star-Elec-RPD.gpkg|layername=FonctionCableElectriqueValue" providerKey="ogr" checked="Qt::Checked" expanded="1" legend_exp="" legend_split_behavior="0" name="FonctionCableElectriqueValue" patch_size="-1,-1">
+      <layer-tree-layer id="FonctionCableElectriqueValue_5d940926_5a6d_40e1_a923_6f57aed815cf" source="./gpkg/Reco-Star-Elec-RPD.gpkg|layername=FonctionCableElectriqueValue" providerKey="ogr" checked="Qt::Checked" expanded="1" legend_exp="" legend_split_behavior="0" name="FonctionCableElectriqueValue" patch_size="-1,-1">
         <customproperties>
           <Option type="Map">
             <Option value="FonctionCableElectriqueValue" name="cached_name" type="QString"/>
@@ -443,7 +443,7 @@
           </Option>
         </customproperties>
       </layer-tree-layer>
-      <layer-tree-layer id="FonctionCoffretValue_9e762dfe_42e9_4592_a8d9_258a0abd103c" source="../gpkg/Reco-Star-Elec-RPD.gpkg|layername=FonctionCoffretValue" providerKey="ogr" checked="Qt::Checked" expanded="1" legend_exp="" legend_split_behavior="0" name="FonctionCoffretValue" patch_size="-1,-1">
+      <layer-tree-layer id="FonctionCoffretValue_9e762dfe_42e9_4592_a8d9_258a0abd103c" source="./gpkg/Reco-Star-Elec-RPD.gpkg|layername=FonctionCoffretValue" providerKey="ogr" checked="Qt::Checked" expanded="1" legend_exp="" legend_split_behavior="0" name="FonctionCoffretValue" patch_size="-1,-1">
         <customproperties>
           <Option type="Map">
             <Option value="FonctionCoffretValue" name="cached_name" type="QString"/>
@@ -451,7 +451,7 @@
           </Option>
         </customproperties>
       </layer-tree-layer>
-      <layer-tree-layer id="HierarchieBTValue_7925e236_53a4_4bd4_8e96_4cc99b8ddfed" source="../gpkg/Reco-Star-Elec-RPD.gpkg|layername=HierarchieBTValue" providerKey="ogr" checked="Qt::Checked" expanded="1" legend_exp="" legend_split_behavior="0" name="HierarchieBTValue" patch_size="-1,-1">
+      <layer-tree-layer id="HierarchieBTValue_7925e236_53a4_4bd4_8e96_4cc99b8ddfed" source="./gpkg/Reco-Star-Elec-RPD.gpkg|layername=HierarchieBTValue" providerKey="ogr" checked="Qt::Checked" expanded="1" legend_exp="" legend_split_behavior="0" name="HierarchieBTValue" patch_size="-1,-1">
         <customproperties>
           <Option type="Map">
             <Option value="HierarchieBTValue" name="cached_name" type="QString"/>
@@ -459,7 +459,7 @@
           </Option>
         </customproperties>
       </layer-tree-layer>
-      <layer-tree-layer id="ImplantationArmoireValue_814f2d42_3ce2_4b1a_888f_7149d283dbdf" source="../gpkg/Reco-Star-Elec-RPD.gpkg|layername=ImplantationArmoireValue" providerKey="ogr" checked="Qt::Checked" expanded="1" legend_exp="" legend_split_behavior="0" name="ImplantationArmoireValue" patch_size="-1,-1">
+      <layer-tree-layer id="ImplantationArmoireValue_814f2d42_3ce2_4b1a_888f_7149d283dbdf" source="./gpkg/Reco-Star-Elec-RPD.gpkg|layername=ImplantationArmoireValue" providerKey="ogr" checked="Qt::Checked" expanded="1" legend_exp="" legend_split_behavior="0" name="ImplantationArmoireValue" patch_size="-1,-1">
         <customproperties>
           <Option type="Map">
             <Option value="ImplantationArmoireValue" name="cached_name" type="QString"/>
@@ -467,7 +467,7 @@
           </Option>
         </customproperties>
       </layer-tree-layer>
-      <layer-tree-layer id="IsolantValueReco_bef4a8e8_1efb_425a_a4f1_2ca250749806" source="../gpkg/Reco-Star-Elec-RPD.gpkg|layername=IsolantValueReco" providerKey="ogr" checked="Qt::Checked" expanded="1" legend_exp="" legend_split_behavior="0" name="IsolantValueReco" patch_size="-1,-1">
+      <layer-tree-layer id="IsolantValueReco_bef4a8e8_1efb_425a_a4f1_2ca250749806" source="./gpkg/Reco-Star-Elec-RPD.gpkg|layername=IsolantValueReco" providerKey="ogr" checked="Qt::Checked" expanded="1" legend_exp="" legend_split_behavior="0" name="IsolantValueReco" patch_size="-1,-1">
         <customproperties>
           <Option type="Map">
             <Option value="IsolantValueReco" name="cached_name" type="QString"/>
@@ -475,7 +475,7 @@
           </Option>
         </customproperties>
       </layer-tree-layer>
-      <layer-tree-layer id="LeveTypeValue_0a80144b_6b38_4ecc_8a00_b20bd136bdb8" source="../gpkg/Reco-Star-Elec-RPD.gpkg|layername=LeveTypeValue" providerKey="ogr" checked="Qt::Checked" expanded="1" legend_exp="" legend_split_behavior="0" name="LeveTypeValue" patch_size="-1,-1">
+      <layer-tree-layer id="LeveTypeValue_0a80144b_6b38_4ecc_8a00_b20bd136bdb8" source="./gpkg/Reco-Star-Elec-RPD.gpkg|layername=LeveTypeValue" providerKey="ogr" checked="Qt::Checked" expanded="1" legend_exp="" legend_split_behavior="0" name="LeveTypeValue" patch_size="-1,-1">
         <customproperties>
           <Option type="Map">
             <Option value="LeveTypeValue" name="cached_name" type="QString"/>
@@ -483,7 +483,7 @@
           </Option>
         </customproperties>
       </layer-tree-layer>
-      <layer-tree-layer id="ModePoseValue_3dcc084a_a6dc_4301_97cc_1c7a47ae1805" source="../gpkg/Reco-Star-Elec-RPD.gpkg|layername=ModePoseValue" providerKey="ogr" checked="Qt::Checked" expanded="1" legend_exp="" legend_split_behavior="0" name="ModePoseValue" patch_size="-1,-1">
+      <layer-tree-layer id="ModePoseValue_3dcc084a_a6dc_4301_97cc_1c7a47ae1805" source="./gpkg/Reco-Star-Elec-RPD.gpkg|layername=ModePoseValue" providerKey="ogr" checked="Qt::Checked" expanded="1" legend_exp="" legend_split_behavior="0" name="ModePoseValue" patch_size="-1,-1">
         <customproperties>
           <Option type="Map">
             <Option value="ModePoseValue" name="cached_name" type="QString"/>
@@ -491,7 +491,7 @@
           </Option>
         </customproperties>
       </layer-tree-layer>
-      <layer-tree-layer id="MatiereValue_3214e542_8a2a_4664_bc53_56cd8a1adc37" source="../gpkg/Reco-Star-Elec-RPD.gpkg|layername=MatiereValue" providerKey="ogr" checked="Qt::Checked" expanded="1" legend_exp="" legend_split_behavior="0" name="MatiereValue" patch_size="-1,-1">
+      <layer-tree-layer id="MatiereValue_3214e542_8a2a_4664_bc53_56cd8a1adc37" source="./gpkg/Reco-Star-Elec-RPD.gpkg|layername=MatiereValue" providerKey="ogr" checked="Qt::Checked" expanded="1" legend_exp="" legend_split_behavior="0" name="MatiereValue" patch_size="-1,-1">
         <customproperties>
           <Option type="Map">
             <Option value="MatiereValue" name="cached_name" type="QString"/>
@@ -499,7 +499,7 @@
           </Option>
         </customproperties>
       </layer-tree-layer>
-      <layer-tree-layer id="NatureSupportValue_96d1f5c7_d023_4fea_882c_38002fe4690e" source="../gpkg/Reco-Star-Elec-RPD.gpkg|layername=NatureSupportValue" providerKey="ogr" checked="Qt::Checked" expanded="1" legend_exp="" legend_split_behavior="0" name="NatureSupportValue" patch_size="-1,-1">
+      <layer-tree-layer id="NatureSupportValue_96d1f5c7_d023_4fea_882c_38002fe4690e" source="./gpkg/Reco-Star-Elec-RPD.gpkg|layername=NatureSupportValue" providerKey="ogr" checked="Qt::Checked" expanded="1" legend_exp="" legend_split_behavior="0" name="NatureSupportValue" patch_size="-1,-1">
         <customproperties>
           <Option type="Map">
             <Option value="NatureSupportValue" name="cached_name" type="QString"/>
@@ -507,7 +507,7 @@
           </Option>
         </customproperties>
       </layer-tree-layer>
-      <layer-tree-layer id="NatureTerreValue_ee27ef01_7dbd_4292_b1b9_2d8b06180511" source="../gpkg/Reco-Star-Elec-RPD.gpkg|layername=NatureTerreValue" providerKey="ogr" checked="Qt::Checked" expanded="1" legend_exp="" legend_split_behavior="0" name="NatureTerreValue" patch_size="-1,-1">
+      <layer-tree-layer id="NatureTerreValue_ee27ef01_7dbd_4292_b1b9_2d8b06180511" source="./gpkg/Reco-Star-Elec-RPD.gpkg|layername=NatureTerreValue" providerKey="ogr" checked="Qt::Checked" expanded="1" legend_exp="" legend_split_behavior="0" name="NatureTerreValue" patch_size="-1,-1">
         <customproperties>
           <Option type="Map">
             <Option value="NatureTerreValue" name="cached_name" type="QString"/>
@@ -515,7 +515,7 @@
           </Option>
         </customproperties>
       </layer-tree-layer>
-      <layer-tree-layer id="ProtectionMaterialTypeValueReco_eb4b80ed_8fa6_4564_bdd2_054a58ef2b51" source="../gpkg/Reco-Star-Elec-RPD.gpkg|layername=ProtectionMaterialTypeValueReco" providerKey="ogr" checked="Qt::Checked" expanded="1" legend_exp="" legend_split_behavior="0" name="ProtectionMaterialTypeValueReco" patch_size="-1,-1">
+      <layer-tree-layer id="ProtectionMaterialTypeValueReco_eb4b80ed_8fa6_4564_bdd2_054a58ef2b51" source="./gpkg/Reco-Star-Elec-RPD.gpkg|layername=ProtectionMaterialTypeValueReco" providerKey="ogr" checked="Qt::Checked" expanded="1" legend_exp="" legend_split_behavior="0" name="ProtectionMaterialTypeValueReco" patch_size="-1,-1">
         <customproperties>
           <Option type="Map">
             <Option value="ProtectionMaterialTypeValueReco" name="cached_name" type="QString"/>
@@ -523,7 +523,7 @@
           </Option>
         </customproperties>
       </layer-tree-layer>
-      <layer-tree-layer id="TypeCoffretValue_071c2bed_f6e3_4277_96b1_61be7129cf4f" source="../gpkg/Reco-Star-Elec-RPD.gpkg|layername=TypeCoffretValue" providerKey="ogr" checked="Qt::Checked" expanded="1" legend_exp="" legend_split_behavior="0" name="TypeCoffretValue" patch_size="-1,-1">
+      <layer-tree-layer id="TypeCoffretValue_071c2bed_f6e3_4277_96b1_61be7129cf4f" source="./gpkg/Reco-Star-Elec-RPD.gpkg|layername=TypeCoffretValue" providerKey="ogr" checked="Qt::Checked" expanded="1" legend_exp="" legend_split_behavior="0" name="TypeCoffretValue" patch_size="-1,-1">
         <customproperties>
           <Option type="Map">
             <Option value="TypeCoffretValue" name="cached_name" type="QString"/>
@@ -531,7 +531,7 @@
           </Option>
         </customproperties>
       </layer-tree-layer>
-      <layer-tree-layer id="TypeJonctionValue_a3d320a0_d30d_4a55_b2d9_018a0f80d76e" source="../gpkg/Reco-Star-Elec-RPD.gpkg|layername=TypeJonctionValue" providerKey="ogr" checked="Qt::Checked" expanded="1" legend_exp="" legend_split_behavior="0" name="TypeJonctionValue" patch_size="-1,-1">
+      <layer-tree-layer id="TypeJonctionValue_a3d320a0_d30d_4a55_b2d9_018a0f80d76e" source="./gpkg/Reco-Star-Elec-RPD.gpkg|layername=TypeJonctionValue" providerKey="ogr" checked="Qt::Checked" expanded="1" legend_exp="" legend_split_behavior="0" name="TypeJonctionValue" patch_size="-1,-1">
         <customproperties>
           <Option type="Map">
             <Option value="TypeJonctionValue" name="cached_name" type="QString"/>
@@ -539,7 +539,7 @@
           </Option>
         </customproperties>
       </layer-tree-layer>
-      <layer-tree-layer id="TypePosteValue_f82c055e_079b_4888_b7a3_95532fae077c" source="../gpkg/Reco-Star-Elec-RPD.gpkg|layername=TypePosteValue" providerKey="ogr" checked="Qt::Checked" expanded="1" legend_exp="" legend_split_behavior="0" name="TypePosteValue" patch_size="-1,-1">
+      <layer-tree-layer id="TypePosteValue_f82c055e_079b_4888_b7a3_95532fae077c" source="./gpkg/Reco-Star-Elec-RPD.gpkg|layername=TypePosteValue" providerKey="ogr" checked="Qt::Checked" expanded="1" legend_exp="" legend_split_behavior="0" name="TypePosteValue" patch_size="-1,-1">
         <customproperties>
           <Option type="Map">
             <Option value="TypePosteValue" name="cached_name" type="QString"/>
@@ -547,7 +547,7 @@
           </Option>
         </customproperties>
       </layer-tree-layer>
-      <layer-tree-layer id="TypePoseValue_91d0ce25_acf9_49dc_8111_15cf2cf6fd1d" source="../gpkg/Reco-Star-Elec-RPD.gpkg|layername=TypePoseValue" providerKey="ogr" checked="Qt::Checked" expanded="1" legend_exp="" legend_split_behavior="0" name="TypePoseValue" patch_size="-1,-1">
+      <layer-tree-layer id="TypePoseValue_91d0ce25_acf9_49dc_8111_15cf2cf6fd1d" source="./gpkg/Reco-Star-Elec-RPD.gpkg|layername=TypePoseValue" providerKey="ogr" checked="Qt::Checked" expanded="1" legend_exp="" legend_split_behavior="0" name="TypePoseValue" patch_size="-1,-1">
         <customproperties>
           <Option type="Map">
             <Option value="TypePoseValue" name="cached_name" type="QString"/>
@@ -1004,7 +1004,7 @@
   <projectlayers>
     <maplayer autoRefreshEnabled="0" legendPlaceholderImage="" readOnly="1" autoRefreshTime="0" refreshOnNotifyEnabled="0" wkbType="NoGeometry" hasScaleBasedVisibilityFlag="0" minScale="1e+08" geometry="No geometry" refreshOnNotifyMessage="" styleCategories="AllStyleCategories" maxScale="0" type="vector">
       <id>CableMaterialTypeValue_fd3d989a_76ac_4334_b609_87f508eb3e9a</id>
-      <datasource>../gpkg/Reco-Star-Elec-RPD.gpkg|layername=CableMaterialTypeValue</datasource>
+      <datasource>./gpkg/Reco-Star-Elec-RPD.gpkg|layername=CableMaterialTypeValue</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -1286,7 +1286,7 @@
     </maplayer>
     <maplayer autoRefreshEnabled="0" legendPlaceholderImage="" readOnly="1" autoRefreshTime="0" refreshOnNotifyEnabled="0" wkbType="NoGeometry" hasScaleBasedVisibilityFlag="0" minScale="1e+08" geometry="No geometry" refreshOnNotifyMessage="" styleCategories="AllStyleCategories" maxScale="0" type="vector">
       <id>CategoriesPosteValue_b1d556f2_46a2_42d5_adec_f8fe0100e246</id>
-      <datasource>../gpkg/Reco-Star-Elec-RPD.gpkg|layername=CategoriesPosteValue</datasource>
+      <datasource>./gpkg/Reco-Star-Elec-RPD.gpkg|layername=CategoriesPosteValue</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -1559,7 +1559,7 @@
     </maplayer>
     <maplayer autoRefreshEnabled="0" legendPlaceholderImage="" readOnly="1" autoRefreshTime="0" refreshOnNotifyEnabled="0" wkbType="NoGeometry" hasScaleBasedVisibilityFlag="0" minScale="1e+08" geometry="No geometry" refreshOnNotifyMessage="" styleCategories="AllStyleCategories" maxScale="0" type="vector">
       <id>ClassePrecisionReseauValue_7240e407_742d_40b4_9db3_00b5d54ed7c2</id>
-      <datasource>../gpkg/Reco-Star-Elec-RPD.gpkg|layername=ClassePrecisionReseauValue</datasource>
+      <datasource>./gpkg/Reco-Star-Elec-RPD.gpkg|layername=ClassePrecisionReseauValue</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -1834,7 +1834,7 @@
     </maplayer>
     <maplayer autoRefreshEnabled="0" legendPlaceholderImage="" readOnly="1" autoRefreshTime="0" refreshOnNotifyEnabled="0" wkbType="NoGeometry" hasScaleBasedVisibilityFlag="0" minScale="1e+08" geometry="No geometry" refreshOnNotifyMessage="" styleCategories="AllStyleCategories" maxScale="0" type="vector">
       <id>ClasseSupportValue_08be9a21_27c5_4744_87ec_aa379aa8568e</id>
-      <datasource>../gpkg/Reco-Star-Elec-RPD.gpkg|layername=ClasseSupportValue</datasource>
+      <datasource>./gpkg/Reco-Star-Elec-RPD.gpkg|layername=ClasseSupportValue</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -2109,7 +2109,7 @@
     </maplayer>
     <maplayer autoRefreshEnabled="0" legendPlaceholderImage="" readOnly="1" autoRefreshTime="0" refreshOnNotifyEnabled="0" wkbType="NoGeometry" hasScaleBasedVisibilityFlag="0" minScale="1e+08" geometry="No geometry" refreshOnNotifyMessage="" styleCategories="AllStyleCategories" maxScale="0" type="vector">
       <id>ConditionOfFacilityValueReco_38db7083_48d8_4055_b0b4_8eaaa83ba36a</id>
-      <datasource>../gpkg/Reco-Star-Elec-RPD.gpkg|layername=ConditionOfFacilityValueReco</datasource>
+      <datasource>./gpkg/Reco-Star-Elec-RPD.gpkg|layername=ConditionOfFacilityValueReco</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -2382,7 +2382,7 @@
     </maplayer>
     <maplayer autoRefreshEnabled="0" legendPlaceholderImage="" readOnly="1" autoRefreshTime="0" refreshOnNotifyEnabled="0" wkbType="NoGeometry" hasScaleBasedVisibilityFlag="0" minScale="1e+08" geometry="No geometry" refreshOnNotifyMessage="" styleCategories="AllStyleCategories" maxScale="0" type="vector">
       <id>ConducteurProtectionValue_d6b0cd5f_c2e7_4c42_b2af_c1b0001c73e4</id>
-      <datasource>../gpkg/Reco-Star-Elec-RPD.gpkg|layername=ConducteurProtectionValue</datasource>
+      <datasource>./gpkg/Reco-Star-Elec-RPD.gpkg|layername=ConducteurProtectionValue</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -2655,7 +2655,7 @@
     </maplayer>
     <maplayer autoRefreshEnabled="0" legendPlaceholderImage="" readOnly="0" autoRefreshTime="0" refreshOnNotifyEnabled="0" wkbType="NoGeometry" hasScaleBasedVisibilityFlag="0" minScale="1e+08" geometry="No geometry" refreshOnNotifyMessage="" styleCategories="AllStyleCategories" maxScale="0" type="vector">
       <id>Conteneur_Cable_77516599_a32d_4bfc_a51f_f0ca739f1cf0</id>
-      <datasource>../gpkg/Reco-Star-Elec-RPD.gpkg|layername=Conteneur_Cable</datasource>
+      <datasource>./gpkg/Reco-Star-Elec-RPD.gpkg|layername=Conteneur_Cable</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -2966,7 +2966,7 @@ def my_form_open(dialog, layer, feature):
     </maplayer>
     <maplayer autoRefreshEnabled="0" legendPlaceholderImage="" readOnly="0" autoRefreshTime="0" refreshOnNotifyEnabled="0" wkbType="NoGeometry" hasScaleBasedVisibilityFlag="0" minScale="1e+08" geometry="No geometry" refreshOnNotifyMessage="" styleCategories="AllStyleCategories" maxScale="0" type="vector">
       <id>Conteneur_Noeud_ce66537f_7bde_4345_b739_da8e6e8251f0</id>
-      <datasource>../gpkg/Reco-Star-Elec-RPD.gpkg|layername=Conteneur_Noeud</datasource>
+      <datasource>./gpkg/Reco-Star-Elec-RPD.gpkg|layername=Conteneur_Noeud</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -3273,7 +3273,7 @@ def my_form_open(dialog, layer, feature):
     </maplayer>
     <maplayer autoRefreshEnabled="0" legendPlaceholderImage="" readOnly="1" autoRefreshTime="0" refreshOnNotifyEnabled="0" wkbType="NoGeometry" hasScaleBasedVisibilityFlag="0" minScale="1e+08" geometry="No geometry" refreshOnNotifyMessage="" styleCategories="AllStyleCategories" maxScale="0" type="vector">
       <id>DomaineTensionValue_8196d2dd_929a_4d00_9d72_0169fe9d652e</id>
-      <datasource>../gpkg/Reco-Star-Elec-RPD.gpkg|layername=DomaineTensionValue</datasource>
+      <datasource>./gpkg/Reco-Star-Elec-RPD.gpkg|layername=DomaineTensionValue</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -3546,7 +3546,7 @@ def my_form_open(dialog, layer, feature):
     </maplayer>
     <maplayer autoRefreshEnabled="0" legendPlaceholderImage="" readOnly="1" autoRefreshTime="0" refreshOnNotifyEnabled="0" wkbType="NoGeometry" hasScaleBasedVisibilityFlag="0" minScale="1e+08" geometry="No geometry" refreshOnNotifyMessage="" styleCategories="AllStyleCategories" maxScale="0" type="vector">
       <id>EtatCoupeTypeValueReco_a4150406_3335_4e7c_9579_e9c236ae907b</id>
-      <datasource>../gpkg/Reco-Star-Elec-RPD.gpkg|layername=EtatCoupeTypeValueReco</datasource>
+      <datasource>./gpkg/Reco-Star-Elec-RPD.gpkg|layername=EtatCoupeTypeValueReco</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -3821,7 +3821,7 @@ def my_form_open(dialog, layer, feature):
     </maplayer>
     <maplayer autoRefreshEnabled="0" legendPlaceholderImage="" readOnly="1" autoRefreshTime="0" refreshOnNotifyEnabled="0" wkbType="NoGeometry" hasScaleBasedVisibilityFlag="0" minScale="1e+08" geometry="No geometry" refreshOnNotifyMessage="" styleCategories="AllStyleCategories" maxScale="0" type="vector">
       <id>FonctionCableElectriqueValue_5d940926_5a6d_40e1_a923_6f57aed815cf</id>
-      <datasource>../gpkg/Reco-Star-Elec-RPD.gpkg|layername=FonctionCableElectriqueValue</datasource>
+      <datasource>./gpkg/Reco-Star-Elec-RPD.gpkg|layername=FonctionCableElectriqueValue</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -4096,7 +4096,7 @@ def my_form_open(dialog, layer, feature):
     </maplayer>
     <maplayer autoRefreshEnabled="0" legendPlaceholderImage="" readOnly="1" autoRefreshTime="0" refreshOnNotifyEnabled="0" wkbType="NoGeometry" hasScaleBasedVisibilityFlag="0" minScale="1e+08" geometry="No geometry" refreshOnNotifyMessage="" styleCategories="AllStyleCategories" maxScale="0" type="vector">
       <id>FonctionCoffretValue_9e762dfe_42e9_4592_a8d9_258a0abd103c</id>
-      <datasource>../gpkg/Reco-Star-Elec-RPD.gpkg|layername=FonctionCoffretValue</datasource>
+      <datasource>./gpkg/Reco-Star-Elec-RPD.gpkg|layername=FonctionCoffretValue</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -4371,7 +4371,7 @@ def my_form_open(dialog, layer, feature):
     </maplayer>
     <maplayer autoRefreshEnabled="0" legendPlaceholderImage="" readOnly="1" autoRefreshTime="0" refreshOnNotifyEnabled="0" wkbType="NoGeometry" hasScaleBasedVisibilityFlag="0" minScale="1e+08" geometry="No geometry" refreshOnNotifyMessage="" styleCategories="AllStyleCategories" maxScale="0" type="vector">
       <id>HierarchieBTValue_7925e236_53a4_4bd4_8e96_4cc99b8ddfed</id>
-      <datasource>../gpkg/Reco-Star-Elec-RPD.gpkg|layername=HierarchieBTValue</datasource>
+      <datasource>./gpkg/Reco-Star-Elec-RPD.gpkg|layername=HierarchieBTValue</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -4644,7 +4644,7 @@ def my_form_open(dialog, layer, feature):
     </maplayer>
     <maplayer autoRefreshEnabled="0" legendPlaceholderImage="" readOnly="1" autoRefreshTime="0" refreshOnNotifyEnabled="0" wkbType="NoGeometry" hasScaleBasedVisibilityFlag="0" minScale="1e+08" geometry="No geometry" refreshOnNotifyMessage="" styleCategories="AllStyleCategories" maxScale="0" type="vector">
       <id>ImplantationArmoireValue_814f2d42_3ce2_4b1a_888f_7149d283dbdf</id>
-      <datasource>../gpkg/Reco-Star-Elec-RPD.gpkg|layername=ImplantationArmoireValue</datasource>
+      <datasource>./gpkg/Reco-Star-Elec-RPD.gpkg|layername=ImplantationArmoireValue</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -4919,7 +4919,7 @@ def my_form_open(dialog, layer, feature):
     </maplayer>
     <maplayer autoRefreshEnabled="0" legendPlaceholderImage="" readOnly="1" autoRefreshTime="0" refreshOnNotifyEnabled="0" wkbType="NoGeometry" hasScaleBasedVisibilityFlag="0" minScale="1e+08" geometry="No geometry" refreshOnNotifyMessage="" styleCategories="AllStyleCategories" maxScale="0" type="vector">
       <id>IsolantValueReco_bef4a8e8_1efb_425a_a4f1_2ca250749806</id>
-      <datasource>../gpkg/Reco-Star-Elec-RPD.gpkg|layername=IsolantValueReco</datasource>
+      <datasource>./gpkg/Reco-Star-Elec-RPD.gpkg|layername=IsolantValueReco</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -5192,7 +5192,7 @@ def my_form_open(dialog, layer, feature):
     </maplayer>
     <maplayer autoRefreshEnabled="0" legendPlaceholderImage="" readOnly="1" autoRefreshTime="0" refreshOnNotifyEnabled="0" wkbType="NoGeometry" hasScaleBasedVisibilityFlag="0" minScale="1e+08" geometry="No geometry" refreshOnNotifyMessage="" styleCategories="AllStyleCategories" maxScale="0" type="vector">
       <id>LeveTypeValue_0a80144b_6b38_4ecc_8a00_b20bd136bdb8</id>
-      <datasource>../gpkg/Reco-Star-Elec-RPD.gpkg|layername=LeveTypeValue</datasource>
+      <datasource>./gpkg/Reco-Star-Elec-RPD.gpkg|layername=LeveTypeValue</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -5467,7 +5467,7 @@ def my_form_open(dialog, layer, feature):
     </maplayer>
     <maplayer autoRefreshEnabled="0" legendPlaceholderImage="" readOnly="1" autoRefreshTime="0" refreshOnNotifyEnabled="0" wkbType="NoGeometry" hasScaleBasedVisibilityFlag="0" minScale="1e+08" geometry="No geometry" refreshOnNotifyMessage="" styleCategories="AllStyleCategories" maxScale="0" type="vector">
       <id>MatiereValue_3214e542_8a2a_4664_bc53_56cd8a1adc37</id>
-      <datasource>../gpkg/Reco-Star-Elec-RPD.gpkg|layername=MatiereValue</datasource>
+      <datasource>./gpkg/Reco-Star-Elec-RPD.gpkg|layername=MatiereValue</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -5742,7 +5742,7 @@ def my_form_open(dialog, layer, feature):
     </maplayer>
     <maplayer autoRefreshEnabled="0" legendPlaceholderImage="" readOnly="1" autoRefreshTime="0" refreshOnNotifyEnabled="0" wkbType="NoGeometry" hasScaleBasedVisibilityFlag="0" minScale="1e+08" geometry="No geometry" refreshOnNotifyMessage="" styleCategories="AllStyleCategories" maxScale="0" type="vector">
       <id>ModePoseValue_3dcc084a_a6dc_4301_97cc_1c7a47ae1805</id>
-      <datasource>../gpkg/Reco-Star-Elec-RPD.gpkg|layername=ModePoseValue</datasource>
+      <datasource>./gpkg/Reco-Star-Elec-RPD.gpkg|layername=ModePoseValue</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -6017,7 +6017,7 @@ def my_form_open(dialog, layer, feature):
     </maplayer>
     <maplayer autoRefreshEnabled="0" legendPlaceholderImage="" readOnly="1" autoRefreshTime="0" refreshOnNotifyEnabled="0" wkbType="NoGeometry" hasScaleBasedVisibilityFlag="0" minScale="1e+08" geometry="No geometry" refreshOnNotifyMessage="" styleCategories="AllStyleCategories" maxScale="0" type="vector">
       <id>NatureSupportValue_96d1f5c7_d023_4fea_882c_38002fe4690e</id>
-      <datasource>../gpkg/Reco-Star-Elec-RPD.gpkg|layername=NatureSupportValue</datasource>
+      <datasource>./gpkg/Reco-Star-Elec-RPD.gpkg|layername=NatureSupportValue</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -6290,7 +6290,7 @@ def my_form_open(dialog, layer, feature):
     </maplayer>
     <maplayer autoRefreshEnabled="0" legendPlaceholderImage="" readOnly="1" autoRefreshTime="0" refreshOnNotifyEnabled="0" wkbType="NoGeometry" hasScaleBasedVisibilityFlag="0" minScale="1e+08" geometry="No geometry" refreshOnNotifyMessage="" styleCategories="AllStyleCategories" maxScale="0" type="vector">
       <id>NatureTerreValue_ee27ef01_7dbd_4292_b1b9_2d8b06180511</id>
-      <datasource>../gpkg/Reco-Star-Elec-RPD.gpkg|layername=NatureTerreValue</datasource>
+      <datasource>./gpkg/Reco-Star-Elec-RPD.gpkg|layername=NatureTerreValue</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -6563,7 +6563,7 @@ def my_form_open(dialog, layer, feature):
     </maplayer>
     <maplayer autoRefreshEnabled="0" legendPlaceholderImage="" readOnly="0" autoRefreshTime="0" refreshOnNotifyEnabled="0" wkbType="NoGeometry" hasScaleBasedVisibilityFlag="0" minScale="1e+08" geometry="No geometry" refreshOnNotifyMessage="" styleCategories="AllStyleCategories" maxScale="0" type="vector">
       <id>Noeud_Cable_7fd9ff7b_5fff_4f7b_a9ca_1a3360db5bde</id>
-      <datasource>../gpkg/Reco-Star-Elec-RPD.gpkg|layername=Noeud_Cable</datasource>
+      <datasource>./gpkg/Reco-Star-Elec-RPD.gpkg|layername=Noeud_Cable</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -7366,7 +7366,7 @@ def my_form_open(dialog, layer, feature):
     </maplayer>
     <maplayer autoRefreshEnabled="0" legendPlaceholderImage="" readOnly="1" autoRefreshTime="0" refreshOnNotifyEnabled="0" wkbType="NoGeometry" hasScaleBasedVisibilityFlag="0" minScale="1e+08" geometry="No geometry" refreshOnNotifyMessage="" styleCategories="AllStyleCategories" maxScale="0" type="vector">
       <id>ProtectionMaterialTypeValueReco_eb4b80ed_8fa6_4564_bdd2_054a58ef2b51</id>
-      <datasource>../gpkg/Reco-Star-Elec-RPD.gpkg|layername=ProtectionMaterialTypeValueReco</datasource>
+      <datasource>./gpkg/Reco-Star-Elec-RPD.gpkg|layername=ProtectionMaterialTypeValueReco</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -7639,7 +7639,7 @@ def my_form_open(dialog, layer, feature):
     </maplayer>
     <maplayer maxScale="0" simplifyDrawingTol="1" hasScaleBasedVisibilityFlag="0" minScale="0" autoRefreshEnabled="0" simplifyDrawingHints="1" geometry="Line" wkbType="LineStringZ" autoRefreshTime="0" refreshOnNotifyEnabled="0" simplifyLocal="1" type="vector" simplifyMaxScale="1" styleCategories="AllStyleCategories" labelsEnabled="0" simplifyAlgorithm="0" symbologyReferenceScale="-1" legendPlaceholderImage="" refreshOnNotifyMessage="" readOnly="0">
       <id>RPD_Aerien_Reco_line_743e97b1_2554_41cd_a2e5_b1683458dd3b</id>
-      <datasource>../gpkg/Reco-Star-Elec-RPD.gpkg|layername=RPD_Aerien_Reco_line</datasource>
+      <datasource>./gpkg/Reco-Star-Elec-RPD.gpkg|layername=RPD_Aerien_Reco_line</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -8245,7 +8245,7 @@ def my_form_open(dialog, layer, feature):
     </maplayer>
     <maplayer maxScale="0" simplifyDrawingTol="1" hasScaleBasedVisibilityFlag="0" minScale="0" autoRefreshEnabled="0" simplifyDrawingHints="1" geometry="Line" wkbType="LineStringZ" autoRefreshTime="0" refreshOnNotifyEnabled="0" simplifyLocal="1" type="vector" simplifyMaxScale="1" styleCategories="AllStyleCategories" labelsEnabled="0" simplifyAlgorithm="0" symbologyReferenceScale="-1" legendPlaceholderImage="" refreshOnNotifyMessage="" readOnly="1">
       <id>RPD_Aerien_Reco_virt_bb776325_a751_46de_9882_2ed11827d6a9</id>
-      <datasource>../gpkg/Reco-Star-Elec-RPD.gpkg|layername=RPD_Aerien_Reco_virt</datasource>
+      <datasource>./gpkg/Reco-Star-Elec-RPD.gpkg|layername=RPD_Aerien_Reco_virt</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -8764,7 +8764,7 @@ def my_form_open(dialog, layer, feature):
     </maplayer>
     <maplayer maxScale="0" simplifyDrawingTol="1" hasScaleBasedVisibilityFlag="0" minScale="0" autoRefreshEnabled="0" simplifyDrawingHints="1" geometry="Line" wkbType="MultiLineStringZ" autoRefreshTime="0" refreshOnNotifyEnabled="0" simplifyLocal="1" type="vector" simplifyMaxScale="1" styleCategories="AllStyleCategories" labelsEnabled="0" simplifyAlgorithm="0" symbologyReferenceScale="-1" legendPlaceholderImage="" refreshOnNotifyMessage="" readOnly="0">
       <id>RPD_BatimentTechnique_Reco_line_0d1cb4af_db56_443c_a089_d5eff62183d8</id>
-      <datasource>../gpkg/Reco-Star-Elec-RPD.gpkg|layername=RPD_BatimentTechnique_Reco_line</datasource>
+      <datasource>./gpkg/Reco-Star-Elec-RPD.gpkg|layername=RPD_BatimentTechnique_Reco_line</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -9336,7 +9336,7 @@ def my_form_open(dialog, layer, feature):
         <ymax>46.18478901012069571</ymax>
       </wgs84extent>
       <id>RPD_CableElectrique_Reco_559ad6fd_6937_4e8b_a5f1_cbfe58af78b3</id>
-      <datasource>../gpkg/Reco-Star-Elec-RPD.gpkg|layername=RPD_CableElectrique_Reco</datasource>
+      <datasource>./gpkg/Reco-Star-Elec-RPD.gpkg|layername=RPD_CableElectrique_Reco</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -13754,7 +13754,7 @@ def my_form_open(dialog, layer, feature):
     </maplayer>
     <maplayer maxScale="0" simplifyDrawingTol="1" hasScaleBasedVisibilityFlag="0" minScale="100000000" autoRefreshEnabled="0" simplifyDrawingHints="1" geometry="Line" wkbType="LineStringZ" autoRefreshTime="0" refreshOnNotifyEnabled="0" simplifyLocal="1" type="vector" simplifyMaxScale="1" styleCategories="AllStyleCategories" labelsEnabled="0" simplifyAlgorithm="0" symbologyReferenceScale="-1" legendPlaceholderImage="" refreshOnNotifyMessage="" readOnly="0">
       <id>RPD_CableTerre_Reco_69e0ec7b_3408_429d_b52c_84c1cc9a9889</id>
-      <datasource>../gpkg/Reco-Star-Elec-RPD.gpkg|layername=RPD_CableTerre_Reco</datasource>
+      <datasource>./gpkg/Reco-Star-Elec-RPD.gpkg|layername=RPD_CableTerre_Reco</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -14536,7 +14536,7 @@ def my_form_open(dialog, layer, feature):
     </maplayer>
     <maplayer maxScale="0" simplifyDrawingTol="1" hasScaleBasedVisibilityFlag="0" minScale="100000000" autoRefreshEnabled="0" simplifyDrawingHints="0" geometry="Point" wkbType="PointZ" autoRefreshTime="0" refreshOnNotifyEnabled="0" simplifyLocal="1" type="vector" simplifyMaxScale="1" styleCategories="AllStyleCategories" labelsEnabled="0" simplifyAlgorithm="0" symbologyReferenceScale="-1" legendPlaceholderImage="" refreshOnNotifyMessage="" readOnly="0">
       <id>RPD_Coffret_Reco_3262a53c_3782_49cd_965b_2675949930be</id>
-      <datasource>../gpkg/Reco-Star-Elec-RPD.gpkg|layername=RPD_Coffret_Reco</datasource>
+      <datasource>./gpkg/Reco-Star-Elec-RPD.gpkg|layername=RPD_Coffret_Reco</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -15388,7 +15388,7 @@ def my_form_open(dialog, layer, feature):
     </maplayer>
     <maplayer maxScale="0" simplifyDrawingTol="1" hasScaleBasedVisibilityFlag="0" minScale="0" autoRefreshEnabled="0" simplifyDrawingHints="1" geometry="Line" wkbType="MultiLineStringZ" autoRefreshTime="0" refreshOnNotifyEnabled="0" simplifyLocal="1" type="vector" simplifyMaxScale="1" styleCategories="AllStyleCategories" labelsEnabled="0" simplifyAlgorithm="0" symbologyReferenceScale="-1" legendPlaceholderImage="" refreshOnNotifyMessage="" readOnly="0">
       <id>RPD_EnceinteCloturee_Reco_line_1d1b0f4e_a411_464d_b89c_9ac2b370e79f</id>
-      <datasource>../gpkg/Reco-Star-Elec-RPD.gpkg|layername=RPD_EnceinteCloturee_Reco_line</datasource>
+      <datasource>./gpkg/Reco-Star-Elec-RPD.gpkg|layername=RPD_EnceinteCloturee_Reco_line</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -16011,7 +16011,7 @@ def my_form_open(dialog, layer, feature):
     </maplayer>
     <maplayer maxScale="0" simplifyDrawingTol="1" hasScaleBasedVisibilityFlag="0" minScale="100000000" autoRefreshEnabled="0" simplifyDrawingHints="1" geometry="Line" wkbType="LineStringZ" autoRefreshTime="0" refreshOnNotifyEnabled="0" simplifyLocal="1" type="vector" simplifyMaxScale="1" styleCategories="AllStyleCategories" labelsEnabled="1" simplifyAlgorithm="0" symbologyReferenceScale="-1" legendPlaceholderImage="" refreshOnNotifyMessage="" readOnly="0">
       <id>RPD_Fourreau_Reco_9f8337d9_7382_4f98_bb14_a587c1db8dce</id>
-      <datasource>../gpkg/Reco-Star-Elec-RPD.gpkg|layername=RPD_Fourreau_Reco</datasource>
+      <datasource>./gpkg/Reco-Star-Elec-RPD.gpkg|layername=RPD_Fourreau_Reco</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -16900,7 +16900,7 @@ def my_form_open(dialog, layer, feature):
     </maplayer>
     <maplayer maxScale="0" simplifyDrawingTol="1" hasScaleBasedVisibilityFlag="0" minScale="100000000" autoRefreshEnabled="0" simplifyDrawingHints="1" geometry="Line" wkbType="LineStringZ" autoRefreshTime="0" refreshOnNotifyEnabled="0" simplifyLocal="1" type="vector" simplifyMaxScale="1" styleCategories="AllStyleCategories" labelsEnabled="1" simplifyAlgorithm="0" symbologyReferenceScale="-1" legendPlaceholderImage="" refreshOnNotifyMessage="" readOnly="0">
       <id>RPD_Galerie_Reco_e9a10f52_434d_4341_87c4_bbc79f6dccde</id>
-      <datasource>../gpkg/Reco-Star-Elec-RPD.gpkg|layername=RPD_Galerie_Reco</datasource>
+      <datasource>./gpkg/Reco-Star-Elec-RPD.gpkg|layername=RPD_Galerie_Reco</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -17727,7 +17727,7 @@ def my_form_open(dialog, layer, feature):
     </maplayer>
     <maplayer maxScale="0" simplifyDrawingTol="1" hasScaleBasedVisibilityFlag="0" minScale="100000000" autoRefreshEnabled="0" simplifyDrawingHints="1" geometry="Polygon" wkbType="MultiPolygonZ" autoRefreshTime="0" refreshOnNotifyEnabled="0" simplifyLocal="1" type="vector" simplifyMaxScale="1" styleCategories="AllStyleCategories" labelsEnabled="0" simplifyAlgorithm="0" symbologyReferenceScale="-1" legendPlaceholderImage="" refreshOnNotifyMessage="" readOnly="1">
       <id>RPD_GeometrieSupplementaire_Reco_f8f6394f_3b6d_46e9_a657_5bf0eda0c74f</id>
-      <datasource>../gpkg/Reco-Star-Elec-RPD.gpkg|layername=RPD_GeometrieSupplementaire_Reco</datasource>
+      <datasource>./gpkg/Reco-Star-Elec-RPD.gpkg|layername=RPD_GeometrieSupplementaire_Reco</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -18161,7 +18161,7 @@ def my_form_open(dialog, layer, feature):
     </maplayer>
     <maplayer maxScale="0" simplifyDrawingTol="1" hasScaleBasedVisibilityFlag="1" minScale="51" autoRefreshEnabled="0" simplifyDrawingHints="0" geometry="Point" wkbType="PointZ" autoRefreshTime="0" refreshOnNotifyEnabled="0" simplifyLocal="1" type="vector" simplifyMaxScale="1" styleCategories="AllStyleCategories" labelsEnabled="0" simplifyAlgorithm="0" symbologyReferenceScale="10" legendPlaceholderImage="" refreshOnNotifyMessage="" readOnly="0">
       <id>RPD_JeuBarres_Reco_f474d02c_145d_4f4f_83a5_ec14862b57de</id>
-      <datasource>../gpkg/Reco-Star-Elec-RPD.gpkg|layername=RPD_JeuBarres_Reco</datasource>
+      <datasource>./gpkg/Reco-Star-Elec-RPD.gpkg|layername=RPD_JeuBarres_Reco</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -18743,7 +18743,7 @@ def my_form_open(dialog, layer, feature):
     </maplayer>
     <maplayer maxScale="0" simplifyDrawingTol="1" hasScaleBasedVisibilityFlag="1" minScale="101" autoRefreshEnabled="0" simplifyDrawingHints="0" geometry="Point" wkbType="PointZ" autoRefreshTime="0" refreshOnNotifyEnabled="0" simplifyLocal="1" type="vector" simplifyMaxScale="1" styleCategories="AllStyleCategories" labelsEnabled="0" simplifyAlgorithm="0" symbologyReferenceScale="-1" legendPlaceholderImage="" refreshOnNotifyMessage="" readOnly="0">
       <id>RPD_Jonction_Reco_f4215dd3_0dd7_4739_a775_8b289d1a1746</id>
-      <datasource>../gpkg/Reco-Star-Elec-RPD.gpkg|layername=RPD_Jonction_Reco</datasource>
+      <datasource>./gpkg/Reco-Star-Elec-RPD.gpkg|layername=RPD_Jonction_Reco</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -20949,7 +20949,7 @@ def my_form_open(dialog, layer, feature):
     </maplayer>
     <maplayer maxScale="0" simplifyDrawingTol="1" hasScaleBasedVisibilityFlag="1" minScale="101" autoRefreshEnabled="0" simplifyDrawingHints="0" geometry="Point" wkbType="PointZ" autoRefreshTime="0" refreshOnNotifyEnabled="0" simplifyLocal="1" type="vector" simplifyMaxScale="1" styleCategories="AllStyleCategories" labelsEnabled="0" simplifyAlgorithm="0" symbologyReferenceScale="10" legendPlaceholderImage="" refreshOnNotifyMessage="" readOnly="0">
       <id>RPD_OuvrageCollectifBranchement_Reco_5a9f3840_14a5_4990_b251_7ec99181060a</id>
-      <datasource>../gpkg/Reco-Star-Elec-RPD.gpkg|layername=RPD_OuvrageCollectifBranchement_Reco</datasource>
+      <datasource>./gpkg/Reco-Star-Elec-RPD.gpkg|layername=RPD_OuvrageCollectifBranchement_Reco</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -21528,7 +21528,7 @@ def my_form_open(dialog, layer, feature):
     </maplayer>
     <maplayer maxScale="0" simplifyDrawingTol="1" hasScaleBasedVisibilityFlag="1" minScale="51" autoRefreshEnabled="0" simplifyDrawingHints="0" geometry="Point" wkbType="PointZ" autoRefreshTime="0" refreshOnNotifyEnabled="0" simplifyLocal="1" type="vector" simplifyMaxScale="1" styleCategories="AllStyleCategories" labelsEnabled="0" simplifyAlgorithm="0" symbologyReferenceScale="10" legendPlaceholderImage="" refreshOnNotifyMessage="" readOnly="0">
       <id>RPD_Plage_Reco_82924fea_11f2_4d7b_a430_be2e443d8cff</id>
-      <datasource>../gpkg/Reco-Star-Elec-RPD.gpkg|layername=RPD_Plage_Reco</datasource>
+      <datasource>./gpkg/Reco-Star-Elec-RPD.gpkg|layername=RPD_Plage_Reco</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -22170,7 +22170,7 @@ def my_form_open(dialog, layer, feature):
     </maplayer>
     <maplayer maxScale="0" simplifyDrawingTol="1" hasScaleBasedVisibilityFlag="0" minScale="100000000" autoRefreshEnabled="0" simplifyDrawingHints="1" geometry="Line" wkbType="LineStringZ" autoRefreshTime="0" refreshOnNotifyEnabled="0" simplifyLocal="1" type="vector" simplifyMaxScale="1" styleCategories="AllStyleCategories" labelsEnabled="0" simplifyAlgorithm="0" symbologyReferenceScale="-1" legendPlaceholderImage="" refreshOnNotifyMessage="" readOnly="0">
       <id>RPD_PleineTerre_Reco_line_434e16d0_b4fe_4687_b552_7faa09f52916</id>
-      <datasource>../gpkg/Reco-Star-Elec-RPD.gpkg|layername=RPD_PleineTerre_Reco_line</datasource>
+      <datasource>./gpkg/Reco-Star-Elec-RPD.gpkg|layername=RPD_PleineTerre_Reco_line</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -22885,7 +22885,7 @@ def my_form_open(dialog, layer, feature):
         <ymax>46.18478901012069571</ymax>
       </wgs84extent>
       <id>RPD_PleineTerre_Reco_virt_b519c09d_5fd8_43ed_b843_0be94ed2d3d5</id>
-      <datasource>../gpkg/Reco-Star-Elec-RPD.gpkg|layername=RPD_PleineTerre_Reco_virt</datasource>
+      <datasource>./gpkg/Reco-Star-Elec-RPD.gpkg|layername=RPD_PleineTerre_Reco_virt</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -23415,7 +23415,7 @@ def my_form_open(dialog, layer, feature):
     </maplayer>
     <maplayer maxScale="0" simplifyDrawingTol="1" hasScaleBasedVisibilityFlag="1" minScale="101" autoRefreshEnabled="0" simplifyDrawingHints="0" geometry="Point" wkbType="PointZ" autoRefreshTime="0" refreshOnNotifyEnabled="0" simplifyLocal="1" type="vector" simplifyMaxScale="1" styleCategories="AllStyleCategories" labelsEnabled="0" simplifyAlgorithm="0" symbologyReferenceScale="10" legendPlaceholderImage="" refreshOnNotifyMessage="" readOnly="0">
       <id>RPD_PointDeComptage_Reco_0b0a6397_b0a2_4d53_892f_fcf300677c9d</id>
-      <datasource>../gpkg/Reco-Star-Elec-RPD.gpkg|layername=RPD_PointDeComptage_Reco</datasource>
+      <datasource>./gpkg/Reco-Star-Elec-RPD.gpkg|layername=RPD_PointDeComptage_Reco</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -24032,7 +24032,7 @@ def my_form_open(dialog, layer, feature):
         <ymax>46.18479018994786145</ymax>
       </wgs84extent>
       <id>RPD_PointLeveOuvrageReseau_Reco_fdb52f9f_7cc9_4161_b70c_ff07e074d328</id>
-      <datasource>../gpkg/Reco-Star-Elec-RPD.gpkg|layername=RPD_PointLeveOuvrageReseau_Reco</datasource>
+      <datasource>./gpkg/Reco-Star-Elec-RPD.gpkg|layername=RPD_PointLeveOuvrageReseau_Reco</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -24695,7 +24695,7 @@ def my_form_open(dialog, layer, feature):
     </maplayer>
     <maplayer maxScale="0" simplifyDrawingTol="1" hasScaleBasedVisibilityFlag="0" minScale="0" autoRefreshEnabled="0" simplifyDrawingHints="0" geometry="Point" wkbType="PointZ" autoRefreshTime="0" refreshOnNotifyEnabled="0" simplifyLocal="1" type="vector" simplifyMaxScale="1" styleCategories="AllStyleCategories" labelsEnabled="0" simplifyAlgorithm="0" symbologyReferenceScale="-1" legendPlaceholderImage="" refreshOnNotifyMessage="" readOnly="0">
       <id>RPD_PosteElectrique_Reco_714a0e8e_a916_4e5d_8806_0e33133c4bef</id>
-      <datasource>../gpkg/Reco-Star-Elec-RPD.gpkg|layername=RPD_PosteElectrique_Reco</datasource>
+      <datasource>./gpkg/Reco-Star-Elec-RPD.gpkg|layername=RPD_PosteElectrique_Reco</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -25777,7 +25777,7 @@ def my_form_open(dialog, layer, feature):
     </maplayer>
     <maplayer maxScale="0" simplifyDrawingTol="1" hasScaleBasedVisibilityFlag="0" minScale="100000000" autoRefreshEnabled="0" simplifyDrawingHints="1" geometry="Line" wkbType="LineStringZ" autoRefreshTime="0" refreshOnNotifyEnabled="0" simplifyLocal="1" type="vector" simplifyMaxScale="1" styleCategories="AllStyleCategories" labelsEnabled="1" simplifyAlgorithm="0" symbologyReferenceScale="-1" legendPlaceholderImage="" refreshOnNotifyMessage="" readOnly="0">
       <id>RPD_ProtectionMecanique_Reco_c50b43a6_a3d1_4c13_bdae_dc996759a1b1</id>
-      <datasource>../gpkg/Reco-Star-Elec-RPD.gpkg|layername=RPD_ProtectionMecanique_Reco</datasource>
+      <datasource>./gpkg/Reco-Star-Elec-RPD.gpkg|layername=RPD_ProtectionMecanique_Reco</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -26625,7 +26625,7 @@ def my_form_open(dialog, layer, feature):
     </maplayer>
     <maplayer maxScale="0" simplifyDrawingTol="1" hasScaleBasedVisibilityFlag="1" minScale="51" autoRefreshEnabled="0" simplifyDrawingHints="0" geometry="Point" wkbType="PointZ" autoRefreshTime="0" refreshOnNotifyEnabled="0" simplifyLocal="1" type="vector" simplifyMaxScale="1" styleCategories="AllStyleCategories" labelsEnabled="0" simplifyAlgorithm="0" symbologyReferenceScale="10" legendPlaceholderImage="" refreshOnNotifyMessage="" readOnly="0">
       <id>RPD_RaccordementModulaire_Reco_f8b23447_99f6_4bf0_a9c4_e0be7a836159</id>
-      <datasource>../gpkg/Reco-Star-Elec-RPD.gpkg|layername=RPD_RaccordementModulaire_Reco</datasource>
+      <datasource>./gpkg/Reco-Star-Elec-RPD.gpkg|layername=RPD_RaccordementModulaire_Reco</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -27227,7 +27227,7 @@ def my_form_open(dialog, layer, feature):
     </maplayer>
     <maplayer maxScale="0" simplifyDrawingTol="1" hasScaleBasedVisibilityFlag="0" minScale="100000000" autoRefreshEnabled="0" simplifyDrawingHints="0" geometry="Point" wkbType="PointZ" autoRefreshTime="0" refreshOnNotifyEnabled="0" simplifyLocal="1" type="vector" simplifyMaxScale="1" styleCategories="AllStyleCategories" labelsEnabled="0" simplifyAlgorithm="0" symbologyReferenceScale="50" legendPlaceholderImage="" refreshOnNotifyMessage="" readOnly="0">
       <id>RPD_Support_Reco_65f3aab3_3bb6_4b26_9507_1d10a4efdb39</id>
-      <datasource>../gpkg/Reco-Star-Elec-RPD.gpkg|layername=RPD_Support_Reco</datasource>
+      <datasource>./gpkg/Reco-Star-Elec-RPD.gpkg|layername=RPD_Support_Reco</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -28810,7 +28810,7 @@ def my_form_open(dialog, layer, feature):
     </maplayer>
     <maplayer maxScale="0" simplifyDrawingTol="1" hasScaleBasedVisibilityFlag="0" minScale="0" autoRefreshEnabled="0" simplifyDrawingHints="0" geometry="Point" wkbType="PointZ" autoRefreshTime="0" refreshOnNotifyEnabled="0" simplifyLocal="1" type="vector" simplifyMaxScale="1" styleCategories="AllStyleCategories" labelsEnabled="0" simplifyAlgorithm="0" symbologyReferenceScale="-1" legendPlaceholderImage="" refreshOnNotifyMessage="" readOnly="0">
       <id>RPD_Terre_Reco_279156a7_af43_4784_8667_b5b79623bb85</id>
-      <datasource>../gpkg/Reco-Star-Elec-RPD.gpkg|layername=RPD_Terre_Reco</datasource>
+      <datasource>./gpkg/Reco-Star-Elec-RPD.gpkg|layername=RPD_Terre_Reco</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -29482,7 +29482,7 @@ def my_form_open(dialog, layer, feature):
     </maplayer>
     <maplayer autoRefreshEnabled="0" legendPlaceholderImage="" readOnly="1" autoRefreshTime="0" refreshOnNotifyEnabled="0" wkbType="NoGeometry" hasScaleBasedVisibilityFlag="0" minScale="1e+08" geometry="No geometry" refreshOnNotifyMessage="" styleCategories="AllStyleCategories" maxScale="0" type="vector">
       <id>TypeCoffretValue_071c2bed_f6e3_4277_96b1_61be7129cf4f</id>
-      <datasource>../gpkg/Reco-Star-Elec-RPD.gpkg|layername=TypeCoffretValue</datasource>
+      <datasource>./gpkg/Reco-Star-Elec-RPD.gpkg|layername=TypeCoffretValue</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -29755,7 +29755,7 @@ def my_form_open(dialog, layer, feature):
     </maplayer>
     <maplayer autoRefreshEnabled="0" legendPlaceholderImage="" readOnly="1" autoRefreshTime="0" refreshOnNotifyEnabled="0" wkbType="NoGeometry" hasScaleBasedVisibilityFlag="0" minScale="1e+08" geometry="No geometry" refreshOnNotifyMessage="" styleCategories="AllStyleCategories" maxScale="0" type="vector">
       <id>TypeJonctionValue_a3d320a0_d30d_4a55_b2d9_018a0f80d76e</id>
-      <datasource>../gpkg/Reco-Star-Elec-RPD.gpkg|layername=TypeJonctionValue</datasource>
+      <datasource>./gpkg/Reco-Star-Elec-RPD.gpkg|layername=TypeJonctionValue</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -30028,7 +30028,7 @@ def my_form_open(dialog, layer, feature):
     </maplayer>
     <maplayer autoRefreshEnabled="0" legendPlaceholderImage="" readOnly="1" autoRefreshTime="0" refreshOnNotifyEnabled="0" wkbType="NoGeometry" hasScaleBasedVisibilityFlag="0" minScale="1e+08" geometry="No geometry" refreshOnNotifyMessage="" styleCategories="AllStyleCategories" maxScale="0" type="vector">
       <id>TypePoseValue_91d0ce25_acf9_49dc_8111_15cf2cf6fd1d</id>
-      <datasource>../gpkg/Reco-Star-Elec-RPD.gpkg|layername=TypePoseValue</datasource>
+      <datasource>./gpkg/Reco-Star-Elec-RPD.gpkg|layername=TypePoseValue</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -30303,7 +30303,7 @@ def my_form_open(dialog, layer, feature):
     </maplayer>
     <maplayer autoRefreshEnabled="0" legendPlaceholderImage="" readOnly="1" autoRefreshTime="0" refreshOnNotifyEnabled="0" wkbType="NoGeometry" hasScaleBasedVisibilityFlag="0" minScale="1e+08" geometry="No geometry" refreshOnNotifyMessage="" styleCategories="AllStyleCategories" maxScale="0" type="vector">
       <id>TypePosteValue_f82c055e_079b_4888_b7a3_95532fae077c</id>
-      <datasource>../gpkg/Reco-Star-Elec-RPD.gpkg|layername=TypePosteValue</datasource>
+      <datasource>./gpkg/Reco-Star-Elec-RPD.gpkg|layername=TypePosteValue</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -30578,7 +30578,7 @@ def my_form_open(dialog, layer, feature):
     </maplayer>
     <maplayer maxScale="0" simplifyDrawingTol="1" hasScaleBasedVisibilityFlag="0" minScale="100000000" autoRefreshEnabled="0" simplifyDrawingHints="1" geometry="Line" wkbType="LineString" autoRefreshTime="0" refreshOnNotifyEnabled="0" simplifyLocal="1" type="vector" simplifyMaxScale="1" styleCategories="AllStyleCategories" labelsEnabled="1" simplifyAlgorithm="0" symbologyReferenceScale="-1" legendPlaceholderImage="" refreshOnNotifyMessage="" readOnly="1">
       <id>ctrl_Cheminement_Cable_2d64b62f_1e28_45a1_8bfa_45d8b95e9e27</id>
-      <datasource>../gpkg/Reco-Star-Elec-RPD.gpkg|layername=ctrl_Cheminement_Cable</datasource>
+      <datasource>./gpkg/Reco-Star-Elec-RPD.gpkg|layername=ctrl_Cheminement_Cable</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -31253,7 +31253,7 @@ def my_form_open(dialog, layer, feature):
     </maplayer>
     <maplayer maxScale="0" simplifyDrawingTol="1" hasScaleBasedVisibilityFlag="0" minScale="0" autoRefreshEnabled="0" simplifyDrawingHints="0" geometry="Point" wkbType="Point" autoRefreshTime="0" refreshOnNotifyEnabled="0" simplifyLocal="1" type="vector" simplifyMaxScale="1" styleCategories="AllStyleCategories" labelsEnabled="1" simplifyAlgorithm="0" symbologyReferenceScale="-1" legendPlaceholderImage="" refreshOnNotifyMessage="" readOnly="1">
       <id>ctrl_Noeud_Cable_a876babf_cbc5_4b1f_9824_c323f928da18</id>
-      <datasource>../gpkg/Reco-Star-Elec-RPD.gpkg|layername=ctrl_Noeud_Cable</datasource>
+      <datasource>./gpkg/Reco-Star-Elec-RPD.gpkg|layername=ctrl_Noeud_Cable</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -31836,7 +31836,7 @@ def my_form_open(dialog, layer, feature):
     </maplayer>
     <maplayer maxScale="0" simplifyDrawingTol="1" hasScaleBasedVisibilityFlag="0" minScale="0" autoRefreshEnabled="0" simplifyDrawingHints="0" geometry="Point" wkbType="Point" autoRefreshTime="0" refreshOnNotifyEnabled="0" simplifyLocal="1" type="vector" simplifyMaxScale="1" styleCategories="AllStyleCategories" labelsEnabled="1" simplifyAlgorithm="0" symbologyReferenceScale="-1" legendPlaceholderImage="" refreshOnNotifyMessage="" readOnly="1">
       <id>ctrl_Noeud_Conteneur_e957e763_b097_40d7_9cae_1080972ba972</id>
-      <datasource>../gpkg/Reco-Star-Elec-RPD.gpkg|layername=ctrl_Noeud_Conteneur</datasource>
+      <datasource>./gpkg/Reco-Star-Elec-RPD.gpkg|layername=ctrl_Noeud_Conteneur</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -32414,7 +32414,7 @@ def my_form_open(dialog, layer, feature):
     </maplayer>
     <maplayer maxScale="0" simplifyDrawingTol="1" hasScaleBasedVisibilityFlag="0" minScale="0" autoRefreshEnabled="0" simplifyDrawingHints="0" geometry="Point" wkbType="Point" autoRefreshTime="0" refreshOnNotifyEnabled="0" simplifyLocal="1" type="vector" simplifyMaxScale="1" styleCategories="AllStyleCategories" labelsEnabled="1" simplifyAlgorithm="0" symbologyReferenceScale="-1" legendPlaceholderImage="" refreshOnNotifyMessage="" readOnly="1">
       <id>ctrl_PLOR_Ouvrage_00e2537f_d596_45f7_8749_3316ef0df281</id>
-      <datasource>../gpkg/Reco-Star-Elec-RPD.gpkg|layername=ctrl_PLOR_Ouvrage</datasource>
+      <datasource>./gpkg/Reco-Star-Elec-RPD.gpkg|layername=ctrl_PLOR_Ouvrage</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -33351,7 +33351,7 @@ def my_form_open(dialog, layer, feature):
             <customproperties>
               <Option/>
             </customproperties>
-            <layer-tree-layer id="RPD_Jonction_Reco_f4215dd3_0dd7_4739_a775_8b289d1a1746" source="../gpkg/Reco-Star-Elec-RPD.gpkg|layername=RPD_Jonction_Reco" providerKey="ogr" checked="Qt::Checked" expanded="0" legend_exp="" legend_split_behavior="0" name="RPD_Jonction_Reco" patch_size="-1,-1">
+            <layer-tree-layer id="RPD_Jonction_Reco_f4215dd3_0dd7_4739_a775_8b289d1a1746" source="./gpkg/Reco-Star-Elec-RPD.gpkg|layername=RPD_Jonction_Reco" providerKey="ogr" checked="Qt::Checked" expanded="0" legend_exp="" legend_split_behavior="0" name="RPD_Jonction_Reco" patch_size="-1,-1">
               <customproperties>
                 <Option type="Map">
                   <Option name="expandedLegendNodes" type="StringList">
@@ -33361,37 +33361,37 @@ def my_form_open(dialog, layer, feature):
                 </Option>
               </customproperties>
             </layer-tree-layer>
-            <layer-tree-layer id="RPD_JeuBarres_Reco_f474d02c_145d_4f4f_83a5_ec14862b57de" source="../gpkg/Reco-Star-Elec-RPD.gpkg|layername=RPD_JeuBarres_Reco" providerKey="ogr" checked="Qt::Checked" expanded="1" legend_exp="" legend_split_behavior="0" name="RPD_JeuBarres_Reco" patch_size="-1,-1">
+            <layer-tree-layer id="RPD_JeuBarres_Reco_f474d02c_145d_4f4f_83a5_ec14862b57de" source="./gpkg/Reco-Star-Elec-RPD.gpkg|layername=RPD_JeuBarres_Reco" providerKey="ogr" checked="Qt::Checked" expanded="1" legend_exp="" legend_split_behavior="0" name="RPD_JeuBarres_Reco" patch_size="-1,-1">
               <customproperties>
                 <Option/>
               </customproperties>
             </layer-tree-layer>
-            <layer-tree-layer id="RPD_RaccordementModulaire_Reco_f8b23447_99f6_4bf0_a9c4_e0be7a836159" source="../gpkg/Reco-Star-Elec-RPD.gpkg|layername=RPD_RaccordementModulaire_Reco" providerKey="ogr" checked="Qt::Checked" expanded="1" legend_exp="" legend_split_behavior="0" name="RPD_RaccordementModulaire_Reco" patch_size="-1,-1">
+            <layer-tree-layer id="RPD_RaccordementModulaire_Reco_f8b23447_99f6_4bf0_a9c4_e0be7a836159" source="./gpkg/Reco-Star-Elec-RPD.gpkg|layername=RPD_RaccordementModulaire_Reco" providerKey="ogr" checked="Qt::Checked" expanded="1" legend_exp="" legend_split_behavior="0" name="RPD_RaccordementModulaire_Reco" patch_size="-1,-1">
               <customproperties>
                 <Option/>
               </customproperties>
             </layer-tree-layer>
-            <layer-tree-layer id="RPD_Plage_Reco_82924fea_11f2_4d7b_a430_be2e443d8cff" source="../gpkg/Reco-Star-Elec-RPD.gpkg|layername=RPD_Plage_Reco" providerKey="ogr" checked="Qt::Checked" expanded="1" legend_exp="" legend_split_behavior="0" name="RPD_Plage_Reco" patch_size="-1,-1">
+            <layer-tree-layer id="RPD_Plage_Reco_82924fea_11f2_4d7b_a430_be2e443d8cff" source="./gpkg/Reco-Star-Elec-RPD.gpkg|layername=RPD_Plage_Reco" providerKey="ogr" checked="Qt::Checked" expanded="1" legend_exp="" legend_split_behavior="0" name="RPD_Plage_Reco" patch_size="-1,-1">
               <customproperties>
                 <Option/>
               </customproperties>
             </layer-tree-layer>
-            <layer-tree-layer id="RPD_PointDeComptage_Reco_0b0a6397_b0a2_4d53_892f_fcf300677c9d" source="../gpkg/Reco-Star-Elec-RPD.gpkg|layername=RPD_PointDeComptage_Reco" providerKey="ogr" checked="Qt::Checked" expanded="1" legend_exp="" legend_split_behavior="0" name="RPD_PointDeComptage_Reco" patch_size="-1,-1">
+            <layer-tree-layer id="RPD_PointDeComptage_Reco_0b0a6397_b0a2_4d53_892f_fcf300677c9d" source="./gpkg/Reco-Star-Elec-RPD.gpkg|layername=RPD_PointDeComptage_Reco" providerKey="ogr" checked="Qt::Checked" expanded="1" legend_exp="" legend_split_behavior="0" name="RPD_PointDeComptage_Reco" patch_size="-1,-1">
               <customproperties>
                 <Option/>
               </customproperties>
             </layer-tree-layer>
-            <layer-tree-layer id="RPD_OuvrageCollectifBranchement_Reco_5a9f3840_14a5_4990_b251_7ec99181060a" source="../gpkg/Reco-Star-Elec-RPD.gpkg|layername=RPD_OuvrageCollectifBranchement_Reco" providerKey="ogr" checked="Qt::Checked" expanded="1" legend_exp="" legend_split_behavior="0" name="RPD_OuvrageCollectifBranchement_Reco" patch_size="-1,-1">
+            <layer-tree-layer id="RPD_OuvrageCollectifBranchement_Reco_5a9f3840_14a5_4990_b251_7ec99181060a" source="./gpkg/Reco-Star-Elec-RPD.gpkg|layername=RPD_OuvrageCollectifBranchement_Reco" providerKey="ogr" checked="Qt::Checked" expanded="1" legend_exp="" legend_split_behavior="0" name="RPD_OuvrageCollectifBranchement_Reco" patch_size="-1,-1">
               <customproperties>
                 <Option/>
               </customproperties>
             </layer-tree-layer>
-            <layer-tree-layer id="RPD_PosteElectrique_Reco_714a0e8e_a916_4e5d_8806_0e33133c4bef" source="../gpkg/Reco-Star-Elec-RPD.gpkg|layername=RPD_PosteElectrique_Reco" providerKey="ogr" checked="Qt::Checked" expanded="0" legend_exp="" legend_split_behavior="0" name="RPD_PosteElectrique_Reco" patch_size="-1,-1">
+            <layer-tree-layer id="RPD_PosteElectrique_Reco_714a0e8e_a916_4e5d_8806_0e33133c4bef" source="./gpkg/Reco-Star-Elec-RPD.gpkg|layername=RPD_PosteElectrique_Reco" providerKey="ogr" checked="Qt::Checked" expanded="0" legend_exp="" legend_split_behavior="0" name="RPD_PosteElectrique_Reco" patch_size="-1,-1">
               <customproperties>
                 <Option/>
               </customproperties>
             </layer-tree-layer>
-            <layer-tree-layer id="RPD_Terre_Reco_279156a7_af43_4784_8667_b5b79623bb85" source="../gpkg/Reco-Star-Elec-RPD.gpkg|layername=RPD_Terre_Reco" providerKey="ogr" checked="Qt::Checked" expanded="1" legend_exp="" legend_split_behavior="0" name="RPD_Terre_Reco" patch_size="-1,-1">
+            <layer-tree-layer id="RPD_Terre_Reco_279156a7_af43_4784_8667_b5b79623bb85" source="./gpkg/Reco-Star-Elec-RPD.gpkg|layername=RPD_Terre_Reco" providerKey="ogr" checked="Qt::Checked" expanded="1" legend_exp="" legend_split_behavior="0" name="RPD_Terre_Reco" patch_size="-1,-1">
               <customproperties>
                 <Option/>
               </customproperties>
@@ -33401,27 +33401,27 @@ def my_form_open(dialog, layer, feature):
             <customproperties>
               <Option/>
             </customproperties>
-            <layer-tree-layer id="RPD_Coffret_Reco_3262a53c_3782_49cd_965b_2675949930be" source="../gpkg/Reco-Star-Elec-RPD.gpkg|layername=RPD_Coffret_Reco" providerKey="ogr" checked="Qt::Checked" expanded="1" legend_exp="" legend_split_behavior="0" name="RPD_Coffret_Reco" patch_size="-1,-1">
+            <layer-tree-layer id="RPD_Coffret_Reco_3262a53c_3782_49cd_965b_2675949930be" source="./gpkg/Reco-Star-Elec-RPD.gpkg|layername=RPD_Coffret_Reco" providerKey="ogr" checked="Qt::Checked" expanded="1" legend_exp="" legend_split_behavior="0" name="RPD_Coffret_Reco" patch_size="-1,-1">
               <customproperties>
                 <Option/>
               </customproperties>
             </layer-tree-layer>
-            <layer-tree-layer id="RPD_Support_Reco_65f3aab3_3bb6_4b26_9507_1d10a4efdb39" source="../gpkg/Reco-Star-Elec-RPD.gpkg|layername=RPD_Support_Reco" providerKey="ogr" checked="Qt::Checked" expanded="1" legend_exp="" legend_split_behavior="0" name="RPD_Support_Reco" patch_size="-1,-1">
+            <layer-tree-layer id="RPD_Support_Reco_65f3aab3_3bb6_4b26_9507_1d10a4efdb39" source="./gpkg/Reco-Star-Elec-RPD.gpkg|layername=RPD_Support_Reco" providerKey="ogr" checked="Qt::Checked" expanded="1" legend_exp="" legend_split_behavior="0" name="RPD_Support_Reco" patch_size="-1,-1">
               <customproperties>
                 <Option/>
               </customproperties>
             </layer-tree-layer>
-            <layer-tree-layer id="RPD_BatimentTechnique_Reco_line_0d1cb4af_db56_443c_a089_d5eff62183d8" source="../gpkg/Reco-Star-Elec-RPD.gpkg|layername=RPD_BatimentTechnique_Reco_line" providerKey="ogr" checked="Qt::Checked" expanded="1" legend_exp="" legend_split_behavior="0" name="RPD_BatimentTechnique_Reco" patch_size="-1,-1">
+            <layer-tree-layer id="RPD_BatimentTechnique_Reco_line_0d1cb4af_db56_443c_a089_d5eff62183d8" source="./gpkg/Reco-Star-Elec-RPD.gpkg|layername=RPD_BatimentTechnique_Reco_line" providerKey="ogr" checked="Qt::Checked" expanded="1" legend_exp="" legend_split_behavior="0" name="RPD_BatimentTechnique_Reco" patch_size="-1,-1">
               <customproperties>
                 <Option/>
               </customproperties>
             </layer-tree-layer>
-            <layer-tree-layer id="RPD_EnceinteCloturee_Reco_line_1d1b0f4e_a411_464d_b89c_9ac2b370e79f" source="../gpkg/Reco-Star-Elec-RPD.gpkg|layername=RPD_EnceinteCloturee_Reco_line" providerKey="ogr" checked="Qt::Checked" expanded="1" legend_exp="" legend_split_behavior="0" name="RPD_EnceinteCloturee_Reco" patch_size="-1,-1">
+            <layer-tree-layer id="RPD_EnceinteCloturee_Reco_line_1d1b0f4e_a411_464d_b89c_9ac2b370e79f" source="./gpkg/Reco-Star-Elec-RPD.gpkg|layername=RPD_EnceinteCloturee_Reco_line" providerKey="ogr" checked="Qt::Checked" expanded="1" legend_exp="" legend_split_behavior="0" name="RPD_EnceinteCloturee_Reco" patch_size="-1,-1">
               <customproperties>
                 <Option/>
               </customproperties>
             </layer-tree-layer>
-            <layer-tree-layer id="RPD_GeometrieSupplementaire_Reco_f8f6394f_3b6d_46e9_a657_5bf0eda0c74f" source="../gpkg/Reco-Star-Elec-RPD.gpkg|layername=RPD_GeometrieSupplementaire_Reco" providerKey="ogr" checked="Qt::Checked" expanded="1" legend_exp="" legend_split_behavior="0" name="RPD_GeometrieSupplementaire_Reco" patch_size="-1,-1">
+            <layer-tree-layer id="RPD_GeometrieSupplementaire_Reco_f8f6394f_3b6d_46e9_a657_5bf0eda0c74f" source="./gpkg/Reco-Star-Elec-RPD.gpkg|layername=RPD_GeometrieSupplementaire_Reco" providerKey="ogr" checked="Qt::Checked" expanded="1" legend_exp="" legend_split_behavior="0" name="RPD_GeometrieSupplementaire_Reco" patch_size="-1,-1">
               <customproperties>
                 <Option/>
               </customproperties>
@@ -33431,14 +33431,14 @@ def my_form_open(dialog, layer, feature):
             <customproperties>
               <Option/>
             </customproperties>
-            <layer-tree-layer id="RPD_CableElectrique_Reco_559ad6fd_6937_4e8b_a5f1_cbfe58af78b3" source="../gpkg/Reco-Star-Elec-RPD.gpkg|layername=RPD_CableElectrique_Reco" providerKey="ogr" checked="Qt::Checked" expanded="1" legend_exp="" legend_split_behavior="0" name="RPD_CableElectrique_Reco" patch_size="-1,-1">
+            <layer-tree-layer id="RPD_CableElectrique_Reco_559ad6fd_6937_4e8b_a5f1_cbfe58af78b3" source="./gpkg/Reco-Star-Elec-RPD.gpkg|layername=RPD_CableElectrique_Reco" providerKey="ogr" checked="Qt::Checked" expanded="1" legend_exp="" legend_split_behavior="0" name="RPD_CableElectrique_Reco" patch_size="-1,-1">
               <customproperties>
                 <Option type="Map">
                   <Option name="expandedLegendNodes" type="invalid"/>
                 </Option>
               </customproperties>
             </layer-tree-layer>
-            <layer-tree-layer id="RPD_CableTerre_Reco_69e0ec7b_3408_429d_b52c_84c1cc9a9889" source="../gpkg/Reco-Star-Elec-RPD.gpkg|layername=RPD_CableTerre_Reco" providerKey="ogr" checked="Qt::Checked" expanded="1" legend_exp="" legend_split_behavior="0" name="RPD_CableTerre_Reco" patch_size="-1,-1">
+            <layer-tree-layer id="RPD_CableTerre_Reco_69e0ec7b_3408_429d_b52c_84c1cc9a9889" source="./gpkg/Reco-Star-Elec-RPD.gpkg|layername=RPD_CableTerre_Reco" providerKey="ogr" checked="Qt::Checked" expanded="1" legend_exp="" legend_split_behavior="0" name="RPD_CableTerre_Reco" patch_size="-1,-1">
               <customproperties>
                 <Option/>
               </customproperties>
@@ -33448,21 +33448,21 @@ def my_form_open(dialog, layer, feature):
             <customproperties>
               <Option/>
             </customproperties>
-            <layer-tree-layer id="RPD_PleineTerre_Reco_line_434e16d0_b4fe_4687_b552_7faa09f52916" source="../gpkg/Reco-Star-Elec-RPD.gpkg|layername=RPD_PleineTerre_Reco_line" providerKey="ogr" checked="Qt::Checked" expanded="1" legend_exp="" legend_split_behavior="0" name="RPD_PleineTerre_Reco" patch_size="-1,-1">
+            <layer-tree-layer id="RPD_PleineTerre_Reco_line_434e16d0_b4fe_4687_b552_7faa09f52916" source="./gpkg/Reco-Star-Elec-RPD.gpkg|layername=RPD_PleineTerre_Reco_line" providerKey="ogr" checked="Qt::Checked" expanded="1" legend_exp="" legend_split_behavior="0" name="RPD_PleineTerre_Reco" patch_size="-1,-1">
               <customproperties>
                 <Option type="Map">
                   <Option value="&lt;symbol alpha=&quot;1&quot; clip_to_extent=&quot;1&quot; name=&quot;custom symbol&quot; type=&quot;line&quot; frame_rate=&quot;10&quot; is_animated=&quot;0&quot; force_rhr=&quot;0&quot;>&#xa; &lt;data_defined_properties>&#xa;  &lt;Option type=&quot;Map&quot;>&#xa;   &lt;Option name=&quot;name&quot; type=&quot;QString&quot; value=&quot;&quot;/>&#xa;   &lt;Option name=&quot;properties&quot;/>&#xa;   &lt;Option name=&quot;type&quot; type=&quot;QString&quot; value=&quot;collection&quot;/>&#xa;  &lt;/Option>&#xa; &lt;/data_defined_properties>&#xa; &lt;layer locked=&quot;0&quot; pass=&quot;0&quot; enabled=&quot;1&quot; class=&quot;SimpleLine&quot;>&#xa;  &lt;Option type=&quot;Map&quot;>&#xa;   &lt;Option name=&quot;align_dash_pattern&quot; type=&quot;QString&quot; value=&quot;0&quot;/>&#xa;   &lt;Option name=&quot;capstyle&quot; type=&quot;QString&quot; value=&quot;flat&quot;/>&#xa;   &lt;Option name=&quot;customdash&quot; type=&quot;QString&quot; value=&quot;5;2&quot;/>&#xa;   &lt;Option name=&quot;customdash_map_unit_scale&quot; type=&quot;QString&quot; value=&quot;3x:0,0,0,0,0,0&quot;/>&#xa;   &lt;Option name=&quot;customdash_unit&quot; type=&quot;QString&quot; value=&quot;MM&quot;/>&#xa;   &lt;Option name=&quot;dash_pattern_offset&quot; type=&quot;QString&quot; value=&quot;0&quot;/>&#xa;   &lt;Option name=&quot;dash_pattern_offset_map_unit_scale&quot; type=&quot;QString&quot; value=&quot;3x:0,0,0,0,0,0&quot;/>&#xa;   &lt;Option name=&quot;dash_pattern_offset_unit&quot; type=&quot;QString&quot; value=&quot;MM&quot;/>&#xa;   &lt;Option name=&quot;draw_inside_polygon&quot; type=&quot;QString&quot; value=&quot;0&quot;/>&#xa;   &lt;Option name=&quot;joinstyle&quot; type=&quot;QString&quot; value=&quot;round&quot;/>&#xa;   &lt;Option name=&quot;line_color&quot; type=&quot;QString&quot; value=&quot;230,230,230,255&quot;/>&#xa;   &lt;Option name=&quot;line_style&quot; type=&quot;QString&quot; value=&quot;solid&quot;/>&#xa;   &lt;Option name=&quot;line_width&quot; type=&quot;QString&quot; value=&quot;2&quot;/>&#xa;   &lt;Option name=&quot;line_width_unit&quot; type=&quot;QString&quot; value=&quot;MM&quot;/>&#xa;   &lt;Option name=&quot;offset&quot; type=&quot;QString&quot; value=&quot;0&quot;/>&#xa;   &lt;Option name=&quot;offset_map_unit_scale&quot; type=&quot;QString&quot; value=&quot;3x:0,0,0,0,0,0&quot;/>&#xa;   &lt;Option name=&quot;offset_unit&quot; type=&quot;QString&quot; value=&quot;MM&quot;/>&#xa;   &lt;Option name=&quot;ring_filter&quot; type=&quot;QString&quot; value=&quot;0&quot;/>&#xa;   &lt;Option name=&quot;trim_distance_end&quot; type=&quot;QString&quot; value=&quot;0&quot;/>&#xa;   &lt;Option name=&quot;trim_distance_end_map_unit_scale&quot; type=&quot;QString&quot; value=&quot;3x:0,0,0,0,0,0&quot;/>&#xa;   &lt;Option name=&quot;trim_distance_end_unit&quot; type=&quot;QString&quot; value=&quot;MM&quot;/>&#xa;   &lt;Option name=&quot;trim_distance_start&quot; type=&quot;QString&quot; value=&quot;0&quot;/>&#xa;   &lt;Option name=&quot;trim_distance_start_map_unit_scale&quot; type=&quot;QString&quot; value=&quot;3x:0,0,0,0,0,0&quot;/>&#xa;   &lt;Option name=&quot;trim_distance_start_unit&quot; type=&quot;QString&quot; value=&quot;MM&quot;/>&#xa;   &lt;Option name=&quot;tweak_dash_pattern_on_corners&quot; type=&quot;QString&quot; value=&quot;0&quot;/>&#xa;   &lt;Option name=&quot;use_custom_dash&quot; type=&quot;QString&quot; value=&quot;0&quot;/>&#xa;   &lt;Option name=&quot;width_map_unit_scale&quot; type=&quot;QString&quot; value=&quot;3x:0,0,0,0,0,0&quot;/>&#xa;  &lt;/Option>&#xa;  &lt;data_defined_properties>&#xa;   &lt;Option type=&quot;Map&quot;>&#xa;    &lt;Option name=&quot;name&quot; type=&quot;QString&quot; value=&quot;&quot;/>&#xa;    &lt;Option name=&quot;properties&quot;/>&#xa;    &lt;Option name=&quot;type&quot; type=&quot;QString&quot; value=&quot;collection&quot;/>&#xa;   &lt;/Option>&#xa;  &lt;/data_defined_properties>&#xa; &lt;/layer>&#xa; &lt;layer locked=&quot;0&quot; pass=&quot;0&quot; enabled=&quot;1&quot; class=&quot;MarkerLine&quot;>&#xa;  &lt;Option type=&quot;Map&quot;>&#xa;   &lt;Option name=&quot;average_angle_length&quot; type=&quot;QString&quot; value=&quot;4&quot;/>&#xa;   &lt;Option name=&quot;average_angle_map_unit_scale&quot; type=&quot;QString&quot; value=&quot;3x:0,0,0,0,0,0&quot;/>&#xa;   &lt;Option name=&quot;average_angle_unit&quot; type=&quot;QString&quot; value=&quot;MM&quot;/>&#xa;   &lt;Option name=&quot;interval&quot; type=&quot;QString&quot; value=&quot;10&quot;/>&#xa;   &lt;Option name=&quot;interval_map_unit_scale&quot; type=&quot;QString&quot; value=&quot;3x:0,0,0,0,0,0&quot;/>&#xa;   &lt;Option name=&quot;interval_unit&quot; type=&quot;QString&quot; value=&quot;MM&quot;/>&#xa;   &lt;Option name=&quot;offset&quot; type=&quot;QString&quot; value=&quot;0&quot;/>&#xa;   &lt;Option name=&quot;offset_along_line&quot; type=&quot;QString&quot; value=&quot;0&quot;/>&#xa;   &lt;Option name=&quot;offset_along_line_map_unit_scale&quot; type=&quot;QString&quot; value=&quot;3x:0,0,0,0,0,0&quot;/>&#xa;   &lt;Option name=&quot;offset_along_line_unit&quot; type=&quot;QString&quot; value=&quot;MM&quot;/>&#xa;   &lt;Option name=&quot;offset_map_unit_scale&quot; type=&quot;QString&quot; value=&quot;3x:0,0,0,0,0,0&quot;/>&#xa;   &lt;Option name=&quot;offset_unit&quot; type=&quot;QString&quot; value=&quot;MM&quot;/>&#xa;   &lt;Option name=&quot;place_on_every_part&quot; type=&quot;bool&quot; value=&quot;true&quot;/>&#xa;   &lt;Option name=&quot;placements&quot; type=&quot;QString&quot; value=&quot;Interval&quot;/>&#xa;   &lt;Option name=&quot;ring_filter&quot; type=&quot;QString&quot; value=&quot;0&quot;/>&#xa;   &lt;Option name=&quot;rotate&quot; type=&quot;QString&quot; value=&quot;1&quot;/>&#xa;  &lt;/Option>&#xa;  &lt;data_defined_properties>&#xa;   &lt;Option type=&quot;Map&quot;>&#xa;    &lt;Option name=&quot;name&quot; type=&quot;QString&quot; value=&quot;&quot;/>&#xa;    &lt;Option name=&quot;properties&quot;/>&#xa;    &lt;Option name=&quot;type&quot; type=&quot;QString&quot; value=&quot;collection&quot;/>&#xa;   &lt;/Option>&#xa;  &lt;/data_defined_properties>&#xa;  &lt;symbol alpha=&quot;1&quot; clip_to_extent=&quot;1&quot; name=&quot;@custom symbol@1&quot; type=&quot;marker&quot; frame_rate=&quot;10&quot; is_animated=&quot;0&quot; force_rhr=&quot;0&quot;>&#xa;   &lt;data_defined_properties>&#xa;    &lt;Option type=&quot;Map&quot;>&#xa;     &lt;Option name=&quot;name&quot; type=&quot;QString&quot; value=&quot;&quot;/>&#xa;     &lt;Option name=&quot;properties&quot;/>&#xa;     &lt;Option name=&quot;type&quot; type=&quot;QString&quot; value=&quot;collection&quot;/>&#xa;    &lt;/Option>&#xa;   &lt;/data_defined_properties>&#xa;   &lt;layer locked=&quot;0&quot; pass=&quot;0&quot; enabled=&quot;1&quot; class=&quot;SimpleMarker&quot;>&#xa;    &lt;Option type=&quot;Map&quot;>&#xa;     &lt;Option name=&quot;angle&quot; type=&quot;QString&quot; value=&quot;0&quot;/>&#xa;     &lt;Option name=&quot;cap_style&quot; type=&quot;QString&quot; value=&quot;square&quot;/>&#xa;     &lt;Option name=&quot;color&quot; type=&quot;QString&quot; value=&quot;230,230,230,255&quot;/>&#xa;     &lt;Option name=&quot;horizontal_anchor_point&quot; type=&quot;QString&quot; value=&quot;1&quot;/>&#xa;     &lt;Option name=&quot;joinstyle&quot; type=&quot;QString&quot; value=&quot;bevel&quot;/>&#xa;     &lt;Option name=&quot;name&quot; type=&quot;QString&quot; value=&quot;circle&quot;/>&#xa;     &lt;Option name=&quot;offset&quot; type=&quot;QString&quot; value=&quot;0,0&quot;/>&#xa;     &lt;Option name=&quot;offset_map_unit_scale&quot; type=&quot;QString&quot; value=&quot;3x:0,0,0,0,0,0&quot;/>&#xa;     &lt;Option name=&quot;offset_unit&quot; type=&quot;QString&quot; value=&quot;MM&quot;/>&#xa;     &lt;Option name=&quot;outline_color&quot; type=&quot;QString&quot; value=&quot;35,35,35,255&quot;/>&#xa;     &lt;Option name=&quot;outline_style&quot; type=&quot;QString&quot; value=&quot;no&quot;/>&#xa;     &lt;Option name=&quot;outline_width&quot; type=&quot;QString&quot; value=&quot;0&quot;/>&#xa;     &lt;Option name=&quot;outline_width_map_unit_scale&quot; type=&quot;QString&quot; value=&quot;3x:0,0,0,0,0,0&quot;/>&#xa;     &lt;Option name=&quot;outline_width_unit&quot; type=&quot;QString&quot; value=&quot;MM&quot;/>&#xa;     &lt;Option name=&quot;scale_method&quot; type=&quot;QString&quot; value=&quot;diameter&quot;/>&#xa;     &lt;Option name=&quot;size&quot; type=&quot;QString&quot; value=&quot;4&quot;/>&#xa;     &lt;Option name=&quot;size_map_unit_scale&quot; type=&quot;QString&quot; value=&quot;3x:0,0,0,0,0,0&quot;/>&#xa;     &lt;Option name=&quot;size_unit&quot; type=&quot;QString&quot; value=&quot;MM&quot;/>&#xa;     &lt;Option name=&quot;vertical_anchor_point&quot; type=&quot;QString&quot; value=&quot;1&quot;/>&#xa;    &lt;/Option>&#xa;    &lt;data_defined_properties>&#xa;     &lt;Option type=&quot;Map&quot;>&#xa;      &lt;Option name=&quot;name&quot; type=&quot;QString&quot; value=&quot;&quot;/>&#xa;      &lt;Option name=&quot;properties&quot;/>&#xa;      &lt;Option name=&quot;type&quot; type=&quot;QString&quot; value=&quot;collection&quot;/>&#xa;     &lt;/Option>&#xa;    &lt;/data_defined_properties>&#xa;   &lt;/layer>&#xa;  &lt;/symbol>&#xa; &lt;/layer>&#xa;&lt;/symbol>&#xa;" name="legend/custom-symbol-0" type="QString"/>
                 </Option>
               </customproperties>
             </layer-tree-layer>
-            <layer-tree-layer id="RPD_Aerien_Reco_line_743e97b1_2554_41cd_a2e5_b1683458dd3b" source="../gpkg/Reco-Star-Elec-RPD.gpkg|layername=RPD_Aerien_Reco_line" providerKey="ogr" checked="Qt::Checked" expanded="0" legend_exp="" legend_split_behavior="0" name="RPD_Aerien_Reco" patch_size="-1,-1">
+            <layer-tree-layer id="RPD_Aerien_Reco_line_743e97b1_2554_41cd_a2e5_b1683458dd3b" source="./gpkg/Reco-Star-Elec-RPD.gpkg|layername=RPD_Aerien_Reco_line" providerKey="ogr" checked="Qt::Checked" expanded="0" legend_exp="" legend_split_behavior="0" name="RPD_Aerien_Reco" patch_size="-1,-1">
               <customproperties>
                 <Option type="Map">
                   <Option value="&lt;symbol alpha=&quot;1&quot; clip_to_extent=&quot;1&quot; name=&quot;custom symbol&quot; type=&quot;line&quot; frame_rate=&quot;10&quot; is_animated=&quot;0&quot; force_rhr=&quot;0&quot;>&#xa; &lt;data_defined_properties>&#xa;  &lt;Option type=&quot;Map&quot;>&#xa;   &lt;Option name=&quot;name&quot; type=&quot;QString&quot; value=&quot;&quot;/>&#xa;   &lt;Option name=&quot;properties&quot;/>&#xa;   &lt;Option name=&quot;type&quot; type=&quot;QString&quot; value=&quot;collection&quot;/>&#xa;  &lt;/Option>&#xa; &lt;/data_defined_properties>&#xa; &lt;layer locked=&quot;0&quot; pass=&quot;0&quot; enabled=&quot;1&quot; class=&quot;SimpleLine&quot;>&#xa;  &lt;Option type=&quot;Map&quot;>&#xa;   &lt;Option name=&quot;align_dash_pattern&quot; type=&quot;QString&quot; value=&quot;0&quot;/>&#xa;   &lt;Option name=&quot;capstyle&quot; type=&quot;QString&quot; value=&quot;flat&quot;/>&#xa;   &lt;Option name=&quot;customdash&quot; type=&quot;QString&quot; value=&quot;5;5&quot;/>&#xa;   &lt;Option name=&quot;customdash_map_unit_scale&quot; type=&quot;QString&quot; value=&quot;3x:0,0,0,0,0,0&quot;/>&#xa;   &lt;Option name=&quot;customdash_unit&quot; type=&quot;QString&quot; value=&quot;MM&quot;/>&#xa;   &lt;Option name=&quot;dash_pattern_offset&quot; type=&quot;QString&quot; value=&quot;0&quot;/>&#xa;   &lt;Option name=&quot;dash_pattern_offset_map_unit_scale&quot; type=&quot;QString&quot; value=&quot;3x:0,0,0,0,0,0&quot;/>&#xa;   &lt;Option name=&quot;dash_pattern_offset_unit&quot; type=&quot;QString&quot; value=&quot;MM&quot;/>&#xa;   &lt;Option name=&quot;draw_inside_polygon&quot; type=&quot;QString&quot; value=&quot;0&quot;/>&#xa;   &lt;Option name=&quot;joinstyle&quot; type=&quot;QString&quot; value=&quot;round&quot;/>&#xa;   &lt;Option name=&quot;line_color&quot; type=&quot;QString&quot; value=&quot;230,230,230,255&quot;/>&#xa;   &lt;Option name=&quot;line_style&quot; type=&quot;QString&quot; value=&quot;solid&quot;/>&#xa;   &lt;Option name=&quot;line_width&quot; type=&quot;QString&quot; value=&quot;2&quot;/>&#xa;   &lt;Option name=&quot;line_width_unit&quot; type=&quot;QString&quot; value=&quot;MM&quot;/>&#xa;   &lt;Option name=&quot;offset&quot; type=&quot;QString&quot; value=&quot;0&quot;/>&#xa;   &lt;Option name=&quot;offset_map_unit_scale&quot; type=&quot;QString&quot; value=&quot;3x:0,0,0,0,0,0&quot;/>&#xa;   &lt;Option name=&quot;offset_unit&quot; type=&quot;QString&quot; value=&quot;MM&quot;/>&#xa;   &lt;Option name=&quot;ring_filter&quot; type=&quot;QString&quot; value=&quot;0&quot;/>&#xa;   &lt;Option name=&quot;trim_distance_end&quot; type=&quot;QString&quot; value=&quot;0&quot;/>&#xa;   &lt;Option name=&quot;trim_distance_end_map_unit_scale&quot; type=&quot;QString&quot; value=&quot;3x:0,0,0,0,0,0&quot;/>&#xa;   &lt;Option name=&quot;trim_distance_end_unit&quot; type=&quot;QString&quot; value=&quot;MM&quot;/>&#xa;   &lt;Option name=&quot;trim_distance_start&quot; type=&quot;QString&quot; value=&quot;0&quot;/>&#xa;   &lt;Option name=&quot;trim_distance_start_map_unit_scale&quot; type=&quot;QString&quot; value=&quot;3x:0,0,0,0,0,0&quot;/>&#xa;   &lt;Option name=&quot;trim_distance_start_unit&quot; type=&quot;QString&quot; value=&quot;MM&quot;/>&#xa;   &lt;Option name=&quot;tweak_dash_pattern_on_corners&quot; type=&quot;QString&quot; value=&quot;0&quot;/>&#xa;   &lt;Option name=&quot;use_custom_dash&quot; type=&quot;QString&quot; value=&quot;0&quot;/>&#xa;   &lt;Option name=&quot;width_map_unit_scale&quot; type=&quot;QString&quot; value=&quot;3x:0,0,0,0,0,0&quot;/>&#xa;  &lt;/Option>&#xa;  &lt;data_defined_properties>&#xa;   &lt;Option type=&quot;Map&quot;>&#xa;    &lt;Option name=&quot;name&quot; type=&quot;QString&quot; value=&quot;&quot;/>&#xa;    &lt;Option name=&quot;properties&quot;/>&#xa;    &lt;Option name=&quot;type&quot; type=&quot;QString&quot; value=&quot;collection&quot;/>&#xa;   &lt;/Option>&#xa;  &lt;/data_defined_properties>&#xa; &lt;/layer>&#xa;&lt;/symbol>&#xa;" name="legend/custom-symbol-0" type="QString"/>
                 </Option>
               </customproperties>
             </layer-tree-layer>
-            <layer-tree-layer id="RPD_Fourreau_Reco_9f8337d9_7382_4f98_bb14_a587c1db8dce" source="../gpkg/Reco-Star-Elec-RPD.gpkg|layername=RPD_Fourreau_Reco" providerKey="ogr" checked="Qt::Checked" expanded="1" legend_exp="" legend_split_behavior="0" name="RPD_Fourreau_Reco" patch_size="0,0">
+            <layer-tree-layer id="RPD_Fourreau_Reco_9f8337d9_7382_4f98_bb14_a587c1db8dce" source="./gpkg/Reco-Star-Elec-RPD.gpkg|layername=RPD_Fourreau_Reco" providerKey="ogr" checked="Qt::Checked" expanded="1" legend_exp="" legend_split_behavior="0" name="RPD_Fourreau_Reco" patch_size="0,0">
               <patch wkt="LineString (0 2.5, 10 2.5)" preserveAspect="0" type="1"/>
               <customproperties>
                 <Option type="Map">
@@ -33472,14 +33472,14 @@ def my_form_open(dialog, layer, feature):
                 </Option>
               </customproperties>
             </layer-tree-layer>
-            <layer-tree-layer id="RPD_ProtectionMecanique_Reco_c50b43a6_a3d1_4c13_bdae_dc996759a1b1" source="../gpkg/Reco-Star-Elec-RPD.gpkg|layername=RPD_ProtectionMecanique_Reco" providerKey="ogr" checked="Qt::Checked" expanded="1" legend_exp="" legend_split_behavior="0" name="RPD_ProtectionMecanique_Reco" patch_size="-1,-1">
+            <layer-tree-layer id="RPD_ProtectionMecanique_Reco_c50b43a6_a3d1_4c13_bdae_dc996759a1b1" source="./gpkg/Reco-Star-Elec-RPD.gpkg|layername=RPD_ProtectionMecanique_Reco" providerKey="ogr" checked="Qt::Checked" expanded="1" legend_exp="" legend_split_behavior="0" name="RPD_ProtectionMecanique_Reco" patch_size="-1,-1">
               <customproperties>
                 <Option type="Map">
                   <Option value="&lt;symbol alpha=&quot;1&quot; clip_to_extent=&quot;1&quot; name=&quot;custom symbol&quot; type=&quot;line&quot; frame_rate=&quot;10&quot; is_animated=&quot;0&quot; force_rhr=&quot;0&quot;>&#xa; &lt;data_defined_properties>&#xa;  &lt;Option type=&quot;Map&quot;>&#xa;   &lt;Option name=&quot;name&quot; type=&quot;QString&quot; value=&quot;&quot;/>&#xa;   &lt;Option name=&quot;properties&quot;/>&#xa;   &lt;Option name=&quot;type&quot; type=&quot;QString&quot; value=&quot;collection&quot;/>&#xa;  &lt;/Option>&#xa; &lt;/data_defined_properties>&#xa; &lt;layer locked=&quot;1&quot; pass=&quot;0&quot; enabled=&quot;1&quot; class=&quot;SimpleLine&quot;>&#xa;  &lt;Option type=&quot;Map&quot;>&#xa;   &lt;Option name=&quot;align_dash_pattern&quot; type=&quot;QString&quot; value=&quot;0&quot;/>&#xa;   &lt;Option name=&quot;capstyle&quot; type=&quot;QString&quot; value=&quot;flat&quot;/>&#xa;   &lt;Option name=&quot;customdash&quot; type=&quot;QString&quot; value=&quot;5;2&quot;/>&#xa;   &lt;Option name=&quot;customdash_map_unit_scale&quot; type=&quot;QString&quot; value=&quot;3x:0,0,0,0,0,0&quot;/>&#xa;   &lt;Option name=&quot;customdash_unit&quot; type=&quot;QString&quot; value=&quot;MM&quot;/>&#xa;   &lt;Option name=&quot;dash_pattern_offset&quot; type=&quot;QString&quot; value=&quot;0&quot;/>&#xa;   &lt;Option name=&quot;dash_pattern_offset_map_unit_scale&quot; type=&quot;QString&quot; value=&quot;3x:0,0,0,0,0,0&quot;/>&#xa;   &lt;Option name=&quot;dash_pattern_offset_unit&quot; type=&quot;QString&quot; value=&quot;MM&quot;/>&#xa;   &lt;Option name=&quot;draw_inside_polygon&quot; type=&quot;QString&quot; value=&quot;0&quot;/>&#xa;   &lt;Option name=&quot;joinstyle&quot; type=&quot;QString&quot; value=&quot;round&quot;/>&#xa;   &lt;Option name=&quot;line_color&quot; type=&quot;QString&quot; value=&quot;91,61,0,255&quot;/>&#xa;   &lt;Option name=&quot;line_style&quot; type=&quot;QString&quot; value=&quot;solid&quot;/>&#xa;   &lt;Option name=&quot;line_width&quot; type=&quot;QString&quot; value=&quot;3&quot;/>&#xa;   &lt;Option name=&quot;line_width_unit&quot; type=&quot;QString&quot; value=&quot;MM&quot;/>&#xa;   &lt;Option name=&quot;offset&quot; type=&quot;QString&quot; value=&quot;0&quot;/>&#xa;   &lt;Option name=&quot;offset_map_unit_scale&quot; type=&quot;QString&quot; value=&quot;3x:0,0,0,0,0,0&quot;/>&#xa;   &lt;Option name=&quot;offset_unit&quot; type=&quot;QString&quot; value=&quot;MM&quot;/>&#xa;   &lt;Option name=&quot;ring_filter&quot; type=&quot;QString&quot; value=&quot;0&quot;/>&#xa;   &lt;Option name=&quot;trim_distance_end&quot; type=&quot;QString&quot; value=&quot;0&quot;/>&#xa;   &lt;Option name=&quot;trim_distance_end_map_unit_scale&quot; type=&quot;QString&quot; value=&quot;3x:0,0,0,0,0,0&quot;/>&#xa;   &lt;Option name=&quot;trim_distance_end_unit&quot; type=&quot;QString&quot; value=&quot;MM&quot;/>&#xa;   &lt;Option name=&quot;trim_distance_start&quot; type=&quot;QString&quot; value=&quot;0&quot;/>&#xa;   &lt;Option name=&quot;trim_distance_start_map_unit_scale&quot; type=&quot;QString&quot; value=&quot;3x:0,0,0,0,0,0&quot;/>&#xa;   &lt;Option name=&quot;trim_distance_start_unit&quot; type=&quot;QString&quot; value=&quot;MM&quot;/>&#xa;   &lt;Option name=&quot;tweak_dash_pattern_on_corners&quot; type=&quot;QString&quot; value=&quot;0&quot;/>&#xa;   &lt;Option name=&quot;use_custom_dash&quot; type=&quot;QString&quot; value=&quot;0&quot;/>&#xa;   &lt;Option name=&quot;width_map_unit_scale&quot; type=&quot;QString&quot; value=&quot;3x:0,0,0,0,0,0&quot;/>&#xa;  &lt;/Option>&#xa;  &lt;data_defined_properties>&#xa;   &lt;Option type=&quot;Map&quot;>&#xa;    &lt;Option name=&quot;name&quot; type=&quot;QString&quot; value=&quot;&quot;/>&#xa;    &lt;Option name=&quot;properties&quot; type=&quot;Map&quot;>&#xa;     &lt;Option name=&quot;outlineWidth&quot; type=&quot;Map&quot;>&#xa;      &lt;Option name=&quot;active&quot; type=&quot;bool&quot; value=&quot;false&quot;/>&#xa;      &lt;Option name=&quot;type&quot; type=&quot;int&quot; value=&quot;1&quot;/>&#xa;      &lt;Option name=&quot;val&quot; type=&quot;QString&quot; value=&quot;&quot;/>&#xa;     &lt;/Option>&#xa;    &lt;/Option>&#xa;    &lt;Option name=&quot;type&quot; type=&quot;QString&quot; value=&quot;collection&quot;/>&#xa;   &lt;/Option>&#xa;  &lt;/data_defined_properties>&#xa; &lt;/layer>&#xa; &lt;layer locked=&quot;0&quot; pass=&quot;0&quot; enabled=&quot;1&quot; class=&quot;SimpleLine&quot;>&#xa;  &lt;Option type=&quot;Map&quot;>&#xa;   &lt;Option name=&quot;align_dash_pattern&quot; type=&quot;QString&quot; value=&quot;0&quot;/>&#xa;   &lt;Option name=&quot;capstyle&quot; type=&quot;QString&quot; value=&quot;flat&quot;/>&#xa;   &lt;Option name=&quot;customdash&quot; type=&quot;QString&quot; value=&quot;5;2&quot;/>&#xa;   &lt;Option name=&quot;customdash_map_unit_scale&quot; type=&quot;QString&quot; value=&quot;3x:0,0,0,0,0,0&quot;/>&#xa;   &lt;Option name=&quot;customdash_unit&quot; type=&quot;QString&quot; value=&quot;MM&quot;/>&#xa;   &lt;Option name=&quot;dash_pattern_offset&quot; type=&quot;QString&quot; value=&quot;0&quot;/>&#xa;   &lt;Option name=&quot;dash_pattern_offset_map_unit_scale&quot; type=&quot;QString&quot; value=&quot;3x:0,0,0,0,0,0&quot;/>&#xa;   &lt;Option name=&quot;dash_pattern_offset_unit&quot; type=&quot;QString&quot; value=&quot;MM&quot;/>&#xa;   &lt;Option name=&quot;draw_inside_polygon&quot; type=&quot;QString&quot; value=&quot;0&quot;/>&#xa;   &lt;Option name=&quot;joinstyle&quot; type=&quot;QString&quot; value=&quot;round&quot;/>&#xa;   &lt;Option name=&quot;line_color&quot; type=&quot;QString&quot; value=&quot;255,255,255,255&quot;/>&#xa;   &lt;Option name=&quot;line_style&quot; type=&quot;QString&quot; value=&quot;solid&quot;/>&#xa;   &lt;Option name=&quot;line_width&quot; type=&quot;QString&quot; value=&quot;1.5&quot;/>&#xa;   &lt;Option name=&quot;line_width_unit&quot; type=&quot;QString&quot; value=&quot;MM&quot;/>&#xa;   &lt;Option name=&quot;offset&quot; type=&quot;QString&quot; value=&quot;0&quot;/>&#xa;   &lt;Option name=&quot;offset_map_unit_scale&quot; type=&quot;QString&quot; value=&quot;3x:0,0,0,0,0,0&quot;/>&#xa;   &lt;Option name=&quot;offset_unit&quot; type=&quot;QString&quot; value=&quot;MM&quot;/>&#xa;   &lt;Option name=&quot;ring_filter&quot; type=&quot;QString&quot; value=&quot;0&quot;/>&#xa;   &lt;Option name=&quot;trim_distance_end&quot; type=&quot;QString&quot; value=&quot;0&quot;/>&#xa;   &lt;Option name=&quot;trim_distance_end_map_unit_scale&quot; type=&quot;QString&quot; value=&quot;3x:0,0,0,0,0,0&quot;/>&#xa;   &lt;Option name=&quot;trim_distance_end_unit&quot; type=&quot;QString&quot; value=&quot;MM&quot;/>&#xa;   &lt;Option name=&quot;trim_distance_start&quot; type=&quot;QString&quot; value=&quot;0&quot;/>&#xa;   &lt;Option name=&quot;trim_distance_start_map_unit_scale&quot; type=&quot;QString&quot; value=&quot;3x:0,0,0,0,0,0&quot;/>&#xa;   &lt;Option name=&quot;trim_distance_start_unit&quot; type=&quot;QString&quot; value=&quot;MM&quot;/>&#xa;   &lt;Option name=&quot;tweak_dash_pattern_on_corners&quot; type=&quot;QString&quot; value=&quot;0&quot;/>&#xa;   &lt;Option name=&quot;use_custom_dash&quot; type=&quot;QString&quot; value=&quot;0&quot;/>&#xa;   &lt;Option name=&quot;width_map_unit_scale&quot; type=&quot;QString&quot; value=&quot;3x:0,0,0,0,0,0&quot;/>&#xa;  &lt;/Option>&#xa;  &lt;data_defined_properties>&#xa;   &lt;Option type=&quot;Map&quot;>&#xa;    &lt;Option name=&quot;name&quot; type=&quot;QString&quot; value=&quot;&quot;/>&#xa;    &lt;Option name=&quot;properties&quot; type=&quot;Map&quot;>&#xa;     &lt;Option name=&quot;outlineWidth&quot; type=&quot;Map&quot;>&#xa;      &lt;Option name=&quot;active&quot; type=&quot;bool&quot; value=&quot;false&quot;/>&#xa;      &lt;Option name=&quot;type&quot; type=&quot;int&quot; value=&quot;1&quot;/>&#xa;      &lt;Option name=&quot;val&quot; type=&quot;QString&quot; value=&quot;&quot;/>&#xa;     &lt;/Option>&#xa;    &lt;/Option>&#xa;    &lt;Option name=&quot;type&quot; type=&quot;QString&quot; value=&quot;collection&quot;/>&#xa;   &lt;/Option>&#xa;  &lt;/data_defined_properties>&#xa; &lt;/layer>&#xa;&lt;/symbol>&#xa;" name="legend/custom-symbol-0" type="QString"/>
                 </Option>
               </customproperties>
             </layer-tree-layer>
-            <layer-tree-layer id="RPD_Galerie_Reco_e9a10f52_434d_4341_87c4_bbc79f6dccde" source="../gpkg/Reco-Star-Elec-RPD.gpkg|layername=RPD_Galerie_Reco" providerKey="ogr" checked="Qt::Checked" expanded="1" legend_exp="" legend_split_behavior="0" name="RPD_Galerie_Reco" patch_size="-1,-1">
+            <layer-tree-layer id="RPD_Galerie_Reco_e9a10f52_434d_4341_87c4_bbc79f6dccde" source="./gpkg/Reco-Star-Elec-RPD.gpkg|layername=RPD_Galerie_Reco" providerKey="ogr" checked="Qt::Checked" expanded="1" legend_exp="" legend_split_behavior="0" name="RPD_Galerie_Reco" patch_size="-1,-1">
               <customproperties>
                 <Option type="Map">
                   <Option value="&lt;symbol alpha=&quot;1&quot; clip_to_extent=&quot;1&quot; name=&quot;custom symbol&quot; type=&quot;line&quot; frame_rate=&quot;10&quot; is_animated=&quot;0&quot; force_rhr=&quot;0&quot;>&#xa; &lt;data_defined_properties>&#xa;  &lt;Option type=&quot;Map&quot;>&#xa;   &lt;Option name=&quot;name&quot; type=&quot;QString&quot; value=&quot;&quot;/>&#xa;   &lt;Option name=&quot;properties&quot;/>&#xa;   &lt;Option name=&quot;type&quot; type=&quot;QString&quot; value=&quot;collection&quot;/>&#xa;  &lt;/Option>&#xa; &lt;/data_defined_properties>&#xa; &lt;layer locked=&quot;1&quot; pass=&quot;0&quot; enabled=&quot;1&quot; class=&quot;SimpleLine&quot;>&#xa;  &lt;Option type=&quot;Map&quot;>&#xa;   &lt;Option name=&quot;align_dash_pattern&quot; type=&quot;QString&quot; value=&quot;0&quot;/>&#xa;   &lt;Option name=&quot;capstyle&quot; type=&quot;QString&quot; value=&quot;flat&quot;/>&#xa;   &lt;Option name=&quot;customdash&quot; type=&quot;QString&quot; value=&quot;5;2&quot;/>&#xa;   &lt;Option name=&quot;customdash_map_unit_scale&quot; type=&quot;QString&quot; value=&quot;3x:0,0,0,0,0,0&quot;/>&#xa;   &lt;Option name=&quot;customdash_unit&quot; type=&quot;QString&quot; value=&quot;MM&quot;/>&#xa;   &lt;Option name=&quot;dash_pattern_offset&quot; type=&quot;QString&quot; value=&quot;0&quot;/>&#xa;   &lt;Option name=&quot;dash_pattern_offset_map_unit_scale&quot; type=&quot;QString&quot; value=&quot;3x:0,0,0,0,0,0&quot;/>&#xa;   &lt;Option name=&quot;dash_pattern_offset_unit&quot; type=&quot;QString&quot; value=&quot;MM&quot;/>&#xa;   &lt;Option name=&quot;draw_inside_polygon&quot; type=&quot;QString&quot; value=&quot;0&quot;/>&#xa;   &lt;Option name=&quot;joinstyle&quot; type=&quot;QString&quot; value=&quot;round&quot;/>&#xa;   &lt;Option name=&quot;line_color&quot; type=&quot;QString&quot; value=&quot;91,91,91,255&quot;/>&#xa;   &lt;Option name=&quot;line_style&quot; type=&quot;QString&quot; value=&quot;solid&quot;/>&#xa;   &lt;Option name=&quot;line_width&quot; type=&quot;QString&quot; value=&quot;5&quot;/>&#xa;   &lt;Option name=&quot;line_width_unit&quot; type=&quot;QString&quot; value=&quot;MM&quot;/>&#xa;   &lt;Option name=&quot;offset&quot; type=&quot;QString&quot; value=&quot;0&quot;/>&#xa;   &lt;Option name=&quot;offset_map_unit_scale&quot; type=&quot;QString&quot; value=&quot;3x:0,0,0,0,0,0&quot;/>&#xa;   &lt;Option name=&quot;offset_unit&quot; type=&quot;QString&quot; value=&quot;MM&quot;/>&#xa;   &lt;Option name=&quot;ring_filter&quot; type=&quot;QString&quot; value=&quot;0&quot;/>&#xa;   &lt;Option name=&quot;trim_distance_end&quot; type=&quot;QString&quot; value=&quot;0&quot;/>&#xa;   &lt;Option name=&quot;trim_distance_end_map_unit_scale&quot; type=&quot;QString&quot; value=&quot;3x:0,0,0,0,0,0&quot;/>&#xa;   &lt;Option name=&quot;trim_distance_end_unit&quot; type=&quot;QString&quot; value=&quot;MM&quot;/>&#xa;   &lt;Option name=&quot;trim_distance_start&quot; type=&quot;QString&quot; value=&quot;0&quot;/>&#xa;   &lt;Option name=&quot;trim_distance_start_map_unit_scale&quot; type=&quot;QString&quot; value=&quot;3x:0,0,0,0,0,0&quot;/>&#xa;   &lt;Option name=&quot;trim_distance_start_unit&quot; type=&quot;QString&quot; value=&quot;MM&quot;/>&#xa;   &lt;Option name=&quot;tweak_dash_pattern_on_corners&quot; type=&quot;QString&quot; value=&quot;0&quot;/>&#xa;   &lt;Option name=&quot;use_custom_dash&quot; type=&quot;QString&quot; value=&quot;0&quot;/>&#xa;   &lt;Option name=&quot;width_map_unit_scale&quot; type=&quot;QString&quot; value=&quot;3x:0,0,0,0,0,0&quot;/>&#xa;  &lt;/Option>&#xa;  &lt;data_defined_properties>&#xa;   &lt;Option type=&quot;Map&quot;>&#xa;    &lt;Option name=&quot;name&quot; type=&quot;QString&quot; value=&quot;&quot;/>&#xa;    &lt;Option name=&quot;properties&quot; type=&quot;Map&quot;>&#xa;     &lt;Option name=&quot;outlineWidth&quot; type=&quot;Map&quot;>&#xa;      &lt;Option name=&quot;active&quot; type=&quot;bool&quot; value=&quot;false&quot;/>&#xa;      &lt;Option name=&quot;type&quot; type=&quot;int&quot; value=&quot;1&quot;/>&#xa;      &lt;Option name=&quot;val&quot; type=&quot;QString&quot; value=&quot;&quot;/>&#xa;     &lt;/Option>&#xa;    &lt;/Option>&#xa;    &lt;Option name=&quot;type&quot; type=&quot;QString&quot; value=&quot;collection&quot;/>&#xa;   &lt;/Option>&#xa;  &lt;/data_defined_properties>&#xa; &lt;/layer>&#xa; &lt;layer locked=&quot;0&quot; pass=&quot;0&quot; enabled=&quot;1&quot; class=&quot;SimpleLine&quot;>&#xa;  &lt;Option type=&quot;Map&quot;>&#xa;   &lt;Option name=&quot;align_dash_pattern&quot; type=&quot;QString&quot; value=&quot;0&quot;/>&#xa;   &lt;Option name=&quot;capstyle&quot; type=&quot;QString&quot; value=&quot;flat&quot;/>&#xa;   &lt;Option name=&quot;customdash&quot; type=&quot;QString&quot; value=&quot;5;2&quot;/>&#xa;   &lt;Option name=&quot;customdash_map_unit_scale&quot; type=&quot;QString&quot; value=&quot;3x:0,0,0,0,0,0&quot;/>&#xa;   &lt;Option name=&quot;customdash_unit&quot; type=&quot;QString&quot; value=&quot;MM&quot;/>&#xa;   &lt;Option name=&quot;dash_pattern_offset&quot; type=&quot;QString&quot; value=&quot;0&quot;/>&#xa;   &lt;Option name=&quot;dash_pattern_offset_map_unit_scale&quot; type=&quot;QString&quot; value=&quot;3x:0,0,0,0,0,0&quot;/>&#xa;   &lt;Option name=&quot;dash_pattern_offset_unit&quot; type=&quot;QString&quot; value=&quot;MM&quot;/>&#xa;   &lt;Option name=&quot;draw_inside_polygon&quot; type=&quot;QString&quot; value=&quot;0&quot;/>&#xa;   &lt;Option name=&quot;joinstyle&quot; type=&quot;QString&quot; value=&quot;round&quot;/>&#xa;   &lt;Option name=&quot;line_color&quot; type=&quot;QString&quot; value=&quot;255,255,255,255&quot;/>&#xa;   &lt;Option name=&quot;line_style&quot; type=&quot;QString&quot; value=&quot;solid&quot;/>&#xa;   &lt;Option name=&quot;line_width&quot; type=&quot;QString&quot; value=&quot;1.5&quot;/>&#xa;   &lt;Option name=&quot;line_width_unit&quot; type=&quot;QString&quot; value=&quot;MM&quot;/>&#xa;   &lt;Option name=&quot;offset&quot; type=&quot;QString&quot; value=&quot;0&quot;/>&#xa;   &lt;Option name=&quot;offset_map_unit_scale&quot; type=&quot;QString&quot; value=&quot;3x:0,0,0,0,0,0&quot;/>&#xa;   &lt;Option name=&quot;offset_unit&quot; type=&quot;QString&quot; value=&quot;MM&quot;/>&#xa;   &lt;Option name=&quot;ring_filter&quot; type=&quot;QString&quot; value=&quot;0&quot;/>&#xa;   &lt;Option name=&quot;trim_distance_end&quot; type=&quot;QString&quot; value=&quot;0&quot;/>&#xa;   &lt;Option name=&quot;trim_distance_end_map_unit_scale&quot; type=&quot;QString&quot; value=&quot;3x:0,0,0,0,0,0&quot;/>&#xa;   &lt;Option name=&quot;trim_distance_end_unit&quot; type=&quot;QString&quot; value=&quot;MM&quot;/>&#xa;   &lt;Option name=&quot;trim_distance_start&quot; type=&quot;QString&quot; value=&quot;0&quot;/>&#xa;   &lt;Option name=&quot;trim_distance_start_map_unit_scale&quot; type=&quot;QString&quot; value=&quot;3x:0,0,0,0,0,0&quot;/>&#xa;   &lt;Option name=&quot;trim_distance_start_unit&quot; type=&quot;QString&quot; value=&quot;MM&quot;/>&#xa;   &lt;Option name=&quot;tweak_dash_pattern_on_corners&quot; type=&quot;QString&quot; value=&quot;0&quot;/>&#xa;   &lt;Option name=&quot;use_custom_dash&quot; type=&quot;QString&quot; value=&quot;0&quot;/>&#xa;   &lt;Option name=&quot;width_map_unit_scale&quot; type=&quot;QString&quot; value=&quot;3x:0,0,0,0,0,0&quot;/>&#xa;  &lt;/Option>&#xa;  &lt;data_defined_properties>&#xa;   &lt;Option type=&quot;Map&quot;>&#xa;    &lt;Option name=&quot;name&quot; type=&quot;QString&quot; value=&quot;&quot;/>&#xa;    &lt;Option name=&quot;properties&quot; type=&quot;Map&quot;>&#xa;     &lt;Option name=&quot;outlineWidth&quot; type=&quot;Map&quot;>&#xa;      &lt;Option name=&quot;active&quot; type=&quot;bool&quot; value=&quot;false&quot;/>&#xa;      &lt;Option name=&quot;type&quot; type=&quot;int&quot; value=&quot;1&quot;/>&#xa;      &lt;Option name=&quot;val&quot; type=&quot;QString&quot; value=&quot;&quot;/>&#xa;     &lt;/Option>&#xa;    &lt;/Option>&#xa;    &lt;Option name=&quot;type&quot; type=&quot;QString&quot; value=&quot;collection&quot;/>&#xa;   &lt;/Option>&#xa;  &lt;/data_defined_properties>&#xa; &lt;/layer>&#xa;&lt;/symbol>&#xa;" name="legend/custom-symbol-0" type="QString"/>
@@ -33487,7 +33487,7 @@ def my_form_open(dialog, layer, feature):
               </customproperties>
             </layer-tree-layer>
           </layer-tree-group>
-          <layer-tree-layer id="RPD_PointLeveOuvrageReseau_Reco_fdb52f9f_7cc9_4161_b70c_ff07e074d328" source="../gpkg/Reco-Star-Elec-RPD.gpkg|layername=RPD_PointLeveOuvrageReseau_Reco" providerKey="ogr" checked="Qt::Checked" expanded="1" legend_exp="" legend_split_behavior="0" name="RPD_PointLeveOuvrageReseau_Reco" patch_size="-1,-1">
+          <layer-tree-layer id="RPD_PointLeveOuvrageReseau_Reco_fdb52f9f_7cc9_4161_b70c_ff07e074d328" source="./gpkg/Reco-Star-Elec-RPD.gpkg|layername=RPD_PointLeveOuvrageReseau_Reco" providerKey="ogr" checked="Qt::Checked" expanded="1" legend_exp="" legend_split_behavior="0" name="RPD_PointLeveOuvrageReseau_Reco" patch_size="-1,-1">
             <customproperties>
               <Option/>
             </customproperties>
@@ -33496,28 +33496,28 @@ def my_form_open(dialog, layer, feature):
             <customproperties>
               <Option/>
             </customproperties>
-            <layer-tree-layer id="ctrl_Cheminement_Cable_2d64b62f_1e28_45a1_8bfa_45d8b95e9e27" source="../gpkg/Reco-Star-Elec-RPD.gpkg|layername=ctrl_Cheminement_Cable" providerKey="ogr" checked="Qt::Checked" expanded="1" legend_exp="" legend_split_behavior="0" name="ctrl_Cheminement_Cable" patch_size="-1,-1">
+            <layer-tree-layer id="ctrl_Cheminement_Cable_2d64b62f_1e28_45a1_8bfa_45d8b95e9e27" source="./gpkg/Reco-Star-Elec-RPD.gpkg|layername=ctrl_Cheminement_Cable" providerKey="ogr" checked="Qt::Checked" expanded="1" legend_exp="" legend_split_behavior="0" name="ctrl_Cheminement_Cable" patch_size="-1,-1">
               <customproperties>
                 <Option type="Map">
                   <Option value="1" name="showFeatureCount" type="int"/>
                 </Option>
               </customproperties>
             </layer-tree-layer>
-            <layer-tree-layer id="ctrl_Noeud_Cable_a876babf_cbc5_4b1f_9824_c323f928da18" source="../gpkg/Reco-Star-Elec-RPD.gpkg|layername=ctrl_Noeud_Cable" providerKey="ogr" checked="Qt::Checked" expanded="1" legend_exp="" legend_split_behavior="0" name="ctrl_Noeud_Cable" patch_size="-1,-1">
+            <layer-tree-layer id="ctrl_Noeud_Cable_a876babf_cbc5_4b1f_9824_c323f928da18" source="./gpkg/Reco-Star-Elec-RPD.gpkg|layername=ctrl_Noeud_Cable" providerKey="ogr" checked="Qt::Checked" expanded="1" legend_exp="" legend_split_behavior="0" name="ctrl_Noeud_Cable" patch_size="-1,-1">
               <customproperties>
                 <Option type="Map">
                   <Option value="1" name="showFeatureCount" type="int"/>
                 </Option>
               </customproperties>
             </layer-tree-layer>
-            <layer-tree-layer id="ctrl_Noeud_Conteneur_e957e763_b097_40d7_9cae_1080972ba972" source="../gpkg/Reco-Star-Elec-RPD.gpkg|layername=ctrl_Noeud_Conteneur" providerKey="ogr" checked="Qt::Checked" expanded="1" legend_exp="" legend_split_behavior="0" name="ctrl_Noeud_Conteneur" patch_size="-1,-1">
+            <layer-tree-layer id="ctrl_Noeud_Conteneur_e957e763_b097_40d7_9cae_1080972ba972" source="./gpkg/Reco-Star-Elec-RPD.gpkg|layername=ctrl_Noeud_Conteneur" providerKey="ogr" checked="Qt::Checked" expanded="1" legend_exp="" legend_split_behavior="0" name="ctrl_Noeud_Conteneur" patch_size="-1,-1">
               <customproperties>
                 <Option type="Map">
                   <Option value="1" name="showFeatureCount" type="int"/>
                 </Option>
               </customproperties>
             </layer-tree-layer>
-            <layer-tree-layer id="ctrl_PLOR_Ouvrage_00e2537f_d596_45f7_8749_3316ef0df281" source="../gpkg/Reco-Star-Elec-RPD.gpkg|layername=ctrl_PLOR_Ouvrage" providerKey="ogr" checked="Qt::Checked" expanded="1" legend_exp="" legend_split_behavior="0" name="ctrl_PLOR_Ouvrage" patch_size="-1,-1">
+            <layer-tree-layer id="ctrl_PLOR_Ouvrage_00e2537f_d596_45f7_8749_3316ef0df281" source="./gpkg/Reco-Star-Elec-RPD.gpkg|layername=ctrl_PLOR_Ouvrage" providerKey="ogr" checked="Qt::Checked" expanded="1" legend_exp="" legend_split_behavior="0" name="ctrl_PLOR_Ouvrage" patch_size="-1,-1">
               <customproperties>
                 <Option type="Map">
                   <Option value="1" name="showFeatureCount" type="int"/>
