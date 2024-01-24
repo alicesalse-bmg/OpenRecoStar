@@ -1,6 +1,6 @@
 # OpenRecoStar
 
-## Démarrer rapidement
+## 🚀 Démarrer rapidement
 
 ### Installer QGIS
 
@@ -48,3 +48,11 @@ mon_repertoire
         ├── Reco-Star-Elec-EP.gpkg
         └── Reco-Star-xxx.gpkg
 ```
+
+## 📚 Documentation
+
+🚧 En construction
+
+## 📺 Vidéos
+
+🚧 En construction
