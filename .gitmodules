@@ -1,3 +1,6 @@
 [submodule "StaR-Elec"]
 	path = StaR-Elec
 	url = git@github.com:GMalard/StaR-Elec.git
+[submodule "python/qgs_plugins/OpenRecoStarPlugin"]
+	path = python/qgs_plugins/OpenRecoStarPlugin
+	url = git@github.com:alicesalse-bmg/OpenRecoStarPlugin.git
