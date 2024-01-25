@@ -6,8 +6,8 @@
 
 * Télécharger QGIS : https://qgis.org/fr/site/forusers/download.html
 
+* Documentation QGIS : https://www.qgis.org/fr/docs/index.htm
 
-* Documentation QGIS : https://docs.qgis.org/3.28/fr/docs/user_manual/index.html
 
 ### Installer le plugin OpenRecoStar dans QGIS
 
@@ -63,10 +63,16 @@ Entrer l'url du dépôt : https://raw.githubusercontent.com/alicesalse-bmg/OpenR
 
 ![img](./img/ouvrir-new-projet.png)
 
+
+🎉 __Vous pouvez maintenant commencer à travailler !__
+Pour en savoir plus consultez la documentation et les vidéos ci-dessous.
+
 ## 📚 Documentation
 
-🚧 En construction
+> 🚧 En cours de rédaction
+
+🛠 [Présentation des outils](./doc/Outils_du_plugin.md)
 
 ## 📺 Vidéos
 
-🚧 En construction
+> 🚧 En cours de rédaction
