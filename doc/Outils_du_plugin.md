@@ -32,7 +32,7 @@ Avec cet outil vous pouvez importer facilement les points levés issus de votre 
 
 Les formats supportés actuellement sont le `*.csv` et le `*.shp`.
 
-* __Prérequis__ : [Ouvrir une session de mise a jour](../#créer-un-nouveau-projet)
+* __Prérequis__ : Avant  de commencer il est nécessaire d'[Ouvrir une session de mise a jour](./Saisie-Qgis.md#ouvrir-une-session-de-mise-à-jour).
 
 * Cliquer sur l'outil : <img src="https://github.com/alicesalse-bmg/OpenRecoStarPlugin/raw/master/icons/ImportPointLeve.png"  width="25">
 
@@ -41,3 +41,5 @@ Les formats supportés actuellement sont le `*.csv` et le `*.shp`.
 
 * Definir la couche dans laquelle importer les points (RPD / EP / ...) :
 ![img](../img/import-plor-layer.png)
+
+* Si vous avez omis de le faire vous disposez à cette étape de 5 secondes pour : [Ouvrir une session de mise a jour](./Saisie-Qgis.md#ouvrir-une-session-de-mise-à-jour).

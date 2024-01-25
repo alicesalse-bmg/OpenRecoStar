@@ -71,7 +71,8 @@ Pour en savoir plus consultez la documentation et les vidéos ci-dessous.
 
 > 🚧 En cours de rédaction
 
-🛠 [Présentation des outils](./doc/Outils_du_plugin.md)
+📖 [Saisir des objets dans QGIS](./doc/Saisie-Qgis.md#saisir-des-objets-dans-qgis)
+📖 [Présentation des outils du plugin](./doc/Outils_du_plugin.md#présentation-du-plugin-qgis)
 
 ## 📺 Vidéos
 

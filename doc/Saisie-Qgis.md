@@ -11,9 +11,8 @@ Toute modification des données nécessite l'ouverture d'une session de mise à 
 ### Mettre à jour les données
 
 * Pour mettre à jour les données :
-     - utiliser les [outils de saisie](#barre-d-outils-de-saisie) de QGIS.
-     - utiliser les [outils du plugin](./Outils_du_plugin.md/#barre-d-outils-de-saisie) OpenRecoStar.
-
+     - utiliser les [outils de saisie](#barre-doutils-de-saisie) de QGIS.
+     - utiliser les [outils du plugin](./Outils_du_plugin.md#2--importer-un-fichier-de-points-levés) OpenRecoStar.
 ### Sauvegarder les modifications
 
 Après chaque lot de modifications, les données doivent être enregistrées.
