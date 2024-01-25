@@ -2,6 +2,10 @@
 
 > 🚧 En cours de rédaction
 
+## 🗺 Se localiser
+
+## 📑 Gestionnare de couches
+
 ## ✏️ Mettre à jour les données
 
 ### Ouvrir une session de mise à jour
@@ -13,6 +17,7 @@ Toute modification des données nécessite l'ouverture d'une session de mise à 
 * Pour mettre à jour les données :
      - utiliser les [outils de saisie](#barre-doutils-de-saisie) de QGIS.
      - utiliser les [outils du plugin](./Outils_du_plugin.md#2--importer-un-fichier-de-points-levés) OpenRecoStar.
+
 ### Sauvegarder les modifications
 
 Après chaque lot de modifications, les données doivent être enregistrées.
