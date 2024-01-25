@@ -42,12 +42,14 @@ Entrer l'url du dépôt : https://raw.githubusercontent.com/alicesalse-bmg/OpenR
 ```
 mon_repertoire
 └── mon_nouveau_projet
-    ├── Reco-Star-Elec.qgs                <--  Fichier QGIS
+    ├── Reco-Star-Elec_mon_nouveau_projet.qgs                 <--  Fichier QGIS du projet
     └── gpkg
-        ├── Reco-Star-Elec-RPD.gpkg       <--  Géopackages contenant les données métiers
+        ├── Reco-Star-Elec-RPD.gpkg                           <--  Géopackages contenant les données métiers
         ├── Reco-Star-Elec-EP.gpkg
         └── Reco-Star-xxx.gpkg
 ```
+
+> ⚠️ Attention: cette arborescence doit être préservée pour ne pas corrompre l'envirionnemnt de travail.
 
 ## 📚 Documentation
 
