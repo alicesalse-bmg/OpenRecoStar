@@ -96,7 +96,6 @@ CREATE TABLE RPD_Fourreau_Reco(
   fid INTEGER PRIMARY KEY AUTOINCREMENT
 , ogr_pkid TEXT GENERATED ALWAYS AS ('RPD_Fourreau_Reco_'||fid) VIRTUAL
 , id TEXT NOT NULL UNIQUE DEFAULT (CreateUUID())
---, reseau_href TEXT NOT NULL DEFAULT 'Reseau' REFERENCES ReseauUtilite (id)
 , Materiau TEXT NOT NULL REFERENCES ProtectionMaterialTypeValueReco (valeurs)
 , DiametreDuFourreau INTEGER NOT NULL
 , DiametreDuFourreau_uom TEXT DEFAULT 'mm'
@@ -113,6 +112,12 @@ INSERT INTO gpkg_contents (table_name, data_type, identifier, srs_id) values ('R
 INSERT INTO gpkg_geometry_columns (table_name, column_name, geometry_type_name, srs_id, z, m) values ('RPD_Fourreau_Reco', 'Geometrie', 'LINESTRING', 2154, 1, 0); --GPKG
 SELECT gpkgAddSpatialIndex('RPD_Fourreau_Reco', 'Geometrie' );
 
+DROP VIEW IF EXISTS RPD_Fourreau_Reco_reseau_reseau;
+CREATE VIEW RPD_Fourreau_Reco_reseau_reseau as
+select cast(ROW_NUMBER () OVER () as int) fid, c.ogr_pkid parent_pkid, r.ogr_pkid child_pkid from RPD_Fourreau_Reco c, Reseau r;
+
+INSERT INTO gpkg_contents (table_name, data_type, identifier) values ('RPD_Fourreau_Reco_reseau_reseau','attributes','RPD_Fourreau_Reco_reseau_reseau'); --GPKG
+
 --XXX RPD_Galerie_Reco
 
 DROP TABLE IF EXISTS RPD_Galerie_Reco;
@@ -120,7 +125,6 @@ CREATE TABLE RPD_Galerie_Reco(
   fid INTEGER PRIMARY KEY AUTOINCREMENT
 , ogr_pkid TEXT GENERATED ALWAYS AS ('RPD_Galerie_Reco_'||fid) VIRTUAL
 , id TEXT NOT NULL UNIQUE DEFAULT (CreateUUID())
---, reseau_href TEXT NOT NULL DEFAULT 'Reseau' REFERENCES ReseauUtilite (id)
 , Hauteur INTEGER NOT NULL
 , Hauteur_uom TEXT DEFAULT 'm'
 , Largeur INTEGER NOT NULL
@@ -136,6 +140,12 @@ INSERT INTO gpkg_contents (table_name, data_type, identifier, srs_id) values ('R
 INSERT INTO gpkg_geometry_columns (table_name, column_name, geometry_type_name, srs_id, z, m) values ('RPD_Galerie_Reco', 'Geometrie', 'LINESTRING', 2154, 1, 0); --GPKG
 SELECT gpkgAddSpatialIndex('RPD_Galerie_Reco', 'Geometrie' );
 
+DROP VIEW IF EXISTS RPD_Galerie_Reco_reseau_reseau;
+CREATE VIEW RPD_Galerie_Reco_reseau_reseau as
+select cast(ROW_NUMBER () OVER () as int) fid, c.ogr_pkid parent_pkid, r.ogr_pkid child_pkid from RPD_Galerie_Reco c, Reseau r;
+
+INSERT INTO gpkg_contents (table_name, data_type, identifier) values ('RPD_Galerie_Reco_reseau_reseau','attributes','RPD_Galerie_Reco_reseau_reseau'); --GPKG
+
 --XXX RPD_PleineTerre_Reco
 
 DROP TABLE IF EXISTS RPD_PleineTerre_Reco_line;
@@ -143,7 +153,6 @@ CREATE TABLE RPD_PleineTerre_Reco_line(
   fid INTEGER PRIMARY KEY AUTOINCREMENT
 , ogr_pkid TEXT GENERATED ALWAYS AS ('RPD_PleineTerre_Reco_line_'||fid) VIRTUAL
 , id TEXT NOT NULL UNIQUE DEFAULT (CreateUUID())
---, reseau_href TEXT NOT NULL DEFAULT 'Reseau' REFERENCES ReseauUtilite (id)
 , CoupeType TEXT
 , EtatCoupeType TEXT REFERENCES EtatCoupeTypeValueReco (valeurs)
 , Geometrie LINESTRINGZ NOT NULL UNIQUE
@@ -164,7 +173,6 @@ CREATE TABLE RPD_ProtectionMecanique_Reco(
   fid INTEGER PRIMARY KEY AUTOINCREMENT
 , ogr_pkid TEXT GENERATED ALWAYS AS ('RPD_ProtectionMecanique_Reco_'||fid) VIRTUAL
 , id TEXT NOT NULL UNIQUE DEFAULT (CreateUUID())
---, reseau_href TEXT NOT NULL DEFAULT 'Reseau' REFERENCES ReseauUtilite (id)
 , Materiau TEXT NOT NULL REFERENCES ProtectionMaterialTypeValueReco (valeurs)
 , CoupeType TEXT
 , EtatCoupeType TEXT REFERENCES EtatCoupeTypeValueReco (valeurs)
@@ -178,6 +186,12 @@ CREATE TABLE RPD_ProtectionMecanique_Reco(
 INSERT INTO gpkg_contents (table_name, data_type, identifier, srs_id) values ('RPD_ProtectionMecanique_Reco','features','RPD_ProtectionMecanique_Reco',2154); --GPKG
 INSERT INTO gpkg_geometry_columns (table_name, column_name, geometry_type_name, srs_id, z, m) values ('RPD_ProtectionMecanique_Reco', 'Geometrie', 'LINESTRING', 2154, 1, 0); --GPKG
 SELECT gpkgAddSpatialIndex('RPD_ProtectionMecanique_Reco', 'Geometrie' );
+
+DROP VIEW IF EXISTS RPD_ProtectionMecanique_Reco_reseau_reseau;
+CREATE VIEW RPD_ProtectionMecanique_Reco_reseau_reseau as
+select cast(ROW_NUMBER () OVER () as int) fid, c.ogr_pkid parent_pkid, r.ogr_pkid child_pkid from RPD_ProtectionMecanique_Reco c, Reseau r;
+
+INSERT INTO gpkg_contents (table_name, data_type, identifier) values ('RPD_ProtectionMecanique_Reco_reseau_reseau','attributes','RPD_ProtectionMecanique_Reco_reseau_reseau'); --GPKG
 
 --XXX RPD_Aerien_Reco
 
@@ -200,7 +214,6 @@ CREATE TABLE RPD_Aerien_Reco_line(
   fid INTEGER PRIMARY KEY AUTOINCREMENT
 , ogr_pkid TEXT GENERATED ALWAYS AS ('RPD_Aerien_Reco_line_'||fid) VIRTUAL
 , id TEXT NOT NULL UNIQUE DEFAULT (CreateUUID())
---, reseau_href TEXT NOT NULL DEFAULT 'Reseau' REFERENCES ReseauUtilite (id)
 , ModePose TEXT NOT NULL REFERENCES ModePoseValue (valeurs)
 , Geometrie LINESTRINGZ NOT NULL UNIQUE
 , ProfondeurMinNonReg DOUBLE
@@ -350,7 +363,6 @@ CREATE TABLE RPD_CableElectrique_Reco(
     fid INTEGER PRIMARY KEY AUTOINCREMENT
   , ogr_pkid TEXT GENERATED ALWAYS AS ('RPD_CableElectrique_Reco_'||fid) VIRTUAL
   , id TEXT NOT NULL UNIQUE DEFAULT (CreateUUID())
-  --, reseau_href TEXT NOT NULL DEFAULT 'Reseau' REFERENCES ReseauUtilite (id)
   , DomaineTension TEXT NOT NULL REFERENCES DomaineTensionValue (valeurs)
   , FonctionCable_href TEXT NOT NULL REFERENCES FonctionCableElectriqueValue (valeurs)
   , NombreConducteurs INTEGER NOT NULL
@@ -403,7 +415,6 @@ CREATE TABLE RPD_CableTerre_Reco(
     fid INTEGER PRIMARY KEY AUTOINCREMENT
   , ogr_pkid TEXT GENERATED ALWAYS AS ('RPD_CableElectrique_Reco_'||fid) VIRTUAL
   , id TEXT NOT NULL UNIQUE DEFAULT (CreateUUID())
-  --, reseau_href TEXT NOT NULL DEFAULT 'Reseau' REFERENCES ReseauUtilite (id)
   , FonctionCable_href TEXT NOT NULL REFERENCES FonctionCableElectriqueValue (valeurs)
   , NatureCableTerre_href TEXT NOT NULL REFERENCES ConducteurProtectionValue (valeurs)
   , Section INTEGER NOT NULL
@@ -420,6 +431,12 @@ CREATE TABLE RPD_CableTerre_Reco(
 
 INSERT INTO gpkg_contents (table_name, data_type, identifier) values ('RPD_CableTerre_Reco','features','RPD_CableTerre_Reco'); --GPKG
 INSERT INTO gpkg_geometry_columns (table_name, column_name, geometry_type_name, srs_id, z, m) values ('RPD_CableTerre_Reco', 'Geometrie', 'LINESTRING', 2154, 1, 0); --GPKG
+
+DROP VIEW IF EXISTS RPD_CableTerre_Reco_reseau_reseau;
+CREATE VIEW RPD_CableTerre_Reco_reseau_reseau as
+select cast(ROW_NUMBER () OVER () as int) fid, c.ogr_pkid parent_pkid, r.ogr_pkid child_pkid from RPD_CableTerre_Reco c, Reseau r;
+
+INSERT INTO gpkg_contents (table_name, data_type, identifier) values ('RPD_CableTerre_Reco_reseau_reseau','attributes','RPD_CableTerre_Reco_reseau_reseau'); --GPKG
 
 DROP VIEW IF EXISTS Cable;
 CREATE VIEW Cable as
@@ -467,6 +484,12 @@ from uniiion
 INSERT INTO gpkg_contents (table_name, data_type, identifier, srs_id) values ('RPD_PleineTerre_Reco','features','RPD_PleineTerre_Reco',2154); --GPKG
 INSERT INTO gpkg_geometry_columns (table_name, column_name, geometry_type_name, srs_id, z, m) values ('RPD_PleineTerre_Reco', 'Geometrie', 'LINESTRING', 2154, 1, 0); --GPKG
 
+DROP VIEW IF EXISTS RPD_PleineTerre_Reco_reseau_reseau;
+CREATE VIEW RPD_PleineTerre_Reco_reseau_reseau as
+select cast(ROW_NUMBER () OVER () as int) fid, c.ogr_pkid parent_pkid, r.ogr_pkid child_pkid from RPD_PleineTerre_Reco c, Reseau r;
+
+INSERT INTO gpkg_contents (table_name, data_type, identifier) values ('RPD_PleineTerre_Reco_reseau_reseau','attributes','RPD_PleineTerre_Reco_reseau_reseau'); --GPKG
+
 DROP VIEW IF EXISTS RPD_Aerien_Reco_virt;
 CREATE VIEW RPD_Aerien_Reco_virt as
 with difference as (
@@ -499,6 +522,12 @@ from uniiion
 
 INSERT INTO gpkg_contents (table_name, data_type, identifier, srs_id) values ('RPD_Aerien_Reco','features','RPD_Aerien_Reco',2154); --GPKG
 INSERT INTO gpkg_geometry_columns (table_name, column_name, geometry_type_name, srs_id, z, m) values ('RPD_Aerien_Reco', 'Geometrie', 'LINESTRING', 2154, 1, 0); --GPKG
+
+DROP VIEW IF EXISTS RPD_Aerien_Reco_reseau_reseau;
+CREATE VIEW RPD_Aerien_Reco_reseau_reseau as
+select cast(ROW_NUMBER () OVER () as int) fid, c.ogr_pkid parent_pkid, r.ogr_pkid child_pkid from RPD_Aerien_Reco c, Reseau r;
+
+INSERT INTO gpkg_contents (table_name, data_type, identifier) values ('RPD_Aerien_Reco_reseau_reseau','attributes','RPD_Aerien_Reco_reseau_reseau'); --GPKG
 
 --XXX RELATIONS CHEMINEMENT / CABLE
 DROP VIEW IF EXISTS Cheminement_Cables;
