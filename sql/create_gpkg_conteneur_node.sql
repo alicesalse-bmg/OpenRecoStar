@@ -6,9 +6,9 @@
 
 DROP TABLE IF EXISTS RPD_BatimentTechnique_Reco_line;
 CREATE TABLE RPD_BatimentTechnique_Reco_line (
-  pkid INTEGER PRIMARY KEY AUTOINCREMENT
+  fid INTEGER PRIMARY KEY AUTOINCREMENT
+, ogr_pkid TEXT GENERATED ALWAYS AS ('RPD_BatimentTechnique_Reco_'||fid) VIRTUAL
 , id TEXT NOT NULL UNIQUE DEFAULT (CreateUUID())
-, reseau_href TEXT NOT NULL DEFAULT 'Reseau' REFERENCES ReseauUtilite (id)
 , Geometrie MULTILINESTRINGZ NOT NULL UNIQUE
 , PrecisionXY TEXT NOT NULL REFERENCES ClassePrecisionReseauValue (valeurs)
 , PrecisionZ TEXT NOT NULL REFERENCES ClassePrecisionReseauValue (valeurs)
@@ -19,23 +19,36 @@ INSERT INTO gpkg_contents (table_name, data_type, identifier, srs_id) values ('R
 INSERT INTO gpkg_geometry_columns (table_name, column_name, geometry_type_name, srs_id, z, m) values ('RPD_BatimentTechnique_Reco_line', 'Geometrie', 'MULTILINESTRING', 2154, 1, 0); --GPKG
 SELECT gpkgAddSpatialIndex('RPD_BatimentTechnique_Reco_line', 'Geometrie' );
 
-
 DROP VIEW IF EXISTS RPD_BatimentTechnique_Reco;
 CREATE VIEW RPD_BatimentTechnique_Reco as
-select pkid, id, reseau_href, ST_Centroid(Geometrie) Geometrie, PrecisionXY, PrecisionZ, geometriesupplementaire_href
+select fid, ogr_pkid, id, ST_Centroid(Geometrie) Geometrie, PrecisionXY, PrecisionZ
 from RPD_BatimentTechnique_Reco_line;
 
 INSERT INTO gpkg_contents (table_name, data_type, identifier, srs_id) values ('RPD_BatimentTechnique_Reco','features','RPD_BatimentTechnique_Reco',2154); --GPKG
 INSERT INTO gpkg_geometry_columns (table_name, column_name, geometry_type_name, srs_id, z, m) values ('RPD_BatimentTechnique_Reco', 'Geometrie', 'POINT', 2154, 1, 0); --GPKG
 
+DROP VIEW IF EXISTS RPD_BatimentTechnique_Reco_reseau_reseau;
+CREATE VIEW RPD_BatimentTechnique_Reco_reseau_reseau as
+select cast(ROW_NUMBER () OVER () as int) fid, c.ogr_pkid parent_pkid, r.ogr_pkid child_pkid from RPD_BatimentTechnique_Reco c, Reseau r;
+
+INSERT INTO gpkg_contents (table_name, data_type, identifier) values ('RPD_BatimentTechnique_Reco_reseau_reseau','attributes','RPD_BatimentTechnique_Reco_reseau_reseau'); --GPKG
+
+DROP VIEW IF EXISTS RPD_BatimentTechnique_Reco_geometriesupplementaire;
+CREATE VIEW RPD_BatimentTechnique_Reco_geometriesupplementaire as
+select fid, c.ogr_pkid ogr_pkid, c.ogr_pkid parent_ogr_pkid
+, geometriesupplementaire_href href
+, cast(null as text) geometriesupplementair_rpd_geometriesupplementaire_reco_pkid
+ from RPD_BatimentTechnique_Reco_line c ;
+
+INSERT INTO gpkg_contents (table_name, data_type, identifier) values ('RPD_BatimentTechnique_Reco_geometriesupplementaire','attributes','RPD_BatimentTechnique_Reco_geometriesupplementaire'); --GPKG
 
 --XXX RPD_EnceinteCloturee_Reco
 
 DROP TABLE IF EXISTS RPD_EnceinteCloturee_Reco_line;
 CREATE TABLE RPD_EnceinteCloturee_Reco_line(
-  pkid INTEGER PRIMARY KEY AUTOINCREMENT
+  fid INTEGER PRIMARY KEY AUTOINCREMENT
+, ogr_pkid TEXT GENERATED ALWAYS AS ('RPD_EnceinteCloturee_Reco_'||fid) VIRTUAL
 , id TEXT NOT NULL UNIQUE DEFAULT (CreateUUID())
-, reseau_href TEXT NOT NULL DEFAULT 'Reseau' REFERENCES ReseauUtilite (id)
 , Geometrie MULTILINESTRINGZ NOT NULL UNIQUE
 , PrecisionXY TEXT NOT NULL REFERENCES ClassePrecisionReseauValue (valeurs)
 , PrecisionZ TEXT NOT NULL REFERENCES ClassePrecisionReseauValue (valeurs)
@@ -48,11 +61,26 @@ SELECT gpkgAddSpatialIndex('RPD_EnceinteCloturee_Reco_line', 'Geometrie' );
 
 DROP VIEW IF EXISTS RPD_EnceinteCloturee_Reco;
 CREATE VIEW RPD_EnceinteCloturee_Reco as
-select pkid, id, reseau_href, ST_Centroid(Geometrie) Geometrie, PrecisionXY, PrecisionZ, geometriesupplementaire_href
+select fid, ogr_pkid, id, ST_Centroid(Geometrie) Geometrie, PrecisionXY, PrecisionZ
 from RPD_EnceinteCloturee_Reco_line;
 
 INSERT INTO gpkg_contents (table_name, data_type, identifier, srs_id) values ('RPD_EnceinteCloturee_Reco','features','RPD_EnceinteCloturee_Reco',2154); --GPKG
 INSERT INTO gpkg_geometry_columns (table_name, column_name, geometry_type_name, srs_id, z, m) values ('RPD_EnceinteCloturee_Reco', 'Geometrie', 'POINT', 2154, 1, 0); --GPKG
+
+DROP VIEW IF EXISTS RPD_EnceinteCloturee_Reco_reseau_reseau;
+CREATE VIEW RPD_EnceinteCloturee_Reco_reseau_reseau as
+select cast(ROW_NUMBER () OVER () as int) fid, c.ogr_pkid parent_pkid, r.ogr_pkid child_pkid from RPD_EnceinteCloturee_Reco c, Reseau r;
+
+INSERT INTO gpkg_contents (table_name, data_type, identifier) values ('RPD_EnceinteCloturee_Reco_reseau_reseau','attributes','RPD_EnceinteCloturee_Reco_reseau_reseau'); --GPKG
+
+DROP VIEW IF EXISTS RPD_EnceinteCloturee_Reco_geometriesupplementaire;
+CREATE VIEW RPD_EnceinteCloturee_Reco_geometriesupplementaire as
+select fid, c.ogr_pkid ogr_pkid, c.ogr_pkid parent_ogr_pkid
+, geometriesupplementaire_href href
+, cast(null as text) geometriesupplementair_rpd_geometriesupplementaire_reco_pkid
+from RPD_EnceinteCloturee_Reco_line c ;
+
+INSERT INTO gpkg_contents (table_name, data_type, identifier) values ('RPD_EnceinteCloturee_Reco_geometriesupplementaire','attributes','RPD_EnceinteCloturee_Reco_geometriesupplementaire'); --GPKG
 
 --XXX RPD_Coffret_Reco
 
@@ -118,9 +146,9 @@ INSERT INTO GeomCoffret VALUES
 
 DROP TABLE IF EXISTS RPD_Coffret_Reco;
 CREATE TABLE RPD_Coffret_Reco(
-  pkid INTEGER PRIMARY KEY AUTOINCREMENT
+  fid INTEGER PRIMARY KEY AUTOINCREMENT
+, ogr_pkid TEXT GENERATED ALWAYS AS ('RPD_Coffret_Reco_'||fid) VIRTUAL
 , id TEXT NOT NULL UNIQUE DEFAULT (CreateUUID())
-, reseau_href TEXT NOT NULL DEFAULT 'Reseau' REFERENCES ReseauUtilite (id)
 , ImplantationArmoire_href TEXT NOT NULL REFERENCES ImplantationArmoireValue (valeurs)
 , TypeCoffret_href TEXT REFERENCES TypeCoffretValue (valeurs)
 , FonctionCoffret_href TEXT REFERENCES FonctionCoffretValue (valeurs)
@@ -134,6 +162,21 @@ CREATE TABLE RPD_Coffret_Reco(
 INSERT INTO gpkg_contents (table_name, data_type, identifier, srs_id) values ('RPD_Coffret_Reco','features','RPD_Coffret_Reco',2154); --GPKG
 INSERT INTO gpkg_geometry_columns (table_name, column_name, geometry_type_name, srs_id, z, m) values ('RPD_Coffret_Reco', 'Geometrie', 'POINT', 2154, 1, 0); --GPKG
 SELECT gpkgAddSpatialIndex('RPD_Coffret_Reco', 'Geometrie' );
+
+DROP VIEW IF EXISTS RPD_Coffret_Reco_reseau_reseau;
+CREATE VIEW RPD_Coffret_Reco_reseau_reseau as
+select cast(ROW_NUMBER () OVER () as int) fid, c.ogr_pkid parent_pkid, r.ogr_pkid child_pkid from RPD_Coffret_Reco c, Reseau r;
+
+INSERT INTO gpkg_contents (table_name, data_type, identifier) values ('RPD_Coffret_Reco_reseau_reseau','attributes','RPD_Coffret_Reco_reseau_reseau'); --GPKG
+
+DROP VIEW IF EXISTS RPD_Coffret_Reco_geometriesupplementaire;
+CREATE VIEW RPD_Coffret_Reco_geometriesupplementaire as
+select fid, c.ogr_pkid ogr_pkid, c.ogr_pkid parent_ogr_pkid
+, geometriesupplementaire_href href
+, cast(null as text) geometriesupplementair_rpd_geometriesupplementaire_reco_pkid
+from RPD_Coffret_Reco c ;
+
+INSERT INTO gpkg_contents (table_name, data_type, identifier) values ('RPD_Coffret_Reco_geometriesupplementaire','attributes','RPD_Coffret_Reco_geometriesupplementaire'); --GPKG
 
 --XXX RPD_Support_Reco
 
@@ -218,9 +261,9 @@ INSERT INTO gpkg_contents (table_name, data_type, identifier) values ('MatiereVa
 
 DROP TABLE IF EXISTS RPD_Support_Reco;
 CREATE TABLE RPD_Support_Reco(
-  pkid INTEGER PRIMARY KEY AUTOINCREMENT
+  fid INTEGER PRIMARY KEY AUTOINCREMENT
+, ogr_pkid TEXT GENERATED ALWAYS AS ('RPD_Support_Reco_'||fid) VIRTUAL
 , id TEXT NOT NULL UNIQUE DEFAULT (CreateUUID())
-, reseau_href TEXT NOT NULL DEFAULT 'Reseau' REFERENCES ReseauUtilite (id)
 , Classe_href TEXT REFERENCES ClasseSupportValue (valeurs) -- NOTE : NOT NULL sauf si NatureSupport = facade
 , Effort INTEGER -- NOTE : NOT NULL sauf si NatureSupport = facade
 , Effort_uom TEXT DEFAULT 'kN'
@@ -242,17 +285,23 @@ INSERT INTO gpkg_contents (table_name, data_type, identifier, srs_id) values ('R
 INSERT INTO gpkg_geometry_columns (table_name, column_name, geometry_type_name, srs_id, z, m) values ('RPD_Support_Reco', 'Geometrie', 'POINT', 2154, 1, 0); --GPKG
 SELECT gpkgAddSpatialIndex('RPD_Support_Reco', 'Geometrie' );
 
+DROP VIEW IF EXISTS RPD_Support_Reco_reseau_reseau;
+CREATE VIEW RPD_Support_Reco_reseau_reseau as
+select cast(ROW_NUMBER () OVER () as int) fid, c.ogr_pkid parent_pkid, r.ogr_pkid child_pkid from RPD_Support_Reco c, Reseau r;
+
+INSERT INTO gpkg_contents (table_name, data_type, identifier) values ('RPD_Support_Reco_reseau_reseau','attributes','RPD_Support_Reco_reseau_reseau'); --GPKG
+
 DROP VIEW IF EXISTS Conteneur;
 CREATE VIEW Conteneur as
 with all_conso as (
-  SELECT id, 'BatimentTechnique' type_conteneur, PrecisionXY, PrecisionZ, Geometrie FROM RPD_BatimentTechnique_Reco_line
+  SELECT ogr_pkid, id, cast('BatimentTechnique' as text) type_conteneur, PrecisionXY, PrecisionZ, Geometrie FROM RPD_BatimentTechnique_Reco_line
   UNION ALL
-  SELECT id, 'EnceinteCloturee' type_conteneur, PrecisionXY, PrecisionZ, Geometrie FROM RPD_EnceinteCloturee_Reco_line
+  SELECT ogr_pkid, id, cast('EnceinteCloturee' as text) type_conteneur, PrecisionXY, PrecisionZ, Geometrie FROM RPD_EnceinteCloturee_Reco_line
   UNION ALL
-  SELECT id, 'Coffret' type_conteneur, PrecisionXY, PrecisionZ, Geometrie FROM RPD_Coffret_Reco
+  SELECT ogr_pkid, id, cast('Coffret' as text) type_conteneur, PrecisionXY, PrecisionZ, Geometrie FROM RPD_Coffret_Reco
   UNION ALL
-  SELECT id, 'Support' type_conteneur, PrecisionXY, PrecisionZ, Geometrie FROM RPD_Support_Reco
-) select ROW_NUMBER () OVER () pkid, * from all_conso;
+  SELECT ogr_pkid, id, cast('Support' as text) type_conteneur, PrecisionXY, PrecisionZ, Geometrie FROM RPD_Support_Reco
+) select cast(ROW_NUMBER () OVER () as int) fid, * from all_conso;
 
 INSERT INTO gpkg_contents (table_name, data_type, identifier, srs_id) values ('Conteneur','features','Conteneur',2154); --GPKG
 INSERT INTO gpkg_geometry_columns (table_name, column_name, geometry_type_name, srs_id, z, m) values ('Conteneur', 'Geometrie', 'POINT', 2154, 1, 0); --GPKG
@@ -262,26 +311,26 @@ INSERT INTO gpkg_geometry_columns (table_name, column_name, geometry_type_name, 
 DROP VIEW IF EXISTS RPD_GeometrieSupplementaire_Reco;
 CREATE VIEW RPD_GeometrieSupplementaire_Reco as
 with all_conso as (
-  SELECT geometriesupplementaire_href id, 'BatimentTechnique' type_conteneur, PrecisionXY, PrecisionZ
+  SELECT cast('RPD_BatimentTechnique_Reco_geomsupp_'||fid as text) ogr_pkid, geometriesupplementaire_href id, cast('BatimentTechnique' as text) type_conteneur, PrecisionXY, PrecisionZ
   , Geometrie "Ligne2.5D"
   , CASE  WHEN ST_IsClosed(Geometrie) THEN ST_MakePolygon(Geometrie)
           WHEN ST_NumPoints(Geometrie) > 3 THEN ST_MakePolygon(ST_AddPoint(Geometrie, ST_StartPoint(Geometrie)))
           ELSE NULL END "Surface2.5D"
   FROM RPD_BatimentTechnique_Reco_line
   UNION ALL
-  SELECT geometriesupplementaire_href id, 'EnceinteCloturee' type_conteneur, PrecisionXY, PrecisionZ
+  SELECT cast('RPD_EnceinteCloturee_Reco_geomsupp_'||fid as text) ogr_pkid, geometriesupplementaire_href id, cast('EnceinteCloturee' as text) type_conteneur, PrecisionXY, PrecisionZ
   , Geometrie "Ligne2.5D"
   , CASE  WHEN ST_IsClosed(Geometrie) THEN ST_MakePolygon(Geometrie)
           WHEN ST_NumPoints(Geometrie) > 3 THEN ST_MakePolygon(ST_AddPoint(Geometrie, ST_StartPoint(Geometrie)))
           ELSE NULL END "Surface2.5D"
   FROM RPD_EnceinteCloturee_Reco_line
   UNION ALL
-  SELECT geometriesupplementaire_href id, 'Coffret' type_conteneur, PrecisionXY, PrecisionZ
+  SELECT cast('RPD_Coffret_Reco_geomsupp_'||fid as text) ogr_pkid, geometriesupplementaire_href id, cast('Coffret' as text) type_conteneur, PrecisionXY, PrecisionZ
   , ST_Translate(RotateCoordinates(CastToXYZ(g.Geometrie),coalesce(angle,0)), ST_X(c.Geometrie), ST_Y(c.Geometrie), ST_Z(c.Geometrie)) "Ligne2.5D"
   , ST_Translate(RotateCoordinates(CastToXYZ(ST_MakePolygon(g.Geometrie)),coalesce(angle,0)), ST_X(c.Geometrie), ST_Y(c.Geometrie), ST_Z(c.Geometrie)) "Surface2.5D"
   FROM RPD_Coffret_Reco c
   JOIN GeomCoffret g ON g.valeurs = 'Default'
-) select ROW_NUMBER () OVER () pkid, * from all_conso;
+) select cast(ROW_NUMBER () OVER () as int) fid, * from all_conso;
 
 INSERT INTO gpkg_contents (table_name, data_type, identifier, srs_id) values ('RPD_GeometrieSupplementaire_Reco','features','RPD_GeometrieSupplementaire_Reco',2154); --GPKG
 INSERT INTO gpkg_geometry_columns (table_name, column_name, geometry_type_name, srs_id, z, m) values ('RPD_GeometrieSupplementaire_Reco', 'Surface2.5D', 'MULTIPOLYGON', 2154, 1, 0); --GPKG
@@ -292,9 +341,9 @@ INSERT INTO gpkg_geometry_columns (table_name, column_name, geometry_type_name, 
 
 DROP TABLE IF EXISTS RPD_JeuBarres_Reco;
 CREATE TABLE RPD_JeuBarres_Reco(
-  pkid INTEGER PRIMARY KEY AUTOINCREMENT
+  fid INTEGER PRIMARY KEY AUTOINCREMENT
+, ogr_pkid TEXT GENERATED ALWAYS AS ('RPD_JeuBarres_Reco_'||fid) VIRTUAL
 , id TEXT NOT NULL UNIQUE DEFAULT (CreateUUID())
-, reseau_href TEXT NOT NULL DEFAULT 'Reseau' REFERENCES ReseauUtilite (id)
 , Geometrie POINTZ NOT NULL UNIQUE
 , PrecisionXY TEXT REFERENCES ClassePrecisionReseauValue (valeurs) -- NOTE : NOT NULL si pas dans conteneur ou noeud parent
 , PrecisionZ TEXT REFERENCES ClassePrecisionReseauValue (valeurs) -- NOTE : NOT NULL si pas dans conteneur ou noeud parent
@@ -305,6 +354,12 @@ CREATE TABLE RPD_JeuBarres_Reco(
 INSERT INTO gpkg_contents (table_name, data_type, identifier, srs_id) values ('RPD_JeuBarres_Reco','features','RPD_JeuBarres_Reco',2154); --GPKG
 INSERT INTO gpkg_geometry_columns (table_name, column_name, geometry_type_name, srs_id, z, m) values ('RPD_JeuBarres_Reco', 'Geometrie', 'POINT', 2154, 1, 0); --GPKG
 SELECT gpkgAddSpatialIndex('RPD_JeuBarres_Reco', 'Geometrie' );
+
+DROP VIEW IF EXISTS RPD_JeuBarres_Reco_reseau_reseau;
+CREATE VIEW RPD_JeuBarres_Reco_reseau_reseau as
+select cast(ROW_NUMBER () OVER () as int) fid, c.ogr_pkid parent_pkid, r.ogr_pkid child_pkid from RPD_JeuBarres_Reco c, Reseau r;
+
+INSERT INTO gpkg_contents (table_name, data_type, identifier) values ('RPD_JeuBarres_Reco_reseau_reseau','attributes','RPD_JeuBarres_Reco_reseau_reseau'); --GPKG
 
 --XXX RPD_Jonction_Reco
 
@@ -325,9 +380,9 @@ INSERT INTO gpkg_contents (table_name, data_type, identifier) values ('TypeJonct
 
 DROP TABLE IF EXISTS RPD_Jonction_Reco;
 CREATE TABLE RPD_Jonction_Reco(
-  pkid INTEGER PRIMARY KEY AUTOINCREMENT
+  fid INTEGER PRIMARY KEY AUTOINCREMENT
+, ogr_pkid TEXT GENERATED ALWAYS AS ('RPD_Jonction_Reco_'||fid) VIRTUAL
 , id TEXT NOT NULL UNIQUE DEFAULT (CreateUUID())
-, reseau_href TEXT NOT NULL DEFAULT 'Reseau' REFERENCES ReseauUtilite (id)
 , DomaineTension TEXT NOT NULL REFERENCES DomaineTensionValue (valeurs)
 , TypeJonction TEXT NOT NULL REFERENCES TypeJonctionValue (valeurs)
 , Geometrie POINTZ NOT NULL UNIQUE
@@ -342,14 +397,20 @@ INSERT INTO gpkg_contents (table_name, data_type, identifier, srs_id) values ('R
 INSERT INTO gpkg_geometry_columns (table_name, column_name, geometry_type_name, srs_id, z, m) values ('RPD_Jonction_Reco', 'Geometrie', 'POINT', 2154, 1, 0); --GPKG
 SELECT gpkgAddSpatialIndex('RPD_Jonction_Reco', 'Geometrie' );
 
+DROP VIEW IF EXISTS RPD_Jonction_Reco_reseau_reseau;
+CREATE VIEW RPD_Jonction_Reco_reseau_reseau as
+select cast(ROW_NUMBER () OVER () as int) fid, c.ogr_pkid parent_pkid, r.ogr_pkid child_pkid from RPD_Jonction_Reco c, Reseau r;
+
+INSERT INTO gpkg_contents (table_name, data_type, identifier) values ('RPD_Jonction_Reco_reseau_reseau','attributes','RPD_Jonction_Reco_reseau_reseau'); --GPKG
+
 --XXX RPD_Plage_Reco
 -- NOTE : peut etre un enfant d'un RM ou JDB
 
 DROP TABLE IF EXISTS RPD_Plage_Reco;
 CREATE TABLE RPD_Plage_Reco(
-  pkid INTEGER PRIMARY KEY AUTOINCREMENT
+  fid INTEGER PRIMARY KEY AUTOINCREMENT
+, ogr_pkid TEXT GENERATED ALWAYS AS ('RPD_Plage_Reco_'||fid) VIRTUAL
 , id TEXT NOT NULL UNIQUE DEFAULT (CreateUUID())
-, reseau_href TEXT NOT NULL DEFAULT 'Reseau' REFERENCES ReseauUtilite (id)
 , Coupure BOOLEAN NOT NULL
 , Protection BOOLEAN NOT NULL
 , Geometrie POINTZ NOT NULL UNIQUE
@@ -364,15 +425,21 @@ INSERT INTO gpkg_contents (table_name, data_type, identifier, srs_id) values ('R
 INSERT INTO gpkg_geometry_columns (table_name, column_name, geometry_type_name, srs_id, z, m) values ('RPD_Plage_Reco', 'Geometrie', 'POINT', 2154, 1, 0); --GPKG
 SELECT gpkgAddSpatialIndex('RPD_Plage_Reco', 'Geometrie' );
 
+DROP VIEW IF EXISTS RPD_Plage_Reco_reseau_reseau;
+CREATE VIEW RPD_Plage_Reco_reseau_reseau as
+select cast(ROW_NUMBER () OVER () as int) fid, c.ogr_pkid parent_pkid, r.ogr_pkid child_pkid from RPD_Plage_Reco c, Reseau r;
+
+INSERT INTO gpkg_contents (table_name, data_type, identifier) values ('RPD_Plage_Reco_reseau_reseau','attributes','RPD_Plage_Reco_reseau_reseau'); --GPKG
+
 --XXX RPD_OuvrageCollectifBranchement_Reco
 -- NOTE : peut etre un enfant d'un RM ou JDB
 -- IDEA: copier la liste des PRMs => création auto des OCB
 
 DROP TABLE IF EXISTS RPD_OuvrageCollectifBranchement_Reco;
 CREATE TABLE RPD_OuvrageCollectifBranchement_Reco(
-  pkid INTEGER PRIMARY KEY AUTOINCREMENT
+  fid INTEGER PRIMARY KEY AUTOINCREMENT
+, ogr_pkid TEXT GENERATED ALWAYS AS ('RPD_OuvrageCollectifBranchement_Reco_'||fid) VIRTUAL
 , id TEXT NOT NULL UNIQUE DEFAULT (CreateUUID())
-, reseau_href TEXT NOT NULL DEFAULT 'Reseau' REFERENCES ReseauUtilite (id)
 , Geometrie POINTZ NOT NULL UNIQUE
 , PrecisionXY TEXT REFERENCES ClassePrecisionReseauValue (valeurs) -- NOTE : NOT NULL si pas dans conteneur ou noeud parent
 , PrecisionZ TEXT REFERENCES ClassePrecisionReseauValue (valeurs) -- NOTE : NOT NULL si pas dans conteneur ou noeud parent
@@ -384,14 +451,20 @@ INSERT INTO gpkg_contents (table_name, data_type, identifier, srs_id) values ('R
 INSERT INTO gpkg_geometry_columns (table_name, column_name, geometry_type_name, srs_id, z, m) values ('RPD_OuvrageCollectifBranchement_Reco', 'Geometrie', 'POINT', 2154, 1, 0); --GPKG
 SELECT gpkgAddSpatialIndex('RPD_OuvrageCollectifBranchement_Reco', 'Geometrie' );
 
+DROP VIEW IF EXISTS RPD_OuvrageCollectifBranchement_Reco_reseau_reseau;
+CREATE VIEW RPD_OuvrageCollectifBranchement_Reco_reseau_reseau as
+select cast(ROW_NUMBER () OVER () as int) fid, c.ogr_pkid parent_pkid, r.ogr_pkid child_pkid from RPD_OuvrageCollectifBranchement_Reco c, Reseau r;
+
+INSERT INTO gpkg_contents (table_name, data_type, identifier) values ('RPD_OuvrageCollectifBranchement_Reco_reseau_reseau','attributes','RPD_OuvrageCollectifBranchement_Reco_reseau_reseau'); --GPKG
+
 --XXX RPD_PointDeComptage_Reco
 -- NOTE : peut etre un enfant d'un OCB, RM ou JDB
 
 DROP TABLE IF EXISTS RPD_PointDeComptage_Reco;
 CREATE TABLE RPD_PointDeComptage_Reco(
-  pkid INTEGER PRIMARY KEY AUTOINCREMENT
+  fid INTEGER PRIMARY KEY AUTOINCREMENT
+, ogr_pkid TEXT GENERATED ALWAYS AS ('RPD_PointDeComptage_Reco_'||fid) VIRTUAL
 , id TEXT NOT NULL UNIQUE DEFAULT (CreateUUID())
-, reseau_href TEXT NOT NULL DEFAULT 'Reseau' REFERENCES ReseauUtilite (id)
 , NumeroPRM INTEGER NOT NULL
 , Geometrie POINTZ NOT NULL UNIQUE
 , PrecisionXY TEXT REFERENCES ClassePrecisionReseauValue (valeurs) -- NOTE : NOT NULL si pas dans conteneur ou noeud parent
@@ -403,6 +476,12 @@ CREATE TABLE RPD_PointDeComptage_Reco(
 INSERT INTO gpkg_contents (table_name, data_type, identifier, srs_id) values ('RPD_PointDeComptage_Reco','features','RPD_PointDeComptage_Reco',2154); --GPKG
 INSERT INTO gpkg_geometry_columns (table_name, column_name, geometry_type_name, srs_id, z, m) values ('RPD_PointDeComptage_Reco', 'Geometrie', 'POINT', 2154, 1, 0); --GPKG
 SELECT gpkgAddSpatialIndex('RPD_PointDeComptage_Reco', 'Geometrie' );
+
+DROP VIEW IF EXISTS RPD_PointDeComptage_Reco_reseau_reseau;
+CREATE VIEW RPD_PointDeComptage_Reco_reseau_reseau as
+select cast(ROW_NUMBER () OVER () as int) fid, c.ogr_pkid parent_pkid, r.ogr_pkid child_pkid from RPD_PointDeComptage_Reco c, Reseau r;
+
+INSERT INTO gpkg_contents (table_name, data_type, identifier) values ('RPD_PointDeComptage_Reco_reseau_reseau','attributes','RPD_PointDeComptage_Reco_reseau_reseau'); --GPKG
 
 --XXX RPD_PosteElectrique_Reco
 
@@ -463,9 +542,9 @@ INSERT INTO gpkg_contents (table_name, data_type, identifier) values ('TypePoste
 
 DROP TABLE IF EXISTS RPD_PosteElectrique_Reco;
 CREATE TABLE RPD_PosteElectrique_Reco(
-  pkid INTEGER PRIMARY KEY AUTOINCREMENT
+  fid INTEGER PRIMARY KEY AUTOINCREMENT
+, ogr_pkid TEXT GENERATED ALWAYS AS ('RPD_PosteElectrique_Reco_'||fid) VIRTUAL
 , id TEXT NOT NULL UNIQUE DEFAULT (CreateUUID())
-, reseau_href TEXT NOT NULL DEFAULT 'Reseau' REFERENCES ReseauUtilite (id)
 , Categorie_href TEXT NOT NULL REFERENCES CategoriesPosteValue (valeurs)
 , TypePoste_href TEXT NOT NULL REFERENCES TypePosteValue (valeurs)
 , Geometrie POINTZ NOT NULL UNIQUE
@@ -480,13 +559,19 @@ INSERT INTO gpkg_contents (table_name, data_type, identifier, srs_id) values ('R
 INSERT INTO gpkg_geometry_columns (table_name, column_name, geometry_type_name, srs_id, z, m) values ('RPD_PosteElectrique_Reco', 'Geometrie', 'POINT', 2154, 1, 0); --GPKG
 SELECT gpkgAddSpatialIndex('RPD_PosteElectrique_Reco', 'Geometrie' );
 
+DROP VIEW IF EXISTS RPD_PosteElectrique_Reco_reseau_reseau;
+CREATE VIEW RPD_PosteElectrique_Reco_reseau_reseau as
+select cast(ROW_NUMBER () OVER () as int) fid, c.ogr_pkid parent_pkid, r.ogr_pkid child_pkid from RPD_PosteElectrique_Reco c, Reseau r;
+
+INSERT INTO gpkg_contents (table_name, data_type, identifier) values ('RPD_PosteElectrique_Reco_reseau_reseau','attributes','RPD_PosteElectrique_Reco_reseau_reseau'); --GPKG
+
 --XXX RPD_RaccordementModulaire_Reco
 
 DROP TABLE IF EXISTS RPD_RaccordementModulaire_Reco;
 CREATE TABLE RPD_RaccordementModulaire_Reco(
-  pkid INTEGER PRIMARY KEY AUTOINCREMENT
+  fid INTEGER PRIMARY KEY AUTOINCREMENT
+, ogr_pkid TEXT GENERATED ALWAYS AS ('RPD_RaccordementModulaire_Reco_'||fid) VIRTUAL
 , id TEXT NOT NULL UNIQUE DEFAULT (CreateUUID())
-, reseau_href TEXT NOT NULL DEFAULT 'Reseau' REFERENCES ReseauUtilite (id)
 , NombrePlages INTEGER NOT NULL
 , Geometrie POINTZ NOT NULL UNIQUE
 , PrecisionXY TEXT REFERENCES ClassePrecisionReseauValue (valeurs) -- NOTE : NOT NULL si pas dans conteneur ou noeud parent
@@ -498,6 +583,12 @@ CREATE TABLE RPD_RaccordementModulaire_Reco(
 INSERT INTO gpkg_contents (table_name, data_type, identifier, srs_id) values ('RPD_RaccordementModulaire_Reco','features','RPD_RaccordementModulaire_Reco',2154); --GPKG
 INSERT INTO gpkg_geometry_columns (table_name, column_name, geometry_type_name, srs_id, z, m) values ('RPD_RaccordementModulaire_Reco', 'Geometrie', 'POINT', 2154, 1, 0); --GPKG
 SELECT gpkgAddSpatialIndex('RPD_RaccordementModulaire_Reco', 'Geometrie' );
+
+DROP VIEW IF EXISTS RPD_RaccordementModulaire_Reco_reseau_reseau;
+CREATE VIEW RPD_RaccordementModulaire_Reco_reseau_reseau as
+select cast(ROW_NUMBER () OVER () as int) fid, c.ogr_pkid parent_pkid, r.ogr_pkid child_pkid from RPD_RaccordementModulaire_Reco c, Reseau r;
+
+INSERT INTO gpkg_contents (table_name, data_type, identifier) values ('RPD_RaccordementModulaire_Reco_reseau_reseau','attributes','RPD_RaccordementModulaire_Reco_reseau_reseau'); --GPKG
 
 --XXX RPD_Terre_Reco
 
@@ -516,9 +607,9 @@ INSERT INTO gpkg_contents (table_name, data_type, identifier) values ('NatureTer
 
 DROP TABLE IF EXISTS RPD_Terre_Reco;
 CREATE TABLE RPD_Terre_Reco(
-  pkid INTEGER PRIMARY KEY AUTOINCREMENT
+  fid INTEGER PRIMARY KEY AUTOINCREMENT
+, ogr_pkid TEXT GENERATED ALWAYS AS ('RPD_Terre_Reco_'||fid) VIRTUAL
 , id TEXT NOT NULL UNIQUE DEFAULT (CreateUUID())
-, reseau_href TEXT NOT NULL DEFAULT 'Reseau' REFERENCES ReseauUtilite (id)
 , NatureTerre_href TEXT NOT NULL REFERENCES NatureTerreValue (valeurs)
 , Resistance INTEGER
 , Resistance_uom TEXT DEFAULT 'ohms'
@@ -534,25 +625,31 @@ INSERT INTO gpkg_contents (table_name, data_type, identifier, srs_id) values ('R
 INSERT INTO gpkg_geometry_columns (table_name, column_name, geometry_type_name, srs_id, z, m) values ('RPD_Terre_Reco', 'Geometrie', 'POINT', 2154, 1, 0); --GPKG
 SELECT gpkgAddSpatialIndex('RPD_Terre_Reco', 'Geometrie' );
 
+DROP VIEW IF EXISTS RPD_Terre_Reco_reseau_reseau;
+CREATE VIEW RPD_Terre_Reco_reseau_reseau as
+select cast(ROW_NUMBER () OVER () as int) fid, c.ogr_pkid parent_pkid, r.ogr_pkid child_pkid from RPD_Terre_Reco c, Reseau r;
+
+INSERT INTO gpkg_contents (table_name, data_type, identifier) values ('RPD_Terre_Reco_reseau_reseau','attributes','RPD_Terre_Reco_reseau_reseau'); --GPKG
+
 DROP VIEW IF EXISTS Noeud;
 CREATE VIEW Noeud as
 with all_conso as (
-  SELECT id, 'Plage' type_noeud, Statut, PrecisionXY, PrecisionZ, Geometrie FROM RPD_Plage_Reco
+  SELECT ogr_pkid, id, cast('Plage' as text) type_noeud, Statut, PrecisionXY, PrecisionZ, Geometrie FROM RPD_Plage_Reco
   UNION ALL
-  SELECT id, 'OuvrageCollectifBranchement' type_noeud, Statut, PrecisionXY, PrecisionZ, Geometrie FROM RPD_OuvrageCollectifBranchement_Reco
+  SELECT ogr_pkid, id, cast('OuvrageCollectifBranchement' as text) type_noeud, Statut, PrecisionXY, PrecisionZ, Geometrie FROM RPD_OuvrageCollectifBranchement_Reco
   UNION ALL
-  SELECT id, 'PointDeComptage' type_noeud, Statut, PrecisionXY, PrecisionZ, Geometrie FROM RPD_PointDeComptage_Reco
+  SELECT ogr_pkid, id, cast('PointDeComptage' as text) type_noeud, Statut, PrecisionXY, PrecisionZ, Geometrie FROM RPD_PointDeComptage_Reco
   UNION ALL
-  SELECT id, 'PosteElectrique' type_noeud, Statut, PrecisionXY, PrecisionZ, Geometrie FROM RPD_PosteElectrique_Reco
+  SELECT ogr_pkid, id, cast('PosteElectrique' as text) type_noeud, Statut, PrecisionXY, PrecisionZ, Geometrie FROM RPD_PosteElectrique_Reco
   UNION ALL
-  SELECT id, 'RaccordementModulaire' type_noeud, Statut, PrecisionXY, PrecisionZ, Geometrie FROM RPD_RaccordementModulaire_Reco
+  SELECT ogr_pkid, id, cast('RaccordementModulaire' as text) type_noeud, Statut, PrecisionXY, PrecisionZ, Geometrie FROM RPD_RaccordementModulaire_Reco
   UNION ALL
-  SELECT id, 'JeuBarres' type_noeud, Statut, PrecisionXY, PrecisionZ, Geometrie FROM RPD_JeuBarres_Reco
+  SELECT ogr_pkid, id, cast('JeuBarres' as text) type_noeud, Statut, PrecisionXY, PrecisionZ, Geometrie FROM RPD_JeuBarres_Reco
   UNION ALL
-  SELECT id, 'Jonction' type_noeud, Statut, PrecisionXY, PrecisionZ, Geometrie FROM RPD_Jonction_Reco
+  SELECT ogr_pkid, id, cast('Jonction' as text) type_noeud, Statut, PrecisionXY, PrecisionZ, Geometrie FROM RPD_Jonction_Reco
   UNION ALL
-  SELECT id, 'Terre' type_noeud, Statut, PrecisionXY, PrecisionZ, Geometrie FROM RPD_Terre_Reco
-) select ROW_NUMBER () OVER () pkid, * from all_conso;
+  SELECT ogr_pkid, id, cast('Terre' as text) type_noeud, Statut, PrecisionXY, PrecisionZ, Geometrie FROM RPD_Terre_Reco
+) select cast(ROW_NUMBER () OVER () as int) ogr_pkid, * from all_conso;
 
 INSERT INTO gpkg_contents (table_name, data_type, identifier, srs_id) values ('Noeud','features','Noeud',2154); --GPKG
 INSERT INTO gpkg_geometry_columns (table_name, column_name, geometry_type_name, srs_id, z, m) values ('Noeud', 'Geometrie', 'POINT', 2154, 1, 0); --GPKG
@@ -569,7 +666,7 @@ with all_conso as (
   SELECT n.id noeud_id, type_noeud, c.id conteneur_id, type_conteneur
   FROM Noeud n
   JOIN Conteneur c ON c.type_conteneur = 'Support' AND PtDistWithin(c."Geometrie", n."Geometrie", 0.002)
-) select ROW_NUMBER () OVER () pkid, * from all_conso;
+) select cast(ROW_NUMBER () OVER () as int) fid, * from all_conso;
 ;
 
 INSERT INTO gpkg_contents (table_name, data_type, identifier) values ('Conteneur_Noeud','attributes','Conteneur_Noeud'); --GPKG
@@ -577,22 +674,22 @@ INSERT INTO gpkg_contents (table_name, data_type, identifier) values ('Conteneur
 DROP VIEW IF EXISTS Conteneur_Cable;
 CREATE VIEW Conteneur_Cable as
 with all_conso as (
-  SELECT n.id cable_id, type_cable, 'StartPoint' connpt, c.id conteneur_id, type_conteneur
+  SELECT n.id cable_id, type_cable, cast('StartPoint' as text) connpt, c.id conteneur_id, type_conteneur
   FROM Cable n
   JOIN RPD_GeometrieSupplementaire_Reco c ON PtDistWithin(c."Ligne2.5D", ST_StartPoint(n."Geometrie"), 0.002) OR PtDistWithin(c."Surface2.5D", ST_StartPoint(n."Geometrie"), 0.002)
   UNION ALL
-  SELECT n.id cable_id, type_cable, 'StartPoint' connpt, c.id conteneur_id, type_conteneur
+  SELECT n.id cable_id, type_cable, cast('StartPoint' as text) connpt, c.id conteneur_id, type_conteneur
   FROM Cable n
   JOIN Conteneur c ON c.type_conteneur = 'Support' AND PtDistWithin(c."Geometrie", ST_StartPoint(n."Geometrie"), 0.002)
   UNION ALL
-  SELECT n.id cable_id, type_cable, 'EndPoint' connpt, c.id conteneur_id, type_conteneur
+  SELECT n.id cable_id, type_cable, cast('EndPoint' as text) connpt, c.id conteneur_id, type_conteneur
   FROM Cable n
   JOIN RPD_GeometrieSupplementaire_Reco c ON PtDistWithin(c."Ligne2.5D", ST_EndPoint(n."Geometrie"), 0.002) OR PtDistWithin(c."Surface2.5D", ST_EndPoint(n."Geometrie"), 0.002)
   UNION ALL
-  SELECT n.id cable_id, type_cable, 'EndPoint' connpt, c.id conteneur_id, type_conteneur
+  SELECT n.id cable_id, type_cable, cast('EndPoint' as text) connpt, c.id conteneur_id, type_conteneur
   FROM Cable n
   JOIN Conteneur c ON c.type_conteneur = 'Support' AND PtDistWithin(c."Geometrie", ST_EndPoint(n."Geometrie"), 0.002)
-) select ROW_NUMBER () OVER () pkid, * from all_conso;
+) select cast(ROW_NUMBER () OVER () as int) fid, * from all_conso;
 ;
 
 INSERT INTO gpkg_contents (table_name, data_type, identifier) values ('Conteneur_Cable','attributes','Conteneur_Cable'); --GPKG
@@ -600,17 +697,61 @@ INSERT INTO gpkg_contents (table_name, data_type, identifier) values ('Conteneur
 DROP VIEW IF EXISTS Noeud_Cable;
 CREATE VIEW Noeud_Cable as
 with all_conso as (
-  SELECT c.id cable_id, type_cable, 'StartPoint' connpt, n.id noeud_id, type_noeud
+  SELECT c.id cable_id, type_cable, cast('StartPoint' as text) connpt, n.id noeud_id, type_noeud
   FROM Noeud n
   JOIN Cable c ON PtDistWithin(n."Geometrie", ST_StartPoint(c."Geometrie"), 0.002)
   UNION ALL
-  SELECT c.id cable_id, type_cable, 'EndPoint' connpt, n.id noeud_id, type_noeud
+  SELECT c.id cable_id, type_cable, cast('EndPoint' as text) connpt, n.id noeud_id, type_noeud
   FROM Noeud n
   JOIN Cable c ON PtDistWithin(n."Geometrie", ST_EndPoint(c."Geometrie"), 0.002)
-) select ROW_NUMBER () OVER () pkid, * from all_conso;
+) select cast(ROW_NUMBER () OVER () as int) fid, * from all_conso;
 ;
 
 INSERT INTO gpkg_contents (table_name, data_type, identifier) values ('Noeud_Cable','attributes','Noeud_Cable'); --GPKG
+
+
+DROP VIEW IF EXISTS CableElectrique_NoeudReseau;
+CREATE VIEW CableElectrique_NoeudReseau AS
+with uniiion as (
+  select cast(c.id as text) cableelectrique_href
+  , cast(n.noeud_id as text) noeudreseau_href
+  , connpt
+  , -1 dist
+  FROM RPD_CableElectrique_Reco c
+  JOIN Noeud_Cable n ON n.cable_id=c.id
+  union all
+  select cast(c.id as text) cableelectrique_href
+  , cast(n.noeud_id as text) noeudreseau_href
+  , connpt
+  , ST_Distance(c.Geometrie, m.Geometrie)
+  FROM RPD_CableElectrique_Reco c
+  JOIN Conteneur_Cable h ON h.cable_id=c.id
+  JOIN Conteneur_Noeud n ON n.conteneur_id=h.conteneur_id
+  JOIN Noeud m on m.id = n.noeud_id
+)
+, diiistinct as (
+select cableelectrique_href, noeudreseau_href, connpt
+from uniiion a
+WHERE NOT EXISTS (SELECT 1 FROM uniiion b WHERE b.cableelectrique_href=a.cableelectrique_href and b.connpt=a.connpt and b.dist < a.dist)
+)
+SELECT
+  cast(ROW_NUMBER () OVER () as int) fid
+, 'CableElectrique_NoeudReseau_'||ROW_NUMBER () OVER () ogr_pkid
+, (CreateUUID()) id
+, *
+, cast(null as text) noeudreseau_noeudreseau_rpd_pointdecomptage_reco_pkid
+, cast(null as text) noeudreseau_noeudreseau_rpd_posteelectrique_reco_pkid
+, cast(null as text) noeudreseau_noeudreseau_rpd_terre_reco_pkid
+, cast(null as text) noeudreseau_noeudreseau_rpd_jeubarres_reco_pkid
+, cast(null as text) noeudres_noeudreseau_rpd_ouvragecollectifbrancheme_reco_pkid
+, cast(null as text) noeudreseau_noeudreseau_rpd_plage_reco_pkid
+, cast(null as text) noeudreseau_noeudreseau_rpd_raccordementmodulaire_reco_pkid
+, cast(null as text) noeudreseau_noeudreseau_rpd_jonction_reco_pkid
+, cast(null as text) cableelectriqu_cableelectrique_rpd_cableelectrique_reco_pkid
+from diiistinct
+;
+
+INSERT INTO gpkg_contents (table_name, data_type, identifier) values ('CableElectrique_NoeudReseau','attributes','CableElectrique_NoeudReseau'); --GPKG
 
 --XXX RPD_PointLeveOuvrageReseau_Reco
 
@@ -629,7 +770,8 @@ INSERT INTO gpkg_contents (table_name, data_type, identifier) values ('LeveTypeV
 
 DROP TABLE IF EXISTS RPD_PointLeveOuvrageReseau_Reco;
 CREATE TABLE RPD_PointLeveOuvrageReseau_Reco(
-  pkid INTEGER PRIMARY KEY AUTOINCREMENT
+  fid INTEGER PRIMARY KEY AUTOINCREMENT
+, ogr_pkid TEXT GENERATED ALWAYS AS ('RPD_PointLeveOuvrageReseau_Reco_'||fid) VIRTUAL
 , id TEXT NOT NULL UNIQUE DEFAULT (CreateUUID())
 , NumeroPoint TEXT NOT NULL
 , CodeOuvrage TEXT NOT NULL --NOTE : hors reco star => permet de tracer les lignes en auto
@@ -648,8 +790,4 @@ INSERT INTO gpkg_geometry_columns (table_name, column_name, geometry_type_name, 
 SELECT gpkgAddSpatialIndex('RPD_PointLeveOuvrageReseau_Reco', 'Geometrie' );
 
 --TODO :
--- pour les conteneurs (bati et enceinte) séparer la couche de dessin (line) et la couche cible (point)
--- probleme attribut geometriesupplementaire_href
--- créer la table cableelectrique_noeudreseau :
----- la liaison topo doit elle se faire avec les conteneurs ou pas ?
 -- calculer les attributs conteneur_href / noeudreseau_href avant export gml
