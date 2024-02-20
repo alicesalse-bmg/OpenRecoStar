@@ -1,14 +1,4 @@
 --CONTROLES TOPO
-DROP TABLE IF EXISTS generate_series;
-CREATE TABLE generate_series(
-  value
-);
-
-WITH RECURSIVE
-  cnt(x) AS (VALUES(1) UNION ALL SELECT x+1 FROM cnt WHERE x<1000)
-INSERT INTO generate_series SELECT x FROM cnt;
-
-SELECT value FROM generate_series;
 
 --XXX NOEUD / CABLE
 DROP VIEW IF EXISTS ctrl_Noeud_Cable;
@@ -56,7 +46,7 @@ FROM Noeud n
 JOIN Cable c ON PtDistWithin(n."Geometrie",c."Geometrie", 0.002)
 WHERE NOT EXISTS (SELECT 1 FROM Noeud_Cable cn WHERE cn.cable_id=c.id and cn.noeud_id=n.id )
 
-) select ROW_NUMBER () OVER () pkid, * from all_ctrl
+) select cast(ROW_NUMBER () OVER () as int) fid, * from all_ctrl
 ;
 
 INSERT INTO gpkg_contents (table_name, data_type, identifier, srs_id) values ('ctrl_Noeud_Cable','features','ctrl_Noeud_Cable',2154);
@@ -120,7 +110,7 @@ FROM Noeud n
 WHERE (PrecisionXY is Null OR PrecisionZ is Null)
 AND NOT EXISTS (SELECT 1 FROM Conteneur_Noeud cn WHERE cn.noeud_id=n.id)
 
-) select ROW_NUMBER () OVER () pkid, * from all_ctrl
+) select cast(ROW_NUMBER () OVER () as int) fid, * from all_ctrl
 ;
 
 INSERT INTO gpkg_contents (table_name, data_type, identifier, srs_id) values ('ctrl_Noeud_Conteneur','features','ctrl_Noeud_Conteneur',2154);
@@ -206,7 +196,7 @@ FROM Noeud c
 WHERE PrecisionXY = 'A' and PrecisionZ = 'A' and ctrl is not null
 AND NOT EXISTS (SELECT 1 FROM Conteneur_Noeud cn WHERE cn.noeud_id=c.id)
 
-) select ROW_NUMBER () OVER () pkid, * from all_ctrl
+) select cast(ROW_NUMBER () OVER () as int) fid, * from all_ctrl
 ;
 
 INSERT INTO gpkg_contents (table_name, data_type, identifier, srs_id) values ('ctrl_PLOR_Ouvrage','features','ctrl_PLOR_Ouvrage',2154);

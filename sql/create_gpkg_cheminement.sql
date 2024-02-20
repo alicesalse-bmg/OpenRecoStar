@@ -561,6 +561,7 @@ with uniiion as (
 select cast(ROW_NUMBER () OVER () as int) fid
 , 'Cheminement_Cables_'||ROW_NUMBER () OVER () ogr_pkid
 , (CreateUUID()) id
+, *
 , cast(null as text) cables_cables_rpd_cableelectrique_reco_pkid
 , cast(null as text) cables_cables_rpd_cableterre_reco_pkid
 , cast(null as text) cheminement_cheminement_rpd_aerien_reco_pkid
@@ -568,7 +569,7 @@ select cast(ROW_NUMBER () OVER () as int) fid
 , cast(null as text) cheminement_cheminement_rpd_galerie_reco_pkid
 , cast(null as text) cheminement_cheminement_rpd_pleineterre_reco_pkid
 , cast(null as text) cheminement_cheminement_rpd_protectionmecanique_reco_pkid
-, * from uniiion
+from uniiion
 ;
---
+
 INSERT INTO gpkg_contents (table_name, data_type, identifier) values ('Cheminement_Cables','attributes','Cheminement_Cables'); --GPKG
