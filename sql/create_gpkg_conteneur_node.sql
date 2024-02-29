@@ -294,9 +294,9 @@ INSERT INTO gpkg_contents (table_name, data_type, identifier) values ('RPD_Suppo
 DROP VIEW IF EXISTS Conteneur;
 CREATE VIEW Conteneur as
 with all_conso as (
-  SELECT ogr_pkid, id, cast('BatimentTechnique' as text) type_conteneur, PrecisionXY, PrecisionZ, Geometrie FROM RPD_BatimentTechnique_Reco_line
+  SELECT ogr_pkid, id, cast('BatimentTechnique' as text) type_conteneur, PrecisionXY, PrecisionZ, Geometrie FROM RPD_BatimentTechnique_Reco
   UNION ALL
-  SELECT ogr_pkid, id, cast('EnceinteCloturee' as text) type_conteneur, PrecisionXY, PrecisionZ, Geometrie FROM RPD_EnceinteCloturee_Reco_line
+  SELECT ogr_pkid, id, cast('EnceinteCloturee' as text) type_conteneur, PrecisionXY, PrecisionZ, Geometrie FROM RPD_EnceinteCloturee_Reco
   UNION ALL
   SELECT ogr_pkid, id, cast('Coffret' as text) type_conteneur, PrecisionXY, PrecisionZ, Geometrie FROM RPD_Coffret_Reco
   UNION ALL
@@ -311,21 +311,21 @@ INSERT INTO gpkg_geometry_columns (table_name, column_name, geometry_type_name, 
 DROP VIEW IF EXISTS RPD_GeometrieSupplementaire_Reco;
 CREATE VIEW RPD_GeometrieSupplementaire_Reco as
 with all_conso as (
-  SELECT cast('RPD_BatimentTechnique_Reco_geomsupp_'||fid as text) ogr_pkid, geometriesupplementaire_href id, cast('BatimentTechnique' as text) type_conteneur, PrecisionXY, PrecisionZ
+  SELECT cast('RPD_BatimentTechnique_Reco_geomsupp_'||fid as text) ogr_pkid, geometriesupplementaire_href id, id conteneur_id, cast('BatimentTechnique' as text) type_conteneur, PrecisionXY, PrecisionZ
   , Geometrie "Ligne2.5D"
   , CASE  WHEN ST_IsClosed(Geometrie) THEN ST_MakePolygon(Geometrie)
           WHEN ST_NumPoints(Geometrie) > 3 THEN ST_MakePolygon(ST_AddPoint(Geometrie, ST_StartPoint(Geometrie)))
           ELSE NULL END "Surface2.5D"
   FROM RPD_BatimentTechnique_Reco_line
   UNION ALL
-  SELECT cast('RPD_EnceinteCloturee_Reco_geomsupp_'||fid as text) ogr_pkid, geometriesupplementaire_href id, cast('EnceinteCloturee' as text) type_conteneur, PrecisionXY, PrecisionZ
+  SELECT cast('RPD_EnceinteCloturee_Reco_geomsupp_'||fid as text) ogr_pkid, geometriesupplementaire_href id, id conteneur_id, cast('EnceinteCloturee' as text) type_conteneur, PrecisionXY, PrecisionZ
   , Geometrie "Ligne2.5D"
   , CASE  WHEN ST_IsClosed(Geometrie) THEN ST_MakePolygon(Geometrie)
           WHEN ST_NumPoints(Geometrie) > 3 THEN ST_MakePolygon(ST_AddPoint(Geometrie, ST_StartPoint(Geometrie)))
           ELSE NULL END "Surface2.5D"
   FROM RPD_EnceinteCloturee_Reco_line
   UNION ALL
-  SELECT cast('RPD_Coffret_Reco_geomsupp_'||fid as text) ogr_pkid, geometriesupplementaire_href id, cast('Coffret' as text) type_conteneur, PrecisionXY, PrecisionZ
+  SELECT cast('RPD_Coffret_Reco_geomsupp_'||fid as text) ogr_pkid, geometriesupplementaire_href id, id conteneur_id, cast('Coffret' as text) type_conteneur, PrecisionXY, PrecisionZ
   , ST_Translate(RotateCoordinates(CastToXYZ(g.Geometrie),coalesce(angle,0)), ST_X(c.Geometrie), ST_Y(c.Geometrie), ST_Z(c.Geometrie)) "Ligne2.5D"
   , ST_Translate(RotateCoordinates(CastToXYZ(ST_MakePolygon(g.Geometrie)),coalesce(angle,0)), ST_X(c.Geometrie), ST_Y(c.Geometrie), ST_Z(c.Geometrie)) "Surface2.5D"
   FROM RPD_Coffret_Reco c
@@ -649,7 +649,7 @@ with all_conso as (
   SELECT ogr_pkid, id, cast('Jonction' as text) type_noeud, Statut, PrecisionXY, PrecisionZ, Geometrie FROM RPD_Jonction_Reco
   UNION ALL
   SELECT ogr_pkid, id, cast('Terre' as text) type_noeud, Statut, PrecisionXY, PrecisionZ, Geometrie FROM RPD_Terre_Reco
-) select cast(ROW_NUMBER () OVER () as int) ogr_pkid, * from all_conso;
+) select cast(ROW_NUMBER () OVER () as int) fid, * from all_conso;
 
 INSERT INTO gpkg_contents (table_name, data_type, identifier, srs_id) values ('Noeud','features','Noeud',2154); --GPKG
 INSERT INTO gpkg_geometry_columns (table_name, column_name, geometry_type_name, srs_id, z, m) values ('Noeud', 'Geometrie', 'POINT', 2154, 1, 0); --GPKG
@@ -659,7 +659,7 @@ INSERT INTO gpkg_geometry_columns (table_name, column_name, geometry_type_name, 
 DROP VIEW IF EXISTS Conteneur_Noeud; --FIXME : a mettre dans attribut de la table Noeud lors de l'export : voir xsd
 CREATE VIEW Conteneur_Noeud as
 with all_conso as (
-  SELECT n.id noeud_id, type_noeud, c.id conteneur_id, type_conteneur
+  SELECT n.id noeud_id, type_noeud, c.conteneur_id conteneur_id, type_conteneur
   FROM Noeud n
   JOIN RPD_GeometrieSupplementaire_Reco c ON PtDistWithin(c."Ligne2.5D", n."Geometrie", 0.002) OR PtDistWithin(c."Surface2.5D", n."Geometrie", 0.002)
   UNION ALL
@@ -674,7 +674,7 @@ INSERT INTO gpkg_contents (table_name, data_type, identifier) values ('Conteneur
 DROP VIEW IF EXISTS Conteneur_Cable;
 CREATE VIEW Conteneur_Cable as
 with all_conso as (
-  SELECT n.id cable_id, type_cable, cast('StartPoint' as text) connpt, c.id conteneur_id, type_conteneur
+  SELECT n.id cable_id, type_cable, cast('StartPoint' as text) connpt, c.conteneur_id conteneur_id, type_conteneur
   FROM Cable n
   JOIN RPD_GeometrieSupplementaire_Reco c ON PtDistWithin(c."Ligne2.5D", ST_StartPoint(n."Geometrie"), 0.002) OR PtDistWithin(c."Surface2.5D", ST_StartPoint(n."Geometrie"), 0.002)
   UNION ALL
@@ -682,7 +682,7 @@ with all_conso as (
   FROM Cable n
   JOIN Conteneur c ON c.type_conteneur = 'Support' AND PtDistWithin(c."Geometrie", ST_StartPoint(n."Geometrie"), 0.002)
   UNION ALL
-  SELECT n.id cable_id, type_cable, cast('EndPoint' as text) connpt, c.id conteneur_id, type_conteneur
+  SELECT n.id cable_id, type_cable, cast('EndPoint' as text) connpt, c.conteneur_id conteneur_id, type_conteneur
   FROM Cable n
   JOIN RPD_GeometrieSupplementaire_Reco c ON PtDistWithin(c."Ligne2.5D", ST_EndPoint(n."Geometrie"), 0.002) OR PtDistWithin(c."Surface2.5D", ST_EndPoint(n."Geometrie"), 0.002)
   UNION ALL
@@ -790,4 +790,5 @@ INSERT INTO gpkg_geometry_columns (table_name, column_name, geometry_type_name, 
 SELECT gpkgAddSpatialIndex('RPD_PointLeveOuvrageReseau_Reco', 'Geometrie' );
 
 --TODO :
--- calculer les attributs conteneur_href / noeudreseau_href avant export gml
+-- voir les calculs de relation pour les cables de terre
+-- remplacer les ogr_pkid générés par des attributs normaux
