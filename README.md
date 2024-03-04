@@ -20,7 +20,7 @@
 
   ![img](./img/depot-extension-1.png)
 
-  Entrer l'url du dépôt : https://raw.githubusercontent.com/alicesalse-bmg/OpenRecoStar/master/python/qgs_plugins/OpenRecoStarPlugin.xml
+  Entrer l'url du dépôt : https://github.com/alicesalse-bmg/OpenRecoStar/raw/master/python/qgs_plugins/OpenRecoStarPlugin.xml
 
   ![img](./img/depot-extension-2.png)
 
