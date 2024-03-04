@@ -4,7 +4,7 @@
 
 ## 🗺 Se localiser
 
-## 📑 Gestionnare de couches
+## 📑 Gestionnaire de couches
 
 ## ✏️ Mettre à jour les données
 

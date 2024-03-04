@@ -8,7 +8,7 @@ Ce plugin vous permet de bénéficier dans QGIS de tous les éléments nécessai
 
 * Pour installer la barre d'outils, suivre les [instructions d'installation du plugin](../#installer-le-plugin-openrecostar-dans-qgis).
 
-## Présentaion de la barre d'outils
+## Présentation de la barre d'outils
 
 <img src="https://github.com/alicesalse-bmg/OpenRecoStarPlugin/raw/master/icons/NewProjet.png"  width="30">    <img src="https://github.com/alicesalse-bmg/OpenRecoStarPlugin/raw/master/icons/ImportPointLeve.png"  width="30">    <img src="https://github.com/alicesalse-bmg/OpenRecoStarPlugin/raw/master/icons/TracePointLeve.png"  width="30">    <img src="https://github.com/alicesalse-bmg/OpenRecoStarPlugin/raw/master/icons/ExportGML.png"  width="30">
 
@@ -59,14 +59,17 @@ Les formats supportés actuellement sont le `*.csv` et le `*.shp`.
 
   L'attribut `Levé` contiendra par défaut (si aucune valeur n'est renseignée) la valeur Z correspondant à l'_altitude de la génératrice_.
 
+  Le `CodeOuvrage` n'est pas documenté dans le RecoStaR mais permet d'utiliser facilement l'[outil de tracé automatique](#3--tracer-des-lignes-à-partir-des-points-levés). Il contient un code distinct pour chaque ouvrage levé et permet d'identifier facilement tous les points levés qui correspondent à un câble, par exemple, pour générer le tracé de celui-ci automatiquement.
+    > ⚠️ à ne pas confondre avec le `Code_PGOC`
+
   ![img](../img/mapping-plor-csv.png)
 
-  > 📓 Pour la définition détaillée de chaque attribut, se reporter à la documentation RecoStar.
+  > 📓 Pour la définition détaillée de chaque attribut, se reporter à la documentation RecoStaR.
 
 * Clic droit sur la couche `*_PointLeveOuvrageReseau_Reco` dans le gestionnaire de couches > Zoomer sur la couche. Vous permet de localiser la carte au nievau des points levés importés.
 
   ![img](../img/zoom-layer-plor.png)
 
-* Si le rend vous convient, [Sauvegarder la mise à jour](./Saisie-Qgis.md#sauvegarder-les-modifications). ![img](../img/sauvegarde-maj.png)
+* Si le rendu vous convient, [Sauvegarder la mise à jour](./Saisie-Qgis.md#sauvegarder-les-modifications). ![img](../img/sauvegarde-maj.png)
 
 ![img](../img/exemple-import-plor.png)
