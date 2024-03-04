@@ -19,7 +19,7 @@ SELECT value FROM generate_series;
 DROP TABLE IF EXISTS ReseauUtilite;
 CREATE TABLE ReseauUtilite (
     fid INTEGER PRIMARY KEY AUTOINCREMENT
-  , ogr_pkid TEXT GENERATED ALWAYS AS ('ReseauUtilite_'||fid) VIRTUAL
+  , ogr_pkid TEXT DEFAULT ('ReseauUtilite_0')
   , id TEXT NOT NULL UNIQUE
   , Mention TEXT
   , Nom TEXT
@@ -94,7 +94,7 @@ INSERT INTO gpkg_contents (table_name, data_type, identifier) values ('EtatCoupe
 DROP TABLE IF EXISTS RPD_Fourreau_Reco;
 CREATE TABLE RPD_Fourreau_Reco(
   fid INTEGER PRIMARY KEY AUTOINCREMENT
-, ogr_pkid TEXT GENERATED ALWAYS AS ('RPD_Fourreau_Reco_'||fid) VIRTUAL
+, ogr_pkid TEXT DEFAULT ('RPD_Fourreau_Reco_0')
 , id TEXT NOT NULL UNIQUE DEFAULT (CreateUUID())
 , Materiau TEXT NOT NULL REFERENCES ProtectionMaterialTypeValueReco (valeurs)
 , DiametreDuFourreau INTEGER NOT NULL
@@ -123,7 +123,7 @@ INSERT INTO gpkg_contents (table_name, data_type, identifier) values ('RPD_Fourr
 DROP TABLE IF EXISTS RPD_Galerie_Reco;
 CREATE TABLE RPD_Galerie_Reco(
   fid INTEGER PRIMARY KEY AUTOINCREMENT
-, ogr_pkid TEXT GENERATED ALWAYS AS ('RPD_Galerie_Reco_'||fid) VIRTUAL
+, ogr_pkid TEXT DEFAULT ('RPD_Galerie_Reco_0')
 , id TEXT NOT NULL UNIQUE DEFAULT (CreateUUID())
 , Hauteur INTEGER NOT NULL
 , Hauteur_uom TEXT DEFAULT 'm'
@@ -151,7 +151,7 @@ INSERT INTO gpkg_contents (table_name, data_type, identifier) values ('RPD_Galer
 DROP TABLE IF EXISTS RPD_PleineTerre_Reco_line;
 CREATE TABLE RPD_PleineTerre_Reco_line(
   fid INTEGER PRIMARY KEY AUTOINCREMENT
-, ogr_pkid TEXT GENERATED ALWAYS AS ('RPD_PleineTerre_Reco_line_'||fid) VIRTUAL
+, ogr_pkid TEXT DEFAULT ('RPD_PleineTerre_Reco_line_0')
 , id TEXT NOT NULL UNIQUE DEFAULT (CreateUUID())
 , CoupeType TEXT
 , EtatCoupeType TEXT REFERENCES EtatCoupeTypeValueReco (valeurs)
@@ -171,7 +171,7 @@ SELECT gpkgAddSpatialIndex('RPD_PleineTerre_Reco_line', 'Geometrie' );
 DROP TABLE IF EXISTS RPD_ProtectionMecanique_Reco;
 CREATE TABLE RPD_ProtectionMecanique_Reco(
   fid INTEGER PRIMARY KEY AUTOINCREMENT
-, ogr_pkid TEXT GENERATED ALWAYS AS ('RPD_ProtectionMecanique_Reco_'||fid) VIRTUAL
+, ogr_pkid TEXT DEFAULT ('RPD_ProtectionMecanique_Reco_0')
 , id TEXT NOT NULL UNIQUE DEFAULT (CreateUUID())
 , Materiau TEXT NOT NULL REFERENCES ProtectionMaterialTypeValueReco (valeurs)
 , CoupeType TEXT
@@ -212,7 +212,7 @@ INSERT INTO gpkg_contents (table_name, data_type, identifier) values ('ModePoseV
 DROP TABLE IF EXISTS RPD_Aerien_Reco_line;
 CREATE TABLE RPD_Aerien_Reco_line(
   fid INTEGER PRIMARY KEY AUTOINCREMENT
-, ogr_pkid TEXT GENERATED ALWAYS AS ('RPD_Aerien_Reco_line_'||fid) VIRTUAL
+, ogr_pkid TEXT DEFAULT ('RPD_Aerien_Reco_line_0')
 , id TEXT NOT NULL UNIQUE DEFAULT (CreateUUID())
 , ModePose TEXT NOT NULL REFERENCES ModePoseValue (valeurs)
 , Geometrie LINESTRINGZ NOT NULL UNIQUE
@@ -361,7 +361,7 @@ INSERT INTO gpkg_contents (table_name, data_type, identifier) values ('TypePoseV
 DROP TABLE IF EXISTS RPD_CableElectrique_Reco;
 CREATE TABLE RPD_CableElectrique_Reco(
     fid INTEGER PRIMARY KEY AUTOINCREMENT
-  , ogr_pkid TEXT GENERATED ALWAYS AS ('RPD_CableElectrique_Reco_'||fid) VIRTUAL
+  , ogr_pkid TEXT DEFAULT ('RPD_CableElectrique_Reco_0')
   , id TEXT NOT NULL UNIQUE DEFAULT (CreateUUID())
   , DomaineTension TEXT NOT NULL REFERENCES DomaineTensionValue (valeurs)
   , FonctionCable_href TEXT NOT NULL REFERENCES FonctionCableElectriqueValue (valeurs)
@@ -413,7 +413,7 @@ INSERT INTO gpkg_contents (table_name, data_type, identifier) values ('Conducteu
 DROP TABLE IF EXISTS RPD_CableTerre_Reco;
 CREATE TABLE RPD_CableTerre_Reco(
     fid INTEGER PRIMARY KEY AUTOINCREMENT
-  , ogr_pkid TEXT GENERATED ALWAYS AS ('RPD_CableElectrique_Reco_'||fid) VIRTUAL
+  , ogr_pkid TEXT DEFAULT ('RPD_CableTerre_Reco_0')
   , id TEXT NOT NULL UNIQUE DEFAULT (CreateUUID())
   , FonctionCable_href TEXT NOT NULL REFERENCES FonctionCableElectriqueValue (valeurs)
   , NatureCableTerre_href TEXT NOT NULL REFERENCES ConducteurProtectionValue (valeurs)

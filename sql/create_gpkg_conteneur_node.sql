@@ -7,7 +7,7 @@
 DROP TABLE IF EXISTS RPD_BatimentTechnique_Reco_line;
 CREATE TABLE RPD_BatimentTechnique_Reco_line (
   fid INTEGER PRIMARY KEY AUTOINCREMENT
-, ogr_pkid TEXT GENERATED ALWAYS AS ('RPD_BatimentTechnique_Reco_'||fid) VIRTUAL
+, ogr_pkid TEXT DEFAULT ('RPD_BatimentTechnique_Reco_0')
 , id TEXT NOT NULL UNIQUE DEFAULT (CreateUUID())
 , Geometrie MULTILINESTRINGZ NOT NULL UNIQUE
 , PrecisionXY TEXT NOT NULL REFERENCES ClassePrecisionReseauValue (valeurs)
@@ -47,7 +47,7 @@ INSERT INTO gpkg_contents (table_name, data_type, identifier) values ('RPD_Batim
 DROP TABLE IF EXISTS RPD_EnceinteCloturee_Reco_line;
 CREATE TABLE RPD_EnceinteCloturee_Reco_line(
   fid INTEGER PRIMARY KEY AUTOINCREMENT
-, ogr_pkid TEXT GENERATED ALWAYS AS ('RPD_EnceinteCloturee_Reco_'||fid) VIRTUAL
+, ogr_pkid TEXT DEFAULT ('RPD_EnceinteCloturee_Reco_0')
 , id TEXT NOT NULL UNIQUE DEFAULT (CreateUUID())
 , Geometrie MULTILINESTRINGZ NOT NULL UNIQUE
 , PrecisionXY TEXT NOT NULL REFERENCES ClassePrecisionReseauValue (valeurs)
@@ -147,7 +147,7 @@ INSERT INTO GeomCoffret VALUES
 DROP TABLE IF EXISTS RPD_Coffret_Reco;
 CREATE TABLE RPD_Coffret_Reco(
   fid INTEGER PRIMARY KEY AUTOINCREMENT
-, ogr_pkid TEXT GENERATED ALWAYS AS ('RPD_Coffret_Reco_'||fid) VIRTUAL
+, ogr_pkid TEXT DEFAULT ('RPD_Coffret_Reco_0')
 , id TEXT NOT NULL UNIQUE DEFAULT (CreateUUID())
 , ImplantationArmoire_href TEXT NOT NULL REFERENCES ImplantationArmoireValue (valeurs)
 , TypeCoffret_href TEXT REFERENCES TypeCoffretValue (valeurs)
@@ -262,7 +262,7 @@ INSERT INTO gpkg_contents (table_name, data_type, identifier) values ('MatiereVa
 DROP TABLE IF EXISTS RPD_Support_Reco;
 CREATE TABLE RPD_Support_Reco(
   fid INTEGER PRIMARY KEY AUTOINCREMENT
-, ogr_pkid TEXT GENERATED ALWAYS AS ('RPD_Support_Reco_'||fid) VIRTUAL
+, ogr_pkid TEXT DEFAULT ('RPD_Support_Reco_0')
 , id TEXT NOT NULL UNIQUE DEFAULT (CreateUUID())
 , Classe_href TEXT REFERENCES ClasseSupportValue (valeurs) -- NOTE : NOT NULL sauf si NatureSupport = facade
 , Effort INTEGER -- NOTE : NOT NULL sauf si NatureSupport = facade
@@ -342,7 +342,7 @@ INSERT INTO gpkg_geometry_columns (table_name, column_name, geometry_type_name, 
 DROP TABLE IF EXISTS RPD_JeuBarres_Reco;
 CREATE TABLE RPD_JeuBarres_Reco(
   fid INTEGER PRIMARY KEY AUTOINCREMENT
-, ogr_pkid TEXT GENERATED ALWAYS AS ('RPD_JeuBarres_Reco_'||fid) VIRTUAL
+, ogr_pkid TEXT DEFAULT ('RPD_JeuBarres_Reco_0')
 , id TEXT NOT NULL UNIQUE DEFAULT (CreateUUID())
 , Geometrie POINTZ NOT NULL UNIQUE
 , PrecisionXY TEXT REFERENCES ClassePrecisionReseauValue (valeurs) -- NOTE : NOT NULL si pas dans conteneur ou noeud parent
@@ -381,7 +381,7 @@ INSERT INTO gpkg_contents (table_name, data_type, identifier) values ('TypeJonct
 DROP TABLE IF EXISTS RPD_Jonction_Reco;
 CREATE TABLE RPD_Jonction_Reco(
   fid INTEGER PRIMARY KEY AUTOINCREMENT
-, ogr_pkid TEXT GENERATED ALWAYS AS ('RPD_Jonction_Reco_'||fid) VIRTUAL
+, ogr_pkid TEXT DEFAULT ('RPD_Jonction_Reco_0')
 , id TEXT NOT NULL UNIQUE DEFAULT (CreateUUID())
 , DomaineTension TEXT NOT NULL REFERENCES DomaineTensionValue (valeurs)
 , TypeJonction TEXT NOT NULL REFERENCES TypeJonctionValue (valeurs)
@@ -409,7 +409,7 @@ INSERT INTO gpkg_contents (table_name, data_type, identifier) values ('RPD_Jonct
 DROP TABLE IF EXISTS RPD_Plage_Reco;
 CREATE TABLE RPD_Plage_Reco(
   fid INTEGER PRIMARY KEY AUTOINCREMENT
-, ogr_pkid TEXT GENERATED ALWAYS AS ('RPD_Plage_Reco_'||fid) VIRTUAL
+, ogr_pkid TEXT DEFAULT ('RPD_Plage_Reco_0')
 , id TEXT NOT NULL UNIQUE DEFAULT (CreateUUID())
 , Coupure BOOLEAN NOT NULL
 , Protection BOOLEAN NOT NULL
@@ -433,12 +433,12 @@ INSERT INTO gpkg_contents (table_name, data_type, identifier) values ('RPD_Plage
 
 --XXX RPD_OuvrageCollectifBranchement_Reco
 -- NOTE : peut etre un enfant d'un RM ou JDB
--- IDEA: copier la liste des PRMs => création auto des OCB
+-- IDEA: copier la liste des PRMs => création auto des OCB (JSON?)
 
 DROP TABLE IF EXISTS RPD_OuvrageCollectifBranchement_Reco;
 CREATE TABLE RPD_OuvrageCollectifBranchement_Reco(
   fid INTEGER PRIMARY KEY AUTOINCREMENT
-, ogr_pkid TEXT GENERATED ALWAYS AS ('RPD_OuvrageCollectifBranchement_Reco_'||fid) VIRTUAL
+, ogr_pkid TEXT DEFAULT ('RPD_OuvrageCollectifBranchement_Reco_0')
 , id TEXT NOT NULL UNIQUE DEFAULT (CreateUUID())
 , Geometrie POINTZ NOT NULL UNIQUE
 , PrecisionXY TEXT REFERENCES ClassePrecisionReseauValue (valeurs) -- NOTE : NOT NULL si pas dans conteneur ou noeud parent
@@ -463,7 +463,7 @@ INSERT INTO gpkg_contents (table_name, data_type, identifier) values ('RPD_Ouvra
 DROP TABLE IF EXISTS RPD_PointDeComptage_Reco;
 CREATE TABLE RPD_PointDeComptage_Reco(
   fid INTEGER PRIMARY KEY AUTOINCREMENT
-, ogr_pkid TEXT GENERATED ALWAYS AS ('RPD_PointDeComptage_Reco_'||fid) VIRTUAL
+, ogr_pkid TEXT DEFAULT ('RPD_PointDeComptage_Reco_0')
 , id TEXT NOT NULL UNIQUE DEFAULT (CreateUUID())
 , NumeroPRM INTEGER NOT NULL
 , Geometrie POINTZ NOT NULL UNIQUE
@@ -543,7 +543,7 @@ INSERT INTO gpkg_contents (table_name, data_type, identifier) values ('TypePoste
 DROP TABLE IF EXISTS RPD_PosteElectrique_Reco;
 CREATE TABLE RPD_PosteElectrique_Reco(
   fid INTEGER PRIMARY KEY AUTOINCREMENT
-, ogr_pkid TEXT GENERATED ALWAYS AS ('RPD_PosteElectrique_Reco_'||fid) VIRTUAL
+, ogr_pkid TEXT DEFAULT ('RPD_PosteElectrique_Reco_0')
 , id TEXT NOT NULL UNIQUE DEFAULT (CreateUUID())
 , Categorie_href TEXT NOT NULL REFERENCES CategoriesPosteValue (valeurs)
 , TypePoste_href TEXT NOT NULL REFERENCES TypePosteValue (valeurs)
@@ -570,7 +570,7 @@ INSERT INTO gpkg_contents (table_name, data_type, identifier) values ('RPD_Poste
 DROP TABLE IF EXISTS RPD_RaccordementModulaire_Reco;
 CREATE TABLE RPD_RaccordementModulaire_Reco(
   fid INTEGER PRIMARY KEY AUTOINCREMENT
-, ogr_pkid TEXT GENERATED ALWAYS AS ('RPD_RaccordementModulaire_Reco_'||fid) VIRTUAL
+, ogr_pkid TEXT DEFAULT ('RPD_RaccordementModulaire_Reco_0')
 , id TEXT NOT NULL UNIQUE DEFAULT (CreateUUID())
 , NombrePlages INTEGER NOT NULL
 , Geometrie POINTZ NOT NULL UNIQUE
@@ -608,7 +608,7 @@ INSERT INTO gpkg_contents (table_name, data_type, identifier) values ('NatureTer
 DROP TABLE IF EXISTS RPD_Terre_Reco;
 CREATE TABLE RPD_Terre_Reco(
   fid INTEGER PRIMARY KEY AUTOINCREMENT
-, ogr_pkid TEXT GENERATED ALWAYS AS ('RPD_Terre_Reco_'||fid) VIRTUAL
+, ogr_pkid TEXT DEFAULT ('RPD_Terre_Reco_0')
 , id TEXT NOT NULL UNIQUE DEFAULT (CreateUUID())
 , NatureTerre_href TEXT NOT NULL REFERENCES NatureTerreValue (valeurs)
 , Resistance INTEGER
@@ -771,7 +771,7 @@ INSERT INTO gpkg_contents (table_name, data_type, identifier) values ('LeveTypeV
 DROP TABLE IF EXISTS RPD_PointLeveOuvrageReseau_Reco;
 CREATE TABLE RPD_PointLeveOuvrageReseau_Reco(
   fid INTEGER PRIMARY KEY AUTOINCREMENT
-, ogr_pkid TEXT GENERATED ALWAYS AS ('RPD_PointLeveOuvrageReseau_Reco_'||fid) VIRTUAL
+, ogr_pkid TEXT DEFAULT ('RPD_PointLeveOuvrageReseau_Reco_0')
 , id TEXT NOT NULL UNIQUE DEFAULT (CreateUUID())
 , NumeroPoint TEXT NOT NULL
 , CodeOuvrage TEXT NOT NULL --NOTE : hors reco star => permet de tracer les lignes en auto
@@ -791,4 +791,4 @@ SELECT gpkgAddSpatialIndex('RPD_PointLeveOuvrageReseau_Reco', 'Geometrie' );
 
 --TODO :
 -- voir les calculs de relation pour les cables de terre
--- remplacer les ogr_pkid générés par des attributs normaux
+-- probleme des doubles géométries des geom suppp qui sortent en polygone
